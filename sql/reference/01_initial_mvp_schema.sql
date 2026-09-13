@@ -1,5 +1,13 @@
--- Initial MVP schema.
--- We will evolve this with Alembic once the first models are final.
+-- ============================================================
+-- Daily Intelligence
+-- Initial MVP schema — HISTORICAL REFERENCE ONLY
+-- ============================================================
+-- This preserves the original MVP database design.
+--
+-- IMPORTANT:
+-- The live schema is now managed by Alembic migrations.
+-- Do not use this file to update an existing database.
+-- ============================================================
 
 CREATE TABLE IF NOT EXISTS sources (
     id BIGSERIAL PRIMARY KEY,
@@ -50,20 +58,3 @@ CREATE TABLE IF NOT EXISTS edition_articles (
     rank INTEGER,
     PRIMARY KEY (edition_id, article_id)
 );
-
-SELECT table_name
-FROM information_schema.tables
-WHERE table_schema = 'public'
-ORDER BY table_name;
-
-SELECT current_database();
-SELECT current_schema();
-
-SELECT
-    id,
-    name,
-    category,
-    trust_tier,
-    active
-FROM sources
-ORDER BY id;
