@@ -9,10 +9,12 @@ from services.ai.ollama import OllamaService, OllamaAnalysisResult
 from services.ai.schemas import ArticleAIAnalysis
 
 
-# 1. Test Valid Structured Output Parsing
-def test_valid_structured_output():
+# 1. Test Valid Relevant Structured Output Parsing
+def test_valid_relevant_structured_output():
     json_data = {
+        "is_relevant": True,
         "primary_category": "AI & Technology",
+        "rejection_reason": None,
         "topics": ["Artificial Intelligence", "Hardware"],
         "countries": ["United States"],
         "entities": [{"name": "NVIDIA", "type": "company"}],
@@ -23,11 +25,36 @@ def test_valid_structured_output():
     }
     raw_str = json.dumps(json_data)
     analysis = ArticleAIAnalysis.model_validate_json(raw_str)
+    assert analysis.is_relevant is True
     assert analysis.primary_category == "AI & Technology"
+    assert analysis.rejection_reason is None
     assert analysis.importance_score == 75
     assert analysis.relevance_score == 90
     assert len(analysis.entities) == 1
     assert analysis.entities[0].name == "NVIDIA"
+
+
+# 1b. Test Valid Out-of-Scope Structured Output Parsing
+def test_valid_out_of_scope_structured_output():
+    json_data = {
+        "is_relevant": False,
+        "primary_category": None,
+        "rejection_reason": "routine sports coverage",
+        "topics": ["Tennis", "US Open"],
+        "countries": ["United States"],
+        "entities": [{"name": "Ben Shelton", "type": "person"}],
+        "summary": "Alexander Zverev defeated Ben Shelton at the US Open.",
+        "importance_score": 0,
+        "relevance_score": 0,
+        "event_type": "sports_match",
+    }
+    raw_str = json.dumps(json_data)
+    analysis = ArticleAIAnalysis.model_validate_json(raw_str)
+    assert analysis.is_relevant is False
+    assert analysis.primary_category is None
+    assert analysis.rejection_reason == "routine sports coverage"
+    assert analysis.importance_score == 0
+    assert analysis.relevance_score == 0
 
 
 # 2. Test Invalid JSON Handling
@@ -49,13 +76,15 @@ def test_invalid_json_handling():
         assert "Invalid JSON" in result.error_message
 
 
-# 2b. Test Request Payload Options (think=False, JSON Schema, temp=0, num_predict=1024)
+# 2b. Test Request Payload Parameters (think=False at top level, JSON Schema, temp=0, num_predict=1024)
 def test_ollama_request_payload_parameters():
     svc = OllamaService(base_url="http://localhost:11434")
     mock_response = MagicMock()
     mock_response.status = 200
     valid_json = {
+        "is_relevant": True,
         "primary_category": "World",
+        "rejection_reason": None,
         "topics": ["News"],
         "countries": ["UK"],
         "entities": [],
@@ -88,7 +117,7 @@ def test_ollama_request_payload_parameters():
         body = json.loads(captured_request.data.decode("utf-8"))
         assert body["format"] == ArticleAIAnalysis.model_json_schema()
         assert body["stream"] is False
-        assert body["options"]["think"] is False
+        assert body["think"] is False
         assert body["options"]["temperature"] == 0
         assert body["options"]["num_predict"] == 1024
 
@@ -135,11 +164,13 @@ def test_ollama_done_reason_length_handling():
         assert "length limit" in result.error_message.lower() or "done_reason='length'" in result.error_message.lower()
 
 
-# 3. Test Invalid Category Validation
+# 3. Test Invalid Category Validation for Relevant Articles
 def test_invalid_category_validation():
     json_data = {
+        "is_relevant": True,
         "primary_category": "Invalid Nonexistent Category",
-        "topics": ["Sports"],
+        "rejection_reason": None,
+        "topics": ["News"],
         "countries": [],
         "entities": [],
         "summary": "Test summary text.",
@@ -151,10 +182,32 @@ def test_invalid_category_validation():
         ArticleAIAnalysis.model_validate_json(json.dumps(json_data))
 
 
+# 3b. Test Out-of-Scope Sports Article Handling (No Longer Fails Validation)
+def test_out_of_scope_sports_example():
+    json_data = {
+        "is_relevant": False,
+        "primary_category": None,
+        "rejection_reason": "routine sports coverage",
+        "topics": ["Tennis"],
+        "countries": [],
+        "entities": [],
+        "summary": "Sports match recap.",
+        "importance_score": 0,
+        "relevance_score": 0,
+        "event_type": "sports",
+    }
+    analysis = ArticleAIAnalysis.model_validate_json(json.dumps(json_data))
+    assert analysis.is_relevant is False
+    assert analysis.primary_category is None
+    assert analysis.rejection_reason == "routine sports coverage"
+
+
 # 4. Test Out-of-Range Scores
 def test_out_of_range_scores():
     json_data_high = {
+        "is_relevant": True,
         "primary_category": "World",
+        "rejection_reason": None,
         "topics": [],
         "countries": [],
         "entities": [],
@@ -208,7 +261,6 @@ def test_missing_extracted_text_fallback():
 
 # 8. Test Duplicate Processing Idempotency & Force Reprocessing
 def test_duplicate_processing_and_force(test_db_session):
-    # Setup test source & article
     source = Source(name="Test AI Source", source_family="news", category="AI & Technology")
     test_db_session.add(source)
     test_db_session.commit()
@@ -235,6 +287,7 @@ def test_duplicate_processing_and_force(test_db_session):
 
     # Save output 1
     analysis1 = ArticleAIAnalysis(
+        is_relevant=True,
         primary_category="AI & Technology",
         summary="Initial AI summary.",
         importance_score=60,
@@ -243,6 +296,8 @@ def test_duplicate_processing_and_force(test_db_session):
     res1 = OllamaAnalysisResult(analysis=analysis1, status="success", processing_ms=100)
     saved1 = save_ai_output(test_db_session, article.id, provider, model, task, version, res1)
     assert saved1.summary == "Initial AI summary."
+    assert saved1.is_relevant is True
+    assert saved1.rejection_reason is None
 
     # Verify article is now excluded from unprocessed query
     unprocessed_after = get_articles_for_ai_processing(
@@ -252,6 +307,7 @@ def test_duplicate_processing_and_force(test_db_session):
 
     # Save output 2 without force -> returns existing output 1
     analysis2 = ArticleAIAnalysis(
+        is_relevant=True,
         primary_category="AI & Technology",
         summary="Updated AI summary.",
         importance_score=90,

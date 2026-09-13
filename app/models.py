@@ -191,6 +191,8 @@ class ArticleAIOutput(Base):
     output_json = Column(JSON, nullable=True)
     summary = Column(Text, nullable=True)
     primary_category = Column(Text, nullable=True)
+    is_relevant = Column(Boolean, nullable=True)
+    rejection_reason = Column(Text, nullable=True)
     importance_score = Column(Integer, nullable=True)
     relevance_score = Column(Integer, nullable=True)
     status = Column(Text, nullable=False, server_default="success", default="success")

@@ -26,42 +26,39 @@ class OllamaAnalysisResult:
 SYSTEM_PROMPT_TEMPLATE = """You are an expert editorial intelligence analyst for Daily Intelligence Newspaper.
 Your task is to analyze the supplied article and output a structured JSON analysis.
 
-CRITICAL INSTRUCTIONS:
-1. Analyze ONLY the supplied article content. Do not invent facts, entities, or countries.
-2. Preserve uncertainty where information is incomplete or unclear.
-3. Choose EXACTLY ONE primary_category from this allowed list:
-   - World
-   - Geopolitics
-   - Business
-   - Markets & Economy
-   - AI & Technology
-   - Industry & Operations
-   - Supply Chain & Trade
-   - Energy
-   - Sustainability
-   - Research
+1. SCOPE EVALUATION:
+   Determine if the article is strategically relevant to Daily Intelligence editorial scope.
+   - RELEVANT CONTENT (is_relevant = true): Global geopolitics, macroeconomics, markets, AI & technology, energy & commodities, supply chain & trade, industrial operations, sustainability, or strategic world events.
+   - OUT OF SCOPE CONTENT (is_relevant = false): Routine sports coverage, game results, match reports, celebrity news, entertainment, lifestyle, fashion, local crime, gossip, or low-value human-interest stories.
 
-4. Provide a factual summary of maximum 2-3 concise sentences.
-5. Provide an importance_score (0-100 integer) according to this rubric:
-   - 0-20: minor / niche
-   - 21-40: useful but limited significance
-   - 41-60: material sector or national development
-   - 61-80: major company / industry / economic / geopolitical event
-   - 81-100: major international development
+2. FOR RELEVANT ARTICLES (is_relevant = true):
+   - Set "is_relevant": true
+   - Set "primary_category" to EXACTLY ONE of:
+     "World", "Geopolitics", "Business", "Markets & Economy", "AI & Technology", "Industry & Operations", "Supply Chain & Trade", "Energy", "Sustainability", "Research"
+   - Set "rejection_reason": null
+   - Provide realistic importance_score (0-100) and relevance_score (0-100)
+   - Provide summary (2-3 factual sentences), topics, countries, entities, event_type
 
-6. Provide a relevance_score (0-100 integer) measuring relevance to Daily Intelligence editorial interests (global news, macroeconomics, tech, energy, supply chain, geopolitics, industrial operations).
+3. FOR OUT-OF-SCOPE ARTICLES (is_relevant = false):
+   - Set "is_relevant": false
+   - Set "primary_category": null
+   - Set "rejection_reason": concise reason (e.g. "routine sports coverage", "entertainment news")
+   - Set importance_score: 0, relevance_score: 0
 
-7. Output ONLY a valid JSON object matching this schema structure:
-{
-  "primary_category": "string (one of allowed categories)",
-  "topics": ["string"],
-  "countries": ["string"],
-  "entities": [{"name": "string", "type": "string"}],
-  "summary": "string (2-3 concise factual sentences)",
-  "importance_score": int (0-100),
-  "relevance_score": int (0-100),
-  "event_type": "string"
-}
+4. OUTPUT FORMAT:
+   Output ONLY a valid JSON object matching this schema structure:
+   {
+     "is_relevant": boolean,
+     "primary_category": "string (allowed category) or null",
+     "rejection_reason": "string or null",
+     "topics": ["string"],
+     "countries": ["string"],
+     "entities": [{"name": "string", "type": "string"}],
+     "summary": "string",
+     "importance_score": int (0-100),
+     "relevance_score": int (0-100),
+     "event_type": "string"
+   }
 
 Return the JSON object immediately. Do not include explanations, markdown, commentary, or reasoning.
 """
@@ -160,10 +157,10 @@ CONTENT:
             "messages": messages,
             "format": ArticleAIAnalysis.model_json_schema(),
             "stream": False,
+            "think": False,
             "options": {
                 "temperature": 0,
                 "num_predict": 1024,
-                "think": False,
             },
         }
 
@@ -235,10 +232,11 @@ CONTENT:
                 try:
                     analysis = ArticleAIAnalysis.model_validate_json(cleaned_content)
                     raw_dict = json.loads(cleaned_content)
+                    status_str = "success" if analysis.is_relevant else "out_of_scope"
                     return OllamaAnalysisResult(
                         analysis=analysis,
                         raw_output=raw_dict,
-                        status="success",
+                        status=status_str,
                         processing_ms=processing_ms,
                         done_reason=done_reason,
                         eval_count=eval_count,

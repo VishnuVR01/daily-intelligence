@@ -95,11 +95,15 @@ def save_ai_output(
     if result.analysis:
         output_obj.summary = result.analysis.summary
         output_obj.primary_category = result.analysis.primary_category
+        output_obj.is_relevant = result.analysis.is_relevant
+        output_obj.rejection_reason = result.analysis.rejection_reason
         output_obj.importance_score = result.analysis.importance_score
         output_obj.relevance_score = result.analysis.relevance_score
     elif result.raw_output:
         output_obj.summary = result.raw_output.get("summary")
         output_obj.primary_category = result.raw_output.get("primary_category")
+        output_obj.is_relevant = result.raw_output.get("is_relevant")
+        output_obj.rejection_reason = result.raw_output.get("rejection_reason")
         output_obj.importance_score = result.raw_output.get("importance_score")
         output_obj.relevance_score = result.raw_output.get("relevance_score")
 

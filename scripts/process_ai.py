@@ -107,9 +107,9 @@ def main():
         print("-" * 110, flush=True)
 
         attempted = 0
-        successful = 0
-        failed = 0
-        skipped = 0
+        relevant_count = 0
+        out_of_scope_count = 0
+        failed_count = 0
         total_ms = 0
 
         for article in articles:
@@ -140,31 +140,44 @@ def main():
                 force=args.force,
             )
 
-            if result.status == "success":
-                successful += 1
-                cat = result.analysis.primary_category if result.analysis else "N/A"
-                imp = result.analysis.importance_score if result.analysis else 0
-                rel = result.analysis.relevance_score if result.analysis else 0
+            if result.analysis:
+                if result.analysis.is_relevant:
+                    relevant_count += 1
+                    cat = result.analysis.primary_category or "N/A"
+                    imp = result.analysis.importance_score
+                    rel = result.analysis.relevance_score
+                    disp_status = "relevant"
+                else:
+                    out_of_scope_count += 1
+                    cat = "[OUT OF SCOPE]"
+                    imp = 0
+                    rel = 0
+                    disp_status = "out_of_scope"
             else:
-                failed += 1
+                failed_count += 1
                 cat = "N/A"
                 imp = 0
                 rel = 0
+                disp_status = result.status
 
             source_name = (article.source.name if article.source else "Unknown")[:22]
             headline_sub = article.title[:36]
-            print(f"{article.id:<6} {source_name:<24} {headline_sub:<38} {cat:<20} {imp:<5} {rel:<5} {result.processing_ms:<6} {result.status}", flush=True)
+            print(f"{article.id:<6} {source_name:<24} {headline_sub:<38} {cat:<20} {imp:<5} {rel:<5} {result.processing_ms:<6} {disp_status}", flush=True)
 
         print("=" * 110)
         avg_ms = int(total_ms / attempted) if attempted > 0 else 0
+        tech_success_count = relevant_count + out_of_scope_count
+        tech_success_rate = (tech_success_count / attempted * 100.0) if attempted > 0 else 0.0
+
         print("\n========================================")
         print("         AI PROCESSING SUMMARY          ")
         print("========================================")
         print(f"Attempted:                {attempted}")
-        print(f"Successful:               {successful}")
-        print(f"Failed:                   {failed}")
-        print(f"Skipped:                  {skipped}")
-        print(f"Average processing time:  {avg_ms} ms ({avg_ms/1000:.2f} s)")
+        print(f"Relevant:                 {relevant_count}")
+        print(f"Out of scope:             {out_of_scope_count}")
+        print(f"Failed:                   {failed_count}")
+        print(f"Technical success rate:   {tech_success_rate:.1f}%")
+        print(f"Average latency:          {avg_ms} ms ({avg_ms/1000:.2f} s)")
         print("========================================\n")
 
     finally:
