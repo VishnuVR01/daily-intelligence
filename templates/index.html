@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
+
+{% block title %}Daily Intelligence - Front Page{% endblock %}
+
+{% block content %}
+<div class="newspaper-frontpage">
+  
+  {# Hero Section: Top Story #}
+  {% if top_story %}
+  <section class="top-story-hero" id="top-story">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="hero-badge">Lead Story</div>
+      {{ render_save_button(top_story.id, saved_ids and top_story.id in saved_ids) }}
+    </div>
+    <div class="hero-content">
+      <div class="article-meta">
+        <a href="/source/{{ top_story.source.id if top_story.source else '' }}" class="article-source">
+          {{ top_story.source.name if top_story.source else "RSS Feed" }}
+        </a>
+        {% if top_story.source and top_story.source.category %}
+        <a href="/category/{{ top_story.source.category }}" class="article-category">
+          {{ top_story.source.category }}
+        </a>
+        {% endif %}
+      </div>
+      {{ render_entity_markers(top_story) }}
+      <h2 class="hero-headline">
+        <a href="{{ top_story.canonical_url }}" target="_blank" rel="noopener noreferrer">
+          {{ top_story.title }}
+        </a>
+      </h2>
+      <p class="hero-date">
+        {% if top_story.published_at %}
+          {{ top_story.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
+        {% else %}
+          Collected {{ top_story.collected_at.strftime("%b %d, %Y") }}
+        {% endif %}
+      </p>
+      {% if top_story.raw_summary %}
+      <p class="hero-summary">{{ top_story.raw_summary | striptags }}</p>
+      {% endif %}
+      <div class="hero-footer">
+        <a href="{{ top_story.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
+          Read Full Report &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {# Category Pills Filter Navigation Bar #}
+  <div class="category-strip">
+    <div class="category-nav">
+      <a href="/" class="category-badge active">Front Page</a>
+      {% for cat in categories %}
+        <a href="/category/{{ cat }}" class="category-badge" data-category="{{ cat }}">{{ cat }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  {# Newspaper Editorial Sections Layout #}
+  <div class="newspaper-grid">
+    
+    {# Primary Columns: Section Topics #}
+    <div class="sections-main">
+      {% for section_name, section_articles in sections.items() %}
+        {% if section_name != "Top Story" and section_articles %}
+        <section class="topic-section">
+          <div class="section-header">
+            <h3 class="section-title" data-category="{{ section_name }}">{{ section_name }}</h3>
+          </div>
+          <div class="articles-grid">
+            {% for article in section_articles %}
+            <article class="article-card" id="article-{{ article.id }}">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+                  <div class="article-meta">
+                    <a href="/source/{{ article.source.id if article.source else '' }}" class="article-source">
+                      {{ article.source.name if article.source else "RSS Feed" }}
+                    </a>
+                    {% if article.source and article.source.category %}
+                    <a href="/category/{{ article.source.category }}" class="article-category" data-category="{{ article.source.category }}">
+                      {{ article.source.category }}
+                    </a>
+                    {% endif %}
+                  </div>
+                  {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
+                </div>
+                {{ render_entity_markers(article) }}
+                <h4 class="article-headline">
+                  <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+                </h4>
+                <p class="article-date">
+                  {% if article.published_at %}
+                    {{ article.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
+                  {% else %}
+                    Collected {{ article.collected_at.strftime("%b %d, %Y") }}
+                  {% endif %}
+                </p>
+                {% if article.raw_summary %}
+                <p class="article-summary">{{ article.raw_summary | striptags }}</p>
+                {% endif %}
+              </div>
+              <div class="article-footer">
+                <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <div class="archive-banner-cta">
+    <a href="/archive" class="pagination-btn big-btn">
+      Browse Permanent Intelligence Archive &rarr;
+    </a>
+  </div>
+</div>
+{% endblock %}

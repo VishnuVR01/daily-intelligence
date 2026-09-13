@@ -1,0 +1,13 @@
+{% extends "error.html" %}
+
+{% block error_headline %}502 - Bad Gateway{% endblock %}
+
+{% block error_message %}
+The server encountered an invalid response or gateway failure while attempting to reach an upstream source or service.
+{% endblock %}
+
+{% block retry_button %}
+<button type="button" onclick="window.location.reload()" class="pagination-btn retry-btn">
+  &circlearrowright; Retry Request
+</button>
+{% endblock %}

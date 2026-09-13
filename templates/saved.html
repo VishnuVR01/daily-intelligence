@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
+
+{% block title %}Daily Intelligence - Saved Articles & Read Later{% endblock %}
+
+{% block content %}
+<div style="margin-top: 24px;">
+  <div class="section-header">
+    <h2 class="section-title">Saved Articles & Read Later</h2>
+  </div>
+
+  {# Status Filter Bar (All, Unread, Read) #}
+  <div class="family-filter-bar">
+    <a href="/saved?status=all{% if active_category %}&category={{ active_category }}{% endif %}{% if active_source_id %}&source_id={{ active_source_id }}{% endif %}" 
+       class="family-filter-tab {% if active_status == 'all' %}active{% endif %}">
+      📁 All Saved ({{ pagination.counts.all }})
+    </a>
+    <a href="/saved?status=unread{% if active_category %}&category={{ active_category }}{% endif %}{% if active_source_id %}&source_id={{ active_source_id }}{% endif %}" 
+       class="family-filter-tab {% if active_status == 'unread' %}active{% endif %}">
+      ✉️ Unread ({{ pagination.counts.unread }})
+    </a>
+    <a href="/saved?status=read{% if active_category %}&category={{ active_category }}{% endif %}{% if active_source_id %}&source_id={{ active_source_id }}{% endif %}" 
+       class="family-filter-tab {% if active_status == 'read' %}active{% endif %}">
+      ✅ Read ({{ pagination.counts.read }})
+    </a>
+  </div>
+
+  {# Category and Source Dropdown Filters #}
+  <div class="date-filter-form" style="margin-bottom: 24px;">
+    <form action="/saved" method="get" class="search-form" style="width: 100%; flex-wrap: wrap;">
+      <input type="hidden" name="status" value="{{ active_status }}" />
+      
+      <label for="saved-category-select" class="date-filter-label">Category:</label>
+      <select id="saved-category-select" name="category" onchange="this.form.submit()" class="map-select">
+        <option value="">-- All Categories --</option>
+        {% for cat in categories %}
+        <option value="{{ cat }}" {% if active_category == cat %}selected{% endif %}>{{ cat }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="saved-source-select" class="date-filter-label" style="margin-left: 12px;">Source:</label>
+      <select id="saved-source-select" name="source_id" onchange="this.form.submit()" class="map-select">
+        <option value="">-- All Sources --</option>
+        {% for s in sources %}
+        <option value="{{ s.id }}" {% if active_source_id == s.id %}selected{% endif %}>{{ s.name }}</option>
+        {% endfor %}
+      </select>
+
+      {% if active_category or active_source_id %}
+      <a href="/saved?status={{ active_status }}" class="clear-date-link" style="margin-left: 12px;">Reset Filters</a>
+      {% endif %}
+    </form>
+  </div>
+
+  {% if pagination.saved_articles %}
+  <div class="articles-grid">
+    {% for item in pagination.saved_articles %}
+      {% set article = item.article %}
+      <article class="article-card saved-card {% if item.is_read %}is-read-card{% endif %}" id="saved-card-{{ article.id }}">
+        <div>
+          <div class="article-meta">
+            <a href="/source/{{ article.source.id if article.source else '' }}" class="article-source">
+              {{ article.source.name if article.source else "RSS Feed" }}
+            </a>
+            {% if article.source and article.source.category %}
+            <a href="/category/{{ article.source.category }}" class="article-category">
+              {{ article.source.category }}
+            </a>
+            {% endif %}
+            <span class="status-badge {% if item.is_read %}status-inactive{% else %}status-active{% endif %}" id="read-badge-{{ article.id }}">
+              {% if item.is_read %}Read{% else %}Unread{% endif %}
+            </span>
+          </div>
+
+          {{ render_entity_markers(article) }}
+
+          <h3 class="article-headline">
+            <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+          </h3>
+
+          <p class="article-date">
+            Saved {{ item.saved_at.strftime("%b %d, %Y at %H:%M UTC") if item.saved_at else "Recently" }}
+            {% if item.read_at %} &bull; Read {{ item.read_at.strftime("%b %d at %H:%M") }}{% endif %}
+          </p>
+
+          {% if article.raw_summary %}
+          <p class="article-summary">{{ article.raw_summary | striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="article-footer saved-action-bar">
+          {% if item.is_read %}
+            <button type="button" class="action-btn mark-unread-btn" data-article-id="{{ article.id }}">
+              Mark as Unread
+            </button>
+          {% else %}
+            <button type="button" class="action-btn mark-read-btn" data-article-id="{{ article.id }}">
+              Mark as Read
+            </button>
+          {% endif %}
+          <button type="button" class="action-btn remove-saved-btn" data-article-id="{{ article.id }}">
+            Remove from Saved
+          </button>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  {# Pagination controls #}
+  {% if pagination.total_pages > 1 %}
+  <div class="pagination">
+    {% set status_param = "&status=" ~ active_status %}
+    {% set cat_param = "&category=" ~ active_category if active_category else "" %}
+    {% set src_param = "&source_id=" ~ active_source_id if active_source_id else "" %}
+
+    <a href="/saved?page={{ pagination.page - 1 }}{{ status_param }}{{ cat_param }}{{ src_param }}" 
+       class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}">
+      &larr; Previous
+    </a>
+
+    <span class="pagination-info">
+      Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong> ({{ pagination.total }} items)
+    </span>
+
+    <a href="/saved?page={{ pagination.page + 1 }}{{ status_param }}{{ cat_param }}{{ src_param }}" 
+       class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}">
+      Next &rarr;
+    </a>
+  </div>
+  {% endif %}
+
+  {% else %}
+  <div class="empty-state">
+    <p>No saved articles found in "{{ active_status }}" state.</p>
+    <a href="/" class="pagination-btn" style="margin-top: 16px;">Browse Front Page &rarr;</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

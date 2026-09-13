@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+jinja2
+sqlalchemy
+psycopg[binary]
+alembic
+feedparser
+httpx
+trafilatura
+beautifulsoup4
+pydantic-settings
+python-dateutil
+apscheduler
+rich
+pytest
+ruff

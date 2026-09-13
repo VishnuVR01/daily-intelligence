@@ -1,0 +1,35 @@
+# Python virtual environment
+.venv/
+
+# Environment secrets
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Test/tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local data / exports
+data/*
+!data/.gitkeep
+exports/*
+!exports/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

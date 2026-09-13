@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Intelligence - {{ status_code if status_code else "Error" }}{% endblock %}
+
+{% block content %}
+<div style="margin: 40px 0 60px;">
+  <div class="error-card-wrapper">
+    <div class="error-badge-row">
+      <span class="error-status-badge">{{ status_code if status_code else "Error" }}</span>
+    </div>
+    <h2 class="error-title-main">{% block error_headline %}An Error Occurred{% endblock %}</h2>
+    <p class="error-desc">
+      {% block error_message %}
+        The requested page or resource could not be processed at this time.
+      {% endblock %}
+    </p>
+
+    <div class="error-actions-group">
+      <a href="/" class="pwa-install-btn error-btn">
+        &larr; Return to Front Page
+      </a>
+      <a href="/archive" class="pagination-btn">
+        Browse Archive
+      </a>
+      {% block retry_button %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

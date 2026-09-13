@@ -1,0 +1,7 @@
+{% extends "error.html" %}
+
+{% block error_headline %}429 - Rate Limit Exceeded{% endblock %}
+
+{% block error_message %}
+Too many requests have been submitted in a short period. Please wait a moment before refreshing or requesting additional articles.
+{% endblock %}

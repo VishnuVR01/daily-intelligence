@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
+
+{% block title %}Daily Intelligence - {{ category }} Articles{% endblock %}
+
+{% block content %}
+<div style="margin-top: 24px;">
+  <div class="section-header">
+    <h2 class="section-title">{{ category }} Intelligence</h2>
+    <div class="category-nav">
+      <a href="/categories" class="category-badge">&larr; All Categories</a>
+      {% for cat in categories %}
+        <a href="/category/{{ cat }}" class="category-badge {% if category == cat %}active{% endif %}">{{ cat }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if pagination.articles %}
+  <div class="articles-grid">
+    {% for article in pagination.articles %}
+    <article class="article-card" id="article-{{ article.id }}">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+          <div class="article-meta">
+            <a href="/source/{{ article.source.id if article.source else '' }}" class="article-source">
+              {{ article.source.name if article.source else "RSS Feed" }}
+            </a>
+            {% if article.source and article.source.category %}
+            <span class="article-category">{{ article.source.category }}</span>
+            {% endif %}
+          </div>
+          {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
+        </div>
+        {{ render_entity_markers(article) }}
+        <h3 class="article-headline">
+          <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+        </h3>
+        <p class="article-date">
+          {% if article.published_at %}
+            {{ article.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
+          {% else %}
+            Collected {{ article.collected_at.strftime("%b %d, %Y") }}
+          {% endif %}
+        </p>
+        {% if article.raw_summary %}
+        <p class="article-summary">{{ article.raw_summary | striptags }}</p>
+        {% endif %}
+      </div>
+      <div class="article-footer">
+        <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
+          Read Original Article &rarr;
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <div class="pagination">
+    <a href="/category/{{ category }}?page={{ pagination.page - 1 }}" 
+       class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}">
+      &larr; Previous
+    </a>
+
+    <span class="pagination-info">
+      Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong>
+      ({{ pagination.total }} items)
+    </span>
+
+    <a href="/category/{{ category }}?page={{ pagination.page + 1 }}" 
+       class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}">
+      Next &rarr;
+    </a>
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <p>No articles found in category "{{ category }}".</p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

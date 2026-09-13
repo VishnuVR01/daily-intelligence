@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Intelligence - Categories Directory{% endblock %}
+
+{% block content %}
+<div style="margin-top: 24px;">
+  <div class="section-header">
+    <h2 class="section-title">Categories Directory</h2>
+  </div>
+
+  <div class="categories-grid">
+    {% for item in categories_summary %}
+    <div class="category-card" data-category="{{ item.name }}">
+      <div class="category-card-header">
+        <h3 class="category-card-title">
+          <a href="/category/{{ item.name }}">{{ item.name }}</a>
+        </h3>
+        <span class="category-card-count">{{ item.count }} articles</span>
+      </div>
+
+      {% if item.sample_articles %}
+      <div class="category-sample-list">
+        <p class="sample-label">Recent Headlines:</p>
+        <ul>
+          {% for art in item.sample_articles %}
+          <li>
+            <a href="{{ art.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ art.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="category-card-footer">
+        <a href="/category/{{ item.name }}" class="article-link">View All {{ item.name }} Articles &rarr;</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

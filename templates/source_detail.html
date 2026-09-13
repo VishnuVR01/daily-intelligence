@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
+
+{% block title %}Daily Intelligence - {% if source %}{{ source.name }}{% else %}Source Articles{% endif %}{% endblock %}
+
+{% block content %}
+<div style="margin-top: 24px;">
+  {% if source %}
+  <div class="source-header-banner">
+    <div class="section-header" style="margin-bottom: 8px;">
+      <h2 class="section-title">{{ source.name }}</h2>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        {% set fam_meta = get_source_family_info(source.source_family) %}
+        <span class="source-family-tag {{ fam_meta.class }}">
+          <span>{{ fam_meta.icon }}</span> {{ fam_meta.label }}
+        </span>
+        {% if source.active %}
+          <span class="status-badge status-active">Active</span>
+        {% else %}
+          <span class="status-badge status-inactive">Inactive</span>
+        {% endif %}
+      </div>
+    </div>
+    <div class="source-meta-row">
+      <span class="meta-item">Category: <strong>{{ source.category if source.category else 'General' }}</strong></span>
+      <span class="meta-item">Type: <code>{{ source.source_type }}</code></span>
+      <span class="meta-item">Trust Tier: <strong>{{ source.trust_tier }}</strong></span>
+      <span class="meta-item">Articles Archived: <strong>{{ "{:,}".format(pagination.total) }}</strong></span>
+      {% if source.website_url %}
+      <span class="meta-item">
+        <a href="{{ source.website_url }}" target="_blank" rel="noopener" class="article-link">Visit Website &nearr;</a>
+      </span>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if pagination.articles %}
+  <div class="articles-grid" style="margin-top: 24px;">
+    {% for article in pagination.articles %}
+    <article class="article-card" id="article-{{ article.id }}">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+          <div class="article-meta">
+            <span class="article-source">{{ source.name }}</span>
+            {% if source.category %}
+            <span class="article-category">{{ source.category }}</span>
+            {% endif %}
+          </div>
+          {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
+        </div>
+        {{ render_entity_markers(article) }}
+        <h3 class="article-headline">
+          <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+        </h3>
+        <p class="article-date">
+          {% if article.published_at %}
+            {{ article.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
+          {% else %}
+            Collected {{ article.collected_at.strftime("%b %d, %Y") }}
+          {% endif %}
+        </p>
+        {% if article.raw_summary %}
+        <p class="article-summary">{{ article.raw_summary | striptags }}</p>
+        {% endif %}
+      </div>
+      <div class="article-footer">
+        <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
+          Read Original Article &rarr;
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <div class="pagination">
+    <a href="/source/{{ source.id }}?page={{ pagination.page - 1 }}" 
+       class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}">
+      &larr; Previous
+    </a>
+
+    <span class="pagination-info">
+      Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong>
+      ({{ pagination.total }} items)
+    </span>
+
+    <a href="/source/{{ source.id }}?page={{ pagination.page + 1 }}" 
+       class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}">
+      Next &rarr;
+    </a>
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <p>No articles found for this source.</p>
+  </div>
+  {% endif %}
+
+  {% else %}
+  <div class="empty-state">
+    <p>Source not found.</p>
+    <a href="/sources" class="pagination-btn" style="margin-top: 16px;">Back to Sources Directory &rarr;</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

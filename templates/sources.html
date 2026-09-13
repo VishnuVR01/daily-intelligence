@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Intelligence - Sources Directory & Registry Status{% endblock %}
+
+{% block content %}
+<div style="margin-top: 24px;">
+  <div class="section-header">
+    <h2 class="section-title">Sources Directory & Registry Status</h2>
+  </div>
+
+  <!-- Source Family Filter Bar -->
+  <div class="family-filter-bar">
+    {% for fam in source_families %}
+      {% set fam_info = get_source_family_info(fam.key) if fam.key != 'all' else {'icon': '🌐'} %}
+      <a href="/sources?family={{ fam.key }}{% if active_category and active_category != 'all' %}&category={{ active_category }}{% endif %}" 
+         class="family-filter-tab {% if active_family == fam.key or (active_family == 'all' and fam.key == 'all') %}active{% endif %}">
+        <span>{{ fam_info.icon }}</span> {{ fam.label }}
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="sources-container">
+    <div class="sources-table-wrapper">
+      <table class="sources-table">
+        <thead>
+          <tr>
+            <th>Source Name</th>
+            <th>Family</th>
+            <th>Country</th>
+            <th>Status</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Trust Tier</th>
+            <th>Stored Articles</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in sources_summary %}
+            {% set fam_meta = get_source_family_info(s.source_family) %}
+            {% set country_meta = get_country_info(s.country_code) if s.country_code else None %}
+          <tr>
+            <td class="source-name-cell">
+              <strong><a href="/source/{{ s.id }}">{{ s.name }}</a></strong>
+            </td>
+            <td>
+              <span class="source-family-tag {{ fam_meta.class }}">
+                <span>{{ fam_meta.icon }}</span> {{ fam_meta.label }}
+              </span>
+            </td>
+            <td>
+              {% if country_meta %}
+                <span class="entity-marker-badge" title="{{ country_meta.name }}">
+                  <span class="entity-flag">{{ country_meta.flag }}</span>
+                  <span class="entity-country-code">{{ country_meta.code }}</span>
+                </span>
+              {% else %}
+                <span style="color: var(--color-text-muted);">-</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if s.active %}
+                <span class="status-badge status-active">Active</span>
+              {% else %}
+                <span class="status-badge status-inactive">Inactive</span>
+              {% endif %}
+            </td>
+            <td><code>{{ s.source_type }}</code></td>
+            <td><span class="article-category">{{ s.category if s.category else 'General' }}</span></td>
+            <td>
+              {% set trust_meta = get_trust_tier_info(s.trust_tier) %}
+              <span class="trust-badge {{ trust_meta.class }}">{{ trust_meta.label }}</span>
+            </td>
+            <td class="count-cell"><strong>{{ "{:,}".format(s.article_count) }}</strong></td>
+            <td>
+              <a href="/source/{{ s.id }}" class="article-link">View Articles &rarr;</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

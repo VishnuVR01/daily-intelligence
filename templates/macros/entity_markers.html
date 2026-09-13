@@ -1,0 +1,56 @@
+{% macro render_entity_markers(article) %}
+  <div class="entity-markers-container">
+    {# Source Family Badge #}
+    {% if article.source and article.source.source_family %}
+      {% set fam_meta = get_source_family_info(article.source.source_family) %}
+      <span class="source-family-tag {{ fam_meta.class }}" title="{{ fam_meta.label }}">
+        <span>{{ fam_meta.icon }}</span> {{ fam_meta.label }}
+      </span>
+    {% endif %}
+
+    {# Country Flags + Text Labels #}
+    {% set country_codes = [] %}
+    {% if article.countries %}
+      {% for c in article.countries %}
+        {% if c.code and c.code not in country_codes %}
+          {% set _ = country_codes.append(c.code) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if not country_codes and article.source and article.source.country_code %}
+      {% set _ = country_codes.append(article.source.country_code) %}
+    {% endif %}
+
+    {% if country_codes %}
+      {% set country_data = format_country_badges(country_codes, max_visible=3) %}
+      {% for item in country_data.visible %}
+        <span class="entity-marker-badge" title="{{ item.name }}">
+          <span class="entity-flag">{{ item.flag }}</span>
+          <span>{{ item.name }}</span>
+        </span>
+      {% endfor %}
+      {% if country_data.overflow_count > 0 %}
+        <span class="entity-marker-badge overflow-badge" title="{{ country_data.overflow_names }}">
+          +{{ country_data.overflow_count }} countries
+        </span>
+      {% endif %}
+    {% endif %}
+
+    {% if article.source and (article.source.provenance == 'state_affiliated' or article.source.trust_tier == 'state_affiliated') %}
+      <span class="entity-marker-badge state-affiliated-badge" title="State-Affiliated Media Provenance">
+        <span>📢 State-Affiliated</span>
+      </span>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro render_save_button(article_id, is_already_saved=False) %}
+  <button 
+    type="button" 
+    class="save-toggle-btn {% if is_already_saved %}is-saved{% endif %}" 
+    data-article-id="{{ article_id }}"
+    title="{% if is_already_saved %}Remove from Saved{% else %}Save for Later{% endif %}"
+  >
+    <span class="save-icon">{% if is_already_saved %}🔖 Saved{% else %}🔖 Save{% endif %}</span>
+  </button>
+{% endmacro %}
