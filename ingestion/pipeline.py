@@ -79,8 +79,12 @@ def run_ingestion_pipeline(session: Session) -> IngestionSummary:
 
         summary.active_sources_processed += 1
         stype = (source.source_type or "rss").lower()
+        is_rss_compatible = stype in (
+            "rss", "news_feed", "institutional_research", "central_bank",
+            "company_primary", "commodity_research", "energy_organization", "regulator"
+        )
 
-        if stype == "rss":
+        if is_rss_compatible and source.feed_url:
             res = collect_rss(source.feed_url, source.name)
 
             if res.status == CollectionStatus.OK:

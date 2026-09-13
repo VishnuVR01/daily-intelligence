@@ -1,77 +1,91 @@
 {% extends "base.html" %}
 {% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
- 
-{% block title %}Daily Intelligence - Latest News{% endblock %}
- 
+
+{% block title %}Daily Intelligence — Latest Intelligence Briefings{% endblock %}
+
 {% block content %}
-<div style="margin-top: 24px;">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">
-        {% if active_category %}{{ active_category }} Latest{% else %}Latest Updates Digest{% endif %}
-      </h2>
-      <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
-        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted);">View Mode:</span>
-        <a href="/latest?mode=balanced{% if active_category %}&category={{ active_category }}{% endif %}" class="mode-btn {% if active_mode != 'chronological' %}active{% endif %}">
-          ⚖️ Editorial Balanced
-        </a>
-        <a href="/latest?mode=chronological{% if active_category %}&category={{ active_category }}{% endif %}" class="mode-btn {% if active_mode == 'chronological' %}active{% endif %}">
-          ⏱️ Pure Chronological
-        </a>
-      </div>
-    </div>
-    <div class="category-nav">
-      <a href="/latest?mode={{ active_mode if active_mode else 'balanced' }}" class="category-badge {% if not active_category %}active{% endif %}">All</a>
+<div style="margin-top: 15px;">
+
+  {# Category Filter Bar #}
+  <div class="category-filter-bar" style="margin-bottom: 25px;">
+    <div class="filter-chips">
+      <a href="/latest?mode={{ active_mode if active_mode else 'balanced' }}" class="filter-chip {% if not active_category %}active{% endif %}">All Sectors</a>
       {% for cat in categories %}
-        <a href="/latest?category={{ cat }}&mode={{ active_mode if active_mode else 'balanced' }}" class="category-badge {% if active_category == cat %}active{% endif %}" data-category="{{ cat }}">{{ cat }}</a>
+        <a href="/latest?category={{ cat }}&mode={{ active_mode if active_mode else 'balanced' }}" class="filter-chip {% if active_category == cat %}active{% endif %}">{{ cat }}</a>
       {% endfor %}
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>
+      {% if active_category %}{{ active_category }} Latest{% else %}Latest Updates Digest{% endif %}
+    </h2>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="/latest?mode=balanced{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode != 'chronological' %}active{% endif %}" style="font-size: 11px;">
+        ⚖️ Editorial Balanced
+      </a>
+      <a href="/latest?mode=chronological{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode == 'chronological' %}active{% endif %}" style="font-size: 11px;">
+        ⏱️ Pure Chronological
+      </a>
     </div>
   </div>
 
   {% if articles %}
   <div class="articles-grid">
     {% for article in articles %}
+    {% set art_ai = get_article_ai_output(article) %}
     <article class="article-card" id="article-{{ article.id }}">
       <div>
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
-          <div class="article-meta">
-            <a href="/source/{{ article.source.id if article.source else '' }}" class="article-source">
-              {{ article.source.name if article.source else "RSS Feed" }}
-            </a>
-            {% if article.source and article.source.category %}
-            <a href="/category/{{ article.source.category }}" class="article-category">
+        <div class="card-top">
+          <span class="category-pill">
+            {% if art_ai and art_ai.primary_category %}
+              {{ art_ai.primary_category }}
+            {% elif article.source and article.source.category %}
               {{ article.source.category }}
-            </a>
+            {% else %}
+              General
             {% endif %}
+          </span>
+
+          <div style="display: flex; align-items: center; gap: 6px;">
+            {% if art_ai and art_ai.importance_score is not none %}
+            <span class="score-badge imp" style="font-size: 10px; padding: 2px 6px;">
+              IMP {{ art_ai.importance_score }}
+            </span>
+            {% endif %}
+            {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
           </div>
-          {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
         </div>
-        {{ render_entity_markers(article) }}
-        <h3 class="article-headline">
-          <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+
+        <h3 class="card-headline">
+          <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">
+            {{ article.title }}
+          </a>
         </h3>
-        <p class="article-date">
-          {% if article.published_at %}
-            {{ article.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
-          {% else %}
-            Collected {{ article.collected_at.strftime("%b %d, %Y") }}
-          {% endif %}
-        </p>
-        {% if article.raw_summary %}
-        <p class="article-summary">{{ article.raw_summary | striptags }}</p>
+
+        {% if art_ai and art_ai.summary %}
+        <p class="card-summary">{{ art_ai.summary }}</p>
+        {% elif article.raw_summary %}
+        <p class="card-summary">{{ article.raw_summary | striptags }}</p>
         {% endif %}
       </div>
-      <div class="article-footer">
-        <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
-          Read Original Article &rarr;
-        </a>
+
+      <div class="card-footer">
+        <span class="source-name">{{ article.source.name if article.source else "Source" }}</span>
+        <span>
+          {% if article.published_at %}
+            {{ article.published_at.strftime("%b %d, %H:%M") }}
+          {% else %}
+            {{ article.collected_at.strftime("%b %d") }}
+          {% endif %}
+        </span>
       </div>
     </article>
     {% endfor %}
   </div>
   {% else %}
-  <div class="empty-state">
-    <p>No articles found for the selected category.</p>
+  <div class="widget-panel" style="text-align: center; padding: 40px;">
+    <p style="color: var(--text-secondary);">No articles found for the selected filter.</p>
   </div>
   {% endif %}
 </div>

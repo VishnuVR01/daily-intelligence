@@ -5,28 +5,34 @@
 
 {% block content %}
 <div class="world-page-container">
-  
-  {# Controls Bar: World Selector, BRICS filter, Category Filter, Mode Toggle #}
-  <div class="world-controls-bar">
-    <div class="controls-group">
-      <a href="/world" class="map-filter-btn {% if not active_country and not is_brics and not active_category %}active{% endif %}">
-        &bigstar; All World Today
-      </a>
-      <a href="/world?brics=1{% if active_category %}&category={{ active_category }}{% endif %}" 
-         class="map-filter-btn brics-btn {% if is_brics %}active{% endif %}">
-        &bull; BRICS Nations
-      </a>
+
+  {# Controls Panel: Intelligence Lens Chips + Country & Category Selectors #}
+  <div class="world-controls-panel">
+    <div class="lens-section">
+      <div class="lens-title">
+        INTELLIGENCE LENS
+      </div>
+      <div class="lens-chips-bar">
+        {% for chip in all_lens_chips %}
+        <a href="/world?lens={{ chip.key }}{% if active_country %}&country={{ active_country }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}"
+           class="lens-chip {% if active_lens == chip.key %}active{% endif %}">
+          {{ chip.label }}
+        </a>
+        {% endfor %}
+      </div>
     </div>
 
-    <div class="controls-group">
+    <div class="world-filter-row">
       <form action="/world" method="get" class="world-filter-form">
-        {% if is_brics %}<input type="hidden" name="brics" value="1" />{% endif %}
-        
+        {% if active_lens and active_lens != "world" %}
+        <input type="hidden" name="lens" value="{{ active_lens }}" />
+        {% endif %}
+
         <select name="country" onchange="this.form.submit()" class="world-select">
-          <option value="">-- Select Country --</option>
+          <option value="">-- All Countries in Lens --</option>
           {% for c in all_countries %}
           <option value="{{ c.code }}" {% if active_country == c.code %}selected{% endif %}>
-            {{ c.name }} {% if c.is_brics %}(BRICS){% endif %}
+            {{ c.name }} {% if c.code in lens_country_codes %}(In Lens){% endif %}
           </option>
           {% endfor %}
         </select>
@@ -37,19 +43,17 @@
           <option value="{{ cat }}" {% if active_category == cat %}selected{% endif %}>{{ cat }}</option>
           {% endfor %}
         </select>
-      </form>
-    </div>
 
-    {# Mode Toggle Controls Requirement 10 #}
-    <div class="controls-group mode-toggle-group">
-      <button class="mode-btn active" type="button">Flat Map</button>
-      <button class="mode-btn disabled" type="button" disabled>Globe &mdash; Coming Soon</button>
+        {% if active_country or active_category or (active_lens and active_lens != "world") %}
+        <a href="/world" class="clear-filters-btn">Reset All Filters</a>
+        {% endif %}
+      </form>
     </div>
   </div>
 
   {# Main Layout: Side-by-side on Desktop, Stacked on Mobile #}
   <div class="world-layout-grid">
-    
+
     {# Left Panel: Interactive D3 + SVG TopoJSON World Map #}
     <div class="map-visualization-panel">
       <div class="map-card">
@@ -63,7 +67,7 @@
               Today's Global Intelligence Heatmap
             {% endif %}
           </h3>
-          <span class="map-subtitle">APP_TIMEZONE: Europe/London Today</span>
+          <span class="map-subtitle">Updated for Europe/London</span>
         </div>
 
         {# D3 SVG World Map Container #}
@@ -72,15 +76,18 @@
           <div id="map-tooltip" class="map-tooltip" style="display: none;"></div>
         </div>
 
-        {# Map Story-Density Legend Requirement Part 2 #}
+        {# Map Story-Density Legend & Outline #}
         <div class="map-legend">
-          <span class="legend-item"><span class="dot" style="background: #2D3A32; border: 1px solid #1e293b;"></span> 0 stories</span>
-          <span class="legend-item"><span class="dot" style="background: #88A996;"></span> 1–4</span>
-          <span class="legend-item"><span class="dot" style="background: #2D6143;"></span> 5–9</span>
-          <span class="legend-item"><span class="dot" style="background: #7E6358;"></span> 10–19</span>
-          <span class="legend-item"><span class="dot" style="background: #083E18; border: 1px solid #ADAE7C;"></span> 20+</span>
-          <span class="legend-item"><span class="dot" style="background: #ef4444; border: 1px solid #ADAE7C;"></span> Selected</span>
-          <span class="legend-item"><span class="dot" style="background: #ADAE7C;"></span> BRICS</span>
+          <span class="legend-title" style="font-weight: 700; color: var(--accent-sage); margin-right: 4px;">FILL:</span>
+          <span class="legend-item"><span class="dot d-0"></span> 0</span>
+          <span class="legend-item"><span class="dot d-1-4"></span> 1–4</span>
+          <span class="legend-item"><span class="dot d-5-9"></span> 5–9</span>
+          <span class="legend-item"><span class="dot d-10-19"></span> 10–19</span>
+          <span class="legend-item"><span class="dot d-20-plus"></span> 20+ stories</span>
+          {% if active_lens and active_lens != "world" %}
+          <span class="legend-title" style="font-weight: 700; color: var(--accent-amber); margin-left: 12px; margin-right: 4px;">OUTLINE:</span>
+          <span class="legend-item"><span class="dot d-lens"></span> Selected Lens: {{ active_lens_info.name }}</span>
+          {% endif %}
         </div>
 
       </div>
@@ -160,7 +167,9 @@
 <script>
   window.WORLD_MAP_CONFIG = {
     activeCountry: "{{ active_country if active_country else '' }}",
+    activeLens: "{{ active_lens if active_lens else 'world' }}",
     isBrics: {{ 'true' if is_brics else 'false' }},
+    lensCountryCodes: {{ lens_country_codes | tojson }},
     activeCategory: "{{ active_category if active_category else '' }}",
     countryCounts: {{ country_counts | tojson }},
     countriesList: {{ all_countries_json | tojson }}

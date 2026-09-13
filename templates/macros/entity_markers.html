@@ -50,7 +50,8 @@
     class="save-toggle-btn {% if is_already_saved %}is-saved{% endif %}" 
     data-article-id="{{ article_id }}"
     title="{% if is_already_saved %}Remove from Saved{% else %}Save for Later{% endif %}"
+    aria-label="{% if is_already_saved %}Remove from Saved{% else %}Save for Later{% endif %}"
   >
-    <span class="save-icon">{% if is_already_saved %}🔖 Saved{% else %}🔖 Save{% endif %}</span>
+    <span class="save-icon">{% if is_already_saved %}🔖 Saved ✓{% else %}🔖 Save{% endif %}</span>
   </button>
 {% endmacro %}

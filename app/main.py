@@ -15,9 +15,11 @@ from app.db import Base, engine, get_db
 from app.schema_validation import validate_schema
 from app.errors import register_error_handlers
 import app.models  # noqa: F401
+from services.quotes import get_daily_quote
 from repositories.articles import (
     get_all_countries,
     get_archive_stats,
+    get_article_ai_output,
     get_articles_by_sections,
     get_articles_by_source,
     get_categories,
@@ -25,15 +27,18 @@ from repositories.articles import (
     get_paginated_articles,
     get_recent_articles,
     get_sources_summary,
+    get_today_ai_context_stats,
     get_todays_country_counts,
     get_todays_world_articles,
     get_top_story,
+    is_article_out_of_scope,
     search_articles,
 )
 
 from app.entity_metadata import (
     format_country_badges,
     get_country_info,
+    get_sector_description,
     get_source_family_info,
     get_trust_tier_info,
 )
@@ -67,9 +72,13 @@ app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 templates.env.globals["format_country_badges"] = format_country_badges
 templates.env.globals["get_country_info"] = get_country_info
+templates.env.globals["get_sector_description"] = get_sector_description
 templates.env.globals["get_source_family_info"] = get_source_family_info
 templates.env.globals["get_trust_tier_info"] = get_trust_tier_info
 templates.env.globals["get_saved_article_ids"] = get_saved_article_ids
+templates.env.globals["get_daily_quote"] = get_daily_quote
+templates.env.globals["get_article_ai_output"] = get_article_ai_output
+templates.env.globals["is_article_out_of_scope"] = is_article_out_of_scope
 
 register_error_handlers(app, templates)
 
@@ -112,8 +121,10 @@ def home(
     stats = get_archive_stats(db)
     categories = get_categories(db)
     top_story = get_top_story(db, category=category)
-    sections = get_articles_by_sections(db, category=category)
+    sections = get_articles_by_sections(db, category=category, curated_only=True)
     saved_ids = get_saved_article_ids(db)
+    daily_quote = get_daily_quote()
+    ai_context_stats = get_today_ai_context_stats(db)
 
     return templates.TemplateResponse(
         request=request,
@@ -126,6 +137,8 @@ def home(
             "saved_ids": saved_ids,
             "masthead_date": get_masthead_date(),
             "active_category": category,
+            "daily_quote": daily_quote,
+            "ai_context_stats": ai_context_stats,
         },
     )
 
@@ -135,15 +148,33 @@ def world(
     request: Request,
     country: str | None = Query(default=None),
     brics: bool = Query(default=False),
+    lens: str | None = Query(default=None),
     category: str | None = Query(default=None),
     db: Session = Depends(get_db),
 ) -> HTMLResponse:
+    from app.intelligence_groups import (
+        get_all_lens_chips,
+        get_group_country_codes,
+        get_group_info,
+    )
+
     stats = get_archive_stats(db)
     categories = get_categories(db)
     all_countries = get_all_countries(db)
     country_counts = get_todays_country_counts(db)
+
+    active_lens_key = (lens or "").lower().strip()
+    if not active_lens_key and brics:
+        active_lens_key = "brics"
+    if not active_lens_key:
+        active_lens_key = "world"
+
+    active_lens_info = get_group_info(active_lens_key)
+    lens_country_codes = get_group_country_codes(active_lens_key)
+    all_lens_chips = get_all_lens_chips()
+
     articles = get_todays_world_articles(
-        db, country_code=country, is_brics=brics, category=category
+        db, country_code=country, is_brics=(active_lens_key == "brics"), lens=active_lens_key, category=category
     )
     saved_ids = get_saved_article_ids(db)
 
@@ -176,7 +207,11 @@ def world(
             "saved_ids": saved_ids,
             "selected_country": selected_country,
             "active_country": country.upper() if country else None,
-            "is_brics": brics,
+            "is_brics": (active_lens_key == "brics"),
+            "active_lens": active_lens_key,
+            "active_lens_info": active_lens_info,
+            "lens_country_codes": lens_country_codes,
+            "all_lens_chips": all_lens_chips,
             "active_category": category,
             "masthead_date": get_masthead_date(),
         },
@@ -210,6 +245,7 @@ def latest(
     )
 
 
+@app.get("/sectors", response_class=HTMLResponse)
 @app.get("/categories", response_class=HTMLResponse)
 def categories(
     request: Request,

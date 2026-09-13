@@ -7,7 +7,7 @@ from sqlalchemy import func, or_
 from sqlalchemy.orm import Session, joinedload
 
 from app.config import get_settings
-from app.models import Article, ArticleCountry, Country, Source
+from app.models import Article, ArticleCountry, ArticleAIOutput, Country, Source
 
 
 def _valid_published_filter():
@@ -120,13 +120,124 @@ def apply_editorial_diversity(
     return selected[:max_items]
 
 
+def is_article_out_of_scope(art: Article) -> bool:
+    """Returns True if the article has been evaluated by AI as out of scope (is_relevant == False)."""
+    if not hasattr(art, "ai_outputs") or not art.ai_outputs:
+        return False
+    latest_output = sorted(art.ai_outputs, key=lambda x: x.created_at, reverse=True)[0]
+    return latest_output.is_relevant is False
+
+
+def get_article_ai_output(art: Article) -> Any:
+    """Returns the latest ArticleAIOutput record for an article, if any."""
+    if not hasattr(art, "ai_outputs") or not art.ai_outputs:
+        return None
+    return sorted(art.ai_outputs, key=lambda x: x.created_at, reverse=True)[0]
+
+
+def get_today_ai_context_stats(db: Session) -> dict[str, Any]:
+    """
+    Aggregates live AI analysis statistics from ArticleAIOutput table for context sidebar widgets.
+    """
+    from app.entity_metadata import get_country_info
+    from app.intelligence_groups import INTELLIGENCE_GROUPS
+
+    total_processed = db.query(ArticleAIOutput).count()
+    relevant_count = db.query(ArticleAIOutput).filter(ArticleAIOutput.is_relevant == True).count()
+    out_of_scope_count = db.query(ArticleAIOutput).filter(ArticleAIOutput.is_relevant == False).count()
+    tech_success_count = relevant_count + out_of_scope_count
+    unprocessed_or_failed = max(0, total_processed - tech_success_count)
+    success_rate = (tech_success_count / total_processed * 100.0) if total_processed > 0 else 0.0
+
+    topic_counts: dict[str, int] = {}
+    country_counts: dict[str, int] = {}
+
+    outputs = (
+        db.query(ArticleAIOutput)
+        .filter(ArticleAIOutput.is_relevant == True, ArticleAIOutput.output_json.is_not(None))
+        .order_by(ArticleAIOutput.id.desc())
+        .limit(100)
+        .all()
+    )
+
+    for out in outputs:
+        if isinstance(out.output_json, dict):
+            for t in out.output_json.get("topics", []):
+                if isinstance(t, str) and t.strip():
+                    t_clean = t.strip().lstrip("#").strip()
+                    if t_clean:
+                        if t_clean[0].islower():
+                            t_clean = t_clean.capitalize()
+                        topic_counts[t_clean] = topic_counts.get(t_clean, 0) + 1
+            for c in out.output_json.get("countries", []):
+                if isinstance(c, str) and c.strip():
+                    c_clean = c.strip()
+                    country_counts[c_clean] = country_counts.get(c_clean, 0) + 1
+
+    sorted_topics = sorted(topic_counts.items(), key=lambda x: x[1], reverse=True)[:6]
+    top_topics_formatted = [{"name": t[0], "count": t[1]} for t in sorted_topics]
+
+    # Map country counts to group counts
+    group_counts: dict[str, int] = {}
+    for c_raw, count in country_counts.items():
+        info = get_country_info(c_raw)
+        c_code = info["code"]
+        if c_code:
+            for g_key, g_data in INTELLIGENCE_GROUPS.items():
+                if g_key != "world" and c_code in g_data.get("country_codes", []):
+                    group_counts[g_data["name"]] = group_counts.get(g_data["name"], 0) + count
+
+    sorted_groups = sorted(group_counts.items(), key=lambda x: x[1], reverse=True)[:2]
+    sorted_countries = sorted(country_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+
+    global_focus_items = []
+    for g_name, g_count in sorted_groups:
+        global_focus_items.append({
+            "type": "group",
+            "name": g_name,
+            "icon": "🌐",
+            "count": g_count,
+        })
+
+    for c_raw, count in sorted_countries:
+        info = get_country_info(c_raw)
+        global_focus_items.append({
+            "type": "country",
+            "name": info["name"],
+            "code": info["code"],
+            "flag": info["flag"],
+            "count": count,
+        })
+
+    top_countries_formatted = []
+    for c_raw, count in sorted_countries:
+        info = get_country_info(c_raw)
+        top_countries_formatted.append({
+            "code": info["code"],
+            "name": info["name"],
+            "flag": info["flag"],
+            "count": count,
+        })
+
+    return {
+        "total_processed": total_processed,
+        "relevant_today": relevant_count,
+        "out_of_scope_today": out_of_scope_count,
+        "unprocessed_or_failed": unprocessed_or_failed,
+        "success_rate": round(success_rate, 1),
+        "top_topics": top_topics_formatted,
+        "top_countries": top_countries_formatted,
+        "global_focus_items": global_focus_items,
+    }
+
+
 def get_recent_articles(
-    db: Session, category: str | None = None, limit: int = 50, mode: str = "balanced"
+    db: Session, category: str | None = None, limit: int = 50, mode: str = "balanced", curated_only: bool = False
 ) -> list[Article]:
     """Fetch recent articles optionally filtered by category, excluding future-dated articles."""
     query = (
         db.query(Article)
-        .options(joinedload(Article.source))
+        .options(joinedload(Article.source), joinedload(Article.ai_outputs))
         .filter(_valid_published_filter())
     )
 
@@ -142,6 +253,9 @@ def get_recent_articles(
 
     raw_articles = query.limit(limit * 2).all()
 
+    if curated_only:
+        raw_articles = [a for a in raw_articles if not is_article_out_of_scope(a)]
+
     if (mode or "balanced").lower() == "chronological":
         return raw_articles[:limit]
 
@@ -152,19 +266,23 @@ def get_top_story(db: Session, category: str | None = None) -> Article | None:
     """Fetch the single top lead article for the masthead hero section."""
     query = (
         db.query(Article)
-        .options(joinedload(Article.source))
+        .options(joinedload(Article.source), joinedload(Article.ai_outputs))
         .filter(_valid_published_filter())
     )
     if category:
         query = query.join(Article.source).filter(
             func.lower(Source.category) == category.lower()
         )
-    return query.order_by(func.coalesce(Article.published_at, Article.collected_at).desc()).first()
+    candidates = query.order_by(func.coalesce(Article.published_at, Article.collected_at).desc()).limit(20).all()
+    for cand in candidates:
+        if not is_article_out_of_scope(cand):
+            return cand
+    return candidates[0] if candidates else None
 
 
-def get_articles_by_sections(db: Session, category: str | None = None) -> dict[str, list[Article]]:
+def get_articles_by_sections(db: Session, category: str | None = None, curated_only: bool = True) -> dict[str, list[Article]]:
     """Group recent articles into newspaper section buckets."""
-    recent = get_recent_articles(db, category=category, limit=120, mode="balanced")
+    recent = get_recent_articles(db, category=category, limit=120, mode="balanced", curated_only=curated_only)
     sections = {
         "Top Story": [],
         "World": [],
@@ -183,9 +301,13 @@ def get_articles_by_sections(db: Session, category: str | None = None) -> dict[s
     if not recent:
         return sections
 
+    filtered_recent = [a for a in recent if not (curated_only and is_article_out_of_scope(a))]
+    if not filtered_recent:
+        return sections
+
     # Lead article is top story
-    sections["Top Story"] = [recent[0]]
-    remaining = recent[1:]
+    sections["Top Story"] = [filtered_recent[0]]
+    remaining = filtered_recent[1:]
 
     category_mapping = {
         "world": "World",
@@ -193,17 +315,21 @@ def get_articles_by_sections(db: Session, category: str | None = None) -> dict[s
         "geopolitics": "Geopolitics",
         "politics": "Geopolitics",
         "business": "Business",
+        "markets & economy": "Markets & Economy",
         "markets": "Markets & Economy",
         "economy": "Markets & Economy",
         "finance": "Markets & Economy",
+        "ai & technology": "AI & Technology",
         "ai": "AI & Technology",
         "tech": "AI & Technology",
         "technology": "AI & Technology",
+        "industry & operations": "Industry & Operations",
         "industry": "Industry & Operations",
         "operations": "Industry & Operations",
         "mining": "Industry & Operations",
         "manufacturing": "Industry & Operations",
         "construction": "Industry & Operations",
+        "supply chain & trade": "Supply Chain & Trade",
         "trade": "Supply Chain & Trade",
         "supply chain": "Supply Chain & Trade",
         "energy": "Energy",
@@ -215,10 +341,16 @@ def get_articles_by_sections(db: Session, category: str | None = None) -> dict[s
     }
 
     for art in remaining:
-        cat_raw = (art.source.category if art.source and art.source.category else "").lower()
+        ai_out = get_article_ai_output(art)
+        cat_raw = ""
+        if ai_out and ai_out.is_relevant and ai_out.primary_category:
+            cat_raw = ai_out.primary_category.lower()
+        elif art.source and art.source.category:
+            cat_raw = art.source.category.lower()
+
         matched = False
         for key, section_name in category_mapping.items():
-            if key in cat_raw:
+            if key == cat_raw or key in cat_raw:
                 if len(sections[section_name]) < 6:
                     sections[section_name].append(art)
                     matched = True
@@ -535,10 +667,11 @@ def get_todays_world_articles(
     db: Session,
     country_code: str | None = None,
     is_brics: bool = False,
+    lens: str | None = None,
     category: str | None = None,
     tz_name: str | None = None,
 ) -> list[Article]:
-    """Fetch today's articles for the interactive world map filtered by country, BRICS, or category."""
+    """Fetch today's articles for the interactive world map filtered by country, lens group, or category."""
     if tz_name is None:
         tz_name = get_settings().app_timezone
 
@@ -571,14 +704,20 @@ def get_todays_world_articles(
             func.lower(Source.category) == category.lower()
         )
 
-    if is_brics:
-        query = query.filter(
-            or_(
-                func.lower(Article.groups).like("%brics%"),
-                Article.countries.any(Country.is_brics == True),  # noqa: E712
-                Article.source.has(Source.country.has(Country.is_brics == True)),  # noqa: E712
+    active_lens_key = (lens or "").lower().strip()
+    if not active_lens_key and is_brics:
+        active_lens_key = "brics"
+
+    if active_lens_key and active_lens_key != "world":
+        from app.intelligence_groups import get_group_country_codes
+        group_codes = get_group_country_codes(active_lens_key)
+        if group_codes:
+            query = query.filter(
+                or_(
+                    Article.countries.any(Country.code.in_(group_codes)),
+                    Article.source.has(Source.country_code.in_(group_codes)),
+                )
             )
-        )
 
     if country_code:
         cc_clean = country_code.upper()

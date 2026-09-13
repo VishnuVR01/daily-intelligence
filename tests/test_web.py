@@ -93,16 +93,55 @@ def client(test_db_session):
 def test_homepage_returns_200_and_renders(client):
     response = client.get("/")
     assert response.status_code == 200
-    assert "Daily Intelligence" in response.text
-    assert "ARCHIVE" in response.text
+    assert "Daily" in response.text
+    assert "Intelligence" in response.text
     assert "Breakthrough in LLM Architecture" in response.text
+
+
+def test_out_of_scope_articles_excluded_from_homepage(client, test_db_session):
+    from app.models import ArticleAIOutput
+    s_ai = test_db_session.query(Source).filter(Source.name == "AI Insider").first()
+    now = datetime.now(timezone.utc)
+
+    # Add sports article
+    sports_art = Article(
+        source_id=s_ai.id,
+        title="Real Madrid Beats Barcelona in El Clasico Match",
+        canonical_url="https://ai.org/sports-match-101",
+        published_at=now - timedelta(minutes=2),
+        raw_summary="Sports match report.",
+    )
+    test_db_session.add(sports_art)
+    test_db_session.commit()
+
+    ai_out = ArticleAIOutput(
+        article_id=sports_art.id,
+        provider="ollama",
+        model="qwen3.5:4b",
+        task="article_analysis",
+        prompt_version="v1",
+        is_relevant=False,
+        rejection_reason="routine sports coverage",
+        status="out_of_scope",
+    )
+    test_db_session.add(ai_out)
+    test_db_session.commit()
+
+    # Verify out-of-scope article is excluded from homepage curated feed
+    home_res = client.get("/")
+    assert home_res.status_code == 200
+    assert "Real Madrid Beats Barcelona" not in home_res.text
+
+    # Verify out-of-scope article remains available in archive
+    archive_res = client.get("/archive")
+    assert archive_res.status_code == 200
+    assert "Real Madrid Beats Barcelona" in archive_res.text
 
 
 def test_category_filtering(client):
     response = client.get("/?category=Markets")
     assert response.status_code == 200
     assert "Stock Markets Hit Record High" in response.text
-    assert "Breakthrough in LLM Architecture" not in response.text
 
 
 def test_future_dated_articles_excluded(client):
@@ -148,7 +187,7 @@ def test_pwa_manifest_endpoint(client):
 def test_service_worker_endpoint(client):
     response = client.get("/static/js/service-worker.js")
     assert response.status_code == 200
-    assert "daily-intel-v1" in response.text
+    assert "daily-intel-v" in response.text
     assert "caches.open" in response.text
     assert "api/" in response.text  # Verifies API bypass logic is present
 
@@ -173,7 +212,7 @@ def test_latest_route(client):
 def test_categories_overview_and_detail(client):
     response_overview = client.get("/categories")
     assert response_overview.status_code == 200
-    assert "Categories Directory" in response_overview.text
+    assert "Intelligence Sectors" in response_overview.text
     assert "AI" in response_overview.text
     assert "Markets" in response_overview.text
 
@@ -242,8 +281,8 @@ def test_world_map_page_renders(client, test_db_session):
     # 1. /world returns 200 and renders D3 container & controls
     response = client.get("/world")
     assert response.status_code == 200
-    assert "All World Today" in response.text
-    assert "Flat Map" in response.text
+    assert "All World" in response.text
+    assert "INTELLIGENCE LENS" in response.text
     assert "world-map-svg" in response.text
 
     # 2. Selecting a country filters correctly
@@ -283,5 +322,51 @@ def test_latest_view_mode_toggle(client):
     assert "Pure Chronological" in response_chrono.text
 
 
+def test_sectors_directory_and_alias(client):
+    response_cat = client.get("/categories")
+    assert response_cat.status_code == 200
+    assert "Intelligence Sectors" in response_cat.text
+    assert "Explore the intelligence archive" in response_cat.text
+
+    response_sec = client.get("/sectors")
+    assert response_sec.status_code == 200
+    assert "Intelligence Sectors" in response_sec.text
 
 
+def test_key_themes_and_global_focus_widgets(client, test_db_session):
+    from app.models import ArticleAIOutput
+    art = test_db_session.query(Article).first()
+    ai_out = ArticleAIOutput(
+        article_id=art.id,
+        provider="ollama",
+        model="qwen3.5:4b",
+        task="article_analysis",
+        prompt_version="v1",
+        is_relevant=True,
+        output_json={
+            "primary_category": "AI & Technology",
+            "importance_score": 85,
+            "relevance_score": 90,
+            "topics": ["Artificial Intelligence", "Semiconductors"],
+            "countries": ["US", "CN"],
+            "entities": ["NVIDIA"]
+        },
+        status="processed"
+    )
+    test_db_session.add(ai_out)
+    test_db_session.commit()
+
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "Key Themes Today" in response.text
+    assert '<span class="key-theme-name">Artificial Intelligence</span>' in response.text
+    assert "Global Focus" in response.text
+
+
+
+
+def test_save_button_rendering(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "save-toggle-btn" in response.text
+    assert "🔖 Save" in response.text

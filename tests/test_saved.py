@@ -109,7 +109,7 @@ def test_repository_read_unread_status(db_session):
     a1 = articles[0]
 
     save_article(db_session, a1.id)
-    
+
     # Mark read
     saved_read = mark_read(db_session, a1.id)
     assert saved_read.is_read is True
@@ -195,5 +195,6 @@ def test_saved_web_page_rendering(client, db_session):
 
     response = client.get("/saved")
     assert response.status_code == 200
-    assert "Saved Articles" in response.text
+    assert "SAVED INTELLIGENCE" in response.text
+    assert "Articles retained for later review and research." in response.text
     assert a1.title in response.text

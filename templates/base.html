@@ -3,72 +3,105 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>{% block title %}Daily Intelligence Newspaper{% endblock %}</title>
-    <meta name="description" content="Local-first RSS intelligence platform, global newspaper, and archive.">
-    <meta name="theme-color" content="#1e293b">
+    <title>{% block title %}Daily Intelligence — AI Powered Edition{% endblock %}</title>
+    <meta name="description" content="Local-first RSS intelligence platform, global AI newspaper, and editorial archive.">
+    <meta name="theme-color" content="#0B101B">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="DailyIntel">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
     <link rel="manifest" href="/static/manifest.json">
     <link rel="icon" type="image/svg+xml" href="/static/icons/icon.svg">
     <link rel="apple-touch-icon" href="/static/icons/icon-192.png">
-    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/main.css?v=2">
     <script src="/static/js/app.js" defer></script>
     <script src="/static/js/saved.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
+    <!-- Deterministic Daily Quote Banner -->
+    {% set quote_data = get_daily_quote() if get_daily_quote is defined else None %}
+    {% if quote_data %}
+    <div class="quote-banner">
       <div class="container">
-        <div class="newspaper-meta-bar">
-          <span class="masthead-date">{{ masthead_date if masthead_date else "Today's Edition" }}</span>
-          <span class="masthead-edition">Global Edition &bull; Local-First Archive</span>
-        </div>
-
-        <div class="masthead">
-          <div>
-            <h1 class="masthead-title"><a href="/">Daily Intelligence</a></h1>
-            <p class="masthead-subtitle">The Independent Local-First Newspaper</p>
+        <div class="quote-banner-card">
+          <div class="quote-content">
+            <span class="quote-mark">&ldquo;</span>
+            <span class="quote-text">{{ quote_data.quote }}</span>
           </div>
-          <div class="masthead-actions">
-            {% if stats %}
-            <div class="masthead-metrics" title="Archive Statistics">
-              <span class="metric-item"><strong>{{ "{:,}".format(stats.total_archive) }}</strong> ARCHIVE</span>
-              <span class="metric-divider">|</span>
-              <span class="metric-item"><strong>{{ "{:,}".format(stats.today_articles) }}</strong> TODAY</span>
-              <span class="metric-divider">|</span>
-              <span class="metric-item"><strong>{{ stats.active_sources }}</strong> SOURCES</span>
-            </div>
+          <div class="quote-footer">
+            <span class="quote-author">&mdash; {{ quote_data.author }}</span>
+            {% if quote_data.theme %}
+            <span class="quote-theme-chip">{{ quote_data.theme }}</span>
             {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <header class="masthead">
+      <div class="container">
+        <div class="top-header">
+          <div class="header-brand">
+            <div class="brand-badge">
+              <span class="brand-badge-dot"></span>
+              AI-POWERED EDITION
+            </div>
+            <h1 class="brand-title">
+              <a href="/">Daily <span>Intelligence</span></a>
+            </h1>
+            <p class="brand-tagline">Global Strategic News & Sovereign Intelligence Briefing</p>
+          </div>
+
+          <div class="header-meta">
+            <span class="masthead-date">{{ masthead_date if masthead_date else "Today's Edition" }}</span>
+            <div class="ollama-indicator" title="Local AI Inference Active">
+              <span class="ollama-pulse"></span>
+              Powered by Ollama (qwen3.5:4b)
+            </div>
             <button id="pwa-install-btn" class="pwa-install-btn" type="button" style="display: none;">
               Install App
             </button>
           </div>
         </div>
-
-        <nav class="main-nav">
-          <a href="/" class="{% if request.url.path == '/' %}active{% endif %}">Home</a>
-          <a href="/world" class="{% if request.url.path == '/world' %}active{% endif %}">World Map</a>
-          <a href="/latest" class="{% if request.url.path == '/latest' %}active{% endif %}">Latest</a>
-          <a href="/categories" class="{% if request.url.path.startswith('/categor') %}active{% endif %}">Categories</a>
-          <a href="/sources" class="{% if request.url.path.startswith('/source') %}active{% endif %}">Sources</a>
-          <a href="/saved" class="{% if request.url.path == '/saved' %}active{% endif %}">Saved</a>
-          <a href="/archive" class="{% if request.url.path == '/archive' %}active{% endif %}">Archive</a>
-          <a href="/search" class="{% if request.url.path == '/search' %}active{% endif %}">Search</a>
-        </nav>
       </div>
+
+      <nav class="main-nav">
+        <div class="container nav-container">
+          <ul class="nav-links">
+            <li><a href="/" class="{% if request.url.path == '/' %}active{% endif %}">Home Edition</a></li>
+            <li><a href="/world" class="{% if request.url.path == '/world' %}active{% endif %}">Global Intelligence</a></li>
+            <li><a href="/latest" class="{% if request.url.path == '/latest' %}active{% endif %}">Latest Briefings</a></li>
+            <li><a href="/categories" class="{% if request.url.path.startswith('/categor') %}active{% endif %}">Sectors</a></li>
+            <li><a href="/sources" class="{% if request.url.path.startswith('/source') %}active{% endif %}">Sources</a></li>
+            <li><a href="/saved" class="{% if request.url.path == '/saved' %}active{% endif %}">Saved</a></li>
+            <li><a href="/archive" class="{% if request.url.path == '/archive' %}active{% endif %}">Archive</a></li>
+          </ul>
+
+          <div class="nav-search-box">
+            <form action="/search" method="get">
+              <input type="text" name="q" class="nav-search-input" placeholder="Search briefing..." value="{{ q if q else '' }}">
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <main class="container">
-      {% block content %}{% endblock %}
-    </main>
+    <div class="container">
+      <main class="page-content">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
 
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; Daily Intelligence Newspaper &bull; Local-first RSS Ingestion & Permanent Archive</p>
+        <p>&copy; Daily Intelligence &bull; Independent Local-First RSS Ingestion & Permanent Archive</p>
+        <p class="footer-credits">Local AI Processing Engine Active &bull; Ollama Local Inference</p>
       </div>
     </footer>
   </body>
 </html>
-
-

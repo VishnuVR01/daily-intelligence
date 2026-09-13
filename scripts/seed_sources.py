@@ -55,6 +55,7 @@ def seed_sources(
                 "active",
                 "country_code",
                 "source_family",
+                "provenance",
                 "replacement_candidate",
             ]:
                 if field in data and getattr(existing, field) != data[field]:
@@ -76,6 +77,7 @@ def seed_sources(
                 active=data.get("active", True),
                 country_code=data.get("country_code"),
                 source_family=data.get("source_family", "news"),
+                provenance=data.get("provenance", "independent"),
                 replacement_candidate=data.get("replacement_candidate", False),
             )
             session.add(new_source)

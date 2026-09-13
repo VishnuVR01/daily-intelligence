@@ -5,38 +5,34 @@
 
 {% block content %}
 <div style="margin-top: 24px;">
-  <div class="archive-header-wrapper">
-    <div class="section-header">
-      <h2 class="section-title">
-        {% if active_category %}{{ active_category }} Archive{% else %}Full Article Archive{% endif %}
-      </h2>
-      <div class="category-nav">
-        <a href="/archive" class="category-badge {% if not active_category and not active_date %}active{% endif %}">All</a>
-        {% for cat in categories %}
-          <a href="/archive?category={{ cat }}" class="category-badge {% if active_category == cat %}active{% endif %}">{{ cat }}</a>
-        {% endfor %}
-      </div>
+  <div class="archive-filters-bar">
+    <div class="archive-filters-title">
+      Filter Archive by Category
+    </div>
+    <div class="archive-pills-container">
+      <a href="/archive" class="archive-pill {% if not active_category and not active_date %}active{% endif %}">All Categories</a>
+      {% for cat in categories %}
+        <a href="/archive?category={{ cat }}" class="archive-pill {% if active_category == cat %}active{% endif %}">{{ cat }}</a>
+      {% endfor %}
     </div>
 
-    <div class="archive-filter-bar">
-      <form action="/archive" method="get" class="date-filter-form">
-        {% if active_category %}
-        <input type="hidden" name="category" value="{{ active_category }}" />
-        {% endif %}
-        <label for="archive-date-input" class="date-filter-label">Filter by Publication Date:</label>
-        <input 
-          type="date" 
-          id="archive-date-input" 
-          name="date" 
-          value="{{ active_date if active_date else '' }}" 
-          class="date-input"
-        />
-        <button type="submit" class="pwa-install-btn filter-btn">Apply Date</button>
-        {% if active_date %}
-        <a href="/archive{% if active_category %}?category={{ active_category }}{% endif %}" class="clear-date-link">Clear Date</a>
-        {% endif %}
-      </form>
-    </div>
+    <form action="/archive" method="get" class="archive-date-form">
+      {% if active_category %}
+      <input type="hidden" name="category" value="{{ active_category }}" />
+      {% endif %}
+      <label for="archive-date-input" style="font-size: 13px; color: var(--text-secondary);">Filter by Publication Date:</label>
+      <input
+        type="date"
+        id="archive-date-input"
+        name="date"
+        value="{{ active_date if active_date else '' }}"
+        class="archive-date-input"
+      />
+      <button type="submit" class="btn-archive-filter">Apply Date</button>
+      {% if active_date %}
+      <a href="/archive{% if active_category %}?category={{ active_category }}{% endif %}" style="font-size: 12.5px; color: var(--accent-sage); margin-left: 8px;">Clear Date Filter</a>
+      {% endif %}
+    </form>
   </div>
 
   {% if pagination.articles %}
@@ -84,17 +80,17 @@
   <div class="pagination">
     {% set cat_param = "&category=" ~ active_category if active_category else "" %}
     {% set date_param = "&date=" ~ active_date if active_date else "" %}
-    
-    <a href="/archive?page={{ pagination.page - 1 }}{{ cat_param }}{{ date_param }}" 
+
+    <a href="/archive?page={{ pagination.page - 1 }}{{ cat_param }}{{ date_param }}"
        class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}">
       &larr; Previous
     </a>
-    
+
     <span class="pagination-info">
       Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong> ({{ "{:,}".format(pagination.total) }} articles)
     </span>
-    
-    <a href="/archive?page={{ pagination.page + 1 }}{{ cat_param }}{{ date_param }}" 
+
+    <a href="/archive?page={{ pagination.page + 1 }}{{ cat_param }}{{ date_param }}"
        class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}">
       Next &rarr;
     </a>

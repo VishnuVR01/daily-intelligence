@@ -1,8 +1,8 @@
-const CACHE_NAME = 'daily-intel-v1';
+const CACHE_NAME = 'daily-intel-v2';
 const STATIC_ASSETS = [
   '/',
   '/archive',
-  '/static/css/main.css',
+  '/static/css/main.css?v=2',
   '/static/manifest.json',
   '/static/js/app.js',
   '/static/icons/icon.svg',
@@ -43,15 +43,28 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Network-first for CSS so updates take effect immediately
+  if (requestUrl.pathname.endsWith('.css')) {
+    event.respondWith(
+      fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
+        }
+        return networkResponse;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // Fetch fresh copy in background for static assets if possible
         fetch(event.request).then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse));
           }
-        }).catch(() => {/* ignore network errors when offline */});
+        }).catch(() => {});
         return cachedResponse;
       }
       return fetch(event.request).then((networkResponse) => {

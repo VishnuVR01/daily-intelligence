@@ -1,41 +1,55 @@
 {% extends "base.html" %}
 
-{% block title %}Daily Intelligence - Categories Directory{% endblock %}
+{% block title %}Daily Intelligence — Strategic Sectors Directory{% endblock %}
 
 {% block content %}
-<div style="margin-top: 24px;">
-  <div class="section-header">
-    <h2 class="section-title">Categories Directory</h2>
+<div class="sectors-page-wrapper">
+
+  <div class="sectors-header">
+    <div class="sectors-header-badge">
+      <span class="brand-badge-dot"></span>
+      Strategic Intelligence Domains
+    </div>
+    <h1 class="sectors-title">Intelligence Sectors</h1>
+    <p class="sectors-subtitle">Explore the intelligence archive structured by strategic domain.</p>
   </div>
 
-  <div class="categories-grid">
+  <div class="sectors-grid">
     {% for item in categories_summary %}
-    <div class="category-card" data-category="{{ item.name }}">
-      <div class="category-card-header">
-        <h3 class="category-card-title">
-          <a href="/category/{{ item.name }}">{{ item.name }}</a>
-        </h3>
-        <span class="category-card-count">{{ item.count }} articles</span>
+    {% set cat_slug = item.name.lower().replace(" & ", "-").replace(" ", "-") %}
+    <div class="sector-card cat-accent-{{ cat_slug }}">
+      <div class="sector-card-top">
+        <div class="sector-badge-header">
+          <span class="cat-badge cat-{{ cat_slug }}">{{ item.name }}</span>
+        </div>
+        <span class="sector-count-badge">{{ "{:,}".format(item.count) }} articles</span>
       </div>
 
+      <p class="sector-description">{{ get_sector_description(item.name) }}</p>
+
       {% if item.sample_articles %}
-      <div class="category-sample-list">
-        <p class="sample-label">Recent Headlines:</p>
-        <ul>
-          {% for art in item.sample_articles %}
-          <li>
-            <a href="{{ art.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ art.title }}</a>
+      <div class="sector-headlines-block">
+        <div class="sector-headlines-title">LATEST COVERAGE</div>
+        <ul class="sector-headlines-list">
+          {% for art in item.sample_articles[:3] %}
+          <li class="sector-headline-item">
+            <a href="{{ art.canonical_url }}" target="_blank" rel="noopener noreferrer">
+              {{ art.title }}
+            </a>
           </li>
           {% endfor %}
         </ul>
       </div>
       {% endif %}
 
-      <div class="category-card-footer">
-        <a href="/category/{{ item.name }}" class="article-link">View All {{ item.name }} Articles &rarr;</a>
+      <div class="sector-card-footer">
+        <a href="/category/{{ item.name }}" class="explore-sector-btn">
+          Explore {{ item.name }} &rarr;
+        </a>
       </div>
     </div>
     {% endfor %}
   </div>
+
 </div>
 {% endblock %}

@@ -1,126 +1,282 @@
 {% extends "base.html" %}
 {% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
 
-{% block title %}Daily Intelligence - Front Page{% endblock %}
+{% block title %}Daily Intelligence — Front Page Briefing{% endblock %}
 
 {% block content %}
-<div class="newspaper-frontpage">
-  
-  {# Hero Section: Top Story #}
-  {% if top_story %}
-  <section class="top-story-hero" id="top-story">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div class="hero-badge">Lead Story</div>
-      {{ render_save_button(top_story.id, saved_ids and top_story.id in saved_ids) }}
-    </div>
-    <div class="hero-content">
-      <div class="article-meta">
-        <a href="/source/{{ top_story.source.id if top_story.source else '' }}" class="article-source">
-          {{ top_story.source.name if top_story.source else "RSS Feed" }}
-        </a>
-        {% if top_story.source and top_story.source.category %}
-        <a href="/category/{{ top_story.source.category }}" class="article-category">
-          {{ top_story.source.category }}
-        </a>
-        {% endif %}
+
+{# Category Filter Bar #}
+<div class="category-filter-bar">
+  <div class="filter-chips">
+    <a href="/" class="filter-chip {% if not active_category %}active{% endif %}">All Sectors</a>
+    <a href="/?category=AI%20%26%20Technology" class="filter-chip {% if active_category == 'AI & Technology' %}active{% endif %}">AI & Technology</a>
+    <a href="/?category=Geopolitics" class="filter-chip {% if active_category == 'Geopolitics' %}active{% endif %}">Geopolitics</a>
+    <a href="/?category=Markets%20%26%20Economy" class="filter-chip {% if active_category == 'Markets & Economy' %}active{% endif %}">Markets & Economy</a>
+    <a href="/?category=Business" class="filter-chip {% if active_category == 'Business' %}active{% endif %}">Business</a>
+    <a href="/?category=Energy" class="filter-chip {% if active_category == 'Energy' %}active{% endif %}">Energy</a>
+    <a href="/?category=Supply%20Chain%20%26%20Trade" class="filter-chip {% if active_category == 'Supply Chain & Trade' %}active{% endif %}">Supply Chain & Trade</a>
+    <a href="/?category=World" class="filter-chip {% if active_category == 'World' %}active{% endif %}">World</a>
+  </div>
+</div>
+
+<div class="dashboard-grid">
+  {# Main Feed Column #}
+  <div class="main-feed">
+
+    {# Featured Top Lead Story #}
+    {% if top_story %}
+    {% set top_ai = get_article_ai_output(top_story) %}
+    <article class="featured-card">
+      <div class="featured-card-header">
+        <span class="category-pill">
+          {% if top_ai and top_ai.primary_category %}
+            {{ top_ai.primary_category }}
+          {% elif top_story.source and top_story.source.category %}
+            {{ top_story.source.category }}
+          {% else %}
+            Featured Intelligence
+          {% endif %}
+        </span>
+
+        <div class="score-pills-group">
+          {% if top_ai and top_ai.importance_score is not none %}
+          <span class="score-pill imp" title="AI Global Importance Score (0-100)">
+            IMP {{ top_ai.importance_score }}
+          </span>
+          {% endif %}
+          {% if top_ai and top_ai.relevance_score is not none %}
+          <span class="score-pill rel" title="AI Editorial Relevance Score (0-100)">
+            REL {{ top_ai.relevance_score }}
+          </span>
+          {% endif %}
+          {{ render_save_button(top_story.id, saved_ids and top_story.id in saved_ids) }}
+        </div>
       </div>
-      {{ render_entity_markers(top_story) }}
-      <h2 class="hero-headline">
+
+      <h2 class="featured-headline">
         <a href="{{ top_story.canonical_url }}" target="_blank" rel="noopener noreferrer">
           {{ top_story.title }}
         </a>
       </h2>
-      <p class="hero-date">
-        {% if top_story.published_at %}
-          {{ top_story.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
-        {% else %}
-          Collected {{ top_story.collected_at.strftime("%b %d, %Y") }}
-        {% endif %}
-      </p>
-      {% if top_story.raw_summary %}
-      <p class="hero-summary">{{ top_story.raw_summary | striptags }}</p>
-      {% endif %}
-      <div class="hero-footer">
-        <a href="{{ top_story.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
-          Read Full Report &rarr;
-        </a>
+
+      <div class="featured-meta">
+        <span class="source-name">{{ top_story.source.name if top_story.source else "RSS Source" }}</span>
+        <span class="meta-dot">&bull;</span>
+        <span class="pub-date">
+          {% if top_story.published_at %}
+            {{ top_story.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
+          {% else %}
+            Collected {{ top_story.collected_at.strftime("%b %d, %Y") }}
+          {% endif %}
+        </span>
       </div>
-    </div>
-  </section>
-  {% endif %}
 
-  {# Category Pills Filter Navigation Bar #}
-  <div class="category-strip">
-    <div class="category-nav">
-      <a href="/" class="category-badge active">Front Page</a>
-      {% for cat in categories %}
-        <a href="/category/{{ cat }}" class="category-badge" data-category="{{ cat }}">{{ cat }}</a>
-      {% endfor %}
-    </div>
-  </div>
+      {% if top_ai and top_ai.summary %}
+      <div class="ai-summary-card">
+        <div class="ai-summary-header">
+          <span>✨</span> AI EXECUTIVE SUMMARY
+        </div>
+        <p class="ai-summary-body">{{ top_ai.summary }}</p>
+      </div>
+      {% elif top_story.raw_summary %}
+      <div class="ai-summary-card fallback">
+        <div class="ai-summary-header">SUMMARY</div>
+        <p class="ai-summary-body">{{ top_story.raw_summary | striptags }}</p>
+      </div>
+      {% endif %}
 
-  {# Newspaper Editorial Sections Layout #}
-  <div class="newspaper-grid">
-    
-    {# Primary Columns: Section Topics #}
-    <div class="sections-main">
-      {% for section_name, section_articles in sections.items() %}
-        {% if section_name != "Top Story" and section_articles %}
-        <section class="topic-section">
-          <div class="section-header">
-            <h3 class="section-title" data-category="{{ section_name }}">{{ section_name }}</h3>
-          </div>
-          <div class="articles-grid">
-            {% for article in section_articles %}
-            <article class="article-card" id="article-{{ article.id }}">
-              <div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
-                  <div class="article-meta">
-                    <a href="/source/{{ article.source.id if article.source else '' }}" class="article-source">
-                      {{ article.source.name if article.source else "RSS Feed" }}
-                    </a>
-                    {% if article.source and article.source.category %}
-                    <a href="/category/{{ article.source.category }}" class="article-category" data-category="{{ article.source.category }}">
-                      {{ article.source.category }}
-                    </a>
-                    {% endif %}
-                  </div>
+      {# AI Extracted Topics & Entities #}
+      {% if top_ai and top_ai.output_json %}
+      <div class="featured-tags">
+        {% for topic in top_ai.output_json.get("topics", [])[:5] %}
+        <span class="topic-chip">#{{ topic }}</span>
+        {% endfor %}
+        {% for ent in top_ai.output_json.get("entities", [])[:4] %}
+        <span class="entity-chip">{{ ent.name if ent is mapping else ent }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endif %}
+
+    {# Curated Sector Sections #}
+    {% for section_name, section_articles in sections.items() %}
+      {% if section_name != "Top Story" and section_articles %}
+      <section class="section-container">
+        <div class="section-title">
+          <h2>{{ section_name }}</h2>
+          <span style="font-size: 12px; color: var(--text-muted);">{{ section_articles | length }} Verified Reports</span>
+        </div>
+
+        <div class="articles-grid">
+          {% for article in section_articles %}
+          {% set art_ai = get_article_ai_output(article) %}
+          <article class="article-card" id="article-{{ article.id }}">
+            <div>
+              <div class="card-top">
+                <span class="category-pill" style="font-size: 10px; padding: 2px 6px;">
+                  {% if art_ai and art_ai.primary_category %}
+                    {{ art_ai.primary_category }}
+                  {% elif article.source and article.source.category %}
+                    {{ article.source.category }}
+                  {% else %}
+                    General
+                  {% endif %}
+                </span>
+
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  {% if art_ai and art_ai.importance_score is not none %}
+                  <span class="score-pill imp" style="font-size: 10px; padding: 2px 6px;">
+                    IMP {{ art_ai.importance_score }}
+                  </span>
+                  {% endif %}
                   {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
                 </div>
-                {{ render_entity_markers(article) }}
-                <h4 class="article-headline">
-                  <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
-                </h4>
-                <p class="article-date">
-                  {% if article.published_at %}
-                    {{ article.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
-                  {% else %}
-                    Collected {{ article.collected_at.strftime("%b %d, %Y") }}
-                  {% endif %}
-                </p>
-                {% if article.raw_summary %}
-                <p class="article-summary">{{ article.raw_summary | striptags }}</p>
-                {% endif %}
               </div>
-              <div class="article-footer">
-                <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
-                  Read Article &rarr;
+
+              <h3 class="card-headline">
+                <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">
+                  {{ article.title }}
                 </a>
-              </div>
-            </article>
-            {% endfor %}
-          </div>
-        </section>
+              </h3>
+
+              {% if art_ai and art_ai.summary %}
+              <p class="card-summary">{{ art_ai.summary }}</p>
+              {% elif article.raw_summary %}
+              <p class="card-summary">{{ article.raw_summary | striptags }}</p>
+              {% endif %}
+            </div>
+
+            <div class="card-footer">
+              <span class="source-name">{{ article.source.name if article.source else "Source" }}</span>
+              <span>
+                {% if article.published_at %}
+                  {{ article.published_at.strftime("%b %d, %H:%M") }}
+                {% else %}
+                  {{ article.collected_at.strftime("%b %d") }}
+                {% endif %}
+              </span>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+  {# Context Sidebar Column #}
+  <aside class="sidebar">
+
+    {# Today in Context Widget #}
+    {% if ai_context_stats %}
+    <div class="widget-panel">
+      <div class="widget-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Today in Context
+      </div>
+      <div class="stat-rows">
+        <div class="stat-row">
+          <span class="stat-row-label">Articles Analyzed</span>
+          <span class="stat-row-val">{{ ai_context_stats.total_processed }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-row-label">Curated Relevant</span>
+          <span class="stat-row-val highlight">{{ ai_context_stats.relevant_today }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-row-label">Out of Scope Filtered</span>
+          <span class="stat-row-val">{{ ai_context_stats.out_of_scope_today }}</span>
+        </div>
+        {% if ai_context_stats.unprocessed_or_failed and ai_context_stats.unprocessed_or_failed > 0 %}
+        <div class="stat-row">
+          <span class="stat-row-label">Failed / Pending</span>
+          <span class="stat-row-val">{{ ai_context_stats.unprocessed_or_failed }}</span>
+        </div>
         {% endif %}
-      {% endfor %}
+        <div class="stat-row" title="Technical Success = (Relevant + Out of Scope Filtered) / Total Analyzed">
+          <span class="stat-row-label">Technical Success</span>
+          <span class="stat-row-val highlight">{{ ai_context_stats.success_rate }}%</span>
+        </div>
+      </div>
     </div>
+    {% endif %}
 
-  </div>
+    {# Key Themes Today Widget #}
+    {% if ai_context_stats and ai_context_stats.top_topics %}
+    <div class="widget-panel">
+      <div class="widget-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Key Themes Today
+      </div>
+      <div class="key-themes-list">
+        {% for theme in ai_context_stats.top_topics %}
+        <div class="key-theme-row">
+          <span class="key-theme-name">{{ theme.name if theme is mapping else theme }}</span>
+          {% if theme is mapping and theme.count %}
+          <span class="key-theme-count">{{ theme.count }}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
 
-  <div class="archive-banner-cta">
-    <a href="/archive" class="pagination-btn big-btn">
-      Browse Permanent Intelligence Archive &rarr;
-    </a>
-  </div>
+    {# Global Focus Countries & Blocs Widget #}
+    {% if ai_context_stats and (ai_context_stats.global_focus_items or ai_context_stats.top_countries) %}
+    <div class="widget-panel">
+      <div class="widget-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Global Focus
+      </div>
+      <div class="country-focus-list">
+        {% set focus_items = ai_context_stats.global_focus_items if ai_context_stats.global_focus_items else ai_context_stats.top_countries %}
+        {% for item in focus_items %}
+        <div class="global-focus-chip">
+          <div class="global-focus-main">
+            {% if item is mapping and item.type == 'group' %}
+            <span class="global-focus-flag">🌐</span>
+            <span class="global-focus-name">{{ item.name }}</span>
+            <span class="global-focus-tag-group">GROUP</span>
+            {% else %}
+            <span class="global-focus-flag">{{ item.flag if item is mapping and item.flag else '🌐' }}</span>
+            <span class="global-focus-name">{{ item.name if item is mapping and item.name else item }}</span>
+            {% endif %}
+          </div>
+          {% if item is mapping and item.count %}
+          <span class="global-focus-count">{{ item.count }} {{ 'reports' if item is mapping and item.type == 'group' else 'mentions' }}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {# Archive Stats Widget #}
+    {% if stats %}
+    <div class="widget-panel">
+      <div class="widget-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        Platform Archive
+      </div>
+      <div class="stat-rows">
+        <div class="stat-row">
+          <span class="stat-row-label">Total Permanent Articles</span>
+          <span class="stat-row-val">{{ "{:,}".format(stats.total_archive) }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-row-label">Today's Ingested</span>
+          <span class="stat-row-val">{{ "{:,}".format(stats.today_articles) }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-row-label">Active RSS Sources</span>
+          <span class="stat-row-val">{{ stats.active_sources }}</span>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </aside>
 </div>
 {% endblock %}

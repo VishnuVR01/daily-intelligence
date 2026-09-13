@@ -5,8 +5,10 @@
 
 {% block content %}
 <div style="margin-top: 24px;">
-  <div class="section-header">
-    <h2 class="section-title">Saved Articles & Read Later</h2>
+  <div class="saved-header page-header-block" style="margin-bottom: 24px;">
+    <span class="masthead-badge">BOOKMARKS</span>
+    <h1 class="page-title">SAVED INTELLIGENCE</h1>
+    <p class="page-subtitle">Articles retained for later review and research.</p>
   </div>
 
   {# Status Filter Bar (All, Unread, Read) #}
@@ -131,8 +133,8 @@
 
   {% else %}
   <div class="empty-state">
-    <p>No saved articles found in "{{ active_status }}" state.</p>
-    <a href="/" class="pagination-btn" style="margin-top: 16px;">Browse Front Page &rarr;</a>
+    <p>No saved articles found{% if active_status != 'all' %} in "{{ active_status }}" state{% endif %}.</p>
+    <a href="/latest" class="pagination-btn" style="margin-top: 16px;">Browse Latest Briefings &rarr;</a>
   </div>
   {% endif %}
 </div>
