@@ -75,6 +75,8 @@
           <ul class="nav-links">
             <li><a href="/" class="{% if request.url.path == '/' %}active{% endif %}">Home Edition</a></li>
             <li><a href="/world" class="{% if request.url.path == '/world' %}active{% endif %}">Global Intelligence</a></li>
+            <li><a href="/research" class="{% if request.url.path == '/research' %}active{% endif %}">Research</a></li>
+            <li><a href="/search" class="{% if request.url.path == '/search' %}active{% endif %}">Search</a></li>
             <li><a href="/latest" class="{% if request.url.path == '/latest' %}active{% endif %}">Latest Briefings</a></li>
             <li><a href="/categories" class="{% if request.url.path.startswith('/categor') %}active{% endif %}">Sectors</a></li>
             <li><a href="/sources" class="{% if request.url.path.startswith('/source') %}active{% endif %}">Sources</a></li>

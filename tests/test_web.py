@@ -245,7 +245,7 @@ def test_search_endpoint(client):
 
     response_empty = client.get("/search?q=NonExistentKeywordXYZ")
     assert response_empty.status_code == 200
-    assert "No matching articles found" in response_empty.text
+    assert "No intelligence records matched" in response_empty.text
 
 
 def test_archive_date_filtering(client, test_db_session):
@@ -370,3 +370,17 @@ def test_save_button_rendering(client):
     assert response.status_code == 200
     assert "save-toggle-btn" in response.text
     assert "🔖 Save" in response.text
+
+
+def test_vercel_entrypoint():
+    """Verify that api/index.py imports the ASGI application cleanly for Vercel."""
+    from api.index import app as vercel_app
+    from fastapi.testclient import TestClient
+
+    test_client = TestClient(vercel_app)
+    resp = test_client.get("/health")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["status"] == "ok"
+    assert data["app"] == "Daily Intelligence Newspaper"
+

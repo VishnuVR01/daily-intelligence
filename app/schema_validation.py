@@ -3,6 +3,8 @@ from sqlalchemy import inspect
 from sqlalchemy.engine import Engine
 from sqlalchemy.sql.schema import MetaData
 
+import app.models  # noqa: F401 (Ensure models are registered on Base.metadata)
+
 logger = logging.getLogger("app.schema_validation")
 
 
@@ -11,6 +13,9 @@ def validate_schema(engine: Engine, metadata: MetaData) -> None:
     Validates that all tables and columns defined in SQLAlchemy models exist in the target database.
     Does NOT alter production data. Raises a RuntimeError if missing columns or tables are detected.
     """
+    if not metadata.tables:
+        raise RuntimeError("No SQLAlchemy model tables registered in MetaData for validation.")
+
     inspector = inspect(engine)
     db_tables = set(inspector.get_table_names())
 

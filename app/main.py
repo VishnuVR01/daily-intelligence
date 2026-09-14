@@ -2,6 +2,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Any
+import logging
 
 from contextlib import asynccontextmanager
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
@@ -16,6 +17,7 @@ from app.schema_validation import validate_schema
 from app.errors import register_error_handlers
 import app.models  # noqa: F401
 from services.quotes import get_daily_quote
+from services.rag import ask_archive
 from repositories.articles import (
     get_all_countries,
     get_archive_stats,
@@ -24,7 +26,10 @@ from repositories.articles import (
     get_articles_by_source,
     get_categories,
     get_categories_summary,
+    get_edition_articles_by_sections,
+    get_edition_top_story,
     get_paginated_articles,
+    get_persisted_daily_edition,
     get_recent_articles,
     get_sources_summary,
     get_today_ai_context_stats,
@@ -33,6 +38,7 @@ from repositories.articles import (
     get_top_story,
     is_article_out_of_scope,
     search_articles,
+    search_articles_v1,
 )
 
 from app.entity_metadata import (
@@ -53,13 +59,17 @@ from repositories.saved import (
     unsave_article,
 )
 
+logger = logging.getLogger("app.main")
 settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Perform database schema validation on application startup without altering data
-    validate_schema(engine, Base.metadata)
+    try:
+        validate_schema(engine, Base.metadata)
+    except Exception as exc:
+        logger.warning(f"Database schema validation skipped/failed on startup: {exc}")
     yield
 
 
@@ -112,6 +122,38 @@ def health() -> dict[str, str]:
     }
 
 
+@app.get("/health/dependencies")
+@app.get("/api/health/dependencies")
+def health_dependencies() -> dict[str, Any]:
+    """Sanitized diagnostic status of app dependencies (Database and Ollama)."""
+    from app.db import check_db_health
+    from services.ai.ollama import OllamaService
+
+    db_status = check_db_health()
+    ollama_svc = OllamaService()
+    ollama_status = ollama_svc.get_health_status()
+
+    is_ok = db_status["reachable"] and db_status["schema_valid"] and ollama_status["available"]
+    return {
+        "status": "ok" if is_ok else "degraded",
+        "app": settings.app_name,
+        "environment": settings.app_env,
+        "database": {
+            "configured": db_status["configured"],
+            "mode": db_status["mode"],
+            "reachable": db_status["reachable"],
+            "schema_valid": db_status["schema_valid"],
+            "migration_revision": db_status.get("migration_revision"),
+        },
+        "ollama": {
+            "enabled": getattr(settings, "ollama_enabled", True),
+            "mode": ollama_status["mode"],
+            "available": ollama_status["available"],
+            "model_configured": ollama_status["model_configured"],
+        },
+    }
+
+
 @app.get("/", response_class=HTMLResponse)
 def home(
     request: Request,
@@ -120,11 +162,19 @@ def home(
 ) -> HTMLResponse:
     stats = get_archive_stats(db)
     categories = get_categories(db)
-    top_story = get_top_story(db, category=category)
-    sections = get_articles_by_sections(db, category=category, curated_only=True)
     saved_ids = get_saved_article_ids(db)
     daily_quote = get_daily_quote()
     ai_context_stats = get_today_ai_context_stats(db)
+
+    # Primary-read persisted DailyEdition for today
+    today_edition = get_persisted_daily_edition(db)
+    if today_edition:
+        top_story = get_edition_top_story(db, today_edition)
+        sections = get_edition_articles_by_sections(db, today_edition, category=category)
+    else:
+        # Safe fallback to dynamic query
+        top_story = get_top_story(db, category=category)
+        sections = get_articles_by_sections(db, category=category, curated_only=True)
 
     return templates.TemplateResponse(
         request=request,
@@ -139,8 +189,231 @@ def home(
             "active_category": category,
             "daily_quote": daily_quote,
             "ai_context_stats": ai_context_stats,
+            "today_edition": today_edition,
         },
     )
+
+
+@app.get("/edition/{date_str}", response_class=HTMLResponse)
+def edition_by_date(
+    request: Request,
+    date_str: str,
+    category: str | None = Query(default=None),
+    db: Session = Depends(get_db),
+) -> HTMLResponse:
+    """Historical daily edition view by date YYYY-MM-DD."""
+    try:
+        target_d = datetime.strptime(date_str, "%Y-%m-%d").date()
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD.")
+
+    edition = get_persisted_daily_edition(db, target_d)
+    stats = get_archive_stats(db)
+    categories = get_categories(db)
+    saved_ids = get_saved_article_ids(db)
+    daily_quote = get_daily_quote()
+    ai_context_stats = get_today_ai_context_stats(db)
+
+    if edition:
+        top_story = get_edition_top_story(db, edition)
+        sections = get_edition_articles_by_sections(db, edition, category=category)
+        masthead_date = target_d.strftime("%A, %B %d, %Y")
+    else:
+        top_story = None
+        sections = {sec: [] for sec in [
+            "Top Intelligence", "Strategic Briefs", "Geopolitics", "Markets & Economy",
+            "Business", "AI & Technology", "Energy & Commodities", "Supply Chain & Trade",
+            "Industry & Operations", "World Watch"
+        ]}
+        masthead_date = f"Edition {date_str} (Not Found)"
+
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={
+            "stats": stats,
+            "categories": categories,
+            "top_story": top_story,
+            "sections": sections,
+            "saved_ids": saved_ids,
+            "masthead_date": masthead_date,
+            "active_category": category,
+            "daily_quote": daily_quote,
+            "ai_context_stats": ai_context_stats,
+            "today_edition": edition,
+        },
+    )
+
+
+@app.get("/search", response_class=HTMLResponse)
+def search_page(
+    request: Request,
+    q: str = Query(default=""),
+    date_from: str | None = Query(default=None),
+    date_to: str | None = Query(default=None),
+    category: str | None = Query(default=None),
+    country: str | None = Query(default=None),
+    source: str | None = Query(default=None),
+    min_importance: int | None = Query(default=None),
+    min_relevance: int | None = Query(default=None),
+    relevant_only: int = Query(default=0),
+    page: int = Query(default=1),
+    db: Session = Depends(get_db),
+) -> HTMLResponse:
+    """Historical Intelligence Search v1 route with full-text search and server-side filters."""
+    d_from = None
+    if date_from:
+        try:
+            d_from = datetime.strptime(date_from.strip(), "%Y-%m-%d").date()
+        except ValueError:
+            pass
+
+    d_to = None
+    if date_to:
+        try:
+            d_to = datetime.strptime(date_to.strip(), "%Y-%m-%d").date()
+        except ValueError:
+            pass
+
+    categories = [category] if category else None
+    countries = [country] if country else None
+    sources = [source] if source else None
+
+    results = search_articles_v1(
+        db,
+        query=q,
+        date_from=d_from,
+        date_to=d_to,
+        categories=categories,
+        countries=countries,
+        sources=sources,
+        min_importance=min_importance,
+        min_relevance=min_relevance,
+        relevant_only=bool(relevant_only),
+        limit=20,
+        page=page,
+    )
+
+    stats = get_archive_stats(db)
+    all_categories = get_categories(db)
+    all_countries = get_all_countries(db)
+    saved_ids = get_saved_article_ids(db)
+
+    return templates.TemplateResponse(
+        request=request,
+        name="search.html",
+        context={
+            "q": q,
+            "results": results,
+            "stats": stats,
+            "categories": all_categories,
+            "all_countries": all_countries,
+            "saved_ids": saved_ids,
+            "active_category": category,
+            "active_country": country,
+            "masthead_date": get_masthead_date(),
+            "filters": {
+                "date_from": date_from,
+                "date_to": date_to,
+                "categories": categories or [],
+                "countries": countries or [],
+                "sources": sources or [],
+                "min_importance": min_importance,
+                "min_relevance": min_relevance,
+                "relevant_only": bool(relevant_only),
+            },
+        },
+    )
+
+
+@app.get("/research", response_class=HTMLResponse)
+def research_page(
+    request: Request,
+    q: str = Query(default=""),
+    date_from: str | None = Query(default=None),
+    date_to: str | None = Query(default=None),
+    category: str | None = Query(default=None),
+    db: Session = Depends(get_db),
+) -> HTMLResponse:
+    """Intelligence Research Terminal route executing grounded RAG."""
+    rag_result = None
+    if q and q.strip():
+        d_from = None
+        if date_from:
+            try:
+                d_from = datetime.strptime(date_from.strip(), "%Y-%m-%d").date()
+            except ValueError:
+                pass
+
+        d_to = None
+        if date_to:
+            try:
+                d_to = datetime.strptime(date_to.strip(), "%Y-%m-%d").date()
+            except ValueError:
+                pass
+
+        filters = {
+            "date_from": d_from,
+            "date_to": d_to,
+            "categories": [category] if category else None,
+            "relevant_only": True,
+        }
+
+        try:
+            rag_result = ask_archive(db, question=q, filters=filters)
+        except Exception as exc:
+            logger.error(f"Error in research view: {exc}")
+            rag_result = {
+                "question": q,
+                "answer": "Archive research is temporarily unavailable.",
+                "confidence": "low",
+                "evidence_count": 0,
+                "citations": [],
+                "key_themes": [],
+                "date_range": None,
+                "insufficient_evidence": True,
+            }
+
+    stats = get_archive_stats(db)
+    categories = get_categories(db)
+    saved_ids = get_saved_article_ids(db)
+
+    return templates.TemplateResponse(
+        request=request,
+        name="research.html",
+        context={
+            "q": q,
+            "rag_result": rag_result,
+            "stats": stats,
+            "categories": categories,
+            "saved_ids": saved_ids,
+            "active_category": category,
+        },
+    )
+
+
+@app.post("/api/research")
+def api_research(
+    payload: dict[str, Any],
+    db: Session = Depends(get_db),
+) -> dict[str, Any]:
+    """JSON API endpoint for submitting research questions and receiving RAG answers."""
+    question = payload.get("question") or payload.get("q") or ""
+    filters = payload.get("filters") or {}
+    try:
+        return ask_archive(db, question=question, filters=filters)
+    except Exception as exc:
+        logger.error(f"Error in api_research: {exc}")
+        return {
+            "question": question,
+            "answer": "Archive research is temporarily unavailable.",
+            "confidence": "low",
+            "evidence_count": 0,
+            "citations": [],
+            "key_themes": [],
+            "date_range": None,
+            "insufficient_evidence": True,
+        }
 
 
 @app.get("/world", response_class=HTMLResponse)
@@ -352,28 +625,7 @@ def source_detail(
     )
 
 
-@app.get("/search", response_class=HTMLResponse)
-def search(
-    request: Request,
-    q: str = Query(default=""),
-    page: int = Query(default=1, ge=1),
-    db: Session = Depends(get_db),
-) -> HTMLResponse:
-    stats = get_archive_stats(db)
-    results = search_articles(db, query_str=q, page=page, page_size=25)
-    saved_ids = get_saved_article_ids(db)
 
-    return templates.TemplateResponse(
-        request=request,
-        name="search.html",
-        context={
-            "stats": stats,
-            "q": q,
-            "results": results,
-            "saved_ids": saved_ids,
-            "masthead_date": get_masthead_date(),
-        },
-    )
 
 
 @app.get("/archive", response_class=HTMLResponse)

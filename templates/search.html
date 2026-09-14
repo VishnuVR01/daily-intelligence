@@ -4,35 +4,107 @@
 {% block title %}Daily Intelligence - Search Archive{% endblock %}
 
 {% block content %}
-<div style="margin-top: 24px;">
+<div class="search-page-container" style="margin-top: 24px;">
   <div class="section-header">
-    <h2 class="section-title">Search Archive</h2>
+    <h2 class="section-title">SEARCH INTELLIGENCE ARCHIVE</h2>
+    <span class="feed-count-badge">PostgreSQL Full-Text Search v1</span>
   </div>
 
+  {# Search & Filter Form Card #}
   <div class="search-box-card">
-    <form action="/search" method="get" class="search-form">
-      <input 
-        type="search" 
-        name="q" 
-        value="{{ q }}" 
-        placeholder="Search headlines, topics, keywords (e.g. OpenAI, Federal Reserve, Tariffs)..." 
-        class="search-input"
-        required
-      />
-      <button type="submit" class="pwa-install-btn search-btn">Search</button>
+    <form action="/search" method="get" class="search-form-v1">
+      <div class="search-primary-row" style="display: flex; gap: 12px; margin-bottom: 16px;">
+        <input 
+          type="search" 
+          name="q" 
+          value="{{ q }}" 
+          placeholder="Search headlines, AI summaries, topics, entities (e.g. Semiconductor, RBI, Inflation, NVIDIA)..." 
+          class="search-input"
+          style="flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--bg-card); color: var(--text-primary); font-size: 1rem;"
+        />
+        <button type="submit" class="pwa-install-btn search-btn" style="padding: 12px 24px; border-radius: 8px; font-weight: 700;">
+          Search Archive
+        </button>
+      </div>
+
+      {# Advanced Filter Row #}
+      <div class="search-filters-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+        <div>
+          <label style="font-size: 0.75rem; color: var(--accent-sage); font-weight: 700; display: block; margin-bottom: 4px;">DATE FROM</label>
+          <input type="date" name="date_from" value="{{ filters.date_from if filters.date_from else '' }}" class="world-select" style="width: 100%;" />
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; color: var(--accent-sage); font-weight: 700; display: block; margin-bottom: 4px;">DATE TO</label>
+          <input type="date" name="date_to" value="{{ filters.date_to if filters.date_to else '' }}" class="world-select" style="width: 100%;" />
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; color: var(--accent-sage); font-weight: 700; display: block; margin-bottom: 4px;">CATEGORY</label>
+          <select name="category" class="world-select" style="width: 100%;">
+            <option value="">All Categories</option>
+            {% for cat in categories %}
+            <option value="{{ cat }}" {% if active_category == cat or (filters.categories and cat in filters.categories) %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; color: var(--accent-sage); font-weight: 700; display: block; margin-bottom: 4px;">COUNTRY</label>
+          <select name="country" class="world-select" style="width: 100%;">
+            <option value="">All Countries</option>
+            {% for c in all_countries %}
+            <option value="{{ c.code }}" {% if active_country == c.code or (filters.countries and c.code in filters.countries) %}selected{% endif %}>{{ c.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; color: var(--accent-sage); font-weight: 700; display: block; margin-bottom: 4px;">MIN IMPORTANCE</label>
+          <select name="min_importance" class="world-select" style="width: 100%;">
+            <option value="">Any Importance</option>
+            <option value="80" {% if filters.min_importance == 80 %}selected{% endif %}>High (80+)</option>
+            <option value="60" {% if filters.min_importance == 60 %}selected{% endif %}>Notable (60+)</option>
+            <option value="40" {% if filters.min_importance == 40 %}selected{% endif %}>Moderate (40+)</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 0.75rem; color: var(--accent-sage); font-weight: 700; display: block; margin-bottom: 4px;">RELEVANCE</label>
+          <select name="relevant_only" class="world-select" style="width: 100%;">
+            <option value="1" {% if filters.relevant_only %}selected{% endif %}>Relevant Only</option>
+            <option value="0" {% if not filters.relevant_only %}selected{% endif %}>All Scope</option>
+          </select>
+        </div>
+      </div>
+      
+      {% if q or filters.date_from or filters.date_to or active_category or active_country or filters.min_importance %}
+      <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+        <a href="/search" class="clear-filters-btn" style="font-size: 0.8rem;">Reset Search Filters &cross;</a>
+      </div>
+      {% endif %}
     </form>
   </div>
 
-  {% if q %}
-  <div class="search-results-header" style="margin-bottom: 24px;">
-    <p class="results-count-text">
-      Found <strong>{{ results.total }}</strong> matching article{{ 's' if results.total != 1 else '' }} for "<strong>{{ q }}</strong>":
+  {# Search Results Section #}
+  {% if q or filters.categories or filters.countries or filters.date_from or filters.min_importance %}
+  <div class="search-results-header" style="margin-top: 24px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+    <p class="results-count-text" style="color: var(--text-secondary); font-size: 0.95rem;">
+      Found <strong style="color: var(--accent-amber);">{{ results.total }}</strong> matching record{{ 's' if results.total != 1 else '' }}
+      {% if q %} for "<strong>{{ q }}</strong>"{% endif %}
     </p>
+    <a href="/research{% if q %}?q={{ q|urlencode }}{% endif %}" class="pagination-btn" style="background: rgba(212, 165, 89, 0.15); border-color: var(--accent-amber); color: var(--accent-amber); font-weight: 600;">
+      Ask Archive RAG &rarr;
+    </a>
   </div>
 
   {% if results.articles %}
   <div class="articles-grid">
     {% for article in results.articles %}
+    {% set ai_out = get_article_ai_output(article) %}
+    {% set explanation = results.matched_explanations.get(article.id, []) %}
+    {% set score = results.scores.get(article.id) %}
+    
     <article class="article-card" id="article-{{ article.id }}">
       <div>
         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
@@ -41,29 +113,51 @@
               {{ article.source.name if article.source else "RSS Feed" }}
             </a>
             {% if article.source and article.source.category %}
-            <a href="/category/{{ article.source.category }}" class="article-category">
-              {{ article.source.category }}
-            </a>
+            <span class="article-category">{{ article.source.category }}</span>
             {% endif %}
           </div>
           {{ render_save_button(article.id, saved_ids and article.id in saved_ids) }}
         </div>
+
         {{ render_entity_markers(article) }}
-        <h3 class="article-headline">
+
+        <h3 class="article-headline" style="margin-top: 8px;">
           <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
         </h3>
-        <p class="article-date">
+
+        {# Match Explanation Badges #}
+        {% if explanation %}
+        <div class="match-explanation-bar" style="margin-top: 6px; margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--accent-sage); text-transform: uppercase;">Matched:</span>
+          {% for tag in explanation %}
+          <span style="font-size: 0.72rem; background: rgba(212, 165, 89, 0.12); color: var(--accent-amber); border: 1px solid rgba(212, 165, 89, 0.3); border-radius: 4px; padding: 1px 6px;">
+            {{ tag }}
+          </span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <p class="article-date" style="font-size: 0.8rem; color: var(--text-tertiary);">
           {% if article.published_at %}
             {{ article.published_at.strftime("%b %d, %Y at %H:%M UTC") }}
           {% else %}
             Collected {{ article.collected_at.strftime("%b %d, %Y") }}
           {% endif %}
+          {% if ai_out and ai_out.importance_score %}
+            &bull; <span style="color: var(--accent-amber); font-weight: 600;">Importance: {{ ai_out.importance_score }}/100</span>
+          {% endif %}
         </p>
-        {% if article.raw_summary %}
+
+        {% if ai_out and ai_out.summary %}
+        <p class="article-summary" style="font-style: italic; color: var(--text-primary);">
+          <strong>AI Executive Summary:</strong> {{ ai_out.summary }}
+        </p>
+        {% elif article.raw_summary %}
         <p class="article-summary">{{ article.raw_summary | striptags }}</p>
         {% endif %}
       </div>
-      <div class="article-footer">
+
+      <div class="article-footer" style="margin-top: 12px;">
         <a href="{{ article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
           Read Original Article &rarr;
         </a>
@@ -73,8 +167,8 @@
   </div>
 
   {% if results.total_pages > 1 %}
-  <div class="pagination">
-    <a href="/search?q={{ q }}&page={{ results.page - 1 }}" 
+  <div class="pagination" style="margin-top: 24px;">
+    <a href="/search?q={{ q }}&page={{ results.page - 1 }}{% if filters.date_from %}&date_from={{ filters.date_from }}{% endif %}{% if filters.date_to %}&date_to={{ filters.date_to }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}{% if active_country %}&country={{ active_country }}{% endif %}" 
        class="pagination-btn {% if not results.has_prev %}disabled{% endif %}">
       &larr; Previous
     </a>
@@ -83,7 +177,7 @@
       Page <strong>{{ results.page }}</strong> of <strong>{{ results.total_pages }}</strong>
     </span>
 
-    <a href="/search?q={{ q }}&page={{ results.page + 1 }}" 
+    <a href="/search?q={{ q }}&page={{ results.page + 1 }}{% if filters.date_from %}&date_from={{ filters.date_from }}{% endif %}{% if filters.date_to %}&date_to={{ filters.date_to }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}{% if active_country %}&country={{ active_country }}{% endif %}" 
        class="pagination-btn {% if not results.has_next %}disabled{% endif %}">
       Next &rarr;
     </a>
@@ -91,8 +185,12 @@
   {% endif %}
 
   {% else %}
-  <div class="empty-state">
-    <p>No matching articles found for "{{ q }}". Try searching for broader terms.</p>
+  <div class="empty-state" style="text-align: center; padding: 48px 24px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-dark); margin-top: 24px;">
+    <h3 style="color: var(--accent-amber); margin-bottom: 8px;">No intelligence records matched this search.</h3>
+    <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 16px auto;">
+      Try searching for broader keywords, expanding your date boundaries, or clearing category/country filters.
+    </p>
+    <a href="/search" class="pagination-btn" style="display: inline-block;">Reset Search Filters &rarr;</a>
   </div>
   {% endif %}
 

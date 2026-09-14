@@ -138,41 +138,72 @@ class DailyEdition(Base):
     __tablename__ = "daily_editions"
 
     id = Column(BigInteger().with_variant(Integer, "sqlite"), primary_key=True, autoincrement=True)
-    edition_date = Column(Date, nullable=False, unique=True)
-    title = Column(Text, nullable=False)
+    edition_date = Column(Date, nullable=False)
+    algorithm_version = Column(Text, nullable=False, server_default="edition_v1", default="edition_v1")
+    status = Column(Text, nullable=False, server_default="published", default="published")
     generated_at = Column(
         DateTime(timezone=True),
         nullable=False,
         server_default=func.now(),
         default=lambda: datetime.now(timezone.utc),
     )
-    status = Column(Text, nullable=False, server_default="draft", default="draft")
+    lead_article_id = Column(
+        BigInteger().with_variant(Integer, "sqlite"),
+        ForeignKey("articles.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+    article_count = Column(Integer, nullable=False, server_default="0", default=0)
+    metadata_json = Column(JSON, nullable=True)
 
+    lead_article = relationship("Article", foreign_keys=[lead_article_id])
     edition_articles = relationship(
-        "EditionArticle", back_populates="edition", cascade="all, delete-orphan"
+        "EditionArticle",
+        back_populates="edition",
+        cascade="all, delete-orphan",
+        order_by="EditionArticle.position",
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "edition_date",
+            "algorithm_version",
+            name="uix_daily_edition_date_version",
+        ),
     )
 
 
 class EditionArticle(Base):
-    __tablename__ = "edition_articles"
+    __tablename__ = "daily_edition_articles"
 
+    id = Column(BigInteger().with_variant(Integer, "sqlite"), primary_key=True, autoincrement=True)
     edition_id = Column(
         BigInteger().with_variant(Integer, "sqlite"),
         ForeignKey("daily_editions.id", ondelete="CASCADE"),
-        primary_key=True,
+        nullable=False,
     )
     article_id = Column(
         BigInteger().with_variant(Integer, "sqlite"),
         ForeignKey("articles.id", ondelete="CASCADE"),
-        primary_key=True,
+        nullable=False,
     )
     section = Column(Text, nullable=False)
-    rank = Column(Integer, nullable=True)
+    position = Column(Integer, nullable=False, server_default="1", default=1)
+    edition_score = Column(Float, nullable=False, server_default="0.0", default=0.0)
+    selection_reason = Column(Text, nullable=True)
+    selection_reason_json = Column(JSON, nullable=True)
+    created_at = Column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+        default=lambda: datetime.now(timezone.utc),
+    )
 
     edition = relationship("DailyEdition", back_populates="edition_articles")
     article = relationship("Article")
 
-    __table_args__ = (PrimaryKeyConstraint("edition_id", "article_id"),)
+    __table_args__ = (
+        UniqueConstraint("edition_id", "article_id", name="uix_edition_article_unique"),
+    )
 
 
 class ArticleAIOutput(Base):

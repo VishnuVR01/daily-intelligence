@@ -1,5 +1,39 @@
+import os
+import urllib.parse
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def get_db_host_mode(url: str) -> str:
+    """Returns 'LOCAL' for localhost/127.0.0.1/::1 or unconfigured URLs; 'CLOUD' otherwise."""
+    if not url or not url.strip():
+        return "LOCAL"
+    try:
+        parsed = urllib.parse.urlsplit(url)
+        host = (parsed.hostname or "").lower()
+        if host in ("localhost", "127.0.0.1", "::1", "[::1]") or "localhost" in url.lower() or "127.0.0.1" in url.lower():
+            return "LOCAL"
+    except Exception:
+        pass
+    return "CLOUD"
+
+
+def sanitize_database_url(url: str) -> str:
+    """
+    Returns a sanitized database URL with password and credentials completely redacted.
+    Never exposes passwords, tokens, or usernames in logs or health endpoints.
+    """
+    if not url or not url.strip():
+        return "Not configured"
+    try:
+        parsed = urllib.parse.urlsplit(url)
+        scheme = parsed.scheme or "postgresql"
+        hostname = parsed.hostname or "unknown"
+        port = f":{parsed.port}" if parsed.port else ""
+        path = parsed.path or ""
+        return f"{scheme}://***@{hostname}{port}{path}"
+    except Exception:
+        return "postgresql://***@hidden-host/hidden-db"
 
 
 class Settings(BaseSettings):
@@ -12,6 +46,7 @@ class Settings(BaseSettings):
     ollama_enabled: bool = True
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "qwen3.5:4b"
+    ollama_api_key: str = ""
     ollama_timeout_seconds: int = 120
     ai_prompt_version: str = "v1"
 
@@ -23,7 +58,6 @@ class Settings(BaseSettings):
 
     enable_error_test_routes: bool = False
 
-
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
@@ -31,7 +65,32 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
+    @property
+    def is_production(self) -> bool:
+        """Returns True when executing in production or on Vercel."""
+        env = (self.app_env or "").lower()
+        return (
+            env in ("production", "prod", "staging")
+            or os.getenv("VERCEL") == "1"
+            or bool(os.getenv("VERCEL_ENV"))
+        )
+
+    @property
+    def effective_database_url(self) -> str:
+        """
+        Returns database URL for SQLAlchemy & Alembic.
+        In production/Vercel: if DATABASE_URL is missing or points to localhost,
+        returns empty string to prevent dangerous fallback to localhost:5432.
+        In local development: returns configured local DATABASE_URL.
+        """
+        url = (self.database_url or "").strip()
+        if self.is_production:
+            if not url or get_db_host_mode(url) == "LOCAL":
+                return ""
+        return url
+
 
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+

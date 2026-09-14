@@ -2,9 +2,10 @@ import json
 import logging
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 from app.config import get_settings
 from services.ai.schemas import ALLOWED_CATEGORIES, ArticleAIAnalysis
@@ -69,33 +70,56 @@ class OllamaService:
         self,
         base_url: Optional[str] = None,
         model: Optional[str] = None,
+        api_key: Optional[str] = None,
         timeout_seconds: Optional[int] = None,
         prompt_version: Optional[str] = None,
     ):
         settings = get_settings()
         self.base_url = (base_url or settings.ollama_base_url).rstrip("/")
         self.model = model or settings.ollama_model or "qwen3.5:4b"
+        self.api_key = api_key if api_key is not None else getattr(settings, "ollama_api_key", "")
         self.timeout_seconds = timeout_seconds or settings.ollama_timeout_seconds or 120
         self.prompt_version = prompt_version or settings.ai_prompt_version or "v1"
 
+    @property
+    def mode(self) -> str:
+        """Derived mode: LOCAL when host is localhost/127.0.0.1, CLOUD otherwise."""
+        try:
+            parsed = urllib.parse.urlparse(self.base_url)
+            host = (parsed.hostname or "").lower()
+            if host in ("localhost", "127.0.0.1", "::1"):
+                return "LOCAL"
+        except Exception:
+            pass
+        return "CLOUD"
+
+    def _get_headers(self, extra: Optional[Dict[str, str]] = None) -> Dict[str, str]:
+        """Constructs headers safely attaching Authorization: Bearer when api_key is present."""
+        headers: Dict[str, str] = {}
+        if self.api_key and self.api_key.strip():
+            headers["Authorization"] = f"Bearer {self.api_key.strip()}"
+        if extra:
+            headers.update(extra)
+        return headers
+
     def check_health(self) -> bool:
-        """Returns True if local Ollama API server is reachable."""
+        """Returns True if Ollama API server is reachable (supports both local and cloud)."""
         try:
             url = f"{self.base_url}/api/tags"
-            req = urllib.request.Request(url, method="GET")
-            with urllib.request.urlopen(req, timeout=5) as response:
+            req = urllib.request.Request(url, headers=self._get_headers(), method="GET")
+            with urllib.request.urlopen(req, timeout=min(5, self.timeout_seconds)) as response:
                 return response.status == 200
         except Exception as exc:
-            logger.warning(f"Ollama health check failed: {exc}")
+            logger.warning(f"Ollama health check failed for mode={self.mode}: {exc.__class__.__name__}")
             return False
 
     def check_model_available(self, model_name: Optional[str] = None) -> bool:
-        """Returns True if the target model is installed in Ollama."""
+        """Returns True if the target model is installed/available in Ollama."""
         target_model = model_name or self.model
         try:
             url = f"{self.base_url}/api/tags"
-            req = urllib.request.Request(url, method="GET")
-            with urllib.request.urlopen(req, timeout=5) as response:
+            req = urllib.request.Request(url, headers=self._get_headers(), method="GET")
+            with urllib.request.urlopen(req, timeout=min(10, self.timeout_seconds)) as response:
                 if response.status == 200:
                     data = json.loads(response.read().decode("utf-8"))
                     models = [m.get("name", "") for m in data.get("models", [])]
@@ -103,8 +127,22 @@ class OllamaService:
                     return any(m == target_model or m.startswith(f"{target_model}:") for m in models)
             return False
         except Exception as exc:
-            logger.warning(f"Ollama model check failed for '{target_model}': {exc}")
+            logger.warning(f"Ollama model check failed for '{target_model}' (mode={self.mode}): {exc.__class__.__name__}")
             return False
+
+    def get_health_status(self) -> Dict[str, Any]:
+        """
+        Application-level health diagnostic.
+        Never exposes API key, Authorization header, or full environment values.
+        """
+        available = self.check_health()
+        model_configured = self.check_model_available() if available else False
+        return {
+            "provider": "ollama",
+            "mode": self.mode.lower(),
+            "available": available,
+            "model_configured": model_configured,
+        }
 
     def prepare_article_prompt(self, article_data: Dict[str, Any]) -> str:
         """Constructs safe user prompt with text truncation to ~3,000 chars."""
@@ -170,7 +208,7 @@ CONTENT:
             req = urllib.request.Request(
                 url,
                 data=body,
-                headers={"Content-Type": "application/json"},
+                headers=self._get_headers({"Content-Type": "application/json"}),
                 method="POST",
             )
 
@@ -268,6 +306,25 @@ CONTENT:
                             eval_count=eval_count,
                         )
 
+        except urllib.error.HTTPError as http_err:
+            processing_ms = int((time.time() - start_time) * 1000)
+            if http_err.code == 401:
+                return OllamaAnalysisResult(
+                    status="failed",
+                    processing_ms=processing_ms,
+                    error_message="Authentication failed (HTTP 401): Invalid or missing Ollama API key",
+                )
+            elif http_err.code == 404:
+                return OllamaAnalysisResult(
+                    status="failed",
+                    processing_ms=processing_ms,
+                    error_message=f"Model '{target_model}' not found on Ollama host (HTTP 404)",
+                )
+            return OllamaAnalysisResult(
+                status="failed",
+                processing_ms=processing_ms,
+                error_message=f"HTTP {http_err.code} from Ollama API",
+            )
         except urllib.error.URLError as url_err:
             processing_ms = int((time.time() - start_time) * 1000)
             if "timed out" in str(url_err).lower():
@@ -286,5 +343,74 @@ CONTENT:
             return OllamaAnalysisResult(
                 status="failed",
                 processing_ms=processing_ms,
-                error_message=f"Unexpected error: {exc}",
+                error_message=f"Unexpected error: {exc.__class__.__name__}",
             )
+
+    def chat_completion(
+        self,
+        messages: List[Dict[str, str]],
+        model_override: Optional[str] = None,
+        format: Optional[Any] = None,
+        options: Optional[Dict[str, Any]] = None,
+        stream: bool = False,
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Sends a chat completion request to Ollama (/api/chat).
+        Handles local and cloud authentication seamlessly.
+        Safely isolates failures and returns None on failure.
+        """
+        target_model = model_override or self.model
+        payload: Dict[str, Any] = {
+            "model": target_model,
+            "messages": messages,
+            "stream": stream,
+        }
+        if format is not None:
+            payload["format"] = format
+        if options:
+            payload["options"] = options
+
+        try:
+            url = f"{self.base_url}/api/chat"
+            body = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(
+                url,
+                data=body,
+                headers=self._get_headers({"Content-Type": "application/json"}),
+                method="POST",
+            )
+            with urllib.request.urlopen(req, timeout=self.timeout_seconds) as response:
+                if response.status == 200:
+                    return json.loads(response.read().decode("utf-8"))
+                logger.warning(f"Ollama chat API returned HTTP {response.status}")
+                return None
+        except Exception as exc:
+            logger.warning(f"Ollama chat completion failed (mode={self.mode}): {exc.__class__.__name__}")
+            return None
+
+    def chat_json(
+        self,
+        messages: List[Dict[str, str]],
+        model_override: Optional[str] = None,
+        options: Optional[Dict[str, Any]] = None,
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Chat completion requesting JSON format and parsing the assistant content into a dict.
+        Returns parsed dict or None if offline/failed/invalid JSON.
+        """
+        res = self.chat_completion(
+            messages=messages,
+            model_override=model_override,
+            format="json",
+            options=options,
+        )
+        if not res:
+            return None
+        content = res.get("message", {}).get("content", "").strip()
+        if not content:
+            return None
+        try:
+            return json.loads(content)
+        except Exception as json_err:
+            logger.warning(f"Failed to parse Ollama JSON chat response: {json_err.__class__.__name__}")
+            return None

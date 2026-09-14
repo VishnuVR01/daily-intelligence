@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% from "macros/entity_markers.html" import render_save_button %}
+
+{% block title %}Daily Intelligence - Research Terminal{% endblock %}
+
+{% block content %}
+<div class="research-page-container" style="margin-top: 24px;">
+  <div class="section-header">
+    <h2 class="section-title">INTELLIGENCE RESEARCH</h2>
+    <span class="feed-count-badge">Grounded RAG v1</span>
+  </div>
+
+  {# Query Input Box & Sample Prompt Chips #}
+  <div class="search-box-card" style="background: var(--bg-card); padding: 24px; border-radius: 12px; border: 1px solid var(--border-dark);">
+    <form action="/research" method="get" class="research-form">
+      <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--accent-sage); margin-bottom: 8px; text-transform: uppercase;">
+        Ask the Intelligence Archive
+      </label>
+      <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+        <input 
+          type="text" 
+          name="q" 
+          value="{{ q }}" 
+          placeholder="Ask a specific question (e.g., What changed in semiconductor supply chains recently?)..." 
+          class="search-input"
+          style="flex: 1; padding: 14px 18px; border-radius: 8px; border: 1px solid var(--border-dark); background: #0b110e; color: var(--text-primary); font-size: 1.05rem;"
+          required
+        />
+        <button type="submit" class="pwa-install-btn search-btn" style="padding: 14px 28px; border-radius: 8px; font-weight: 700; background: var(--accent-amber); color: #000;">
+          Run Research Query
+        </button>
+      </div>
+
+      {# Preset Sample Prompt Chips #}
+      <div class="sample-prompts-bar" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600;">Sample Queries:</span>
+        <a href="/research?q=What+changed+in+semiconductor+supply+chains+recently%3F" class="lens-chip" style="font-size: 0.78rem;">
+          Semiconductor Supply Chains
+        </a>
+        <a href="/research?q=What+has+the+RBI+said+about+inflation%3F" class="lens-chip" style="font-size: 0.78rem;">
+          RBI & Inflation
+        </a>
+        <a href="/research?q=What+are+the+major+developments+in+oil+and+energy+markets%3F" class="lens-chip" style="font-size: 0.78rem;">
+          Oil & Energy Markets
+        </a>
+        <a href="/research?q=What+are+the+latest+BRICS+trade+declarations%3F" class="lens-chip" style="font-size: 0.78rem;">
+          BRICS Trade Declarations
+        </a>
+      </div>
+    </form>
+  </div>
+
+  {# Grounded Answer Output Section #}
+  {% if rag_result %}
+  <div class="rag-answer-container" style="margin-top: 24px;">
+    
+    {# Executive Answer Card #}
+    <div class="rag-answer-card" style="background: var(--bg-card); padding: 24px; border-radius: 12px; border: 1px solid var(--accent-amber); margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border-dark); padding-bottom: 12px;">
+        <h3 style="color: var(--accent-amber); font-size: 1.15rem; font-weight: 700; margin: 0;">
+          Analytical Summary
+        </h3>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          {% if rag_result.date_range %}
+          <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: var(--accent-sage); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-dark);">
+            📅 {{ rag_result.date_range }}
+          </span>
+          {% endif %}
+          <span style="font-size: 0.75rem; background: rgba(212, 165, 89, 0.15); color: var(--accent-amber); padding: 4px 10px; border-radius: 6px; font-weight: 600;">
+            Citing {{ rag_result.citations | length }} Record{{ 's' if rag_result.citations | length != 1 else '' }}
+          </span>
+        </div>
+      </div>
+
+      {% if rag_result.insufficient_evidence %}
+      <div class="alert-box" style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #fca5a5; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 0.9rem;">
+        ⚠️ <strong>Notice:</strong> {{ rag_result.answer }}
+      </div>
+      {% else %}
+      <div class="rag-answer-body" style="line-height: 1.7; font-size: 1.02rem; color: var(--text-primary); white-space: pre-line;">
+        {{ rag_result.answer }}
+      </div>
+      {% endif %}
+
+      {# Key Themes Badges #}
+      {% if rag_result.key_themes %}
+      <div class="key-themes-row" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+        <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-sage); text-transform: uppercase; margin-right: 4px;">Key Themes:</span>
+        {% for theme in rag_result.key_themes %}
+        <span style="font-size: 0.78rem; background: rgba(76, 131, 117, 0.2); color: #88A996; border: 1px solid rgba(76, 131, 117, 0.4); padding: 2px 10px; border-radius: 12px; font-weight: 600;">
+          #{{ theme }}
+        </span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {# Citations / Evidence Cards Grid #}
+    {% if rag_result.citations %}
+    <div class="section-header" style="margin-bottom: 16px;">
+      <h3 class="section-title" style="font-size: 1rem;">CITED ARCHIVE EVIDENCE</h3>
+    </div>
+
+    <div class="articles-grid">
+      {% for cit in rag_result.citations %}
+      <article class="article-card" id="citation-{{ cit.citation_number }}">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+          <div class="article-meta">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-amber); background: rgba(212, 165, 89, 0.2); padding: 2px 8px; border-radius: 4px; margin-right: 6px;">
+              [{{ cit.citation_number }}]
+            </span>
+            <span class="article-source">{{ cit.source_name }}</span>
+            <span class="article-category">{{ cit.category }}</span>
+          </div>
+          {{ render_save_button(cit.article_id, saved_ids and cit.article_id in saved_ids) }}
+        </div>
+
+        <h4 class="article-headline" style="margin-top: 10px; font-size: 1.05rem;">
+          <a href="{{ cit.canonical_url }}" target="_blank" rel="noopener noreferrer">{{ cit.headline }}</a>
+        </h4>
+
+        <p class="article-date" style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 6px;">
+          Published {{ cit.publication_date }}
+        </p>
+
+        <div class="article-footer" style="margin-top: 12px;">
+          <a href="{{ cit.canonical_url }}" target="_blank" rel="noopener noreferrer" class="article-link">
+            Read Original Source Story &rarr;
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
