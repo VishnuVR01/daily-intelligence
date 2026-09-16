@@ -77,23 +77,32 @@
     {% endfor %}
   </div>
 
-  <div class="pagination">
-    {% set cat_param = "&category=" ~ active_category if active_category else "" %}
-    {% set date_param = "&date=" ~ active_date if active_date else "" %}
+  <div class="pagination-wrapper">
+    <div class="pagination">
+      {% set cat_param = "&category=" ~ active_category if active_category else "" %}
+      {% set date_param = "&date=" ~ active_date if active_date else "" %}
 
-    <a href="/archive?page={{ pagination.page - 1 }}{{ cat_param }}{{ date_param }}"
-       class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}">
-      &larr; Previous
-    </a>
+      <a href="/archive?page={{ pagination.page - 1 }}{{ cat_param }}{{ date_param }}"
+         class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}"
+         {% if not pagination.has_prev %}tabindex="-1" aria-disabled="true"{% endif %}>
+        &larr; Previous
+      </a>
 
-    <span class="pagination-info">
-      Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong> ({{ "{:,}".format(pagination.total) }} articles)
-    </span>
+      <div class="pagination-center">
+        <span class="pagination-info">
+          Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong>
+        </span>
+        <span class="pagination-count">
+          {{ "{:,}".format(pagination.total) }} articles
+        </span>
+      </div>
 
-    <a href="/archive?page={{ pagination.page + 1 }}{{ cat_param }}{{ date_param }}"
-       class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}">
-      Next &rarr;
-    </a>
+      <a href="/archive?page={{ pagination.page + 1 }}{{ cat_param }}{{ date_param }}"
+         class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}"
+         {% if not pagination.has_next %}tabindex="-1" aria-disabled="true"{% endif %}>
+        Next &rarr;
+      </a>
+    </div>
   </div>
 
   {% else %}

@@ -1,0 +1,452 @@
+[
+  {
+    "source_id": 1,
+    "name": "Federal Reserve",
+    "feed_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2026-09-11T14:00:00+00:00"
+  },
+  {
+    "source_id": 2,
+    "name": "Google Blog",
+    "feed_url": "https://blog.google/rss/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2026-09-14T19:00:00+00:00"
+  },
+  {
+    "source_id": 3,
+    "name": "OpenAI",
+    "feed_url": "https://openai.com/news/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 1193,
+    "latest_item_published": "2026-09-14T12:00:00+00:00"
+  },
+  {
+    "source_id": 4,
+    "name": "United Nations",
+    "feed_url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 30,
+    "latest_item_published": "2026-09-14T12:00:00+00:00"
+  },
+  {
+    "source_id": 5,
+    "name": "Google Search Central Updates",
+    "feed_url": "https://developers.google.com/search/updates/search_docs_updates.rss",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 36,
+    "latest_item_published": "2026-09-08T00:00:00+00:00"
+  },
+  {
+    "source_id": 7,
+    "name": "Bank of England",
+    "feed_url": "https://www.bankofengland.co.uk/rss/news",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-10T09:00:00+00:00"
+  },
+  {
+    "source_id": 8,
+    "name": "BBC World",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 33,
+    "latest_item_published": "2026-09-14T21:29:12+00:00"
+  },
+  {
+    "source_id": 10,
+    "name": "World Trade Organization (WTO)",
+    "feed_url": "https://www.wto.org/library/rss/latest_news_e.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-14T00:00:00+00:00"
+  },
+  {
+    "source_id": 13,
+    "name": "South Africa Department of Science, Technology and Innovation (DSTI)",
+    "feed_url": "https://www.dsti.gov.za/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 100,
+    "latest_item_published": "2026-09-11T00:00:00+00:00"
+  },
+  {
+    "source_id": 15,
+    "name": "US Energy Information Administration (EIA)",
+    "feed_url": "https://www.eia.gov/rss/todayinenergy.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 15,
+    "latest_item_published": "2026-09-10T14:00:00+00:00"
+  },
+  {
+    "source_id": 24,
+    "name": "McKinsey & Company",
+    "feed_url": "https://www.mckinsey.com/rss",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T00:00:00+00:00"
+  },
+  {
+    "source_id": 25,
+    "name": "MIT News",
+    "feed_url": "https://news.mit.edu/rss/feed",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T20:30:00+00:00"
+  },
+  {
+    "source_id": 26,
+    "name": "GitHub Blog",
+    "feed_url": "https://github.blog/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-11T18:26:10+00:00"
+  },
+  {
+    "source_id": 27,
+    "name": "Hugging Face",
+    "feed_url": "https://huggingface.co/blog/feed.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 862,
+    "latest_item_published": "2026-09-10T00:00:00+00:00"
+  },
+  {
+    "source_id": 29,
+    "name": "Harvard Gazette",
+    "feed_url": "https://news.harvard.edu/gazette/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T20:27:45+00:00"
+  },
+  {
+    "source_id": 43,
+    "name": "Al Jazeera English",
+    "feed_url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 25,
+    "latest_item_published": "2026-09-14T21:44:03+00:00"
+  },
+  {
+    "source_id": 44,
+    "name": "European Central Bank (ECB)",
+    "feed_url": "https://www.ecb.europa.eu/rss/press.html",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 15,
+    "latest_item_published": "2026-09-14T15:15:00+00:00"
+  },
+  {
+    "source_id": 45,
+    "name": "France 24 English",
+    "feed_url": "https://www.france24.com/en/rss",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 23,
+    "latest_item_published": "2026-09-14T22:57:26+00:00"
+  },
+  {
+    "source_id": 46,
+    "name": "Kubernetes",
+    "feed_url": "https://kubernetes.io/feed.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T18:30:00+00:00"
+  },
+  {
+    "source_id": 47,
+    "name": "Linux Foundation",
+    "feed_url": "https://www.linuxfoundation.org/blog/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-14T16:00:00+00:00"
+  },
+  {
+    "source_id": 48,
+    "name": "Mozilla",
+    "feed_url": "https://blog.mozilla.org/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2026-09-02T13:00:00+00:00"
+  },
+  {
+    "source_id": 49,
+    "name": "Nature Materials",
+    "feed_url": "https://www.nature.com/nmat.rss",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 8,
+    "latest_item_published": "2026-09-14T00:00:00+00:00"
+  },
+  {
+    "source_id": 50,
+    "name": "Nikkei Asia",
+    "feed_url": "https://asia.nikkei.com/rss/feed/nar",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": null
+  },
+  {
+    "source_id": 51,
+    "name": "PyTorch Blog",
+    "feed_url": "https://pytorch.org/blog/feed.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-11T17:45:57+00:00"
+  },
+  {
+    "source_id": 52,
+    "name": "ScienceDaily Top News",
+    "feed_url": "https://www.sciencedaily.com/rss/top.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 60,
+    "latest_item_published": "2026-09-14T14:47:07+00:00"
+  },
+  {
+    "source_id": 53,
+    "name": "University of Cambridge",
+    "feed_url": "https://www.cam.ac.uk/news/feed",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 15,
+    "latest_item_published": "2026-09-14T09:28:12+00:00"
+  },
+  {
+    "source_id": 54,
+    "name": "Android Developers Blog",
+    "feed_url": "https://android-developers.googleblog.com/feeds/posts/default",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 25,
+    "latest_item_published": "2026-09-09T16:00:00+00:00"
+  },
+  {
+    "source_id": 55,
+    "name": "Construction Dive",
+    "feed_url": "https://www.constructiondive.com/feeds/news/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-14T21:24:00+00:00"
+  },
+  {
+    "source_id": 56,
+    "name": "FreightWaves",
+    "feed_url": "https://www.freightwaves.com/feed",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T22:18:32+00:00"
+  },
+  {
+    "source_id": 57,
+    "name": "gCaptain",
+    "feed_url": "https://gcaptain.com/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 12,
+    "latest_item_published": "2026-09-14T21:14:40+00:00"
+  },
+  {
+    "source_id": 58,
+    "name": "Mining.com",
+    "feed_url": "https://www.mining.com/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 36,
+    "latest_item_published": "2026-09-14T16:38:23+00:00"
+  },
+  {
+    "source_id": 59,
+    "name": "Siemens Global News",
+    "feed_url": "https://press.siemens.com/global/en/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-11T07:39:22+00:00"
+  },
+  {
+    "source_id": 60,
+    "name": "TASS World",
+    "feed_url": "https://tass.com/rss/v2.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 100,
+    "latest_item_published": "2026-09-14T23:14:44+00:00"
+  },
+  {
+    "source_id": 61,
+    "name": "The Hacker News",
+    "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T18:02:13+00:00"
+  },
+  {
+    "source_id": 62,
+    "name": "The Hindu International",
+    "feed_url": "https://www.thehindu.com/news/international/feeder/default.rss",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 60,
+    "latest_item_published": "2026-09-14T23:05:06+00:00"
+  },
+  {
+    "source_id": 63,
+    "name": "Windows Blog",
+    "feed_url": "https://blogs.windows.com/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-09-14T17:00:49+00:00"
+  },
+  {
+    "source_id": 64,
+    "name": "Yle News",
+    "feed_url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2026-09-14T22:10:51+00:00"
+  },
+  {
+    "source_id": 65,
+    "name": "Reserve Bank of India (RBI)",
+    "feed_url": "https://rbi.org.in/pressreleases_rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": null
+  },
+  {
+    "source_id": 66,
+    "name": "NY Fed Liberty Street Economics",
+    "feed_url": "https://libertystreeteconomics.newyorkfed.org/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 100,
+    "latest_item_published": "2026-09-03T11:00:00+00:00"
+  },
+  {
+    "source_id": 67,
+    "name": "Wall Street Journal US Business",
+    "feed_url": "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2025-01-24T20:37:00+00:00"
+  },
+  {
+    "source_id": 68,
+    "name": "Financial Times Markets",
+    "feed_url": "https://www.ft.com/markets?format=rss",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 25,
+    "latest_item_published": "2026-09-14T20:47:11+00:00"
+  },
+  {
+    "source_id": 69,
+    "name": "CNBC Business News",
+    "feed_url": "https://www.cnbc.com/id/10001147/device/rss/rss.html",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 30,
+    "latest_item_published": "2026-09-14T20:34:23+00:00"
+  },
+  {
+    "source_id": 70,
+    "name": "Google DeepMind",
+    "feed_url": "https://deepmind.google/blog/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 100,
+    "latest_item_published": "2026-09-08T14:00:15+00:00"
+  },
+  {
+    "source_id": 71,
+    "name": "NVIDIA Newsroom",
+    "feed_url": "https://nvidianews.nvidia.com/rss.xml",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2026-09-14T15:00:52+00:00"
+  },
+  {
+    "source_id": 72,
+    "name": "AWS Machine Learning Blog",
+    "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 20,
+    "latest_item_published": "2026-09-14T21:22:45+00:00"
+  },
+  {
+    "source_id": 73,
+    "name": "Microsoft Research Blog",
+    "feed_url": "https://www.microsoft.com/en-us/research/feed/",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 10,
+    "latest_item_published": "2026-08-31T16:00:00+00:00"
+  },
+  {
+    "source_id": 74,
+    "name": "OilPrice.com",
+    "feed_url": "https://oilprice.com/rss/main",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 15,
+    "latest_item_published": "2026-09-14T23:00:00+00:00"
+  },
+  {
+    "source_id": 75,
+    "name": "Rigzone Energy",
+    "feed_url": "https://www.rigzone.com/news/rss/rigzone_latest.aspx",
+    "status": "ZERO_ENTRIES",
+    "error_message": null,
+    "items_fetched": 0,
+    "latest_item_published": null
+  },
+  {
+    "source_id": 76,
+    "name": "AgFunderNews",
+    "feed_url": "https://agfundernews.com/feed",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 50,
+    "latest_item_published": "2026-09-14T15:27:50+00:00"
+  },
+  {
+    "source_id": 77,
+    "name": "World Grain",
+    "feed_url": "https://www.world-grain.com/rss/articles",
+    "status": "REACHABLE_OK",
+    "error_message": null,
+    "items_fetched": 30,
+    "latest_item_published": "2026-09-14T13:52:11+00:00"
+  }
+]

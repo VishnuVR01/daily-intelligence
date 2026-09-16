@@ -1,0 +1,524 @@
+{
+  "generated_at": "2026-09-15T13:19:52.906792+00:00",
+  "summary": {
+    "total_configured": 51,
+    "active": 51,
+    "healthy": 46,
+    "stale": 5,
+    "empty": 0,
+    "failed": 0,
+    "disabled": 0
+  },
+  "sources": [
+    {
+      "source_id": 76,
+      "name": "AgFunderNews",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 51,
+      "newest_article": "2026-09-14T16:27:50+01:00",
+      "last_collection": "2026-09-15T00:26:15.226507+01:00",
+      "error": null
+    },
+    {
+      "source_id": 43,
+      "name": "Al Jazeera English",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 107,
+      "newest_article": "2026-09-15T14:07:41+01:00",
+      "last_collection": "2026-09-15T14:14:20.750886+01:00",
+      "error": null
+    },
+    {
+      "source_id": 54,
+      "name": "Android Developers Blog",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 25,
+      "newest_article": "2026-09-09T17:00:00+01:00",
+      "last_collection": "2026-09-13T01:25:03.994443+01:00",
+      "error": null
+    },
+    {
+      "source_id": 72,
+      "name": "AWS Machine Learning Blog",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 25,
+      "newest_article": "2026-09-14T22:22:45+01:00",
+      "last_collection": "2026-09-15T00:26:17.028019+01:00",
+      "error": null
+    },
+    {
+      "source_id": 7,
+      "name": "Bank of England",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 52,
+      "newest_article": "2026-09-15T10:21:31+01:00",
+      "last_collection": "2026-09-15T14:12:37.676220+01:00",
+      "error": null
+    },
+    {
+      "source_id": 8,
+      "name": "BBC World",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 74,
+      "newest_article": "2026-09-15T14:05:36+01:00",
+      "last_collection": "2026-09-15T14:19:25.307570+01:00",
+      "error": null
+    },
+    {
+      "source_id": 69,
+      "name": "CNBC Business News",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 37,
+      "newest_article": "2026-09-15T13:28:15+01:00",
+      "last_collection": "2026-09-15T14:12:38.343677+01:00",
+      "error": null
+    },
+    {
+      "source_id": 55,
+      "name": "Construction Dive",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 18,
+      "newest_article": "2026-09-15T13:52:00+01:00",
+      "last_collection": "2026-09-15T14:12:38.567061+01:00",
+      "error": null
+    },
+    {
+      "source_id": 78,
+      "name": "Dedupe Test Source",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 1,
+      "newest_article": "2026-09-15T14:19:12.043322+01:00",
+      "last_collection": "2026-09-15T14:19:12.043322+01:00",
+      "error": null
+    },
+    {
+      "source_id": 44,
+      "name": "European Central Bank (ECB)",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 18,
+      "newest_article": "2026-09-14T16:15:00+01:00",
+      "last_collection": "2026-09-15T00:26:17.923924+01:00",
+      "error": null
+    },
+    {
+      "source_id": 1,
+      "name": "Federal Reserve",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 20,
+      "newest_article": "2026-09-11T14:00:00+01:00",
+      "last_collection": "2026-09-12T19:59:48.766261+01:00",
+      "error": null
+    },
+    {
+      "source_id": 68,
+      "name": "Financial Times Markets",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 60,
+      "newest_article": "2026-09-15T13:26:30+01:00",
+      "last_collection": "2026-09-15T14:12:39.214770+01:00",
+      "error": null
+    },
+    {
+      "source_id": 45,
+      "name": "France 24 English",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 94,
+      "newest_article": "2026-09-15T09:01:35+01:00",
+      "last_collection": "2026-09-15T14:12:39.398514+01:00",
+      "error": null
+    },
+    {
+      "source_id": 56,
+      "name": "FreightWaves",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 74,
+      "newest_article": "2026-09-15T13:30:01+01:00",
+      "last_collection": "2026-09-15T14:12:39.925601+01:00",
+      "error": null
+    },
+    {
+      "source_id": 57,
+      "name": "gCaptain",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 30,
+      "newest_article": "2026-09-15T11:55:59+01:00",
+      "last_collection": "2026-09-15T14:12:40.095082+01:00",
+      "error": null
+    },
+    {
+      "source_id": 26,
+      "name": "GitHub Blog",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 10,
+      "newest_article": "2026-09-11T19:26:10+01:00",
+      "last_collection": "2026-09-13T00:17:46.251762+01:00",
+      "error": null
+    },
+    {
+      "source_id": 2,
+      "name": "Google Blog",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 24,
+      "newest_article": "2026-09-15T14:00:00+01:00",
+      "last_collection": "2026-09-15T14:12:40.863202+01:00",
+      "error": null
+    },
+    {
+      "source_id": 70,
+      "name": "Google DeepMind",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 100,
+      "newest_article": "2026-09-08T15:00:15+01:00",
+      "last_collection": "2026-09-13T21:14:06.067731+01:00",
+      "error": null
+    },
+    {
+      "source_id": 5,
+      "name": "Google Search Central Updates",
+      "status": "STALE",
+      "reachable": true,
+      "items_discovered": 1,
+      "newest_article": "2026-09-08T00:00:00+01:00",
+      "last_collection": "2026-09-12T20:41:08.043290+01:00",
+      "error": null
+    },
+    {
+      "source_id": 29,
+      "name": "Harvard Gazette",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 52,
+      "newest_article": "2026-09-14T21:27:45+01:00",
+      "last_collection": "2026-09-15T00:26:20.872890+01:00",
+      "error": null
+    },
+    {
+      "source_id": 27,
+      "name": "Hugging Face",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 862,
+      "newest_article": "2026-09-10T01:00:00+01:00",
+      "last_collection": "2026-09-13T00:17:47.615645+01:00",
+      "error": null
+    },
+    {
+      "source_id": 46,
+      "name": "Kubernetes",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 52,
+      "newest_article": "2026-09-14T19:30:00+01:00",
+      "last_collection": "2026-09-15T00:26:22.487222+01:00",
+      "error": null
+    },
+    {
+      "source_id": 47,
+      "name": "Linux Foundation",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 11,
+      "newest_article": "2026-09-14T17:00:00+01:00",
+      "last_collection": "2026-09-15T00:26:22.638872+01:00",
+      "error": null
+    },
+    {
+      "source_id": 24,
+      "name": "McKinsey & Company",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 52,
+      "newest_article": "2026-09-14T01:00:00+01:00",
+      "last_collection": "2026-09-15T00:26:23.218078+01:00",
+      "error": null
+    },
+    {
+      "source_id": 73,
+      "name": "Microsoft Research Blog",
+      "status": "STALE",
+      "reachable": true,
+      "items_discovered": 10,
+      "newest_article": "2026-08-31T17:00:00+01:00",
+      "last_collection": "2026-09-13T21:14:16.923183+01:00",
+      "error": null
+    },
+    {
+      "source_id": 58,
+      "name": "Mining.com",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 46,
+      "newest_article": "2026-09-15T11:51:00+01:00",
+      "last_collection": "2026-09-15T14:12:49.009053+01:00",
+      "error": null
+    },
+    {
+      "source_id": 25,
+      "name": "MIT News",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 53,
+      "newest_article": "2026-09-14T21:30:00+01:00",
+      "last_collection": "2026-09-15T00:26:26.768179+01:00",
+      "error": null
+    },
+    {
+      "source_id": 48,
+      "name": "Mozilla",
+      "status": "STALE",
+      "reachable": true,
+      "items_discovered": 20,
+      "newest_article": "2026-09-02T14:00:00+01:00",
+      "last_collection": "2026-09-13T00:51:08.145546+01:00",
+      "error": null
+    },
+    {
+      "source_id": 49,
+      "name": "Nature Materials",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 12,
+      "newest_article": "2026-09-14T01:00:00+01:00",
+      "last_collection": "2026-09-15T00:26:27.116485+01:00",
+      "error": null
+    },
+    {
+      "source_id": 50,
+      "name": "Nikkei Asia",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 99,
+      "newest_article": "2026-09-15T14:19:33.188078+01:00",
+      "last_collection": "2026-09-15T14:19:33.188078+01:00",
+      "error": null
+    },
+    {
+      "source_id": 71,
+      "name": "NVIDIA Newsroom",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 23,
+      "newest_article": "2026-09-15T10:00:42+01:00",
+      "last_collection": "2026-09-15T14:12:51.235180+01:00",
+      "error": null
+    },
+    {
+      "source_id": 66,
+      "name": "NY Fed Liberty Street Economics",
+      "status": "STALE",
+      "reachable": true,
+      "items_discovered": 100,
+      "newest_article": "2026-09-03T12:00:00+01:00",
+      "last_collection": "2026-09-13T21:14:23.075507+01:00",
+      "error": null
+    },
+    {
+      "source_id": 74,
+      "name": "OilPrice.com",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 38,
+      "newest_article": "2026-09-15T13:30:00+01:00",
+      "last_collection": "2026-09-15T14:12:53.085724+01:00",
+      "error": null
+    },
+    {
+      "source_id": 3,
+      "name": "OpenAI",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 1193,
+      "newest_article": "2026-09-14T13:00:00+01:00",
+      "last_collection": "2026-09-15T00:26:30.084113+01:00",
+      "error": null
+    },
+    {
+      "source_id": 51,
+      "name": "PyTorch Blog",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 10,
+      "newest_article": "2026-09-11T18:45:57+01:00",
+      "last_collection": "2026-09-13T00:51:10.080987+01:00",
+      "error": null
+    },
+    {
+      "source_id": 65,
+      "name": "Reserve Bank of India (RBI)",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 19,
+      "newest_article": "2026-09-15T14:12:55.972635+01:00",
+      "last_collection": "2026-09-15T14:12:55.972635+01:00",
+      "error": null
+    },
+    {
+      "source_id": 75,
+      "name": "Rigzone Energy",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 20,
+      "newest_article": "2026-09-15T13:16:36+01:00",
+      "last_collection": "2026-09-15T14:19:38.434166+01:00",
+      "error": null
+    },
+    {
+      "source_id": 52,
+      "name": "ScienceDaily Top News",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 91,
+      "newest_article": "2026-09-15T13:33:50+01:00",
+      "last_collection": "2026-09-15T14:12:57.277006+01:00",
+      "error": null
+    },
+    {
+      "source_id": 59,
+      "name": "Siemens Global News",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 13,
+      "newest_article": "2026-09-14T15:10:27+01:00",
+      "last_collection": "2026-09-15T14:12:57.875917+01:00",
+      "error": null
+    },
+    {
+      "source_id": 13,
+      "name": "South Africa Department of Science, Technology and Innovation (DSTI)",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 101,
+      "newest_article": "2026-09-15T01:00:00+01:00",
+      "last_collection": "2026-09-15T14:12:59.908752+01:00",
+      "error": null
+    },
+    {
+      "source_id": 60,
+      "name": "TASS World",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 318,
+      "newest_article": "2026-09-15T14:16:31+01:00",
+      "last_collection": "2026-09-15T14:19:41.292106+01:00",
+      "error": null
+    },
+    {
+      "source_id": 61,
+      "name": "The Hacker News",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 65,
+      "newest_article": "2026-09-15T12:52:28+01:00",
+      "last_collection": "2026-09-15T14:13:01.048749+01:00",
+      "error": null
+    },
+    {
+      "source_id": 62,
+      "name": "The Hindu International",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 167,
+      "newest_article": "2026-09-15T13:37:00+01:00",
+      "last_collection": "2026-09-15T14:13:01.385213+01:00",
+      "error": null
+    },
+    {
+      "source_id": 4,
+      "name": "United Nations",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 42,
+      "newest_article": "2026-09-15T13:00:00+01:00",
+      "last_collection": "2026-09-15T14:13:01.988109+01:00",
+      "error": null
+    },
+    {
+      "source_id": 53,
+      "name": "University of Cambridge",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 17,
+      "newest_article": "2026-09-15T10:00:00+01:00",
+      "last_collection": "2026-09-15T14:13:02.299059+01:00",
+      "error": null
+    },
+    {
+      "source_id": 15,
+      "name": "US Energy Information Administration (EIA)",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 16,
+      "newest_article": "2026-09-15T15:00:00+01:00",
+      "last_collection": "2026-09-15T14:13:11.634178+01:00",
+      "error": null
+    },
+    {
+      "source_id": 67,
+      "name": "Wall Street Journal US Business",
+      "status": "STALE",
+      "reachable": true,
+      "items_discovered": 20,
+      "newest_article": "2025-01-24T20:37:00+00:00",
+      "last_collection": "2026-09-13T21:14:45.318623+01:00",
+      "error": null
+    },
+    {
+      "source_id": 63,
+      "name": "Windows Blog",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 12,
+      "newest_article": "2026-09-14T18:00:49+01:00",
+      "last_collection": "2026-09-15T00:26:45.934854+01:00",
+      "error": null
+    },
+    {
+      "source_id": 77,
+      "name": "World Grain",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 36,
+      "newest_article": "2026-09-15T12:31:53+01:00",
+      "last_collection": "2026-09-15T14:13:12.726406+01:00",
+      "error": null
+    },
+    {
+      "source_id": 10,
+      "name": "World Trade Organization (WTO)",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 14,
+      "newest_article": "2026-09-15T01:00:00+01:00",
+      "last_collection": "2026-09-15T14:13:12.920870+01:00",
+      "error": null
+    },
+    {
+      "source_id": 64,
+      "name": "Yle News",
+      "status": "HEALTHY",
+      "reachable": true,
+      "items_discovered": 80,
+      "newest_article": "2026-09-15T14:09:42+01:00",
+      "last_collection": "2026-09-15T14:13:13.259795+01:00",
+      "error": null
+    }
+  ]
+}

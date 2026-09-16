@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-15T00:26:46Z",
+  "audit_summary": {
+    "total_active_sources": 50,
+    "reachable_sources": 49,
+    "failed_sources": 0,
+    "stale_sources": 1,
+    "articles_discovered": 1845,
+    "new_articles_inserted": 387,
+    "duplicates_skipped": 1458,
+    "parse_failures": 0,
+    "ai_processed": 5,
+    "ai_relevant": 4,
+    "ai_out_of_scope": 1,
+    "ai_failed_pending": 382,
+    "newest_article_id": 4206,
+    "newest_collected_timestamp": "2026-09-15T00:26:46.676307+01:00"
+  },
+  "sources_requiring_future_fixes": [
+    {
+      "source_id": 75,
+      "name": "Rigzone Energy",
+      "feed_url": "https://www.rigzone.com/news/rss/rigzone_latest.aspx",
+      "issue": "Returned 0 feed items during live fetch. Feed URL should be updated or inspected."
+    }
+  ]
+}

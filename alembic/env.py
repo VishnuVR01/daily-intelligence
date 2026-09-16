@@ -14,7 +14,8 @@ import app.models  # noqa: F401
 config = context.config
 
 # Dynamically set database_url from application settings (.env / config)
-url = get_settings().database_url.replace("%", "%%")
+target_url = get_settings().effective_database_url or get_settings().database_url
+url = target_url.replace("%", "%%")
 config.set_main_option("sqlalchemy.url", url)
 
 

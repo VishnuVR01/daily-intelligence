@@ -20,7 +20,41 @@
     <h2>
       {% if active_category %}{{ active_category }} Latest{% else %}Latest Updates Digest{% endif %}
     </h2>
-    <div style="display: flex; align-items: center; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      {% if freshness_sla %}
+      <div style="font-size: 11px; padding: 4px 10px; border-radius: 4px; font-weight: 500; font-family: var(--font-body); display: inline-flex; align-items: center; gap: 6px;
+        {% if freshness_sla.overall_status in ['LIVE', 'FRESH'] %}
+          background-color: rgba(34, 197, 94, 0.1); color: #15803d; border: 1px solid rgba(34, 197, 94, 0.25);
+        {% elif freshness_sla.overall_status == 'STALE' %}
+          background-color: rgba(234, 179, 8, 0.1); color: #a16207; border: 1px solid rgba(234, 179, 8, 0.25);
+        {% else %}
+          background-color: rgba(239, 68, 68, 0.1); color: #b91c1c; border: 1px solid rgba(239, 68, 68, 0.25);
+        {% endif %}
+      ">
+        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+          {% if freshness_sla.overall_status in ['LIVE', 'FRESH'] %}background-color: #22c55e;
+          {% elif freshness_sla.overall_status == 'STALE' %}background-color: #eab308;
+          {% else %}background-color: #ef4444;{% endif %}"></span>
+        <strong style="text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px;">
+          {% if freshness_sla.overall_status in ['LIVE', 'FRESH'] %}LIVE
+          {% elif freshness_sla.overall_status == 'STALE' %}STALE
+          {% else %}ERROR{% endif %}
+        </strong>
+        •
+        {% if freshness_sla.minutes_since_ingestion is not none %}
+          Ingestion: {{ freshness_sla.minutes_since_ingestion | int }}m ago
+        {% else %}
+          Ingestion: N/A
+        {% endif %}
+        •
+        {% if freshness_sla.minutes_since_ai_processing is not none %}
+          AI: {{ freshness_sla.minutes_since_ai_processing | int }}m ago
+        {% else %}
+          AI: pending
+        {% endif %}
+      </div>
+      {% endif %}
+
       <a href="/latest?mode=balanced{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode != 'chronological' %}active{% endif %}" style="font-size: 11px;">
         ⚖️ Editorial Balanced
       </a>

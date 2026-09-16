@@ -195,7 +195,7 @@ def test_visible_article_lists_exclude_future_dated_rows(db_session):
     db_session.add_all([past_art, future_art])
     db_session.commit()
 
-    recent = get_recent_articles(db_session)
+    recent = get_recent_articles(db_session, mode="chronological")
     titles = [a.title for a in recent]
     assert "Past Article" in titles
     assert "Future Article" not in titles

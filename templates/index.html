@@ -19,6 +19,19 @@
   </div>
 </div>
 
+{# TODAY'S EDITION HERO CALLOUT #}
+<div class="todays-edition-hero-card card">
+  <div class="edition-hero-left">
+    <span class="edition-hero-badge">TODAY'S EDITION</span>
+    <h2 class="edition-hero-title">Daily Intelligence Newspaper Briefing</h2>
+    <p class="edition-hero-desc">Curated finite daily briefing synthesized from primary source intelligence and bounded evidence packs.</p>
+  </div>
+  <div class="edition-hero-right">
+    <a href="/edition" class="btn btn-primary btn-large">Read Today's Edition &rarr;</a>
+    <a href="/editions" class="edition-archive-sublink">View Editions Archive</a>
+  </div>
+</div>
+
 <div class="dashboard-grid">
   {# Main Feed Column #}
   <div class="main-feed">
@@ -178,30 +191,85 @@
       </div>
       <div class="stat-rows">
         <div class="stat-row">
-          <span class="stat-row-label">Articles Analyzed</span>
-          <span class="stat-row-val">{{ ai_context_stats.total_processed }}</span>
+          <span class="stat-row-label">AI Processed</span>
+          <span class="stat-row-val">{{ ai_context_stats.ai_processed }}</span>
         </div>
         <div class="stat-row">
           <span class="stat-row-label">Curated Relevant</span>
           <span class="stat-row-val highlight">{{ ai_context_stats.relevant_today }}</span>
         </div>
         <div class="stat-row">
-          <span class="stat-row-label">Out of Scope Filtered</span>
+          <span class="stat-row-label">Out of Scope</span>
           <span class="stat-row-val">{{ ai_context_stats.out_of_scope_today }}</span>
         </div>
-        {% if ai_context_stats.unprocessed_or_failed and ai_context_stats.unprocessed_or_failed > 0 %}
         <div class="stat-row">
-          <span class="stat-row-label">Failed / Pending</span>
-          <span class="stat-row-val">{{ ai_context_stats.unprocessed_or_failed }}</span>
+          <span class="stat-row-label">Awaiting AI Processing</span>
+          <span class="stat-row-val">{{ ai_context_stats.awaiting_ai_processing }}</span>
         </div>
-        {% endif %}
-        <div class="stat-row" title="Technical Success = (Relevant + Out of Scope Filtered) / Total Analyzed">
-          <span class="stat-row-label">Technical Success</span>
-          <span class="stat-row-val highlight">{{ ai_context_stats.success_rate }}%</span>
+        <div class="stat-row">
+          <span class="stat-row-label">AI Processing Failed</span>
+          <span class="stat-row-val">{{ ai_context_stats.ai_processing_failed }}</span>
+        </div>
+        <div class="stat-row" title="Processing Coverage = (AI Processed / Eligible Articles) * 100">
+          <span class="stat-row-label">Processing Coverage</span>
+          <span class="stat-row-val highlight">{{ ai_context_stats.processing_coverage }}%</span>
         </div>
       </div>
     </div>
     {% endif %}
+
+    {# Global Markets Overview Widget #}
+    <div class="widget-panel global-markets-panel">
+      <div class="widget-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          Global Markets
+        </div>
+        {% if markets_is_stale %}
+        <span class="stale-cache-badge" style="font-size: 10px; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 1px 6px; border-radius: 4px;" title="Market data provider unavailable; displaying cached data">STALE CACHE</span>
+        {% endif %}
+      </div>
+
+      {% if global_markets %}
+      <div class="markets-list">
+        {% for snapshot in global_markets %}
+        {% set sess = get_market_session_status(snapshot.region) if get_market_session_status is defined else None %}
+        <div class="market-row">
+          <div class="market-info">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="market-region">{{ snapshot.region }}</span>
+              {% if sess %}
+              <span class="session-dot-badge {{ sess.dot_class }}" style="font-size: 9px; font-weight: 700; text-transform: uppercase;" title="{{ sess.disclaimer }}">● {{ sess.display_label }}</span>
+              {% endif %}
+            </div>
+            <span class="market-index">{{ snapshot.display_name }} &bull; {{ "{:,.2f}".format(snapshot.latest_close) }}{% if snapshot.currency %} <small style="font-size: 9.5px; color: var(--text-muted);">{{ snapshot.currency }}</small>{% endif %}</span>
+          </div>
+          {% if snapshot.direction == "UP" %}
+          <div class="market-change up" title="Latest: {{ snapshot.latest_close }} | Prev: {{ snapshot.previous_close }}">
+            <span class="market-dir">▲</span> +{{ "%.2f"|format(snapshot.change_percent) }}% <span class="market-state">UP</span>
+          </div>
+          {% elif snapshot.direction == "DOWN" %}
+          <div class="market-change down" title="Latest: {{ snapshot.latest_close }} | Prev: {{ snapshot.previous_close }}">
+            <span class="market-dir">▼</span> {{ "%.2f"|format(snapshot.change_percent) }}% <span class="market-state">DOWN</span>
+          </div>
+          {% else %}
+          <div class="market-change flat" title="Latest: {{ snapshot.latest_close }} | Prev: {{ snapshot.previous_close }}">
+            <span class="market-dir">—</span> {{ "%.2f"|format(snapshot.change_percent) }}% <span class="market-state">FLAT</span>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="markets-footer" style="margin-top: 10px; font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center;">
+        <span>Daily Close Overview &bull; Source: {{ global_markets[0].source if global_markets else "Twelve Data" }}</span>
+        <a href="/markets" style="font-size: 11px; font-weight: 600; color: var(--accent-primary); text-decoration: none;">View Markets &amp; Macro &rarr;</a>
+      </div>
+      {% else %}
+      <div style="padding: 16px 12px; text-align: center; color: var(--text-muted); font-size: 12.5px;">
+        Market data temporarily unavailable.
+      </div>
+      {% endif %}
+    </div>
 
     {# Key Themes Today Widget #}
     {% if ai_context_stats and ai_context_stats.top_topics %}

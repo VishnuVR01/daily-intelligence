@@ -1,0 +1,717 @@
+{
+  "benchmark_version": "1.0-validated",
+  "validated_against_archive_date": "2026-09-14",
+  "archive_article_count": 3797,
+  "relevant_article_count": 41,
+  "notes": "Gold labels manually and semantically validated against current local archive. Distinguishes core gold (primary evidence) and optional gold (valid supporting evidence).",
+  "questions": [
+    {
+      "id": "RAG-001",
+      "category": "temporal_freshness",
+      "question": "What happened in AI today?",
+      "expected_date_scope": "today",
+      "expected_topics": [
+        "AI"
+      ],
+      "expected_entities": [],
+      "expected_min_evidence": 0,
+      "expected_article_ids": [],
+      "must_cite_sources": false,
+      "should_be_answerable": false,
+      "notes": "No AI articles published or collected on today's calendar date in local DB.",
+      "gold_core_article_ids": [],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-002",
+      "category": "temporal_freshness",
+      "question": "What important developments happened yesterday?",
+      "expected_date_scope": "yesterday",
+      "expected_topics": [
+        "Geopolitics"
+      ],
+      "expected_entities": [
+        "US",
+        "Russia",
+        "Ukraine",
+        "TASS"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        2926,
+        2927,
+        3144
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Articles from 2026-09-13 covering diplomatic visits to Moscow and Kiev.",
+      "gold_core_article_ids": [
+        2926,
+        2927,
+        3144
+      ],
+      "gold_optional_article_ids": [
+        2928
+      ]
+    },
+    {
+      "id": "RAG-003",
+      "category": "temporal_freshness",
+      "question": "What supply-chain developments happened this week?",
+      "expected_date_scope": "this_week",
+      "expected_topics": [
+        "Supply Chain & Trade",
+        "Industry & Operations"
+      ],
+      "expected_entities": [
+        "Bunge",
+        "CN",
+        "Neste",
+        "Bayer"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3752,
+        3754,
+        3763
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Covers recent grain transport, canola partnership, and oilseed plant attack.",
+      "gold_core_article_ids": [
+        3752,
+        3754,
+        3763
+      ],
+      "gold_optional_article_ids": [
+        3758,
+        3772
+      ]
+    },
+    {
+      "id": "RAG-004",
+      "category": "historical_synthesis",
+      "question": "What major AI developments are present in the archive?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "AI & Technology",
+        "AI"
+      ],
+      "expected_entities": [
+        "Anthropic",
+        "WeRide"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3153,
+        3159,
+        3751,
+        3771
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Includes Anthropic CEO comments, AI safety debate, WeRide robotaxis, and supply chain AI.",
+      "gold_core_article_ids": [
+        3153,
+        3159,
+        3751,
+        3771
+      ],
+      "gold_optional_article_ids": [
+        3766
+      ]
+    },
+    {
+      "id": "RAG-005",
+      "category": "historical_synthesis",
+      "question": "What trends are visible in grain and agricultural supply chains?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Supply Chain & Trade",
+        "Industry & Operations"
+      ],
+      "expected_entities": [
+        "World Grain",
+        "CN",
+        "CPKC",
+        "FAO"
+      ],
+      "expected_min_evidence": 4,
+      "expected_article_ids": [
+        3763,
+        3770,
+        3772,
+        3775,
+        3778,
+        3780
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Synthesizes US soybean exports, FAO price index, rail grain records, and India storage.",
+      "gold_core_article_ids": [
+        3763,
+        3770,
+        3772,
+        3775,
+        3778,
+        3780
+      ],
+      "gold_optional_article_ids": [
+        3768
+      ]
+    },
+    {
+      "id": "RAG-006",
+      "category": "historical_synthesis",
+      "question": "Summarize the geopolitical diplomatic developments involving Ukraine and Russia in the archive.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Geopolitics"
+      ],
+      "expected_entities": [
+        "US",
+        "Russia",
+        "Ukraine",
+        "Moscow",
+        "Kiev"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        2926,
+        2927,
+        2928,
+        3752
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Covers diplomatic visits to Moscow/Kiev by US envoy and Bunge plant attack.",
+      "gold_core_article_ids": [
+        2926,
+        2927,
+        2928,
+        3752
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-007",
+      "category": "historical_synthesis",
+      "question": "What sustainability and renewable energy initiatives are documented across sources?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Sustainability",
+        "Energy"
+      ],
+      "expected_entities": [
+        "Bayer",
+        "Neste",
+        "FEFAC",
+        "Guatemala"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        3758,
+        3765,
+        3777
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Covers Guatemala ethanol blending, Bayer/Neste winter canola, and FEFAC report.",
+      "gold_core_article_ids": [
+        3758,
+        3765,
+        3777
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-008",
+      "category": "entity_centric",
+      "question": "What does the archive contain about OpenAI or Anthropic?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "AI & Technology"
+      ],
+      "expected_entities": [
+        "Anthropic"
+      ],
+      "expected_min_evidence": 1,
+      "expected_article_ids": [
+        3153
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Focuses on Anthropic CEO warnings on AI safety pace.",
+      "gold_core_article_ids": [
+        3153
+      ],
+      "gold_optional_article_ids": [
+        3159
+      ]
+    },
+    {
+      "id": "RAG-009",
+      "category": "entity_centric",
+      "question": "What information is available regarding Tesla and autonomous vehicles?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Industry & Operations",
+        "AI & Technology"
+      ],
+      "expected_entities": [
+        "Tesla",
+        "WeRide",
+        "China"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        3747,
+        3751
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Covers Tesla vehicle recall in China and WeRide global robotaxi expansion.",
+      "gold_core_article_ids": [
+        3747,
+        3751
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-010",
+      "category": "entity_centric",
+      "question": "Which companies appear in agricultural supply-chain related stories?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Supply Chain & Trade",
+        "Industry & Operations"
+      ],
+      "expected_entities": [
+        "Bunge",
+        "ADM",
+        "CN",
+        "CPKC",
+        "Bayer"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3752,
+        3754,
+        3758,
+        3775,
+        3778
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Identifies agricultural corporate entities in local archive.",
+      "gold_core_article_ids": [
+        3752,
+        3754,
+        3758,
+        3775,
+        3778
+      ],
+      "gold_optional_article_ids": [
+        3753,
+        3769
+      ]
+    },
+    {
+      "id": "RAG-011",
+      "category": "entity_centric",
+      "question": "What developments involve Bunge and ADM?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Industry & Operations"
+      ],
+      "expected_entities": [
+        "Bunge",
+        "ADM"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        3752,
+        3753,
+        3769
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Covers Bunge Ukraine plant attack, ADM biofuels, and Bunge executive retirement.",
+      "gold_core_article_ids": [
+        3752,
+        3753,
+        3769
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-012",
+      "category": "comparison",
+      "question": "Compare the AI technology developments and autonomous vehicle announcements in the archive.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "AI & Technology"
+      ],
+      "expected_entities": [
+        "Anthropic",
+        "WeRide",
+        "Tesla"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3153,
+        3159,
+        3747,
+        3751
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Compares AI frontier safety/ethics against applied automotive autonomy and supply chain AI.",
+      "gold_core_article_ids": [
+        3153,
+        3159,
+        3747,
+        3751
+      ],
+      "gold_optional_article_ids": [
+        3771
+      ]
+    },
+    {
+      "id": "RAG-013",
+      "category": "comparison",
+      "question": "Compare developments involving India and China where sufficient evidence exists.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Geopolitics",
+        "Supply Chain & Trade"
+      ],
+      "expected_entities": [
+        "India",
+        "China"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3144,
+        3162,
+        3763,
+        3770
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Compares Sino-Indian border dispute resolution & BRICS host role vs China soybean trade.",
+      "gold_core_article_ids": [
+        3144,
+        3162,
+        3763,
+        3770
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-014",
+      "category": "comparison",
+      "question": "Compare North American grain rail logistics between Canadian National (CN) and CPKC.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Supply Chain & Trade"
+      ],
+      "expected_entities": [
+        "CN",
+        "CPKC"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        3754,
+        3775,
+        3778
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Compares CN August grain transport record vs CPKC record crop year start.",
+      "gold_core_article_ids": [
+        3754,
+        3775,
+        3778
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-015",
+      "category": "timeline",
+      "question": "Construct a chronological timeline of grain market and agricultural developments in the archive.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Supply Chain & Trade",
+        "Industry & Operations"
+      ],
+      "expected_entities": [
+        "World Grain"
+      ],
+      "expected_min_evidence": 4,
+      "expected_article_ids": [
+        3780,
+        3778,
+        3775,
+        3770,
+        3762,
+        3758,
+        3752
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Chronological timeline of agricultural stories from Sep 3 to Sep 11, 2026.",
+      "gold_core_article_ids": [
+        3780,
+        3778,
+        3775,
+        3770,
+        3762,
+        3758,
+        3752
+      ],
+      "gold_optional_article_ids": [
+        3781,
+        3765
+      ]
+    },
+    {
+      "id": "RAG-016",
+      "category": "timeline",
+      "question": "Show the chronological sequence of relevant AI developments.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "AI & Technology"
+      ],
+      "expected_entities": [
+        "WeRide",
+        "Anthropic"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3751,
+        3771,
+        3159,
+        3153
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Chronological timeline from WeRide (Jan 2025) to Anthropic and supply chain AI (Sep 2026).",
+      "gold_core_article_ids": [
+        3751,
+        3771,
+        3159,
+        3153
+      ],
+      "gold_optional_article_ids": [
+        3766
+      ]
+    },
+    {
+      "id": "RAG-017",
+      "category": "timeline",
+      "question": "Provide a timeline of geopolitical diplomatic visits and talks reported in September 2026.",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Geopolitics"
+      ],
+      "expected_entities": [
+        "China",
+        "India",
+        "US",
+        "Russia",
+        "Ukraine"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3162,
+        2926,
+        2927,
+        2928,
+        3144
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Covers Sino-Indian border talks (Sep 12) and US diplomatic visits to Moscow/Kiev (Sep 13).",
+      "gold_core_article_ids": [
+        3162,
+        2926,
+        2927,
+        2928,
+        3144
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-018",
+      "category": "analytical_causal",
+      "question": "What factors appear to be affecting global grain supply and food prices?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Supply Chain & Trade"
+      ],
+      "expected_entities": [
+        "FAO",
+        "Bunge",
+        "Thailand"
+      ],
+      "expected_min_evidence": 3,
+      "expected_article_ids": [
+        3752,
+        3762,
+        3772,
+        3780
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Analyzes FAO price index increases, Thailand rice output decline, and Bunge plant attack.",
+      "gold_core_article_ids": [
+        3752,
+        3762,
+        3772,
+        3780
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-019",
+      "category": "analytical_causal",
+      "question": "What evidence is there that AI and digital twins are being applied to supply chains?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "AI & Technology",
+        "Supply Chain & Trade"
+      ],
+      "expected_entities": [
+        "World Grain"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        3766,
+        3771
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Cites crop forecasting digital twins and AI supply chain optimization.",
+      "gold_core_article_ids": [
+        3766,
+        3771
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-020",
+      "category": "analytical_causal",
+      "question": "What commercial and regulatory pressures are impacting wireless telecom and financial services?",
+      "expected_date_scope": "all",
+      "expected_topics": [
+        "Business"
+      ],
+      "expected_entities": [
+        "Verizon",
+        "CaixaBank",
+        "Burberry"
+      ],
+      "expected_min_evidence": 2,
+      "expected_article_ids": [
+        3744,
+        3746,
+        3749
+      ],
+      "must_cite_sources": true,
+      "should_be_answerable": true,
+      "notes": "Analyzes Verizon price increases, CaixaBank M&A outlook, and Burberry turnaround.",
+      "gold_core_article_ids": [
+        3744,
+        3746,
+        3749
+      ],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-021",
+      "category": "insufficient_evidence",
+      "question": "What are the latest commercial sales figures for Apple Vision Pro 2 in Europe?",
+      "expected_date_scope": "all",
+      "expected_topics": [],
+      "expected_entities": [
+        "Apple"
+      ],
+      "expected_min_evidence": 0,
+      "expected_article_ids": [],
+      "must_cite_sources": false,
+      "should_be_answerable": false,
+      "notes": "Topic completely absent from local archive; RAG must report insufficient_evidence = true.",
+      "gold_core_article_ids": [],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-022",
+      "category": "insufficient_evidence",
+      "question": "What breakthroughs in fault-tolerant quantum computing were announced by IBM today?",
+      "expected_date_scope": "today",
+      "expected_topics": [],
+      "expected_entities": [
+        "IBM"
+      ],
+      "expected_min_evidence": 0,
+      "expected_article_ids": [],
+      "must_cite_sources": false,
+      "should_be_answerable": false,
+      "notes": "Quantum computing announcements are completely absent from the archive.",
+      "gold_core_article_ids": [],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-023",
+      "category": "insufficient_evidence",
+      "question": "What was the outcome of the 2026 FIFA World Cup final in North America?",
+      "expected_date_scope": "all",
+      "expected_topics": [],
+      "expected_entities": [
+        "FIFA"
+      ],
+      "expected_min_evidence": 0,
+      "expected_article_ids": [],
+      "must_cite_sources": false,
+      "should_be_answerable": false,
+      "notes": "Sports match outcomes are absent from the intelligence archive.",
+      "gold_core_article_ids": [],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-024",
+      "category": "insufficient_evidence",
+      "question": "What specific earnings guidance did Microsoft release for Q4 2026?",
+      "expected_date_scope": "all",
+      "expected_topics": [],
+      "expected_entities": [
+        "Microsoft"
+      ],
+      "expected_min_evidence": 0,
+      "expected_article_ids": [],
+      "must_cite_sources": false,
+      "should_be_answerable": false,
+      "notes": "Microsoft earnings guidance is absent from the archive.",
+      "gold_core_article_ids": [],
+      "gold_optional_article_ids": []
+    },
+    {
+      "id": "RAG-025",
+      "category": "insufficient_evidence",
+      "question": "How did the central bank of Japan adjust interest rates yesterday?",
+      "expected_date_scope": "yesterday",
+      "expected_topics": [],
+      "expected_entities": [
+        "Bank of Japan"
+      ],
+      "expected_min_evidence": 0,
+      "expected_article_ids": [],
+      "must_cite_sources": false,
+      "should_be_answerable": false,
+      "notes": "Bank of Japan rate policy is absent from yesterday's articles.",
+      "gold_core_article_ids": [],
+      "gold_optional_article_ids": []
+    }
+  ]
+}

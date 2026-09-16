@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Editions Archive | Daily Intelligence{% endblock %}
+
+{% block content %}
+<div class="editions-archive-container">
+  <header class="page-header">
+    <h1 class="page-title">Daily Editions Archive</h1>
+    <p class="page-description">Curated daily intelligence briefings published by Daily Intelligence.</p>
+  </header>
+
+  {% if editions and editions|length > 0 %}
+  <div class="editions-list">
+    {% for ed in editions %}
+    <article class="edition-row-card">
+      <div class="edition-row-left">
+        <div class="edition-row-date">{{ ed.edition_date }}</div>
+        <span class="status-badge status-{{ ed.status.lower() }}">{{ ed.status }}</span>
+      </div>
+
+      <div class="edition-row-main">
+        <h3 class="edition-row-headline">
+          <a href="/edition/{{ ed.edition_date }}">
+            {% if ed.lead_headline %}
+            {{ ed.lead_headline }}
+            {% else %}
+            Daily Intelligence Briefing &mdash; {{ ed.edition_date }}
+            {% endif %}
+          </a>
+        </h3>
+        <div class="edition-row-meta">
+          <span>{{ ed.event_count }} Selected Events</span> &bull;
+          <span>{{ ed.article_count }} Bounded Source Articles</span>
+        </div>
+      </div>
+
+      <div class="edition-row-action">
+        <a href="/edition/{{ ed.edition_date }}" class="btn btn-secondary">Read Edition &rarr;</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state-card card">
+    <h3>No Historical Daily Editions Published</h3>
+    <p>No published daily editions are currently stored in the archive index.</p>
+    <a href="/latest" class="btn btn-primary">View Latest Intelligence Feed &rarr;</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

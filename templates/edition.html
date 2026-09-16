@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Edition — {{ formatted_date }} | Daily Intelligence{% endblock %}
+
+{% block content %}
+<div class="edition-container">
+
+  <!-- NEWSPAPER MASTHEAD -->
+  <header class="edition-masthead">
+    <div class="edition-masthead-top">
+      <div class="edition-masthead-brand">
+        <span class="edition-type-badge">MORNING EDITION</span>
+        <h1 class="edition-title">DAILY INTELLIGENCE</h1>
+        <p class="edition-subtitle">Global Strategic News & Sovereign Intelligence Briefing</p>
+      </div>
+      <div class="edition-masthead-meta">
+        <div class="edition-date-display">{{ formatted_date }}</div>
+        <div class="edition-status-row">
+          {% if edition.status == 'PUBLISHED' %}
+          <span class="status-badge status-published">PUBLISHED</span>
+          <span class="edition-time-stamp">Published {{ edition.generated_at.strftime('%H:%M BST') if edition.generated_at else '07:05 BST' }}</span>
+          {% elif edition.readiness == 'READY' %}
+          <span class="status-badge status-ready">READY FOR PUBLICATION</span>
+          <span class="edition-time-stamp">Ready for Publication &bull; Preview Mode</span>
+          {% elif edition.status == 'ARCHIVED' %}
+          <span class="status-badge status-archived">HISTORICAL EDITION</span>
+          <span class="edition-time-stamp">Archived Edition</span>
+          {% else %}
+          <span class="status-badge status-preparing">MORNING EDITION PREPARING</span>
+          <span class="edition-time-stamp">Preparation in progress &bull; {{ events|length if events else 0 }} qualifying developments reviewed</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- EDITION NAVIGATION -->
+    <nav class="edition-nav-bar">
+      <div class="edition-nav-left">
+        {% if prev_edition_date %}
+        <a href="/edition/{{ prev_edition_date }}" class="edition-nav-link">&larr; {{ prev_edition_date }}</a>
+        {% else %}
+        <span class="edition-nav-disabled">&larr; Previous</span>
+        {% endif %}
+      </div>
+
+      <div class="edition-nav-center">
+        <a href="/editions" class="edition-nav-link archive-link">All Editions Archive</a>
+      </div>
+
+      <div class="edition-nav-right">
+        {% if next_edition_date %}
+        <a href="/edition/{{ next_edition_date }}" class="edition-nav-link">{{ next_edition_date }} &rarr;</a>
+        {% else %}
+        <span class="edition-nav-disabled">Latest &rarr;</span>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+  {% if edition.readiness == 'PREPARING' or edition.status == 'PREPARING' %}
+  <!-- PREPARING STATE BANNER -->
+  <section class="edition-preparing-state card">
+    <div class="preparing-header">
+      <span class="status-badge status-preparing">MORNING EDITION PREPARING</span>
+      <h2>Today's Edition is Preparing</h2>
+    </div>
+    <p>{{ events|length if events else 0 }} qualifying developments reviewed so far. Today's full edition will be generated when the editorial readiness threshold is met.</p>
+
+    <div class="preparing-actions">
+      <a href="/latest" class="btn btn-primary">Browse Latest Intelligence Feed &rarr;</a>
+      <a href="/markets" class="btn btn-secondary">Global Markets Pulse &rarr;</a>
+    </div>
+  </section>
+  {% else %}
+
+  <!-- MORNING BRIEF -->
+  {% if brief and brief.brief_text %}
+  <section class="edition-brief-section">
+    <div class="edition-brief-card">
+      <div class="section-label-header">MORNING BRIEF</div>
+      <p class="edition-brief-text">{{ brief.brief_text }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- KEY THEMES -->
+  {% if brief and brief.key_themes_json %}
+  <section class="edition-themes-section">
+    <div class="section-label-header">KEY THEMES</div>
+    <div class="edition-themes-grid">
+      {% for theme in brief.key_themes_json %}
+      <div class="theme-card">
+        <h4 class="theme-title">{{ theme.title }}</h4>
+        <p class="theme-description">{{ theme.description }}</p>
+        {% if theme.event_cluster_ids %}
+        <div class="theme-anchors">
+          {% for cid in theme.event_cluster_ids %}
+          <a href="#{{ cid }}" class="theme-anchor-chip">Story #{{ loop.index }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- LEAD STORY -->
+  {% if lead_event %}
+  <section class="edition-lead-section">
+    <div class="section-label-header">LEAD STORY</div>
+    <article id="{{ lead_event.cluster_id }}" class="event-card lead-event-card">
+      <div class="event-meta-top">
+        <span class="section-badge badge-{{ lead_event.section.lower().replace(' ', '-').replace('&', 'and') }}">{{ lead_event.section }}</span>
+        <span class="event-role-badge">LEAD STORY</span>
+      </div>
+
+      <h2 class="event-headline">{{ lead_event.headline }}</h2>
+      <p class="event-summary">{{ lead_event.summary }}</p>
+
+      {% if lead_event.why_it_matters %}
+      <div class="why-it-matters-box">
+        <strong>WHY IT MATTERS:</strong> {{ lead_event.why_it_matters }}
+      </div>
+      {% endif %}
+
+      <div class="event-source-line">
+        <span class="primary-source">
+          Source: <a href="{{ lead_event.primary_article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="source-link">{{ lead_event.primary_article.source.name if lead_event.primary_article.source else 'Primary Source' }}</a>
+        </span>
+        <span class="meta-separator">&bull;</span>
+        <span class="event-time">{{ lead_event.primary_article.published_at.strftime('%d %b %H:%M') if lead_event.primary_article.published_at else 'Recent' }}</span>
+        {% if lead_event.supporting_articles and lead_event.supporting_articles|length > 0 %}
+        <span class="meta-separator">&bull;</span>
+        <span class="supporting-count">Covered by {{ lead_event.supporting_articles|length + 1 }} sources</span>
+        {% endif %}
+      </div>
+
+      <!-- EXPLAINABILITY & SUPPORTING COVERAGE DROPDOWNS -->
+      <div class="event-collapsibles">
+        {% if lead_event.why_selected %}
+        <details class="details-explain">
+          <summary class="details-summary">Why this story?</summary>
+
+          <div class="details-content">
+            <ul>
+              {% for reason in lead_event.why_selected %}
+              <li>{{ reason }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+        {% endif %}
+
+        {% if lead_event.supporting_articles and lead_event.supporting_articles|length > 0 %}
+        <details class="details-supporting">
+          <summary class="details-summary">Supporting coverage &mdash; {{ lead_event.supporting_articles|length }} sources</summary>
+          <div class="details-content">
+            <ul class="supporting-articles-list">
+              {% for supp in lead_event.supporting_articles %}
+              <li>
+                <span class="supp-source">{{ supp.source.name if supp.source else 'Source' }}:</span>
+                <a href="{{ supp.canonical_url }}" target="_blank" rel="noopener noreferrer" class="supp-title">{{ supp.title }}</a>
+                <span class="supp-time">({{ supp.published_at.strftime('%d %b %H:%M') if supp.published_at else '' }})</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+        {% endif %}
+      </div>
+    </article>
+  </section>
+  {% endif %}
+
+  <!-- TOP STORIES -->
+  {% if top_events and top_events|length > 0 %}
+  <section class="edition-top-stories-section">
+    <div class="section-label-header">TOP STORIES</div>
+    <div class="events-grid top-events-grid">
+      {% for ev in top_events %}
+      <article id="{{ ev.cluster_id }}" class="event-card top-event-card">
+        <div class="event-meta-top">
+          <span class="section-badge badge-{{ ev.section.lower().replace(' ', '-').replace('&', 'and') }}">{{ ev.section }}</span>
+        </div>
+
+        <h3 class="event-headline">{{ ev.headline }}</h3>
+        <p class="event-summary">{{ ev.summary }}</p>
+
+        {% if ev.why_it_matters %}
+        <div class="why-it-matters-box">
+          <strong>WHY IT MATTERS:</strong> {{ ev.why_it_matters }}
+        </div>
+        {% endif %}
+
+        <div class="event-source-line">
+          <span class="primary-source">
+            <a href="{{ ev.primary_article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="source-link">{{ ev.primary_article.source.name if ev.primary_article.source else 'Source' }}</a>
+          </span>
+          <span class="meta-separator">&bull;</span>
+          <span class="event-time">{{ ev.primary_article.published_at.strftime('%d %b %H:%M') if ev.primary_article.published_at else 'Recent' }}</span>
+        </div>
+
+        {% if ev.supporting_articles and ev.supporting_articles|length > 0 %}
+        <details class="details-supporting">
+          <summary class="details-summary">Supporting coverage &mdash; {{ ev.supporting_articles|length }} sources</summary>
+          <div class="details-content">
+            <ul class="supporting-articles-list">
+              {% for supp in ev.supporting_articles %}
+              <li>
+                <span class="supp-source">{{ supp.source.name if supp.source else 'Source' }}:</span>
+                <a href="{{ supp.canonical_url }}" target="_blank" rel="noopener noreferrer" class="supp-title">{{ supp.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- SECTION STORIES -->
+  {% if section_groups %}
+  <section class="edition-sections-container">
+    {% for sec_name, sec_events in section_groups.items() %}
+    {% if sec_events and sec_events|length > 0 %}
+    <div class="edition-section-group">
+      <h3 class="section-group-title">{{ sec_name }}</h3>
+      <div class="events-grid section-events-grid">
+        {% for ev in sec_events %}
+        <article id="{{ ev.cluster_id }}" class="event-card section-event-card">
+          <h4 class="event-headline">{{ ev.headline }}</h4>
+          <p class="event-summary">{{ ev.summary }}</p>
+
+          {% if ev.why_it_matters %}
+          <div class="why-it-matters-box">
+            <strong>WHY IT MATTERS:</strong> {{ ev.why_it_matters }}
+          </div>
+          {% endif %}
+
+          <div class="event-source-line">
+            <span class="primary-source">
+              <a href="{{ ev.primary_article.canonical_url }}" target="_blank" rel="noopener noreferrer" class="source-link">{{ ev.primary_article.source.name if ev.primary_article.source else 'Source' }}</a>
+            </span>
+            <span class="meta-separator">&bull;</span>
+            <span class="event-time">{{ ev.primary_article.published_at.strftime('%d %b %H:%M') if ev.primary_article.published_at else 'Recent' }}</span>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- MARKETS AT A GLANCE -->
+  {% if market_snapshots %}
+  <section class="edition-markets-section">
+    <div class="section-label-header">MARKETS AT A GLANCE ({{ market_snapshot_label or 'SNAPSHOT' }})</div>
+    <div class="markets-glance-grid">
+      {% for symbol, snap in market_snapshots.items() %}
+      <div class="market-glance-card">
+        <span class="market-symbol-name">{{ snap.name or symbol }}</span>
+        <span class="market-price-val">{{ snap.price }}</span>
+        <span class="market-change-badge change-{{ 'up' if snap.change_percent >= 0 else 'down' }}">
+          {{ '+' if snap.change_percent >= 0 else '' }}{{ "%.2f"|format(snap.change_percent) }}%
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- WATCH NEXT -->
+  {% if watch_next_items and watch_next_items|length > 0 %}
+  <section class="edition-watch-next-section">
+    <div class="section-label-header">WATCH NEXT</div>
+    <div class="watch-next-list">
+      {% for item in watch_next_items %}
+      <div class="watch-next-card">
+        <div class="watch-next-event">{{ item.event }}</div>
+        {% if item.date_str %}
+        <div class="watch-next-date">{{ item.date_str }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- EDITORIAL METHODOLOGY & TRANSPARENCY FOOTER -->
+  <footer class="edition-methodology-footer">
+    <div class="methodology-card">
+      <p class="methodology-text">
+        <strong>EDITORIAL METHODOLOGY:</strong> This edition was compiled from AI-reviewed primary source material. Story selection is deterministic and diversity-constrained. Editorial summaries and briefs are generated from selected evidence and validated against primary source reporting.
+      </p>
+      <div class="methodology-meta">
+        <span>Edition Date: {{ edition.edition_date }}</span> &bull;
+        <span>Status: {{ edition.status }}</span> &bull;
+        <span>Events Selected: {{ events|length if events else 0 }}</span> &bull;
+        <span>AI Disclosure: AI-assisted synthesis grounded in cited primary sources</span>
+      </div>
+    </div>
+  </footer>
+
+  {% endif %}
+
+</div>
+{% endblock %}

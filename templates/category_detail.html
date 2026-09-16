@@ -55,21 +55,29 @@
     {% endfor %}
   </div>
 
-  <div class="pagination">
-    <a href="/category/{{ category }}?page={{ pagination.page - 1 }}" 
-       class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}">
-      &larr; Previous
-    </a>
+  <div class="pagination-wrapper">
+    <div class="pagination">
+      <a href="/category/{{ category }}?page={{ pagination.page - 1 }}" 
+         class="pagination-btn {% if not pagination.has_prev %}disabled{% endif %}"
+         {% if not pagination.has_prev %}tabindex="-1" aria-disabled="true"{% endif %}>
+        &larr; Previous
+      </a>
 
-    <span class="pagination-info">
-      Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong>
-      ({{ pagination.total }} items)
-    </span>
+      <div class="pagination-center">
+        <span class="pagination-info">
+          Page <strong>{{ pagination.page }}</strong> of <strong>{{ pagination.total_pages }}</strong>
+        </span>
+        <span class="pagination-count">
+          {{ "{:,}".format(pagination.total) }} articles
+        </span>
+      </div>
 
-    <a href="/category/{{ category }}?page={{ pagination.page + 1 }}" 
-       class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}">
-      Next &rarr;
-    </a>
+      <a href="/category/{{ category }}?page={{ pagination.page + 1 }}" 
+         class="pagination-btn {% if not pagination.has_next %}disabled{% endif %}"
+         {% if not pagination.has_next %}tabindex="-1" aria-disabled="true"{% endif %}>
+        Next &rarr;
+      </a>
+    </div>
   </div>
   {% else %}
   <div class="empty-state">

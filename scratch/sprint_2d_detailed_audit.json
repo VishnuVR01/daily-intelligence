@@ -1,0 +1,171 @@
+{
+  "timestamp": "2026-09-15T20:10:49.393154+00:00",
+  "fred_results": {
+    "US_10Y_DGS10": {
+      "series_id": "DGS10",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "UK_10Y_IRLTLT01GBM156N": {
+      "series_id": "IRLTLT01GBM156N",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "DE_10Y_IRLTLT01DEM156N": {
+      "series_id": "IRLTLT01DEM156N",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "JP_10Y_IRLTLT01JPM156N": {
+      "series_id": "IRLTLT01JPM156N",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "IN_10Y_INTGSB10YM": {
+      "series_id": "INTGSB10YM",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "FED_TARGET_LOWER_DFEDTARL": {
+      "series_id": "DFEDTARL",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "FED_TARGET_UPPER_DFEDTARU": {
+      "series_id": "DFEDTARU",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "FED_EFFECTIVE_FEDFUNDS": {
+      "series_id": "FEDFUNDS",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "BOE_BANK_RATE_INTDSRGBM193N": {
+      "series_id": "INTDSRGBM193N",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "ECB_DEPOSIT_ECBDFR": {
+      "series_id": "ECBDFR",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "ECB_REFI_ECBMRR": {
+      "series_id": "ECBMRR",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "ECB_MARGINAL_ECBMLFR": {
+      "series_id": "ECBMLFR",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "BOJ_POLICY_INTDSRJPM193N": {
+      "series_id": "INTDSRJPM193N",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    },
+    "RBI_REPO_INTDSRINM193N": {
+      "series_id": "INTDSRINM193N",
+      "status": "FAILED",
+      "error": "The read operation timed out"
+    }
+  },
+  "yahoo_results": {
+    "^TNX": {
+      "symbol": "^TNX",
+      "status": "SUCCESS",
+      "shortName": "CBOE Interest Rate 10 Year T No",
+      "regularMarketPrice": 4.996,
+      "chartPreviousClose": 4.796,
+      "closes": [
+        4.796000003814697,
+        4.796000003814697,
+        4.76200008392334,
+        4.783999919891357,
+        4.806000232696533,
+        4.836999893188477,
+        4.943999767303467,
+        4.974999904632568,
+        4.960999965667725,
+        4.995999813079834
+      ]
+    },
+    "^TYX": {
+      "symbol": "^TYX",
+      "status": "SUCCESS",
+      "shortName": "Treasury Yield 30 Years",
+      "regularMarketPrice": 5.364,
+      "chartPreviousClose": 5.268,
+      "closes": [
+        5.26800012588501,
+        5.267000198364258,
+        5.243000030517578,
+        5.245999813079834,
+        5.263999938964844,
+        5.285999774932861,
+        5.361000061035156,
+        5.354000091552734,
+        5.328999996185303,
+        5.363999843597412
+      ]
+    },
+    "^FVX": {
+      "symbol": "^FVX",
+      "status": "SUCCESS",
+      "shortName": "Treasury Yield 5 Years",
+      "regularMarketPrice": 4.826,
+      "chartPreviousClose": 4.557,
+      "closes": [
+        4.557000160217285,
+        4.552000045776367,
+        4.508999824523926,
+        4.550000190734863,
+        4.572999954223633,
+        4.613999843597412,
+        4.732999801635742,
+        4.790999889373779,
+        4.789999961853027,
+        4.825999736785889
+      ]
+    },
+    "^IRX": {
+      "symbol": "^IRX",
+      "status": "SUCCESS",
+      "shortName": "13 WEEK TREASURY BILL",
+      "regularMarketPrice": 3.96,
+      "chartPreviousClose": 3.772,
+      "closes": [
+        3.7720000743865967,
+        3.7720000743865967,
+        3.740000009536743,
+        3.756999969482422,
+        3.7750000953674316,
+        3.805000066757202,
+        3.8450000286102295,
+        3.9130001068115234,
+        3.934999942779541,
+        3.9599997997283936
+      ]
+    },
+    "0P0000X97G.F": {
+      "symbol": "0P0000X97G.F",
+      "status": "FAILED",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "^GILT": {
+      "symbol": "^GILT",
+      "status": "FAILED",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "BUND": {
+      "symbol": "BUND",
+      "status": "SUCCESS",
+      "shortName": "PIMCO Germany Bond  Index Excha",
+      "regularMarketPrice": 0.0,
+      "chartPreviousClose": 0.0,
+      "closes": []
+    }
+  }
+}

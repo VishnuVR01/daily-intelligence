@@ -1,0 +1,72 @@
+[
+  {
+    "entity_name": "Federal Reserve",
+    "entity_type": "CENTRAL_BANK",
+    "expected_min_events": 1,
+    "expected_roles": ["ISSUER"],
+    "description": "Fed rate and monetary policy decisions timeline"
+  },
+  {
+    "entity_name": "European Central Bank",
+    "entity_type": "CENTRAL_BANK",
+    "expected_min_events": 1,
+    "expected_roles": ["ISSUER"],
+    "description": "ECB rate and Eurozone monetary policy timeline"
+  },
+  {
+    "entity_name": "OpenAI",
+    "entity_type": "COMPANY",
+    "expected_min_events": 1,
+    "expected_roles": ["ACTOR"],
+    "description": "OpenAI product launches and AI development timeline"
+  },
+  {
+    "entity_name": "Microsoft Corporation",
+    "entity_type": "COMPANY",
+    "expected_min_events": 1,
+    "expected_roles": ["ACTOR", "MENTIONED"],
+    "description": "Microsoft cloud and AI investment timeline"
+  },
+  {
+    "entity_name": "NVIDIA Corporation",
+    "entity_type": "COMPANY",
+    "expected_min_events": 1,
+    "expected_roles": ["ACTOR"],
+    "description": "NVIDIA earnings and AI GPU milestones timeline"
+  },
+  {
+    "entity_name": "United States",
+    "entity_type": "COUNTRY",
+    "expected_min_events": 1,
+    "expected_roles": ["LOCATION"],
+    "description": "US macroeconomic and geopolitical events timeline"
+  },
+  {
+    "entity_name": "India",
+    "entity_type": "COUNTRY",
+    "expected_min_events": 1,
+    "expected_roles": ["LOCATION"],
+    "description": "India economic and market developments timeline"
+  },
+  {
+    "entity_name": "China",
+    "entity_type": "COUNTRY",
+    "expected_min_events": 1,
+    "expected_roles": ["LOCATION"],
+    "description": "China macroeconomic policy and market events timeline"
+  },
+  {
+    "entity_name": "Brent Crude",
+    "entity_type": "COMMODITY",
+    "expected_min_events": 1,
+    "expected_roles": ["SUBJECT"],
+    "description": "Brent crude oil market and supply dynamics timeline"
+  },
+  {
+    "entity_name": "Jerome Powell",
+    "entity_type": "PERSON",
+    "expected_min_events": 1,
+    "expected_roles": ["ACTOR"],
+    "description": "Jerome Powell speeches and testimony timeline"
+  }
+]

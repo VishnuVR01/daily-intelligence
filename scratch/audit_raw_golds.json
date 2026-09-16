@@ -1,0 +1,1349 @@
+[
+  {
+    "id": "RAG-001",
+    "category": "temporal_freshness",
+    "question": "What happened in AI today?",
+    "expected_article_ids": [],
+    "gold_audit": []
+  },
+  {
+    "id": "RAG-002",
+    "category": "temporal_freshness",
+    "question": "What important developments happened yesterday?",
+    "expected_article_ids": [
+      2926,
+      2927,
+      2928,
+      3144
+    ],
+    "gold_audit": [
+      {
+        "article_id": 2926,
+        "title": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:57:58+01:00",
+        "collected_at": "2026-09-13T01:25:25.376650+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "US negotiator Jared Kushner reports successful diplomatic missions to Moscow and Kiev, indicating progress in negotiations toward a lasting resolution. The article highlights his confidence in identifying the path forward for enduring peace.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2927,
+        "title": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:39:56+01:00",
+        "collected_at": "2026-09-13T01:25:25.377651+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "The US presidential envoy, John F. Kerry, stated that negotiators must find the right formula to settle the ongoing conflict between Russia and Ukraine.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2928,
+        "title": "Former US Army Secretary Driscoll arrives in Kiev \u2014 CBS",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:22:09+01:00",
+        "collected_at": "2026-09-13T01:25:25.377651+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "Former US Army Secretary Driscoll attended a conference on the Yalta European Strategy in Kiev. The event took place under the auspices of TASS World.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3144,
+        "title": "Brics-maiden kokous jatkuu Intiassa",
+        "source": "Yle News",
+        "published_at": "2026-09-13T00:09:58+01:00",
+        "collected_at": "2026-09-13T01:25:38.187953+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "The article reports on the continuation of a maiden meeting involving BRICS nations in India. The event is described as an ongoing diplomatic gathering focused on international relations and strategic cooperation.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-003",
+    "category": "temporal_freshness",
+    "question": "What supply-chain developments happened this week?",
+    "expected_article_ids": [
+      3752,
+      3754,
+      3758,
+      3763,
+      3772
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3752,
+        "title": "Attack damages Bunge oilseeds plant in Ukraine",
+        "source": "World Grain",
+        "published_at": "2026-09-11T15:14:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.460359+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "A Russian airstrike damaged a Bunge oilseeds plant in Ukraine, resulting in no employee injuries. The incident highlights ongoing industrial and agricultural infrastructure risks in the region.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3754,
+        "title": "CN files proposal with STB regarding UP-NS merger",
+        "source": "World Grain",
+        "published_at": "2026-09-11T13:50:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.463692+01:00",
+        "ai_relevant": true,
+        "relevance_score": 70,
+        "importance_score": 65,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China National (CN) has filed a proposal with the Southern Tier Board (STB) to merge operations, seeking expanded access to CN's network in key Midwest markets. The proposal involves strategic consolidation within the grain industry.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3758,
+        "title": "Bayer, Neste partner on US winter canola",
+        "source": "World Grain",
+        "published_at": "2026-09-10T14:52:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.468379+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "Bayer and Neste have partnered to develop a supply of lower-carbon oilseed feedstocks for biofuels in the United States. The collaboration focuses on sustainable agriculture and renewable energy production.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3763,
+        "title": "China continues US soybean push amid South American purchases",
+        "source": "World Grain",
+        "published_at": "2026-09-09T15:20:34+01:00",
+        "collected_at": "2026-09-13T21:14:46.475008+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article reports on the US soybean export push to China, noting that import demand growth is expected to slow in coming years according to FAS data. It also highlights concurrent purchases from South American grain producers.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3772,
+        "title": "Railroads ready for US grain harvest",
+        "source": "World Grain",
+        "published_at": "2026-09-07T13:15:37+01:00",
+        "collected_at": "2026-09-13T21:14:46.488488+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the critical role of effective communication in rail operations during the US grain harvest season. It highlights industry readiness and logistical coordination.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-004",
+    "category": "historical_synthesis",
+    "question": "What major AI developments are present in the archive?",
+    "expected_article_ids": [
+      3153,
+      3159,
+      3751,
+      3766,
+      3771
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3153,
+        "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+        "source": "Yle News",
+        "published_at": "2026-09-12T17:29:01+01:00",
+        "collected_at": "2026-09-13T01:25:38.194948+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "AI & Technology",
+        "summary": "Dario Amodei, the CEO of Anthropic, is calling for independent monitoring of AI models during their development phase. He advocates for industry-wide and global regulation to ensure safety and oversight.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3159,
+        "title": "Professori tyrm\u00e4\u00e4 teko\u00e4lytutkijoiden kauhukuvat ihmiskunnan lopusta",
+        "source": "Yle News",
+        "published_at": "2026-09-12T15:41:36+01:00",
+        "collected_at": "2026-09-13T01:25:38.205552+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "Professor Laura Ruotsalainen argues that sensationalist media coverage distracts from the genuine risks of AI, such as election interference and data breaches. The article highlights her perspective on prioritizing factual risk assessment over fear-mongering narratives.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3751,
+        "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T08:30:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.338611+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "The Chinese autonomous-driving company WeRide is expanding its global operations with a focus on robotaxis and related services. The company aims to increase its market presence overseas, anticipating high demand for these technologies in the coming years.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3766,
+        "title": "Crop forecasting enters the age of digital twins",
+        "source": "World Grain",
+        "published_at": "2026-09-09T13:03:43+01:00",
+        "collected_at": "2026-09-13T21:14:46.478174+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "New technologies are enabling earlier and more detailed insights into crop prospects through the application of digital twins. The article highlights advancements in agricultural technology.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3771,
+        "title": "AI brings speed to supply chain",
+        "source": "World Grain",
+        "published_at": "2026-09-08T12:54:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.486949+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the role of Artificial Intelligence in accelerating supply chain operations through the implementation of appropriate programs and data management. It emphasizes the necessity of human validation alongside technical solutions for successful deployment.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-005",
+    "category": "historical_synthesis",
+    "question": "What trends are visible in grain and agricultural supply chains?",
+    "expected_article_ids": [
+      3763,
+      3768,
+      3770,
+      3772,
+      3775,
+      3778,
+      3780
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3763,
+        "title": "China continues US soybean push amid South American purchases",
+        "source": "World Grain",
+        "published_at": "2026-09-09T15:20:34+01:00",
+        "collected_at": "2026-09-13T21:14:46.475008+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article reports on the US soybean export push to China, noting that import demand growth is expected to slow in coming years according to FAS data. It also highlights concurrent purchases from South American grain producers.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3768,
+        "title": "AFIA outlines industry contributions, challenges",
+        "source": "World Grain",
+        "published_at": "2026-09-08T14:38:38+01:00",
+        "collected_at": "2026-09-13T21:14:46.482782+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Industry & Operations",
+        "summary": "The article outlines the economic footprint of the feed industry, estimated at $267.1 billion, and discusses contributions and challenges within the sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3770,
+        "title": "India expands decentralized grain infrastructure",
+        "source": "World Grain",
+        "published_at": "2026-09-08T14:04:25+01:00",
+        "collected_at": "2026-09-13T21:14:46.485415+01:00",
+        "ai_relevant": true,
+        "relevance_score": 85,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Indian government has announced an expansion of its decentralized grain storage infrastructure, adding 180,000 tonnes of capacity. This initiative aims to enhance food security and supply chain resilience.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3772,
+        "title": "Railroads ready for US grain harvest",
+        "source": "World Grain",
+        "published_at": "2026-09-07T13:15:37+01:00",
+        "collected_at": "2026-09-13T21:14:46.488488+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the critical role of effective communication in rail operations during the US grain harvest season. It highlights industry readiness and logistical coordination.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3775,
+        "title": "CN sets grain transportation mark for August",
+        "source": "World Grain",
+        "published_at": "2026-09-07T12:30:06+01:00",
+        "collected_at": "2026-09-13T21:14:46.491555+01:00",
+        "ai_relevant": true,
+        "relevance_score": 75,
+        "importance_score": 80,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China's railway system transported 2.5 million tonnes of grain in the last month, setting a new record for August transportation volumes.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3778,
+        "title": "Crop year off to record start for CPKC",
+        "source": "World Grain",
+        "published_at": "2026-09-04T13:29:11+01:00",
+        "collected_at": "2026-09-13T21:14:46.494719+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Canadian Pacific Kansas City (CPKC) railroad has set a record-breaking monthly tonnage and carload mark for grain transportation in August. This performance highlights the robust operational capacity of Canada's grain logistics sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3780,
+        "title": "FAO Food Price Index rises again",
+        "source": "World Grain",
+        "published_at": "2026-09-04T12:47:38+01:00",
+        "collected_at": "2026-09-13T21:14:46.496324+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The FAO Cereal Price Index has reached its highest level since May 2024, indicating a significant rise in global cereal prices. This trend is reported by World Grain, an industry publication.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-006",
+    "category": "historical_synthesis",
+    "question": "Summarize the geopolitical diplomatic developments involving Ukraine and Russia in the archive.",
+    "expected_article_ids": [
+      2926,
+      2927,
+      2928,
+      3752
+    ],
+    "gold_audit": [
+      {
+        "article_id": 2926,
+        "title": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:57:58+01:00",
+        "collected_at": "2026-09-13T01:25:25.376650+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "US negotiator Jared Kushner reports successful diplomatic missions to Moscow and Kiev, indicating progress in negotiations toward a lasting resolution. The article highlights his confidence in identifying the path forward for enduring peace.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2927,
+        "title": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:39:56+01:00",
+        "collected_at": "2026-09-13T01:25:25.377651+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "The US presidential envoy, John F. Kerry, stated that negotiators must find the right formula to settle the ongoing conflict between Russia and Ukraine.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2928,
+        "title": "Former US Army Secretary Driscoll arrives in Kiev \u2014 CBS",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:22:09+01:00",
+        "collected_at": "2026-09-13T01:25:25.377651+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "Former US Army Secretary Driscoll attended a conference on the Yalta European Strategy in Kiev. The event took place under the auspices of TASS World.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3752,
+        "title": "Attack damages Bunge oilseeds plant in Ukraine",
+        "source": "World Grain",
+        "published_at": "2026-09-11T15:14:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.460359+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "A Russian airstrike damaged a Bunge oilseeds plant in Ukraine, resulting in no employee injuries. The incident highlights ongoing industrial and agricultural infrastructure risks in the region.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-007",
+    "category": "historical_synthesis",
+    "question": "What sustainability and renewable energy initiatives are documented across sources?",
+    "expected_article_ids": [
+      3758,
+      3765,
+      3777
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3758,
+        "title": "Bayer, Neste partner on US winter canola",
+        "source": "World Grain",
+        "published_at": "2026-09-10T14:52:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.468379+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "Bayer and Neste have partnered to develop a supply of lower-carbon oilseed feedstocks for biofuels in the United States. The collaboration focuses on sustainable agriculture and renewable energy production.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3765,
+        "title": "FEFAC highlights sustainability progress",
+        "source": "World Grain",
+        "published_at": "2026-09-09T14:10:29+01:00",
+        "collected_at": "2026-09-13T21:14:46.478174+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "The FEFAC report highlights progress in sustainability goals within the feed industry while addressing strategic challenges. The article focuses on advancements and operational improvements in this sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3777,
+        "title": "Guatemala rolls out ethanol blending program",
+        "source": "World Grain",
+        "published_at": "2026-09-04T14:43:52+01:00",
+        "collected_at": "2026-09-13T21:14:46.493160+01:00",
+        "ai_relevant": true,
+        "relevance_score": 75,
+        "importance_score": 65,
+        "primary_category": "Energy",
+        "summary": "Guatemala has implemented an ethanol blending program utilizing E10 fuel standards following years of preparation and collaboration. The initiative represents a strategic shift in the country's energy sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-008",
+    "category": "entity_centric",
+    "question": "What does the archive contain about OpenAI or Anthropic?",
+    "expected_article_ids": [
+      3153
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3153,
+        "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+        "source": "Yle News",
+        "published_at": "2026-09-12T17:29:01+01:00",
+        "collected_at": "2026-09-13T01:25:38.194948+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "AI & Technology",
+        "summary": "Dario Amodei, the CEO of Anthropic, is calling for independent monitoring of AI models during their development phase. He advocates for industry-wide and global regulation to ensure safety and oversight.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-009",
+    "category": "entity_centric",
+    "question": "What information is available regarding Tesla and autonomous vehicles?",
+    "expected_article_ids": [
+      3747,
+      3751
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3747,
+        "title": "Tesla to Recall Cars in China on Safety Concerns",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T10:56:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.335417+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Industry & Operations",
+        "summary": "Tesla is planning a recall of 1.2 million vehicles in China due to software issues. The recall involves both China-made and imported models.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3751,
+        "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T08:30:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.338611+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "The Chinese autonomous-driving company WeRide is expanding its global operations with a focus on robotaxis and related services. The company aims to increase its market presence overseas, anticipating high demand for these technologies in the coming years.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-010",
+    "category": "entity_centric",
+    "question": "Which companies appear in agricultural supply-chain related stories?",
+    "expected_article_ids": [
+      3752,
+      3753,
+      3754,
+      3758,
+      3769,
+      3775,
+      3778
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3752,
+        "title": "Attack damages Bunge oilseeds plant in Ukraine",
+        "source": "World Grain",
+        "published_at": "2026-09-11T15:14:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.460359+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "A Russian airstrike damaged a Bunge oilseeds plant in Ukraine, resulting in no employee injuries. The incident highlights ongoing industrial and agricultural infrastructure risks in the region.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3753,
+        "title": "ADM rolling with biofuels opportunities",
+        "source": "World Grain",
+        "published_at": "2026-09-11T14:04:50+01:00",
+        "collected_at": "2026-09-13T21:14:46.461371+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "Archer-Daniels-Midland (ADM) is positioning itself to capitalize on biofuels opportunities, citing a constructive environment for growth as confirmed by its CFO. The company's strategic focus aligns with global energy transition trends.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3754,
+        "title": "CN files proposal with STB regarding UP-NS merger",
+        "source": "World Grain",
+        "published_at": "2026-09-11T13:50:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.463692+01:00",
+        "ai_relevant": true,
+        "relevance_score": 70,
+        "importance_score": 65,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China National (CN) has filed a proposal with the Southern Tier Board (STB) to merge operations, seeking expanded access to CN's network in key Midwest markets. The proposal involves strategic consolidation within the grain industry.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3758,
+        "title": "Bayer, Neste partner on US winter canola",
+        "source": "World Grain",
+        "published_at": "2026-09-10T14:52:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.468379+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "Bayer and Neste have partnered to develop a supply of lower-carbon oilseed feedstocks for biofuels in the United States. The collaboration focuses on sustainable agriculture and renewable energy production.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3769,
+        "title": "Bunge controller, CAO Simmons to retire",
+        "source": "World Grain",
+        "published_at": "2026-09-08T14:12:18+01:00",
+        "collected_at": "2026-09-13T21:14:46.484896+01:00",
+        "ai_relevant": true,
+        "relevance_score": 60,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "CAO Simmons is retiring as controller of Bunge, with James named as the successor effective April 1, 2027. This marks a significant leadership transition within the global grain industry.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3775,
+        "title": "CN sets grain transportation mark for August",
+        "source": "World Grain",
+        "published_at": "2026-09-07T12:30:06+01:00",
+        "collected_at": "2026-09-13T21:14:46.491555+01:00",
+        "ai_relevant": true,
+        "relevance_score": 75,
+        "importance_score": 80,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China's railway system transported 2.5 million tonnes of grain in the last month, setting a new record for August transportation volumes.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3778,
+        "title": "Crop year off to record start for CPKC",
+        "source": "World Grain",
+        "published_at": "2026-09-04T13:29:11+01:00",
+        "collected_at": "2026-09-13T21:14:46.494719+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Canadian Pacific Kansas City (CPKC) railroad has set a record-breaking monthly tonnage and carload mark for grain transportation in August. This performance highlights the robust operational capacity of Canada's grain logistics sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-011",
+    "category": "entity_centric",
+    "question": "What developments involve Bunge and ADM?",
+    "expected_article_ids": [
+      3752,
+      3753,
+      3769
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3752,
+        "title": "Attack damages Bunge oilseeds plant in Ukraine",
+        "source": "World Grain",
+        "published_at": "2026-09-11T15:14:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.460359+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "A Russian airstrike damaged a Bunge oilseeds plant in Ukraine, resulting in no employee injuries. The incident highlights ongoing industrial and agricultural infrastructure risks in the region.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3753,
+        "title": "ADM rolling with biofuels opportunities",
+        "source": "World Grain",
+        "published_at": "2026-09-11T14:04:50+01:00",
+        "collected_at": "2026-09-13T21:14:46.461371+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "Archer-Daniels-Midland (ADM) is positioning itself to capitalize on biofuels opportunities, citing a constructive environment for growth as confirmed by its CFO. The company's strategic focus aligns with global energy transition trends.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3769,
+        "title": "Bunge controller, CAO Simmons to retire",
+        "source": "World Grain",
+        "published_at": "2026-09-08T14:12:18+01:00",
+        "collected_at": "2026-09-13T21:14:46.484896+01:00",
+        "ai_relevant": true,
+        "relevance_score": 60,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "CAO Simmons is retiring as controller of Bunge, with James named as the successor effective April 1, 2027. This marks a significant leadership transition within the global grain industry.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-012",
+    "category": "comparison",
+    "question": "Compare the AI technology developments and autonomous vehicle announcements in the archive.",
+    "expected_article_ids": [
+      3153,
+      3159,
+      3747,
+      3751,
+      3771
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3153,
+        "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+        "source": "Yle News",
+        "published_at": "2026-09-12T17:29:01+01:00",
+        "collected_at": "2026-09-13T01:25:38.194948+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "AI & Technology",
+        "summary": "Dario Amodei, the CEO of Anthropic, is calling for independent monitoring of AI models during their development phase. He advocates for industry-wide and global regulation to ensure safety and oversight.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3159,
+        "title": "Professori tyrm\u00e4\u00e4 teko\u00e4lytutkijoiden kauhukuvat ihmiskunnan lopusta",
+        "source": "Yle News",
+        "published_at": "2026-09-12T15:41:36+01:00",
+        "collected_at": "2026-09-13T01:25:38.205552+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "Professor Laura Ruotsalainen argues that sensationalist media coverage distracts from the genuine risks of AI, such as election interference and data breaches. The article highlights her perspective on prioritizing factual risk assessment over fear-mongering narratives.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3747,
+        "title": "Tesla to Recall Cars in China on Safety Concerns",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T10:56:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.335417+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Industry & Operations",
+        "summary": "Tesla is planning a recall of 1.2 million vehicles in China due to software issues. The recall involves both China-made and imported models.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3751,
+        "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T08:30:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.338611+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "The Chinese autonomous-driving company WeRide is expanding its global operations with a focus on robotaxis and related services. The company aims to increase its market presence overseas, anticipating high demand for these technologies in the coming years.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3771,
+        "title": "AI brings speed to supply chain",
+        "source": "World Grain",
+        "published_at": "2026-09-08T12:54:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.486949+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the role of Artificial Intelligence in accelerating supply chain operations through the implementation of appropriate programs and data management. It emphasizes the necessity of human validation alongside technical solutions for successful deployment.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-013",
+    "category": "comparison",
+    "question": "Compare developments involving India and China where sufficient evidence exists.",
+    "expected_article_ids": [
+      3144,
+      3162,
+      3763,
+      3770
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3144,
+        "title": "Brics-maiden kokous jatkuu Intiassa",
+        "source": "Yle News",
+        "published_at": "2026-09-13T00:09:58+01:00",
+        "collected_at": "2026-09-13T01:25:38.187953+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "The article reports on the continuation of a maiden meeting involving BRICS nations in India. The event is described as an ongoing diplomatic gathering focused on international relations and strategic cooperation.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3162,
+        "title": "Kiina ja Intia pyrkiv\u00e4t ratkaisemaan vuosikymmeni\u00e4 hiert\u00e4neen rajakiistan",
+        "source": "Yle News",
+        "published_at": "2026-09-12T15:26:07+01:00",
+        "collected_at": "2026-09-13T01:25:38.207553+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "China and India are attempting to resolve a long-standing border dispute that has persisted for decades. The article reports on diplomatic efforts aimed at de-escalating regional tensions between the two nations.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3763,
+        "title": "China continues US soybean push amid South American purchases",
+        "source": "World Grain",
+        "published_at": "2026-09-09T15:20:34+01:00",
+        "collected_at": "2026-09-13T21:14:46.475008+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article reports on the US soybean export push to China, noting that import demand growth is expected to slow in coming years according to FAS data. It also highlights concurrent purchases from South American grain producers.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3770,
+        "title": "India expands decentralized grain infrastructure",
+        "source": "World Grain",
+        "published_at": "2026-09-08T14:04:25+01:00",
+        "collected_at": "2026-09-13T21:14:46.485415+01:00",
+        "ai_relevant": true,
+        "relevance_score": 85,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Indian government has announced an expansion of its decentralized grain storage infrastructure, adding 180,000 tonnes of capacity. This initiative aims to enhance food security and supply chain resilience.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-014",
+    "category": "comparison",
+    "question": "Compare North American grain rail logistics between Canadian National (CN) and CPKC.",
+    "expected_article_ids": [
+      3754,
+      3775,
+      3778
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3754,
+        "title": "CN files proposal with STB regarding UP-NS merger",
+        "source": "World Grain",
+        "published_at": "2026-09-11T13:50:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.463692+01:00",
+        "ai_relevant": true,
+        "relevance_score": 70,
+        "importance_score": 65,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China National (CN) has filed a proposal with the Southern Tier Board (STB) to merge operations, seeking expanded access to CN's network in key Midwest markets. The proposal involves strategic consolidation within the grain industry.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3775,
+        "title": "CN sets grain transportation mark for August",
+        "source": "World Grain",
+        "published_at": "2026-09-07T12:30:06+01:00",
+        "collected_at": "2026-09-13T21:14:46.491555+01:00",
+        "ai_relevant": true,
+        "relevance_score": 75,
+        "importance_score": 80,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China's railway system transported 2.5 million tonnes of grain in the last month, setting a new record for August transportation volumes.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3778,
+        "title": "Crop year off to record start for CPKC",
+        "source": "World Grain",
+        "published_at": "2026-09-04T13:29:11+01:00",
+        "collected_at": "2026-09-13T21:14:46.494719+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Canadian Pacific Kansas City (CPKC) railroad has set a record-breaking monthly tonnage and carload mark for grain transportation in August. This performance highlights the robust operational capacity of Canada's grain logistics sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-015",
+    "category": "timeline",
+    "question": "Construct a chronological timeline of grain market and agricultural developments in the archive.",
+    "expected_article_ids": [
+      3781,
+      3780,
+      3778,
+      3775,
+      3770,
+      3765,
+      3762,
+      3758,
+      3752
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3781,
+        "title": "Kamm takes over as SafeGrain CEO",
+        "source": "World Grain",
+        "published_at": "2026-09-03T14:47:21+01:00",
+        "collected_at": "2026-09-13T21:14:46.496324+01:00",
+        "ai_relevant": true,
+        "relevance_score": 65,
+        "importance_score": 40,
+        "primary_category": "Industry & Operations",
+        "summary": "Kamm has been appointed as the new CEO of SafeGrain, replacing Carr who is transitioning to the role of board chairman. This leadership change occurs within the global grain industry.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3780,
+        "title": "FAO Food Price Index rises again",
+        "source": "World Grain",
+        "published_at": "2026-09-04T12:47:38+01:00",
+        "collected_at": "2026-09-13T21:14:46.496324+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The FAO Cereal Price Index has reached its highest level since May 2024, indicating a significant rise in global cereal prices. This trend is reported by World Grain, an industry publication.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3778,
+        "title": "Crop year off to record start for CPKC",
+        "source": "World Grain",
+        "published_at": "2026-09-04T13:29:11+01:00",
+        "collected_at": "2026-09-13T21:14:46.494719+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Canadian Pacific Kansas City (CPKC) railroad has set a record-breaking monthly tonnage and carload mark for grain transportation in August. This performance highlights the robust operational capacity of Canada's grain logistics sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3775,
+        "title": "CN sets grain transportation mark for August",
+        "source": "World Grain",
+        "published_at": "2026-09-07T12:30:06+01:00",
+        "collected_at": "2026-09-13T21:14:46.491555+01:00",
+        "ai_relevant": true,
+        "relevance_score": 75,
+        "importance_score": 80,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "China's railway system transported 2.5 million tonnes of grain in the last month, setting a new record for August transportation volumes.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3770,
+        "title": "India expands decentralized grain infrastructure",
+        "source": "World Grain",
+        "published_at": "2026-09-08T14:04:25+01:00",
+        "collected_at": "2026-09-13T21:14:46.485415+01:00",
+        "ai_relevant": true,
+        "relevance_score": 85,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Indian government has announced an expansion of its decentralized grain storage infrastructure, adding 180,000 tonnes of capacity. This initiative aims to enhance food security and supply chain resilience.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3765,
+        "title": "FEFAC highlights sustainability progress",
+        "source": "World Grain",
+        "published_at": "2026-09-09T14:10:29+01:00",
+        "collected_at": "2026-09-13T21:14:46.478174+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "The FEFAC report highlights progress in sustainability goals within the feed industry while addressing strategic challenges. The article focuses on advancements and operational improvements in this sector.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3762,
+        "title": "FAS: Thailand\u2019s rice output expected to decline",
+        "source": "World Grain",
+        "published_at": "2026-09-10T12:16:10+01:00",
+        "collected_at": "2026-09-13T21:14:46.473437+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Food and Agriculture Organization (FAS) reports that Thailand's rice production is expected to decline due to tighter water supplies and the impact of an emerging El Ni\u00f1o phenomenon on off-season planting. This development highlights potential risks to global grain supply chains.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3758,
+        "title": "Bayer, Neste partner on US winter canola",
+        "source": "World Grain",
+        "published_at": "2026-09-10T14:52:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.468379+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "Bayer and Neste have partnered to develop a supply of lower-carbon oilseed feedstocks for biofuels in the United States. The collaboration focuses on sustainable agriculture and renewable energy production.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3752,
+        "title": "Attack damages Bunge oilseeds plant in Ukraine",
+        "source": "World Grain",
+        "published_at": "2026-09-11T15:14:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.460359+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "A Russian airstrike damaged a Bunge oilseeds plant in Ukraine, resulting in no employee injuries. The incident highlights ongoing industrial and agricultural infrastructure risks in the region.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-016",
+    "category": "timeline",
+    "question": "Show the chronological sequence of relevant AI developments.",
+    "expected_article_ids": [
+      3751,
+      3771,
+      3766,
+      3159,
+      3153
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3751,
+        "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T08:30:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.338611+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "The Chinese autonomous-driving company WeRide is expanding its global operations with a focus on robotaxis and related services. The company aims to increase its market presence overseas, anticipating high demand for these technologies in the coming years.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3771,
+        "title": "AI brings speed to supply chain",
+        "source": "World Grain",
+        "published_at": "2026-09-08T12:54:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.486949+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the role of Artificial Intelligence in accelerating supply chain operations through the implementation of appropriate programs and data management. It emphasizes the necessity of human validation alongside technical solutions for successful deployment.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3766,
+        "title": "Crop forecasting enters the age of digital twins",
+        "source": "World Grain",
+        "published_at": "2026-09-09T13:03:43+01:00",
+        "collected_at": "2026-09-13T21:14:46.478174+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "New technologies are enabling earlier and more detailed insights into crop prospects through the application of digital twins. The article highlights advancements in agricultural technology.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3159,
+        "title": "Professori tyrm\u00e4\u00e4 teko\u00e4lytutkijoiden kauhukuvat ihmiskunnan lopusta",
+        "source": "Yle News",
+        "published_at": "2026-09-12T15:41:36+01:00",
+        "collected_at": "2026-09-13T01:25:38.205552+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "AI & Technology",
+        "summary": "Professor Laura Ruotsalainen argues that sensationalist media coverage distracts from the genuine risks of AI, such as election interference and data breaches. The article highlights her perspective on prioritizing factual risk assessment over fear-mongering narratives.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3153,
+        "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+        "source": "Yle News",
+        "published_at": "2026-09-12T17:29:01+01:00",
+        "collected_at": "2026-09-13T01:25:38.194948+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "AI & Technology",
+        "summary": "Dario Amodei, the CEO of Anthropic, is calling for independent monitoring of AI models during their development phase. He advocates for industry-wide and global regulation to ensure safety and oversight.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-017",
+    "category": "timeline",
+    "question": "Provide a timeline of geopolitical diplomatic visits and talks reported in September 2026.",
+    "expected_article_ids": [
+      3162,
+      2926,
+      2927,
+      2928,
+      3144
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3162,
+        "title": "Kiina ja Intia pyrkiv\u00e4t ratkaisemaan vuosikymmeni\u00e4 hiert\u00e4neen rajakiistan",
+        "source": "Yle News",
+        "published_at": "2026-09-12T15:26:07+01:00",
+        "collected_at": "2026-09-13T01:25:38.207553+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "China and India are attempting to resolve a long-standing border dispute that has persisted for decades. The article reports on diplomatic efforts aimed at de-escalating regional tensions between the two nations.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2926,
+        "title": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:57:58+01:00",
+        "collected_at": "2026-09-13T01:25:25.376650+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "US negotiator Jared Kushner reports successful diplomatic missions to Moscow and Kiev, indicating progress in negotiations toward a lasting resolution. The article highlights his confidence in identifying the path forward for enduring peace.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2927,
+        "title": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:39:56+01:00",
+        "collected_at": "2026-09-13T01:25:25.377651+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "The US presidential envoy, John F. Kerry, stated that negotiators must find the right formula to settle the ongoing conflict between Russia and Ukraine.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 2928,
+        "title": "Former US Army Secretary Driscoll arrives in Kiev \u2014 CBS",
+        "source": "TASS World",
+        "published_at": "2026-09-13T00:22:09+01:00",
+        "collected_at": "2026-09-13T01:25:25.377651+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "Former US Army Secretary Driscoll attended a conference on the Yalta European Strategy in Kiev. The event took place under the auspices of TASS World.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3144,
+        "title": "Brics-maiden kokous jatkuu Intiassa",
+        "source": "Yle News",
+        "published_at": "2026-09-13T00:09:58+01:00",
+        "collected_at": "2026-09-13T01:25:38.187953+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Geopolitics",
+        "summary": "The article reports on the continuation of a maiden meeting involving BRICS nations in India. The event is described as an ongoing diplomatic gathering focused on international relations and strategic cooperation.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-018",
+    "category": "analytical_causal",
+    "question": "What factors appear to be affecting global grain supply and food prices?",
+    "expected_article_ids": [
+      3752,
+      3762,
+      3772,
+      3780
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3752,
+        "title": "Attack damages Bunge oilseeds plant in Ukraine",
+        "source": "World Grain",
+        "published_at": "2026-09-11T15:14:41+01:00",
+        "collected_at": "2026-09-13T21:14:46.460359+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Industry & Operations",
+        "summary": "A Russian airstrike damaged a Bunge oilseeds plant in Ukraine, resulting in no employee injuries. The incident highlights ongoing industrial and agricultural infrastructure risks in the region.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3762,
+        "title": "FAS: Thailand\u2019s rice output expected to decline",
+        "source": "World Grain",
+        "published_at": "2026-09-10T12:16:10+01:00",
+        "collected_at": "2026-09-13T21:14:46.473437+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The Food and Agriculture Organization (FAS) reports that Thailand's rice production is expected to decline due to tighter water supplies and the impact of an emerging El Ni\u00f1o phenomenon on off-season planting. This development highlights potential risks to global grain supply chains.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3772,
+        "title": "Railroads ready for US grain harvest",
+        "source": "World Grain",
+        "published_at": "2026-09-07T13:15:37+01:00",
+        "collected_at": "2026-09-13T21:14:46.488488+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the critical role of effective communication in rail operations during the US grain harvest season. It highlights industry readiness and logistical coordination.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3780,
+        "title": "FAO Food Price Index rises again",
+        "source": "World Grain",
+        "published_at": "2026-09-04T12:47:38+01:00",
+        "collected_at": "2026-09-13T21:14:46.496324+01:00",
+        "ai_relevant": true,
+        "relevance_score": 90,
+        "importance_score": 85,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The FAO Cereal Price Index has reached its highest level since May 2024, indicating a significant rise in global cereal prices. This trend is reported by World Grain, an industry publication.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-019",
+    "category": "analytical_causal",
+    "question": "What evidence is there that AI and digital twins are being applied to supply chains?",
+    "expected_article_ids": [
+      3766,
+      3771
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3766,
+        "title": "Crop forecasting enters the age of digital twins",
+        "source": "World Grain",
+        "published_at": "2026-09-09T13:03:43+01:00",
+        "collected_at": "2026-09-13T21:14:46.478174+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Industry & Operations",
+        "summary": "New technologies are enabling earlier and more detailed insights into crop prospects through the application of digital twins. The article highlights advancements in agricultural technology.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3771,
+        "title": "AI brings speed to supply chain",
+        "source": "World Grain",
+        "published_at": "2026-09-08T12:54:42+01:00",
+        "collected_at": "2026-09-13T21:14:46.486949+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 45,
+        "primary_category": "Supply Chain & Trade",
+        "summary": "The article discusses the role of Artificial Intelligence in accelerating supply chain operations through the implementation of appropriate programs and data management. It emphasizes the necessity of human validation alongside technical solutions for successful deployment.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-020",
+    "category": "analytical_causal",
+    "question": "What commercial and regulatory pressures are impacting wireless telecom and financial services?",
+    "expected_article_ids": [
+      3744,
+      3746,
+      3749
+    ],
+    "gold_audit": [
+      {
+        "article_id": 3744,
+        "title": "Verizon Results Boosted by Higher Prices, Gain in Wireless Customers",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T14:05:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.331951+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Business",
+        "summary": "Verizon's quarterly earnings exceeded Wall Street forecasts due to increased pricing strategies driving revenue growth. The company also reported a gain in wireless customers.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3746,
+        "title": "CaixaBank's CFO Sees Case for Dealmaking Among Europe's Banks",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T11:11:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.334272+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Business",
+        "summary": "CaixaBank's CFO Javier Pano argues that while the bank itself is not pursuing growth through acquisitions in its current plan, other European banks should consider dealmaking as a strategic option. The interview highlights a divergence between CaixaBank's internal strategy and broader industry trends.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      },
+      {
+        "article_id": 3749,
+        "title": "Burberry Sees Positive Signs as Turnaround Plan Continues",
+        "source": "Wall Street Journal US Business",
+        "published_at": "2025-01-24T09:31:00+00:00",
+        "collected_at": "2026-09-13T21:14:45.337007+01:00",
+        "ai_relevant": true,
+        "relevance_score": 80,
+        "importance_score": 75,
+        "primary_category": "Business",
+        "summary": "Burberry has upgraded its earnings outlook following positive sales growth in the Americas during the holiday period. The company attributes this improvement to successful efforts in revamping its brand.",
+        "classification": "PENDING_SEMANTIC_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "RAG-021",
+    "category": "insufficient_evidence",
+    "question": "What are the latest commercial sales figures for Apple Vision Pro 2 in Europe?",
+    "expected_article_ids": [],
+    "gold_audit": []
+  },
+  {
+    "id": "RAG-022",
+    "category": "insufficient_evidence",
+    "question": "What breakthroughs in fault-tolerant quantum computing were announced by IBM today?",
+    "expected_article_ids": [],
+    "gold_audit": []
+  },
+  {
+    "id": "RAG-023",
+    "category": "insufficient_evidence",
+    "question": "What was the outcome of the 2026 FIFA World Cup final in North America?",
+    "expected_article_ids": [],
+    "gold_audit": []
+  },
+  {
+    "id": "RAG-024",
+    "category": "insufficient_evidence",
+    "question": "What specific earnings guidance did Microsoft release for Q4 2026?",
+    "expected_article_ids": [],
+    "gold_audit": []
+  },
+  {
+    "id": "RAG-025",
+    "category": "insufficient_evidence",
+    "question": "How did the central bank of Japan adjust interest rates yesterday?",
+    "expected_article_ids": [],
+    "gold_audit": []
+  }
+]

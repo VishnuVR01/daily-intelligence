@@ -1,0 +1,842 @@
+[
+  {
+    "raw_name": "Federal Reserve",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Federal Reserve",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Exact match for seed central bank"
+  },
+  {
+    "raw_name": "Fed",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Federal Reserve",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Seed alias resolution"
+  },
+  {
+    "raw_name": "US Federal Reserve",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Federal Reserve",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Alias variation"
+  },
+  {
+    "raw_name": "ECB",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "European Central Bank",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Seed acronym for European Central Bank"
+  },
+  {
+    "raw_name": "European Central Bank",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "European Central Bank",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Exact match for European Central Bank"
+  },
+  {
+    "raw_name": "Bank of England",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Bank of England",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Exact match Bank of England"
+  },
+  {
+    "raw_name": "BoE",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Bank of England",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Acronym for Bank of England"
+  },
+  {
+    "raw_name": "Bank of Japan",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Bank of Japan",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Exact match Bank of Japan"
+  },
+  {
+    "raw_name": "BOJ",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Bank of Japan",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Acronym Bank of Japan"
+  },
+  {
+    "raw_name": "People's Bank of China",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "People's Bank of China",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Exact match PBOC"
+  },
+  {
+    "raw_name": "PBOC",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "People's Bank of China",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Acronym PBOC"
+  },
+  {
+    "raw_name": "Reserve Bank of India",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Reserve Bank of India",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Exact match RBI"
+  },
+  {
+    "raw_name": "RBI",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": "Reserve Bank of India",
+    "expected_type": "CENTRAL_BANK",
+    "should_resolve": true,
+    "description": "Acronym RBI"
+  },
+  {
+    "raw_name": "International Monetary Fund",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "International Monetary Fund",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "Exact match IMF"
+  },
+  {
+    "raw_name": "IMF",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "International Monetary Fund",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "Acronym IMF"
+  },
+  {
+    "raw_name": "World Bank",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "World Bank",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "Exact match World Bank"
+  },
+  {
+    "raw_name": "World Trade Organization",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "World Trade Organization",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "Exact match WTO"
+  },
+  {
+    "raw_name": "WTO",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "World Trade Organization",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "Acronym WTO"
+  },
+  {
+    "raw_name": "OPEC",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "OPEC",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "OPEC acronym"
+  },
+  {
+    "raw_name": "OPEC+",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": "OPEC+",
+    "expected_type": "ORGANIZATION",
+    "should_resolve": true,
+    "description": "OPEC+ acronym"
+  },
+  {
+    "raw_name": "United States",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United States",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match country US"
+  },
+  {
+    "raw_name": "US",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United States",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Country ISO code US"
+  },
+  {
+    "raw_name": "U.S.",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United States",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Country abbreviation U.S."
+  },
+  {
+    "raw_name": "USA",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United States",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Country ISO code USA"
+  },
+  {
+    "raw_name": "United Kingdom",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United Kingdom",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match country UK"
+  },
+  {
+    "raw_name": "UK",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United Kingdom",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Country ISO code UK"
+  },
+  {
+    "raw_name": "U.K.",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "United Kingdom",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Country abbreviation U.K."
+  },
+  {
+    "raw_name": "China",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "China",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match China"
+  },
+  {
+    "raw_name": "PRC",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "China",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "China abbreviation PRC"
+  },
+  {
+    "raw_name": "People's Republic of China",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "China",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "China full formal name"
+  },
+  {
+    "raw_name": "Japan",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "Japan",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match Japan"
+  },
+  {
+    "raw_name": "Germany",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "Germany",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match Germany"
+  },
+  {
+    "raw_name": "France",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "France",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match France"
+  },
+  {
+    "raw_name": "India",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "India",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match India"
+  },
+  {
+    "raw_name": "South Korea",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "South Korea",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match South Korea"
+  },
+  {
+    "raw_name": "Korea",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "South Korea",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Alias for South Korea"
+  },
+  {
+    "raw_name": "Taiwan",
+    "raw_type": "COUNTRY",
+    "expected_canonical": "Taiwan",
+    "expected_type": "COUNTRY",
+    "should_resolve": true,
+    "description": "Exact match Taiwan"
+  },
+  {
+    "raw_name": "European Union",
+    "raw_type": "REGION",
+    "expected_canonical": "European Union",
+    "expected_type": "REGION",
+    "should_resolve": true,
+    "description": "Exact match EU region"
+  },
+  {
+    "raw_name": "EU",
+    "raw_type": "REGION",
+    "expected_canonical": "European Union",
+    "expected_type": "REGION",
+    "should_resolve": true,
+    "description": "EU acronym"
+  },
+  {
+    "raw_name": "Eurozone",
+    "raw_type": "REGION",
+    "expected_canonical": "Eurozone",
+    "expected_type": "REGION",
+    "should_resolve": true,
+    "description": "Eurozone region"
+  },
+  {
+    "raw_name": "Asia-Pacific",
+    "raw_type": "REGION",
+    "expected_canonical": "Asia-Pacific",
+    "expected_type": "REGION",
+    "should_resolve": true,
+    "description": "APAC region"
+  },
+  {
+    "raw_name": "APAC",
+    "raw_type": "REGION",
+    "expected_canonical": "Asia-Pacific",
+    "expected_type": "REGION",
+    "should_resolve": true,
+    "description": "APAC acronym"
+  },
+  {
+    "raw_name": "Latin America",
+    "raw_type": "REGION",
+    "expected_canonical": "Latin America",
+    "expected_type": "REGION",
+    "should_resolve": true,
+    "description": "LatAm region"
+  },
+  {
+    "raw_name": "OpenAI",
+    "raw_type": "COMPANY",
+    "expected_canonical": "OpenAI",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Exact match OpenAI"
+  },
+  {
+    "raw_name": "Microsoft",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Microsoft Corporation",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Microsoft alias to Microsoft Corporation"
+  },
+  {
+    "raw_name": "Microsoft Corp",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Microsoft Corporation",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Microsoft Corp with suffix"
+  },
+  {
+    "raw_name": "Microsoft Corporation",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Microsoft Corporation",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Exact match Microsoft Corporation"
+  },
+  {
+    "raw_name": "Nvidia",
+    "raw_type": "COMPANY",
+    "expected_canonical": "NVIDIA Corporation",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Nvidia alias"
+  },
+  {
+    "raw_name": "NVIDIA",
+    "raw_type": "COMPANY",
+    "expected_canonical": "NVIDIA Corporation",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "NVIDIA alias"
+  },
+  {
+    "raw_name": "NVIDIA Corp",
+    "raw_type": "COMPANY",
+    "expected_canonical": "NVIDIA Corporation",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "NVIDIA Corp with suffix"
+  },
+  {
+    "raw_name": "Apple",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Apple Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Apple alias to Apple Inc."
+  },
+  {
+    "raw_name": "Apple Inc.",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Apple Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Exact match Apple Inc."
+  },
+  {
+    "raw_name": "Google",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Alphabet Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Google alias to Alphabet Inc."
+  },
+  {
+    "raw_name": "Alphabet",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Alphabet Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Alphabet alias"
+  },
+  {
+    "raw_name": "Alphabet Inc.",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Alphabet Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Exact match Alphabet Inc."
+  },
+  {
+    "raw_name": "Amazon",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Amazon.com Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Amazon alias"
+  },
+  {
+    "raw_name": "Meta",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Meta Platforms Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Meta alias"
+  },
+  {
+    "raw_name": "Tesla",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Tesla Inc.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Tesla alias"
+  },
+  {
+    "raw_name": "TSMC",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Taiwan Semiconductor Manufacturing Company",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "TSMC acronym"
+  },
+  {
+    "raw_name": "ASML",
+    "raw_type": "COMPANY",
+    "expected_canonical": "ASML Holding N.V.",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "ASML acronym"
+  },
+  {
+    "raw_name": "Saudi Aramco",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Saudi Aramco",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Saudi Aramco exact"
+  },
+  {
+    "raw_name": "Aramco",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Saudi Aramco",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Aramco alias"
+  },
+  {
+    "raw_name": "Ayana Bio",
+    "raw_type": "COMPANY",
+    "expected_canonical": "Ayana Bio",
+    "expected_type": "COMPANY",
+    "should_resolve": true,
+    "description": "Ayana Bio company"
+  },
+  {
+    "raw_name": "Jerome Powell",
+    "raw_type": "PERSON",
+    "expected_canonical": "Jerome Powell",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Jerome Powell exact"
+  },
+  {
+    "raw_name": "Jay Powell",
+    "raw_type": "PERSON",
+    "expected_canonical": "Jerome Powell",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Jay Powell alias"
+  },
+  {
+    "raw_name": "Powell",
+    "raw_type": "PERSON",
+    "expected_canonical": "Jerome Powell",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Powell alias"
+  },
+  {
+    "raw_name": "Christine Lagarde",
+    "raw_type": "PERSON",
+    "expected_canonical": "Christine Lagarde",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Lagarde exact"
+  },
+  {
+    "raw_name": "Lagarde",
+    "raw_type": "PERSON",
+    "expected_canonical": "Christine Lagarde",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Lagarde surname"
+  },
+  {
+    "raw_name": "Andrew Bailey",
+    "raw_type": "PERSON",
+    "expected_canonical": "Andrew Bailey",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Andrew Bailey exact"
+  },
+  {
+    "raw_name": "Kazuo Ueda",
+    "raw_type": "PERSON",
+    "expected_canonical": "Kazuo Ueda",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Kazuo Ueda exact"
+  },
+  {
+    "raw_name": "Sam Altman",
+    "raw_type": "PERSON",
+    "expected_canonical": "Sam Altman",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Sam Altman exact"
+  },
+  {
+    "raw_name": "Jensen Huang",
+    "raw_type": "PERSON",
+    "expected_canonical": "Jensen Huang",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Jensen Huang exact"
+  },
+  {
+    "raw_name": "Elon Musk",
+    "raw_type": "PERSON",
+    "expected_canonical": "Elon Musk",
+    "expected_type": "PERSON",
+    "should_resolve": true,
+    "description": "Elon Musk exact"
+  },
+  {
+    "raw_name": "Brent Crude",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Brent Crude",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Brent Crude commodity"
+  },
+  {
+    "raw_name": "Brent",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Brent Crude",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Brent alias"
+  },
+  {
+    "raw_name": "WTI Crude",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "WTI Crude Oil",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "WTI Crude commodity"
+  },
+  {
+    "raw_name": "Spot Gold",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Gold",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Spot Gold alias"
+  },
+  {
+    "raw_name": "Gold",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Gold",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Gold commodity"
+  },
+  {
+    "raw_name": "Silver",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Silver",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Silver commodity"
+  },
+  {
+    "raw_name": "Copper",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Copper",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Copper commodity"
+  },
+  {
+    "raw_name": "Lithium",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Lithium",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Lithium commodity"
+  },
+  {
+    "raw_name": "Natural Gas",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Natural Gas",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Natural Gas commodity"
+  },
+  {
+    "raw_name": "Uranium",
+    "raw_type": "COMMODITY",
+    "expected_canonical": "Uranium",
+    "expected_type": "COMMODITY",
+    "should_resolve": true,
+    "description": "Uranium commodity"
+  },
+  {
+    "raw_name": "ChatGPT",
+    "raw_type": "PRODUCT",
+    "expected_canonical": "ChatGPT",
+    "expected_type": "PRODUCT",
+    "should_resolve": true,
+    "description": "ChatGPT product"
+  },
+  {
+    "raw_name": "GPT-4",
+    "raw_type": "TECHNOLOGY",
+    "expected_canonical": "GPT-4",
+    "expected_type": "TECHNOLOGY",
+    "should_resolve": true,
+    "description": "GPT-4 tech"
+  },
+  {
+    "raw_name": "H100 GPU",
+    "raw_type": "PRODUCT",
+    "expected_canonical": "NVIDIA H100",
+    "expected_type": "PRODUCT",
+    "should_resolve": true,
+    "description": "H100 GPU product alias"
+  },
+  {
+    "raw_name": "NVIDIA H100",
+    "raw_type": "PRODUCT",
+    "expected_canonical": "NVIDIA H100",
+    "expected_type": "PRODUCT",
+    "should_resolve": true,
+    "description": "NVIDIA H100 exact product"
+  },
+  {
+    "raw_name": "iPhone",
+    "raw_type": "PRODUCT",
+    "expected_canonical": "iPhone",
+    "expected_type": "PRODUCT",
+    "should_resolve": true,
+    "description": "iPhone product"
+  },
+  {
+    "raw_name": "Generative AI",
+    "raw_type": "TECHNOLOGY",
+    "expected_canonical": "Generative AI",
+    "expected_type": "TECHNOLOGY",
+    "should_resolve": true,
+    "description": "Generative AI tech"
+  },
+  {
+    "raw_name": "Semiconductors",
+    "raw_type": "TECHNOLOGY",
+    "expected_canonical": "Semiconductors",
+    "expected_type": "TECHNOLOGY",
+    "should_resolve": true,
+    "description": "Semiconductors tech"
+  },
+  {
+    "raw_name": "Quantum Computing",
+    "raw_type": "TECHNOLOGY",
+    "expected_canonical": "Quantum Computing",
+    "expected_type": "TECHNOLOGY",
+    "should_resolve": true,
+    "description": "Quantum Computing tech"
+  },
+  {
+    "raw_name": "government",
+    "raw_type": "GOVERNMENT_BODY",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "officials",
+    "raw_type": "PERSON",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "company",
+    "raw_type": "COMPANY",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "analysts",
+    "raw_type": "PERSON",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "central bank",
+    "raw_type": "CENTRAL_BANK",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "market",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "investors",
+    "raw_type": "PERSON",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "regulators",
+    "raw_type": "GOVERNMENT_BODY",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "economy",
+    "raw_type": "REGION",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "policymakers",
+    "raw_type": "PERSON",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "banks",
+    "raw_type": "COMPANY",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "industry",
+    "raw_type": "ORGANIZATION",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Generic term suppression"
+  },
+  {
+    "raw_name": "x",
+    "raw_type": "COMPANY",
+    "expected_canonical": null,
+    "expected_type": null,
+    "should_resolve": false,
+    "description": "Single-letter ambiguous string suppression"
+  },
+  {
+    "raw_name": "ai",
+    "raw_type": "TECHNOLOGY",
+    "expected_canonical": "Artificial Intelligence",
+    "expected_type": "TECHNOLOGY",
+    "should_resolve": true,
+    "description": "AI acronym resolution to Artificial Intelligence"
+  }
+]
