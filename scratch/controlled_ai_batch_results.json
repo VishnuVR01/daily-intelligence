@@ -1,0 +1,72 @@
+[
+  {
+    "article_id": 3820,
+    "title": "Funerals for children killed after fire spreads to school in DR Congo",
+    "source": "Al Jazeera English",
+    "ai_status": "success",
+    "is_relevant": true,
+    "relevance_score": 90,
+    "importance_score": 75,
+    "primary_category": "World",
+    "summary_generated": true,
+    "topics_generated": true,
+    "entities_generated": true,
+    "summary_preview": "Memorial services were held for at least 28 children killed in a school fire that spread rapidly in ..."
+  },
+  {
+    "article_id": 3821,
+    "title": "What\u2019s the VAR mistake controversy in Haaland\u2019s Man City goal vs United?",
+    "source": "Al Jazeera English",
+    "ai_status": "out_of_scope",
+    "is_relevant": false,
+    "relevance_score": 0,
+    "importance_score": 0,
+    "primary_category": null,
+    "summary_generated": true,
+    "topics_generated": true,
+    "entities_generated": true,
+    "summary_preview": "The article discusses the VAR controversy surrounding a goal scored by Erling Haaland for Manchester..."
+  },
+  {
+    "article_id": 3822,
+    "title": "Trump says calls for more control on AI are a \u2018SICK conspiracy\u2019",
+    "source": "Al Jazeera English",
+    "ai_status": "success",
+    "is_relevant": true,
+    "relevance_score": 90,
+    "importance_score": 85,
+    "primary_category": "AI & Technology",
+    "summary_generated": true,
+    "topics_generated": true,
+    "entities_generated": true,
+    "summary_preview": "The US President, Donald Trump, has dismissed calls for stricter AI oversight as a conspiracy theory..."
+  },
+  {
+    "article_id": 3823,
+    "title": "Djibouti humanitarian situation worsens as Yemenis seek refuge",
+    "source": "Al Jazeera English",
+    "ai_status": "success",
+    "is_relevant": true,
+    "relevance_score": 90,
+    "importance_score": 85,
+    "primary_category": "World",
+    "summary_generated": true,
+    "topics_generated": true,
+    "entities_generated": true,
+    "summary_preview": "The humanitarian situation in Djibouti is deteriorating as Yemenis continue to seek refuge, indicati..."
+  },
+  {
+    "article_id": 3824,
+    "title": "NATO pledges more Ukraine support after Russia strikes near Poland",
+    "source": "Al Jazeera English",
+    "ai_status": "success",
+    "is_relevant": true,
+    "relevance_score": 90,
+    "importance_score": 85,
+    "primary_category": "Geopolitics",
+    "summary_generated": true,
+    "topics_generated": true,
+    "entities_generated": true,
+    "summary_preview": "NATO Chief Mark Rutte asserts that Western allies will not be intimidated by Russian military strike..."
+  }
+]

@@ -13,14 +13,14 @@ from repositories.articles import search_articles_v1
 @pytest.fixture
 def search_sample_data(test_db_session: Session):
     """Seed test articles for search filtering and ranking tests."""
-    src_ft = Source(name="Financial Times", source_family="news", trust_tier="institutional", category="Markets & Economy", country_code="GB")
-    src_reuters = Source(name="Reuters Tech", source_family="news", trust_tier="primary", category="AI & Technology", country_code="US")
-    test_db_session.add_all([src_ft, src_reuters])
-    test_db_session.flush()
-
     c_uk = Country(code="GB", name="United Kingdom")
     c_us = Country(code="US", name="United States")
     test_db_session.add_all([c_uk, c_us])
+    test_db_session.flush()
+
+    src_ft = Source(name="Financial Times", source_family="news", trust_tier="institutional", category="Markets & Economy", country_code="GB")
+    src_reuters = Source(name="Reuters Tech", source_family="news", trust_tier="primary", category="AI & Technology", country_code="US")
+    test_db_session.add_all([src_ft, src_reuters])
     test_db_session.flush()
 
     now_utc = datetime.now(timezone.utc)

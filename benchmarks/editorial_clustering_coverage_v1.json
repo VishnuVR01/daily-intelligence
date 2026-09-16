@@ -1,0 +1,1237 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_at": "2026-09-16T18:30:00Z",
+    "description": "Expanded gold benchmark dataset for Stage 4D.1 event coverage expansion containing 160 manually reviewed candidate pair and singleton cases."
+  },
+  "positive_same_event_pairs": [
+    {
+      "id1": 2926,
+      "title1": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+      "id2": 2927,
+      "title2": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+      "expected_merge": true,
+      "reason": "Kushner diplomatic mission coverage"
+    },
+    {
+      "id1": 2928,
+      "title1": "Kushner meets President El-Sisi in Cairo to discuss Gaza peace framework",
+      "id2": 2929,
+      "title2": "Egyptian President El-Sisi receives US envoy Kushner for Middle East talks",
+      "expected_merge": true,
+      "reason": "El-Sisi Kushner Cairo peace talks"
+    },
+    {
+      "id1": 4761,
+      "title1": "Puolustusministeri H\u00e4kk\u00e4nen: Porin TNT-tehtaan rakentamiseen 20 miljoonaa euroa lis\u00e4rahoitusta",
+      "id2": 4762,
+      "title2": "Suomen TNT-tehdas Poriin sai 20 miljoonan euron rahoitusp\u00e4\u00e4t\u00f6ksen",
+      "expected_merge": true,
+      "reason": "20M EUR Pori TNT factory funding"
+    },
+    {
+      "id1": 4763,
+      "title1": "Finland approves 20M EUR funding for new TNT explosive plant in Pori",
+      "id2": 4764,
+      "title2": "Finnish Defense Ministry commits 20 million euros to Pori TNT facility",
+      "expected_merge": true,
+      "reason": "Finland Pori TNT factory approval"
+    },
+    {
+      "id1": 2401,
+      "title1": "Fed holds interest rates steady at 4.75%-5.00% target range",
+      "id2": 2402,
+      "title2": "Federal Reserve maintains policy rate, signals data-dependent path",
+      "expected_merge": true,
+      "reason": "Fed rate hold decision"
+    },
+    {
+      "id1": 24011,
+      "title1": "Federal Reserve keeps benchmark rate unchanged at 4.75%-5.00%",
+      "id2": 24012,
+      "title2": "Powell states Fed rate target remains 4.75%-5.00% following FOMC meeting",
+      "expected_merge": true,
+      "reason": "Fed benchmark rate hold"
+    },
+    {
+      "id1": 24013,
+      "title1": "FOMC statement: Fed leaves benchmark interest rate target at 4.75%-5.00%",
+      "id2": 24014,
+      "title2": "US central bank pauses interest rate moves, maintaining 4.75%-5.00% band",
+      "expected_merge": true,
+      "reason": "FOMC rate pause"
+    },
+    {
+      "id1": 2403,
+      "title1": "ECB cuts Deposit Facility Rate by 25 bps to 3.25%",
+      "id2": 2404,
+      "title2": "Lagarde announces 25 basis point rate cut as inflation nears target",
+      "expected_merge": true,
+      "reason": "ECB 25 bps rate cut"
+    },
+    {
+      "id1": 24031,
+      "title1": "European Central Bank lowers deposit rate to 3.25% in Frankfurt",
+      "id2": 24032,
+      "title2": "ECB reduces policy rate by a quarter percentage point to 3.25%",
+      "expected_merge": true,
+      "reason": "ECB Frankfurt rate reduction"
+    },
+    {
+      "id1": 2413,
+      "title1": "Bank of Japan raises policy rate by 15 bps to 0.25%",
+      "id2": 2414,
+      "title2": "BoJ hikes benchmark interest rate to 0.25%, signals further tightening",
+      "expected_merge": true,
+      "reason": "BoJ rate hike decision"
+    },
+    {
+      "id1": 24131,
+      "title1": "Ueda leads Bank of Japan to increase uncollateralized overnight rate to 0.25%",
+      "id2": 24132,
+      "title2": "BoJ policy board votes to lift interest rate target to 0.25%",
+      "expected_merge": true,
+      "reason": "BoJ Ueda rate hike vote"
+    },
+    {
+      "id1": 2436,
+      "title1": "Bank of England votes 8-1 to keep Bank Rate at 4.75%",
+      "id2": 2437,
+      "title2": "BoE leaves interest rates on hold at 4.75% amid sticky service inflation",
+      "expected_merge": true,
+      "reason": "BoE rate hold decision"
+    },
+    {
+      "id1": 2438,
+      "title1": "RBI keeps repo rate unchanged at 6.50% for tenth consecutive meeting",
+      "id2": 2439,
+      "title2": "Das states RBI Monetary Policy Committee holds repo rate at 6.50%",
+      "expected_merge": true,
+      "reason": "RBI repo rate hold"
+    },
+    {
+      "id1": 2405,
+      "title1": "NVIDIA announces Vera Rubin NVLink architecture at AI Summit",
+      "id2": 2406,
+      "title2": "NVIDIA details Vera Rubin platform for next-gen AI datacenters",
+      "expected_merge": true,
+      "reason": "NVIDIA Vera Rubin architecture announcement"
+    },
+    {
+      "id1": 24051,
+      "title1": "Huang presents NVIDIA Vera Rubin architecture featuring 6th gen NVLink",
+      "id2": 24052,
+      "title2": "NVIDIA unveils Vera Rubin AI supercomputing platform in keynote",
+      "expected_merge": true,
+      "reason": "NVIDIA Huang Vera Rubin keynote"
+    },
+    {
+      "id1": 2407,
+      "title1": "AWS launches Instance Preference Lists for SageMaker AI",
+      "id2": 2408,
+      "title2": "Amazon Web Services adds instance preference lists to SageMaker",
+      "expected_merge": true,
+      "reason": "AWS SageMaker feature launch"
+    },
+    {
+      "id1": 2411,
+      "title1": "OpenAI unveils GPT-5 with multimodal reasoning capabilities",
+      "id2": 2412,
+      "title2": "OpenAI launches GPT-5 frontier model featuring enhanced reasoning",
+      "expected_merge": true,
+      "reason": "OpenAI GPT-5 launch"
+    },
+    {
+      "id1": 24111,
+      "title1": "Altman announces GPT-5 release with advance chain-of-thought capabilities",
+      "id2": 24112,
+      "title2": "OpenAI rolls out GPT-5 preview to ChatGPT Plus users",
+      "expected_merge": true,
+      "reason": "OpenAI Altman GPT-5 roll out"
+    },
+    {
+      "id1": 2419,
+      "title1": "Google DeepMind releases Gemini 2.0 Flash for developer preview",
+      "id2": 2420,
+      "title2": "Google unveils Gemini 2.0 Flash model with lower latency API access",
+      "expected_merge": true,
+      "reason": "Gemini 2.0 Flash release"
+    },
+    {
+      "id1": 2440,
+      "title1": "Anthropic launches Claude 3.5 Sonnet upgrade with computer use feature",
+      "id2": 2441,
+      "title2": "Anthropic updates Claude 3.5 Sonnet enabling direct computer operation",
+      "expected_merge": true,
+      "reason": "Anthropic Claude computer use launch"
+    },
+    {
+      "id1": 2409,
+      "title1": "Oil prices jump 3% as Red Sea shipping disruptions escalate",
+      "id2": 2410,
+      "title2": "Brent crude hits $108 as tanker rerouting pushes freight rates higher",
+      "expected_merge": true,
+      "reason": "Red Sea oil price reaction"
+    },
+    {
+      "id1": 24091,
+      "title1": "Houthi attacks in Red Sea force oil tankers around Cape of Good Hope, lifting crude",
+      "id2": 24092,
+      "title2": "Brent futures rise toward $108 per barrel following maritime shipping strikes",
+      "expected_merge": true,
+      "reason": "Red Sea tanker rerouting oil price surge"
+    },
+    {
+      "id1": 2415,
+      "title1": "TSMC breaks ground on $11B semiconductor fabrication plant in Dresden",
+      "id2": 2416,
+      "title2": "TSMC commences construction of European chip fab in Dresden Germany",
+      "expected_merge": true,
+      "reason": "TSMC Dresden fab groundbreaking"
+    },
+    {
+      "id1": 2417,
+      "title1": "US CPI inflation cools to 2.5% in August, cementing September rate cut bets",
+      "id2": 2418,
+      "title2": "US consumer prices rise 2.5% year-over-year in August inflation report",
+      "expected_merge": true,
+      "reason": "August US CPI report"
+    },
+    {
+      "id1": 24171,
+      "title1": "Bureau of Labor Statistics: US annual CPI slows to 2.5% in August",
+      "id2": 24172,
+      "title2": "Headline US inflation drops to 2.5% rate in August data release",
+      "expected_merge": true,
+      "reason": "BLS August CPI release"
+    },
+    {
+      "id1": 2421,
+      "title1": "UK GDP contracts 0.1% in Q2, raising stagflation concerns",
+      "id2": 2422,
+      "title2": "British economy shrinks 0.1% in second quarter ONS data shows",
+      "expected_merge": true,
+      "reason": "UK Q2 GDP contraction"
+    },
+    {
+      "id1": 2423,
+      "title1": "Ayana Bio secures $30M Series B funding for plant cell technology",
+      "id2": 2424,
+      "title2": "Ayana Bio raises $30M financing round to scale bio-manufactured ingredients",
+      "expected_merge": true,
+      "reason": "Ayana Bio Series B funding"
+    },
+    {
+      "id1": 2425,
+      "title1": "Saudi Aramco reports $27.3B Q2 net income, maintains quarterly dividend",
+      "id2": 2426,
+      "title2": "Aramco Q2 profit reaches $27.3 billion as oil production remains steady",
+      "expected_merge": true,
+      "reason": "Saudi Aramco Q2 earnings"
+    },
+    {
+      "id1": 2442,
+      "title1": "ExxonMobil posts Q2 net profit of $9.2B supported by Guyana volume growth",
+      "id2": 2443,
+      "title2": "Exxon Q2 earnings touch $9.2 billion driven by Permian and Guyana output",
+      "expected_merge": true,
+      "reason": "ExxonMobil Q2 earnings"
+    },
+    {
+      "id1": 2444,
+      "title1": "Gold prices surge past $2,700 per ounce on safe-haven demand",
+      "id2": 2445,
+      "title2": "Spot gold reaches all-time high of $2,700/oz as geopolitical tensions rise",
+      "expected_merge": true,
+      "reason": "Gold $2700 record high"
+    },
+    {
+      "id1": 2446,
+      "title1": "Apple rolls out Apple Intelligence features in iOS 18.1 beta",
+      "id2": 2447,
+      "title2": "Apple releases iOS 18.1 developer beta introducing Apple Intelligence",
+      "expected_merge": true,
+      "reason": "Apple Intelligence iOS 18.1 release"
+    },
+    {
+      "id1": 2448,
+      "title1": "Microsoft completes $68.7B acquisition of Activision Blizzard",
+      "id2": 2449,
+      "title2": "Microsoft closes Activision Blizzard deal following CMA clearance",
+      "expected_merge": true,
+      "reason": "Microsoft Activision deal close"
+    },
+    {
+      "id1": 2450,
+      "title1": "Pfizer and BioNTech receive FDA approval for updated COVID-19 vaccine",
+      "id2": 2451,
+      "title2": "FDA approves updated Pfizer-BioNTech mRNA vaccine targeting KP.2 strain",
+      "expected_merge": true,
+      "reason": "FDA Pfizer BioNTech vaccine approval"
+    },
+    {
+      "id1": 2452,
+      "title1": "US economy adds 142,000 jobs in August, unemployment rate ticks down to 4.2%",
+      "id2": 2453,
+      "title2": "US August payrolls rise by 142K while jobless rate drops to 4.2%",
+      "expected_merge": true,
+      "reason": "US August employment report"
+    },
+    {
+      "id1": 2454,
+      "title1": "Lithium Americas closes $2.26B DOE loan for Thacker Pass project construction",
+      "id2": 2455,
+      "title2": "US Department of Energy finalizes $2.26B loan for Thacker Pass lithium mine",
+      "expected_merge": true,
+      "reason": "Lithium Americas Thacker Pass DOE loan"
+    },
+    {
+      "id1": 2456,
+      "title1": "Boeing Starliner capsule lands uncrewed at White Sands Space Harbor",
+      "id2": 2457,
+      "title2": "Starliner touches down safely in New Mexico after departing ISS without crew",
+      "expected_merge": true,
+      "reason": "Boeing Starliner uncrewed landing"
+    },
+    {
+      "id1": 2458,
+      "title1": "ASML ships second High-NA EUV lithography system to Intel foundry",
+      "id2": 2459,
+      "title2": "Intel receives second High-NA EUV tool from ASML for Oregon fab",
+      "expected_merge": true,
+      "reason": "ASML High-NA EUV shipment to Intel"
+    },
+    {
+      "id1": 2460,
+      "title1": "SpaceX successfully completes Flight 5 Starship launch and booster catch",
+      "id2": 2461,
+      "title2": "SpaceX catches Super Heavy booster with chopsticks during Starship Test Flight 5",
+      "expected_merge": true,
+      "reason": "SpaceX Starship Flight 5 booster catch"
+    },
+    {
+      "id1": 2462,
+      "title1": "Musk unveils Cybercab autonomous robotaxi at We, Robot event",
+      "id2": 2463,
+      "title2": "Tesla presents Cybercab two-seater vehicle without steering wheel or pedals",
+      "expected_merge": true,
+      "reason": "Tesla Cybercab robotaxi launch"
+    },
+    {
+      "id1": 2464,
+      "title1": "Novo Nordisk Wegovy approved in China for weight management",
+      "id2": 2465,
+      "title2": "Chinese regulators approve Novo Nordisk semaglutide injection for obesity",
+      "expected_merge": true,
+      "reason": "Wegovy China approval"
+    },
+    {
+      "id1": 2466,
+      "title1": "Eli Lilly reports positive Phase 3 results for Zepbound in sleep apnea",
+      "id2": 2467,
+      "title2": "Lilly tirzepatide reduces sleep apnea severity by up to 63% in trial",
+      "expected_merge": true,
+      "reason": "Eli Lilly Zepbound sleep apnea trial"
+    },
+    {
+      "id1": 2468,
+      "title1": "Meta launches Llama 3.2 open vision models in 11B and 90B sizes",
+      "id2": 2469,
+      "title2": "Zuckerberg announces Llama 3.2 multimodal open-weights AI models",
+      "expected_merge": true,
+      "reason": "Meta Llama 3.2 release"
+    },
+    {
+      "id1": 2470,
+      "title1": "Intel turns foundry business into independent subsidiary",
+      "id2": 2471,
+      "title2": "Gelsinger announces Intel Foundry separation as standalone corporate entity",
+      "expected_merge": true,
+      "reason": "Intel Foundry subsidiary reorganization"
+    },
+    {
+      "id1": 2472,
+      "title1": "Volkswagen considers historic Germany plant closures amid cost pressures",
+      "id2": 2473,
+      "title2": "VW management signals possible domestic factory shutdowns in Germany",
+      "expected_merge": true,
+      "reason": "Volkswagen Germany factory closure threat"
+    },
+    {
+      "id1": 2474,
+      "title1": "Shell signals lower refining margins and gas trading in Q3 update",
+      "id2": 2475,
+      "title2": "Shell warns of reduced downstream refining profits in third quarter preview",
+      "expected_merge": true,
+      "reason": "Shell Q3 update warning"
+    },
+    {
+      "id1": 2476,
+      "title1": "European gas prices spike 6% following transit concerns through Ukraine",
+      "id2": 2477,
+      "title2": "TTF natural gas benchmark jumps to \u20ac40/MWh on Sudzha pipeline risk",
+      "expected_merge": true,
+      "reason": "European natural gas price spike"
+    },
+    {
+      "id1": 2478,
+      "title1": "Japan Q2 GDP revised up to annualized 2.9% growth on business spending",
+      "id2": 2479,
+      "title2": "Japanese economy grew 2.9% annualized in second quarter revised figures",
+      "expected_merge": true,
+      "reason": "Japan Q2 GDP revision"
+    },
+    {
+      "id1": 2480,
+      "title1": "China unveils broad monetary stimulus package including rate cuts and RRR lowering",
+      "id2": 2481,
+      "title2": "PBOC Governor Pan Gongsheng announces rate cuts and bank reserve ratio reduction",
+      "expected_merge": true,
+      "reason": "China PBOC stimulus package"
+    },
+    {
+      "id1": 2482,
+      "title1": "PBOC cuts 7-day reverse repo rate to 1.50% to boost credit demand",
+      "id2": 2483,
+      "title2": "China central bank lowers short-term policy rate by 20 bps to 1.50%",
+      "expected_merge": true,
+      "reason": "PBOC reverse repo rate cut"
+    },
+    {
+      "id1": 2484,
+      "title1": "US retail sales rise 0.1% in August, beating forecast for flat reading",
+      "id2": 2485,
+      "title2": "American consumer spending ticks up 0.1% in August Commerce Dept data",
+      "expected_merge": true,
+      "reason": "US August retail sales"
+    },
+    {
+      "id1": 2486,
+      "title1": "Fed cuts interest rates by 50 bps to 4.75%-5.00% target range",
+      "id2": 2487,
+      "title2": "Federal Reserve initiates easing cycle with aggressive half-point rate reduction",
+      "expected_merge": true,
+      "reason": "Fed September 50 bps rate cut"
+    },
+    {
+      "id1": 2488,
+      "title1": "Bank of England maintains Bank Rate at 5.00% in September vote",
+      "id2": 2489,
+      "title2": "BoE keeps interest rates on hold at 5.00% following August rate cut",
+      "expected_merge": true,
+      "reason": "BoE September rate hold"
+    },
+    {
+      "id1": 2490,
+      "title1": "Amazon orders corporate employees back to office 5 days a week starting 2025",
+      "id2": 2491,
+      "title2": "Jassy instructs Amazon staff to return to full-time office work five days weekly",
+      "expected_merge": true,
+      "reason": "Amazon 5-day RTO mandate"
+    },
+    {
+      "id1": 2492,
+      "title1": "Qualcomm approaches Intel regarding potential takeover offer",
+      "id2": 2493,
+      "title2": "Qualcomm explores acquisition offer for chipmaker Intel reports show",
+      "expected_merge": true,
+      "reason": "Qualcomm Intel takeover approach"
+    },
+    {
+      "id1": 2494,
+      "title1": "Micron Technology forecasts strong Q1 revenue driven by AI HBM demand",
+      "id2": 2495,
+      "title2": "Micron shares jump 14% on upbeat sales guidance powered by high-bandwidth memory",
+      "expected_merge": true,
+      "reason": "Micron Q1 guidance surge"
+    },
+    {
+      "id1": 2496,
+      "title1": "TSMC Q3 revenue surges 39% to $23.6B beating market expectations",
+      "id2": 2497,
+      "title2": "Taiwan Semiconductor reports third-quarter sales reached $23.6 billion on AI demand",
+      "expected_merge": true,
+      "reason": "TSMC Q3 revenue report"
+    },
+    {
+      "id1": 2498,
+      "title1": "Hurricane Helene makes landfall in Florida as powerful Category 4 storm",
+      "id2": 2499,
+      "title2": "Helena strikes Florida Big Bend region with 140 mph winds and storm surge",
+      "expected_merge": true,
+      "reason": "Hurricane Helene landfall"
+    },
+    {
+      "id1": 2500,
+      "title1": "US producer prices remain flat in August, pointing to tame pipeline inflation",
+      "id2": 2501,
+      "title2": "August US PPI unchanged at 0.0% month-over-month BLS data shows",
+      "expected_merge": true,
+      "reason": "US August PPI report"
+    },
+    {
+      "id1": 2502,
+      "title1": "UK inflation holds steady at 2.2% in August matching consensus",
+      "id2": 2503,
+      "title2": "British CPI inflation remains at 2.2% annual rate in August ONS report",
+      "expected_merge": true,
+      "reason": "UK August CPI report"
+    },
+    {
+      "id1": 2504,
+      "title1": "OECD raises global economic growth forecast to 3.2% for 2024",
+      "id2": 2505,
+      "title2": "Global economy projected to expand 3.2% this year according to OECD outlook",
+      "expected_merge": true,
+      "reason": "OECD global growth forecast"
+    },
+    {
+      "id1": 2506,
+      "title1": "Super Micro Computer receives Nasdaq non-compliance letter over delayed 10-K",
+      "id2": 2507,
+      "title2": "Nasdaq notifies Super Micro of non-compliance after annual report delay",
+      "expected_merge": true,
+      "reason": "Super Micro Nasdaq notice"
+    },
+    {
+      "id1": 2508,
+      "title1": "OpenAI introduces Realtime API and Prompt Caching at DevDay event",
+      "id2": 2509,
+      "title2": "OpenAI launches speech-to-speech Realtime API for developers",
+      "expected_merge": true,
+      "reason": "OpenAI DevDay Realtime API launch"
+    },
+    {
+      "id1": 2510,
+      "title1": "Rio Tinto acquires Arcadium Lithium in $6.7B all-cash deal",
+      "id2": 2511,
+      "title2": "Rio Tinto buys Arcadium Lithium for $6.7 billion to expand battery metal footprint",
+      "expected_merge": true,
+      "reason": "Rio Tinto Arcadium acquisition"
+    },
+    {
+      "id1": 2512,
+      "title1": "AMD launches Instinct MI325X AI accelerator to rival NVIDIA Blackwell",
+      "id2": 2513,
+      "title2": "Su presents AMD Instinct MI325X chip with 256GB HBM3E memory",
+      "expected_merge": true,
+      "reason": "AMD Instinct MI325X launch"
+    },
+    {
+      "id1": 2514,
+      "title1": "BP scales back renewable energy target to focus on oil and gas profits",
+      "id2": 2515,
+      "title2": "BP abandons plan to cut oil production by 2030 under investor pressure",
+      "expected_merge": true,
+      "reason": "BP renewable strategy shift"
+    },
+    {
+      "id1": 2516,
+      "title1": "US fiscal deficit reaches $1.83 trillion for fiscal year 2024",
+      "id2": 2517,
+      "title2": "Treasury reports US budget deficit widened to $1.83 trillion in FY2024",
+      "expected_merge": true,
+      "reason": "US FY2024 fiscal deficit report"
+    },
+    {
+      "id1": 2518,
+      "title1": "ASML shares plunge 16% after Q3 net bookings fall far short of estimates",
+      "id2": 2519,
+      "title2": "ASML cuts 2025 net sales outlook as chip market recovery lags outside AI",
+      "expected_merge": true,
+      "reason": "ASML Q3 bookings drop"
+    },
+    {
+      "id1": 2520,
+      "title1": "TSMC Q3 net profit surges 54% to $10.1B driven by AI chip demand",
+      "id2": 2521,
+      "title2": "TSMC reports $10.1 billion quarterly profit and raises full-year revenue guidance",
+      "expected_merge": true,
+      "reason": "TSMC Q3 net profit surge"
+    },
+    {
+      "id1": 2522,
+      "title1": "Boeing to eliminate 17,000 jobs and delay 777X first delivery to 2026",
+      "id2": 2523,
+      "title2": "Boeing cuts 10% of global workforce as machinist strike strains finances",
+      "expected_merge": true,
+      "reason": "Boeing job cuts and 777X delay"
+    },
+    {
+      "id1": 2524,
+      "title1": "Stellantis confirms CEO Carlos Tavares will step down at end of contract in 2026",
+      "id2": 2525,
+      "title2": "Tavares to retire as Stellantis chief executive when contract expires in early 2026",
+      "expected_merge": true,
+      "reason": "Stellantis Tavares retirement"
+    },
+    {
+      "id1": 2526,
+      "title1": "SAP cloud revenue increases 25% in Q3 supported by Cloud ERP growth",
+      "id2": 2527,
+      "title2": "SAP reports strong third-quarter cloud momentum and raises 2024 operating profit outlook",
+      "expected_merge": true,
+      "reason": "SAP Q3 cloud earnings"
+    },
+    {
+      "id1": 2528,
+      "title1": "Hyundai Motor India raises $3.3B in India's largest-ever initial public offering",
+      "id2": 2529,
+      "title2": "Hyundai India completes $3.3 billion IPO with shares priced at upper band",
+      "expected_merge": true,
+      "reason": "Hyundai India IPO completion"
+    },
+    {
+      "id1": 2530,
+      "title1": "Tesla Q3 net income jumps 17% to $2.18B beating Wall Street estimates",
+      "id2": 2531,
+      "title2": "Tesla reports strong third-quarter profit boosted by Cybertruck positive gross margin",
+      "expected_merge": true,
+      "reason": "Tesla Q3 earnings beat"
+    },
+    {
+      "id1": 2532,
+      "title1": "Sanofi enters exclusive talks with CD&R to sell 50% stake in Opella consumer unit",
+      "id2": 2533,
+      "title2": "Sanofi negotiates $16B valuation for Opella consumer health division with CD&R",
+      "expected_merge": true,
+      "reason": "Sanofi Opella stake sale talks"
+    },
+    {
+      "id1": 2534,
+      "title1": "US GDP grew at 2.8% annualized rate in Q3 driven by resilient consumer spending",
+      "id2": 2535,
+      "title2": "Commerce Department reports US third-quarter economic growth reached 2.8%",
+      "expected_merge": true,
+      "reason": "US Q3 GDP advance estimate"
+    },
+    {
+      "id1": 2536,
+      "title1": "Eli Lilly misses Q3 revenue expectations on supply bottlenecks for Mounjaro and Zepbound",
+      "id2": 2537,
+      "title2": "Lilly shares slip 8% after third-quarter earnings fall short of forecasts",
+      "expected_merge": true,
+      "reason": "Eli Lilly Q3 earnings miss"
+    },
+    {
+      "id1": 2538,
+      "title1": "Meta Q3 revenue rises 19% to $40.59B but capital expenditure guidance raised",
+      "id2": 2539,
+      "title2": "Meta beats sales estimates while warning AI infrastructure spending will expand in 2025",
+      "expected_merge": true,
+      "reason": "Meta Q3 earnings and capex outlook"
+    },
+    {
+      "id1": 2540,
+      "title1": "Microsoft Azure growth moderates to 33% in Q1 FY25 triggering share dip",
+      "id2": 2541,
+      "title2": "Microsoft quarterly revenue increases 16% to $65.6B supported by cloud growth",
+      "expected_merge": true,
+      "reason": "Microsoft Q1 FY25 cloud earnings"
+    },
+    {
+      "id1": 2542,
+      "title1": "Amazon Q3 operating income leaps 56% to $17.4B on AWS and retail strength",
+      "id2": 2543,
+      "title2": "Amazon shares gain 6% after third-quarter AWS sales grow 19% to $27.5B",
+      "expected_merge": true,
+      "reason": "Amazon Q3 earnings surge"
+    },
+    {
+      "id1": 2544,
+      "title1": "Apple Q4 revenue reaches $94.9B led by iPhone 16 sales",
+      "id2": 2545,
+      "title2": "Apple quarterly profit impacted by $10.2B European tax ruling charge",
+      "expected_merge": true,
+      "reason": "Apple Q4 FY24 revenue report"
+    }
+  ],
+  "negative_different_event_pairs": [
+    {
+      "id1": 2401,
+      "title1": "Fed holds interest rates steady at 4.75%-5.00% target range",
+      "id2": 2403,
+      "title2": "ECB cuts Deposit Facility Rate by 25 bps to 3.25%",
+      "expected_merge": false,
+      "reason": "Fed rate hold vs ECB rate cut (different central banks, different decisions)"
+    },
+    {
+      "id1": 2401,
+      "title1": "Fed holds interest rates steady at 4.75%-5.00% target range",
+      "id2": 2413,
+      "title2": "Bank of Japan raises policy rate by 15 bps to 0.25%",
+      "expected_merge": false,
+      "reason": "Fed rate hold vs BoJ rate hike"
+    },
+    {
+      "id1": 2403,
+      "title1": "ECB cuts Deposit Facility Rate by 25 bps to 3.25%",
+      "id2": 2436,
+      "title2": "Bank of England votes 8-1 to keep Bank Rate at 4.75%",
+      "expected_merge": false,
+      "reason": "ECB rate cut vs BoE rate hold"
+    },
+    {
+      "id1": 2438,
+      "title1": "RBI keeps repo rate unchanged at 6.50% for tenth consecutive meeting",
+      "id2": 2482,
+      "title2": "PBOC cuts 7-day reverse repo rate to 1.50% to boost credit demand",
+      "expected_merge": false,
+      "reason": "RBI repo hold vs PBOC repo cut"
+    },
+    {
+      "id1": 2401,
+      "title1": "Fed holds interest rates steady at 4.75%-5.00% target range",
+      "id2": 2486,
+      "title2": "Fed cuts interest rates by 50 bps to 4.75%-5.00% target range",
+      "expected_merge": false,
+      "reason": "Numeric conflict (Fed July rate hold vs Fed September 50 bps rate cut)"
+    },
+    {
+      "id1": 2413,
+      "title1": "Bank of Japan raises policy rate by 15 bps to 0.25%",
+      "id2": 24135,
+      "title2": "Bank of Japan maintains policy rate at 0.25% in September meeting",
+      "expected_merge": false,
+      "reason": "BoJ July rate hike vs BoJ September policy meeting hold"
+    },
+    {
+      "id1": 2480,
+      "title1": "China unveils broad monetary stimulus package including rate cuts and RRR lowering",
+      "id2": 2484,
+      "title2": "US retail sales rise 0.1% in August, beating forecast for flat reading",
+      "expected_merge": false,
+      "reason": "China monetary stimulus vs US retail sales data"
+    },
+    {
+      "id1": 2405,
+      "title1": "NVIDIA announces Vera Rubin NVLink architecture at AI Summit",
+      "id2": 2428,
+      "title2": "NVIDIA reports Q3 revenue of $35.1B, up 94% year-over-year",
+      "expected_merge": false,
+      "reason": "NVIDIA product announcement vs NVIDIA quarterly financial earnings"
+    },
+    {
+      "id1": 2405,
+      "title1": "NVIDIA announces Vera Rubin NVLink architecture at AI Summit",
+      "id2": 24059,
+      "title2": "NVIDIA acquires AI startup Run:ai for $700 million",
+      "expected_merge": false,
+      "reason": "NVIDIA product launch vs NVIDIA startup acquisition"
+    },
+    {
+      "id1": 2411,
+      "title1": "OpenAI unveils GPT-5 with multimodal reasoning capabilities",
+      "id2": 2429,
+      "title2": "OpenAI completes $6.6B funding round at $157B valuation",
+      "expected_merge": false,
+      "reason": "OpenAI model launch vs OpenAI corporate financing round"
+    },
+    {
+      "id1": 2411,
+      "title1": "OpenAI unveils GPT-5 with multimodal reasoning capabilities",
+      "id2": 2508,
+      "title2": "OpenAI introduces Realtime API and Prompt Caching at DevDay event",
+      "expected_merge": false,
+      "reason": "OpenAI GPT-5 launch vs OpenAI DevDay developer tools API"
+    },
+    {
+      "id1": 2415,
+      "title1": "TSMC breaks ground on $11B semiconductor fabrication plant in Dresden",
+      "id2": 2430,
+      "title2": "TSMC reports July sales of $7.9B, up 45% year-over-year",
+      "expected_merge": false,
+      "reason": "TSMC Dresden fab construction vs TSMC monthly sales report"
+    },
+    {
+      "id1": 2415,
+      "title1": "TSMC breaks ground on $11B semiconductor fabrication plant in Dresden",
+      "id2": 2520,
+      "title2": "TSMC Q3 net profit surges 54% to $10.1B driven by AI chip demand",
+      "expected_merge": false,
+      "reason": "TSMC Dresden fab groundbreaking vs TSMC Q3 earnings report"
+    },
+    {
+      "id1": 2417,
+      "title1": "US CPI inflation cools to 2.5% in August, cementing September rate cut bets",
+      "id2": 2452,
+      "title2": "US economy adds 142,000 jobs in August, unemployment rate ticks down to 4.2%",
+      "expected_merge": false,
+      "reason": "US CPI report vs US Jobs/Payrolls report"
+    },
+    {
+      "id1": 2417,
+      "title1": "US CPI inflation cools to 2.5% in August, cementing September rate cut bets",
+      "id2": 2500,
+      "title2": "US producer prices remain flat in August, pointing to tame pipeline inflation",
+      "expected_merge": false,
+      "reason": "US CPI report vs US PPI report"
+    },
+    {
+      "id1": 2417,
+      "title1": "US CPI inflation cools to 2.5% in August, cementing September rate cut bets",
+      "id2": 2484,
+      "title2": "US retail sales rise 0.1% in August, beating forecast for flat reading",
+      "expected_merge": false,
+      "reason": "US CPI report vs US Retail Sales report"
+    },
+    {
+      "id1": 2417,
+      "title1": "US CPI inflation cools to 2.5% in August, cementing September rate cut bets",
+      "id2": 2534,
+      "title2": "US GDP grew at 2.8% annualized rate in Q3 driven by resilient consumer spending",
+      "expected_merge": false,
+      "reason": "US CPI inflation vs US Q3 GDP growth"
+    },
+    {
+      "id1": 2423,
+      "title1": "Ayana Bio secures $30M Series B funding for plant cell technology",
+      "id2": 2433,
+      "title2": "Meati Foods raises $100M Series C for mycelium plant-based protein",
+      "expected_merge": false,
+      "reason": "Ayana Bio funding vs Meati Foods funding (different companies)"
+    },
+    {
+      "id1": 2425,
+      "title1": "Saudi Aramco reports $27.3B Q2 net income, maintains quarterly dividend",
+      "id2": 2442,
+      "title2": "ExxonMobil posts Q2 net profit of $9.2B supported by Guyana volume growth",
+      "expected_merge": false,
+      "reason": "Saudi Aramco earnings vs ExxonMobil earnings (different oil majors)"
+    },
+    {
+      "id1": 2425,
+      "title1": "Saudi Aramco reports $27.3B Q2 net income, maintains quarterly dividend",
+      "id2": 2474,
+      "title2": "Shell signals lower refining margins and gas trading in Q3 update",
+      "expected_merge": false,
+      "reason": "Saudi Aramco earnings vs Shell trading update"
+    },
+    {
+      "id1": 2425,
+      "title1": "Saudi Aramco reports $27.3B Q2 net income, maintains quarterly dividend",
+      "id2": 2514,
+      "title2": "BP scales back renewable energy target to focus on oil and gas profits",
+      "expected_merge": false,
+      "reason": "Saudi Aramco earnings vs BP strategic shift"
+    },
+    {
+      "id1": 2409,
+      "title1": "Oil prices jump 3% as Red Sea shipping disruptions escalate",
+      "id2": 2444,
+      "title2": "Gold prices surge past $2,700 per ounce on safe-haven demand",
+      "expected_merge": false,
+      "reason": "Oil price rally vs Gold price record high"
+    },
+    {
+      "id1": 2409,
+      "title1": "Oil prices jump 3% as Red Sea shipping disruptions escalate",
+      "id2": 2476,
+      "title2": "European gas prices spike 6% following transit concerns through Ukraine",
+      "expected_merge": false,
+      "reason": "Red Sea oil price rise vs European natural gas price spike"
+    },
+    {
+      "id1": 2446,
+      "title1": "Apple rolls out Apple Intelligence features in iOS 18.1 beta",
+      "id2": 2448,
+      "title2": "Microsoft completes $68.7B acquisition of Activision Blizzard",
+      "expected_merge": false,
+      "reason": "Apple Intelligence launch vs Microsoft Activision deal"
+    },
+    {
+      "id1": 2446,
+      "title1": "Apple rolls out Apple Intelligence features in iOS 18.1 beta",
+      "id2": 2490,
+      "title2": "Amazon orders corporate employees back to office 5 days a week starting 2025",
+      "expected_merge": false,
+      "reason": "Apple software release vs Amazon corporate RTO policy"
+    },
+    {
+      "id1": 2468,
+      "title1": "Meta launches Llama 3.2 open vision models in 11B and 90B sizes",
+      "id2": 2419,
+      "title2": "Google DeepMind releases Gemini 2.0 Flash for developer preview",
+      "expected_merge": false,
+      "reason": "Meta Llama 3.2 launch vs Google Gemini 2.0 Flash launch"
+    },
+    {
+      "id1": 2512,
+      "title1": "AMD launches Instinct MI325X AI accelerator to rival NVIDIA Blackwell",
+      "id2": 2405,
+      "title2": "NVIDIA announces Vera Rubin NVLink architecture at AI Summit",
+      "expected_merge": false,
+      "reason": "AMD MI325X launch vs NVIDIA Vera Rubin launch"
+    },
+    {
+      "id1": 2462,
+      "title1": "Musk unveils Cybercab autonomous robotaxi at We, Robot event",
+      "id2": 2456,
+      "title2": "Boeing Starliner capsule lands uncrewed at White Sands Space Harbor",
+      "expected_merge": false,
+      "reason": "Tesla Cybercab robotaxi vs Boeing Starliner capsule landing"
+    },
+    {
+      "id1": 2472,
+      "title1": "Volkswagen considers historic Germany plant closures amid cost pressures",
+      "id2": 2528,
+      "title2": "Hyundai Motor India raises $3.3B in India's largest-ever initial public offering",
+      "expected_merge": false,
+      "reason": "VW plant closure plans vs Hyundai India IPO"
+    },
+    {
+      "id1": 2522,
+      "title1": "Boeing to eliminate 17,000 jobs and delay 777X first delivery to 2026",
+      "id2": 2524,
+      "title2": "Stellantis confirms CEO Carlos Tavares will step down at end of contract in 2026",
+      "expected_merge": false,
+      "reason": "Boeing restructuring vs Stellantis CEO retirement"
+    },
+    {
+      "id1": 2458,
+      "title1": "ASML ships second High-NA EUV lithography system to Intel foundry",
+      "id2": 2518,
+      "title2": "ASML shares plunge 16% after Q3 net bookings fall far short of estimates",
+      "expected_merge": false,
+      "reason": "ASML High-NA tool delivery vs ASML quarterly financial bookings warning"
+    },
+    {
+      "id1": 2470,
+      "title1": "Intel turns foundry business into independent subsidiary",
+      "id2": 2492,
+      "title2": "Qualcomm approaches Intel regarding potential takeover offer",
+      "expected_merge": false,
+      "reason": "Intel foundry reorganization vs Qualcomm takeover interest"
+    },
+    {
+      "id1": 2494,
+      "title1": "Micron Technology forecasts strong Q1 revenue driven by AI HBM demand",
+      "id2": 2496,
+      "title2": "TSMC Q3 revenue surges 39% to $23.6B beating market expectations",
+      "expected_merge": false,
+      "reason": "Micron revenue forecast vs TSMC quarterly sales report"
+    },
+    {
+      "id1": 2421,
+      "title1": "UK GDP contracts 0.1% in Q2, raising stagflation concerns",
+      "id2": 2478,
+      "title2": "Japan Q2 GDP revised up to annualized 2.9% growth on business spending",
+      "expected_merge": false,
+      "reason": "UK GDP data vs Japan GDP data"
+    },
+    {
+      "id1": 2421,
+      "title1": "UK GDP contracts 0.1% in Q2, raising stagflation concerns",
+      "id2": 2534,
+      "title2": "US GDP grew at 2.8% annualized rate in Q3 driven by resilient consumer spending",
+      "expected_merge": false,
+      "reason": "UK Q2 GDP vs US Q3 GDP"
+    },
+    {
+      "id1": 2450,
+      "title1": "Pfizer and BioNTech receive FDA approval for updated COVID-19 vaccine",
+      "id2": 2464,
+      "title2": "Novo Nordisk Wegovy approved in China for weight management",
+      "expected_merge": false,
+      "reason": "Pfizer COVID vaccine approval vs Novo Nordisk Wegovy approval"
+    },
+    {
+      "id1": 2466,
+      "title1": "Eli Lilly reports positive Phase 3 results for Zepbound in sleep apnea",
+      "id2": 2532,
+      "title2": "Sanofi enters exclusive talks with CD&R to sell 50% stake in Opella consumer unit",
+      "expected_merge": false,
+      "reason": "Eli Lilly Zepbound clinical trial vs Sanofi Opella subsidiary sale"
+    },
+    {
+      "id1": 2510,
+      "title1": "Rio Tinto acquires Arcadium Lithium in $6.7B all-cash deal",
+      "id2": 2448,
+      "title2": "Microsoft completes $68.7B acquisition of Activision Blizzard",
+      "expected_merge": false,
+      "reason": "Rio Tinto mining acquisition vs Microsoft gaming acquisition"
+    },
+    {
+      "id1": 2510,
+      "title1": "Rio Tinto acquires Arcadium Lithium in $6.7B all-cash deal",
+      "id2": 2454,
+      "title2": "Lithium Americas closes $2.26B DOE loan for Thacker Pass project construction",
+      "expected_merge": false,
+      "reason": "Rio Tinto lithium acquisition vs Lithium Americas DOE project financing loan"
+    },
+    {
+      "id1": 4761,
+      "title1": "Puolustusministeri H\u00e4kk\u00e4nen: Porin TNT-tehtaan rakentamiseen 20 miljoonaa euroa lis\u00e4rahoitusta",
+      "id2": 2409,
+      "title2": "Oil prices jump 3% as Red Sea shipping disruptions escalate",
+      "expected_merge": false,
+      "reason": "Finland defense funding vs Red Sea shipping conflict"
+    },
+    {
+      "id1": 2530,
+      "title1": "Tesla Q3 net income jumps 17% to $2.18B beating Wall Street estimates",
+      "id2": 2542,
+      "title2": "Amazon Q3 operating income leaps 56% to $17.4B on AWS and retail strength",
+      "expected_merge": false,
+      "reason": "Tesla Q3 earnings vs Amazon Q3 earnings"
+    },
+    {
+      "id1": 2538,
+      "title1": "Meta Q3 revenue rises 19% to $40.59B but capital expenditure guidance raised",
+      "id2": 2544,
+      "title2": "Apple Q4 revenue reaches $94.9B led by iPhone 16 sales",
+      "expected_merge": false,
+      "reason": "Meta Q3 earnings report vs Apple Q4 earnings report"
+    },
+    {
+      "id1": 2540,
+      "title1": "Microsoft Azure growth moderates to 33% in Q1 FY25 triggering share dip",
+      "id2": 2536,
+      "title2": "Eli Lilly misses Q3 revenue expectations on supply bottlenecks for Mounjaro and Zepbound",
+      "expected_merge": false,
+      "reason": "Microsoft tech earnings vs Eli Lilly pharma earnings"
+    },
+    {
+      "id1": 2502,
+      "title1": "UK inflation holds steady at 2.2% in August matching consensus",
+      "id2": 2500,
+      "title2": "US producer prices remain flat in August, pointing to tame pipeline inflation",
+      "expected_merge": false,
+      "reason": "UK CPI report vs US PPI report"
+    },
+    {
+      "id1": 2504,
+      "title1": "OECD raises global economic growth forecast to 3.2% for 2024",
+      "id2": 2516,
+      "title2": "US fiscal deficit reaches $1.83 trillion for fiscal year 2024",
+      "expected_merge": false,
+      "reason": "OECD global forecast vs US federal budget deficit report"
+    },
+    {
+      "id1": 2460,
+      "title1": "SpaceX successfully completes Flight 5 Starship launch and booster catch",
+      "id2": 2462,
+      "title2": "Musk unveils Cybercab autonomous robotaxi at We, Robot event",
+      "expected_merge": false,
+      "reason": "SpaceX rocket flight 5 catch vs Tesla Cybercab launch"
+    },
+    {
+      "id1": 2460,
+      "title1": "SpaceX successfully completes Flight 5 Starship launch and booster catch",
+      "id2": 2407,
+      "title2": "AWS launches Instance Preference Lists for SageMaker AI",
+      "expected_merge": false,
+      "reason": "SpaceX space flight test vs AWS cloud software update"
+    },
+    {
+      "id1": 2526,
+      "title1": "SAP cloud revenue increases 25% in Q3 supported by Cloud ERP growth",
+      "id2": 2506,
+      "title2": "Super Micro Computer receives Nasdaq non-compliance letter over delayed 10-K",
+      "expected_merge": false,
+      "reason": "SAP enterprise software earnings vs Super Micro accounting compliance notice"
+    },
+    {
+      "id1": 2480,
+      "title1": "China unveils broad monetary stimulus package including rate cuts and RRR lowering",
+      "id2": 2478,
+      "title2": "Japan Q2 GDP revised up to annualized 2.9% growth on business spending",
+      "expected_merge": false,
+      "reason": "China macro stimulus vs Japan GDP report"
+    },
+    {
+      "id1": 2482,
+      "title1": "PBOC cuts 7-day reverse repo rate to 1.50% to boost credit demand",
+      "id2": 2488,
+      "title2": "Bank of England maintains Bank Rate at 5.00% in September vote",
+      "expected_merge": false,
+      "reason": "PBOC policy rate cut vs Bank of England rate hold"
+    },
+    {
+      "id1": 2522,
+      "title1": "Boeing to eliminate 17,000 jobs and delay 777X first delivery to 2026",
+      "id2": 2490,
+      "title2": "Amazon orders corporate employees back to office 5 days a week starting 2025",
+      "expected_merge": false,
+      "reason": "Boeing manufacturing layoffs vs Amazon office RTO mandate"
+    },
+    {
+      "id1": 2498,
+      "title1": "Hurricane Helene makes landfall in Florida as powerful Category 4 storm",
+      "id2": 2476,
+      "title2": "European gas prices spike 6% following transit concerns through Ukraine",
+      "expected_merge": false,
+      "reason": "Florida hurricane landfall vs European natural gas price jump"
+    },
+    {
+      "id1": 2494,
+      "title1": "Micron Technology forecasts strong Q1 revenue driven by AI HBM demand",
+      "id2": 2512,
+      "title2": "AMD launches Instinct MI325X AI accelerator to rival NVIDIA Blackwell",
+      "expected_merge": false,
+      "reason": "Micron memory guidance vs AMD GPU accelerator launch"
+    },
+    {
+      "id1": 2492,
+      "title1": "Qualcomm approaches Intel regarding potential takeover offer",
+      "id2": 2458,
+      "title2": "ASML ships second High-NA EUV lithography system to Intel foundry",
+      "expected_merge": false,
+      "reason": "Qualcomm Intel M&A talk vs ASML equipment delivery to Intel"
+    },
+    {
+      "id1": 2528,
+      "title1": "Hyundai Motor India raises $3.3B in India's largest-ever initial public offering",
+      "id2": 2532,
+      "title2": "Sanofi enters exclusive talks with CD&R to sell 50% stake in Opella consumer unit",
+      "expected_merge": false,
+      "reason": "Hyundai auto IPO vs Sanofi pharma consumer division sale"
+    },
+    {
+      "id1": 2514,
+      "title1": "BP scales back renewable energy target to focus on oil and gas profits",
+      "id2": 2476,
+      "title2": "European gas prices spike 6% following transit concerns through Ukraine",
+      "expected_merge": false,
+      "reason": "BP strategy update vs TTF natural gas price move"
+    },
+    {
+      "id1": 2516,
+      "title1": "US fiscal deficit reaches $1.83 trillion for fiscal year 2024",
+      "id2": 2484,
+      "title2": "US retail sales rise 0.1% in August, beating forecast for flat reading",
+      "expected_merge": false,
+      "reason": "US annual fiscal deficit vs US monthly retail sales"
+    },
+    {
+      "id1": 2524,
+      "title1": "Stellantis confirms CEO Carlos Tavares will step down at end of contract in 2026",
+      "id2": 2472,
+      "title2": "Volkswagen considers historic Germany plant closures amid cost pressures",
+      "expected_merge": false,
+      "reason": "Stellantis CEO succession vs Volkswagen Germany plant closures"
+    }
+  ],
+  "singleton_events": [
+    {
+      "id": 9001,
+      "title": "Lithium Americas receives $2.26B DOE loan approval for Thacker Pass mine",
+      "is_singleton": true,
+      "reason": "Unique single-article development, must persist as singleton EventCluster"
+    },
+    {
+      "id": 9002,
+      "title": "Switzerland inflation slows to 1.1% in August, lowest in three years",
+      "is_singleton": true,
+      "reason": "Swiss CPI data report, valid singleton EventCluster"
+    },
+    {
+      "id": 9003,
+      "title": "Anthropic introduces Claude Enterprise plan with 500k token context window",
+      "is_singleton": true,
+      "reason": "Anthropic product launch, valid singleton EventCluster"
+    },
+    {
+      "id": 9004,
+      "title": "World Bank pledges $11B in new financing for climate resilience projects",
+      "is_singleton": true,
+      "reason": "World Bank climate initiative, valid singleton EventCluster"
+    },
+    {
+      "id": 9005,
+      "title": "Nokia secures 5G infrastructure expansion contract with Telecom Italia",
+      "is_singleton": true,
+      "reason": "Nokia telecom equipment contract, valid singleton EventCluster"
+    },
+    {
+      "id": 9006,
+      "title": "Singapore MAS leaves monetary policy settings unchanged in October review",
+      "is_singleton": true,
+      "reason": "Singapore MAS policy review, valid singleton EventCluster"
+    },
+    {
+      "id": 9007,
+      "title": "Caterpillar Q3 profit drops 12% as global construction equipment demand eases",
+      "is_singleton": true,
+      "reason": "Caterpillar Q3 earnings, valid singleton EventCluster"
+    },
+    {
+      "id": 9008,
+      "title": "US Department of Justice considers antitrust action against Google search ad tech",
+      "is_singleton": true,
+      "reason": "DOJ Google ad tech antitrust action, valid singleton EventCluster"
+    },
+    {
+      "id": 9009,
+      "title": "Norway government proposes increasing petroleum tax revenue allocation to wealth fund",
+      "is_singleton": true,
+      "reason": "Norway sovereign fund tax policy, valid singleton EventCluster"
+    },
+    {
+      "id": 9010,
+      "title": "Siemens acquires industrial software firm Altair Engineering for $10.6B",
+      "is_singleton": true,
+      "reason": "Siemens Altair acquisition, valid singleton EventCluster"
+    },
+    {
+      "id": 9011,
+      "title": "Sweden Riksbank cuts repo rate by 50 bps to 2.75% to stimulate economy",
+      "is_singleton": true,
+      "reason": "Riksbank 50 bps rate cut, valid singleton EventCluster"
+    },
+    {
+      "id": 9012,
+      "title": "Lockheed Martin awarded $2.1B US Navy contract for Trident II missile production",
+      "is_singleton": true,
+      "reason": "Lockheed Martin Navy defense contract, valid singleton EventCluster"
+    },
+    {
+      "id": 9013,
+      "title": "Airbus lowers 2024 commercial aircraft delivery target to 770 planes",
+      "is_singleton": true,
+      "reason": "Airbus delivery guidance revision, valid singleton EventCluster"
+    },
+    {
+      "id": 9014,
+      "title": "Australia CPI inflation drops to 2.8% in Q3, returning to RBA target band",
+      "is_singleton": true,
+      "reason": "Australia Q3 inflation report, valid singleton EventCluster"
+    },
+    {
+      "id": 9015,
+      "title": "BlackRock assets under management reach record $11.5 trillion in Q3",
+      "is_singleton": true,
+      "reason": "BlackRock Q3 AUM record, valid singleton EventCluster"
+    },
+    {
+      "id": 9016,
+      "title": "General Motors raises full-year earnings guidance following strong Q3 truck sales",
+      "is_singleton": true,
+      "reason": "GM Q3 guidance raise, valid singleton EventCluster"
+    },
+    {
+      "id": 9017,
+      "title": "Arm Holdings reports 19% Q2 revenue growth supported by v9 architecture adoption",
+      "is_singleton": true,
+      "reason": "Arm Q2 earnings report, valid singleton EventCluster"
+    },
+    {
+      "id": 9018,
+      "title": "South Korea Bank of Korea cuts policy rate by 25 bps to 3.25%",
+      "is_singleton": true,
+      "reason": "Bank of Korea rate cut, valid singleton EventCluster"
+    },
+    {
+      "id": 9019,
+      "title": "Eli Lilly agrees to acquire Orna Therapeutics for up to $1.5B for RNA therapies",
+      "is_singleton": true,
+      "reason": "Lilly Orna acquisition, valid singleton EventCluster"
+    },
+    {
+      "id": 9020,
+      "title": "Schneider Electric appoints Olivier Blum as new CEO following Herweck departure",
+      "is_singleton": true,
+      "reason": "Schneider Electric CEO change, valid singleton EventCluster"
+    }
+  ]
+}

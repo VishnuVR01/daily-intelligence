@@ -1,0 +1,58 @@
+{
+  "benchmark_name": "editorial_hardening_v1",
+  "version": "1.0",
+  "created_at": "2026-09-15T22:38:00Z",
+  "description": "Golden reference dataset for Daily Intelligence editorial hardening verification.",
+  "category_mappings": [
+    {
+      "title": "Exclusive: Ayana Bio acquires Meati Foods assets for a steal to scale plant cell culture tech with Zenfold in India",
+      "ai_category": "Industry & Operations",
+      "expected_category": "Industry & Operations",
+      "expected_section": "BUSINESS"
+    },
+    {
+      "title": "Christine Lagarde: Interview with Ouest-France",
+      "ai_category": "Markets & Economy",
+      "expected_category": "Markets & Economy",
+      "expected_section": "ECONOMY"
+    },
+    {
+      "title": "Israel lacking respect for dead buried in Gaza rubble: UN",
+      "ai_category": "Geopolitics",
+      "expected_category": "Geopolitics",
+      "expected_section": "WORLD"
+    },
+    {
+      "title": "Optimizing cost and latency with Amazon Bedrock prompt caching",
+      "ai_category": "AI & Technology",
+      "expected_category": "AI & Technology",
+      "expected_section": "TECH"
+    }
+  ],
+  "generic_themes_rejection": [
+    {"title": "Tech Key Developments", "should_reject": true},
+    {"title": "World Developments", "should_reject": true},
+    {"title": "Business News", "should_reject": true},
+    {"title": "Energy Updates", "should_reject": true},
+    {"title": "Technology Stories", "should_reject": true},
+    {"title": "AI Infrastructure Efficiency", "should_reject": false},
+    {"title": "Monetary Policy Divergence", "should_reject": false},
+    {"title": "European Airspace Security", "should_reject": false}
+  ],
+  "lead_significance_calibration": [
+    {
+      "event_title": "FOMC Rate Decision: Federal Reserve Reduces Benchmark Rate by 25bps",
+      "section": "ECONOMY",
+      "source_type": "CENTRAL_BANK",
+      "distinct_sources": 3,
+      "expected_role": "LEAD"
+    },
+    {
+      "event_title": "Optimizing cost and latency with Amazon Bedrock prompt caching",
+      "section": "TECH",
+      "source_type": "COMPANY_PRIMARY",
+      "distinct_sources": 1,
+      "expected_role": "TOP"
+    }
+  ]
+}

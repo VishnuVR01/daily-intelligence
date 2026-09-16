@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "created_at": "2026-09-15T22:01:00Z",
+  "description": "Gold editorial synthesis benchmark for Stage 3D Editorial Synthesis Engine.",
+  "benchmark_events": [
+    {
+      "event_cluster_id": "evt_fed_hold_2026",
+      "expected_headline": "Federal Reserve Holds Policy Rate Steady at 4.75%-5.00%",
+      "expected_summary_facts": ["Fed held rates steady", "target range 4.75%-5.00%", "unanimous decision"],
+      "expected_why_it_matters": "Monetary policy stability maintains existing borrowing costs across credit markets.",
+      "expected_watch_next_event": "FOMC September 2026 Meeting Statement",
+      "prohibited_terms": ["shocking", "catastrophic", "caused massive collapse"]
+    },
+    {
+      "event_cluster_id": "evt_ecb_cut_2026",
+      "expected_headline": "ECB Cuts Deposit Facility Rate by 25 bps to 3.25%",
+      "expected_summary_facts": ["ECB lowered deposit rate by 25 bps", "new rate 3.25%", "eurozone inflation moderation"],
+      "expected_why_it_matters": "Eases eurozone monetary policy amid cooling regional inflation.",
+      "expected_watch_next_event": "ECB Governing Council Policy Meeting",
+      "prohibited_terms": ["mindblowing", "investors should buy"]
+    }
+  ]
+}

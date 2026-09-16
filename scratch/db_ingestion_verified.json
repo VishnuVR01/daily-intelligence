@@ -1,0 +1,3879 @@
+{
+  "total_articles_now": 4202,
+  "new_articles_count": 387,
+  "newest_article_id": 4206,
+  "newest_collected_at": "2026-09-15T00:26:46.676307+01:00",
+  "distinct_sources_count": 34,
+  "new_articles": [
+    {
+      "article_id": 3820,
+      "source_name": "Al Jazeera English",
+      "title": "Funerals for children killed after fire spreads to school in DR Congo",
+      "canonical_url": "https://www.aljazeera.com/video/newsfeed/2026/9/14/funerals-for-children-killed-after-fire-spreads-to-school-in-dr-congo?traffic_source=rss",
+      "published_at": "2026-09-14T20:50:27+01:00",
+      "collected_at": "2026-09-15T00:26:15.398161+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3821,
+      "source_name": "Al Jazeera English",
+      "title": "What\u2019s the VAR mistake controversy in Haaland\u2019s Man City goal vs United?",
+      "canonical_url": "https://www.aljazeera.com/sports/2026/9/14/erling-haaland-goal-var-controversy-manchester-derby-referee?traffic_source=rss",
+      "published_at": "2026-09-14T20:46:56+01:00",
+      "collected_at": "2026-09-15T00:26:15.399183+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3822,
+      "source_name": "Al Jazeera English",
+      "title": "Trump says calls for more control on AI are a \u2018SICK conspiracy\u2019",
+      "canonical_url": "https://www.aljazeera.com/news/2026/9/14/trump-says-calls-for-more-control-on-ai-are-a-sick-conspiracy?traffic_source=rss",
+      "published_at": "2026-09-14T20:32:23+01:00",
+      "collected_at": "2026-09-15T00:26:15.400173+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3823,
+      "source_name": "Al Jazeera English",
+      "title": "Djibouti humanitarian situation worsens as Yemenis seek refuge",
+      "canonical_url": "https://www.aljazeera.com/video/newsfeed/2026/9/14/djibouti-humanitarian-situation-worsens-as-yemenis-seek-refuge?traffic_source=rss",
+      "published_at": "2026-09-14T19:46:25+01:00",
+      "collected_at": "2026-09-15T00:26:15.401172+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3824,
+      "source_name": "Al Jazeera English",
+      "title": "NATO pledges more Ukraine support after Russia strikes near Poland",
+      "canonical_url": "https://www.aljazeera.com/news/2026/9/14/nato-pledges-increased-support-for-ukraine-after-russia-strikes-warsaw-bound-train?traffic_source=rss",
+      "published_at": "2026-09-14T19:40:23+01:00",
+      "collected_at": "2026-09-15T00:26:15.401172+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3825,
+      "source_name": "Al Jazeera English",
+      "title": "Jerusalem Daily: A new report on the erosion of Palestinian life",
+      "canonical_url": "https://www.aljazeera.com/video/newsfeed/2026/9/14/jerusalem-daily-a-new-report-on-the-erosion-of-palestinian-life?traffic_source=rss",
+      "published_at": "2026-09-14T19:02:44+01:00",
+      "collected_at": "2026-09-15T00:26:15.402179+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3826,
+      "source_name": "Al Jazeera English",
+      "title": "India to supply Nepal electricity after floods wrecked hydropower projects",
+      "canonical_url": "https://www.aljazeera.com/news/2026/9/14/india-to-supply-nepal-electricity-after-floods-wrecked-hydropower-projects?traffic_source=rss",
+      "published_at": "2026-09-14T18:52:33+01:00",
+      "collected_at": "2026-09-15T00:26:15.402179+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3827,
+      "source_name": "Al Jazeera English",
+      "title": "Mark Carney pitches Canada to global investors amid US trade war",
+      "canonical_url": "https://www.aljazeera.com/economy/2026/9/14/carney-pitches-canada-to-global-investors-amid-us-trade-war?traffic_source=rss",
+      "published_at": "2026-09-14T18:42:33+01:00",
+      "collected_at": "2026-09-15T00:26:15.403169+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3828,
+      "source_name": "AWS Machine Learning Blog",
+      "title": "Abnormal AI: Amazon Bedrock AgentCore for agentic email security at scale",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale",
+      "published_at": "2026-09-14T22:22:45+01:00",
+      "collected_at": "2026-09-15T00:26:17.028019+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3829,
+      "source_name": "AWS Machine Learning Blog",
+      "title": "Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/manage-end-user-oauth-consent-for-ai-agents-with-amazon-bedrock-agentcore",
+      "published_at": "2026-09-14T21:35:45+01:00",
+      "collected_at": "2026-09-15T00:26:17.029022+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3830,
+      "source_name": "AWS Machine Learning Blog",
+      "title": "How Ninth Wave built AI-powered open finance onboarding on Amazon Bedrock",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/how-ninth-wave-built-ai-powered-open-finance-onboarding-on-amazon-bedrock",
+      "published_at": "2026-09-14T16:58:57+01:00",
+      "collected_at": "2026-09-15T00:26:17.030022+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3831,
+      "source_name": "AWS Machine Learning Blog",
+      "title": "The generative AI customization spectrum: From prompt engineering to custom models on AWS",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/the-generative-ai-customization-spectrum-from-prompt-engineering-to-custom-models-on-aws",
+      "published_at": "2026-09-14T16:47:12+01:00",
+      "collected_at": "2026-09-15T00:26:17.031027+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3832,
+      "source_name": "AWS Machine Learning Blog",
+      "title": "Automate replenishment with MMF, Databricks Genie, and Amazon Quick",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/automate-replenishment-with-mmf-databricks-genie-and-amazon-quick",
+      "published_at": "2026-09-14T16:42:06+01:00",
+      "collected_at": "2026-09-15T00:26:17.031027+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3833,
+      "source_name": "BBC World",
+      "title": "China criticises idea it is in 'malicious competition' over AI",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cn8me133119o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T12:31:39+01:00",
+      "collected_at": "2026-09-15T00:26:17.366803+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3834,
+      "source_name": "BBC World",
+      "title": "Swedish left-wing bloc narrowly ahead with election too close to call",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/c0qx5d79kdeo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T09:36:09+01:00",
+      "collected_at": "2026-09-15T00:26:17.367804+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3835,
+      "source_name": "BBC World",
+      "title": "Wild dogs record 2,500-mile trek across Zambia in search of a mate",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cy459y5y9yxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T15:08:12+01:00",
+      "collected_at": "2026-09-15T00:26:17.368805+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3836,
+      "source_name": "BBC World",
+      "title": "Thousands demand end to violence in Mexican cartel hotspot",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cde06rxw5g6o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T12:28:36+01:00",
+      "collected_at": "2026-09-15T00:26:17.368805+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3837,
+      "source_name": "BBC World",
+      "title": "Legendary costume designer Bob Mackie dies aged 87",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cmpq04wx8l4eo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T22:29:12+01:00",
+      "collected_at": "2026-09-15T00:26:17.368805+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3838,
+      "source_name": "BBC World",
+      "title": "Malaysian boy acquitted for murder of schoolgirl on grounds of insanity",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/ce87qzrz7p8o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T09:58:27+01:00",
+      "collected_at": "2026-09-15T00:26:17.370082+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3839,
+      "source_name": "BBC World",
+      "title": "Immigrants held in small outdoor cages at 'Alligator Alcatraz' in Florida, investigators find",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cqrk37rrpk23o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T17:48:10+01:00",
+      "collected_at": "2026-09-15T00:26:17.370082+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3840,
+      "source_name": "BBC World",
+      "title": "Africa's richest man launches continent's biggest share sale",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cxly50gzldz9o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T17:23:42+01:00",
+      "collected_at": "2026-09-15T00:26:17.371089+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3841,
+      "source_name": "BBC World",
+      "title": "Body of missing runner found in South Africa",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cxyvzggzd5jgo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T15:58:48+01:00",
+      "collected_at": "2026-09-15T00:26:17.372089+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3842,
+      "source_name": "BBC World",
+      "title": "Zambians warned not to eat dead wildlife after anthrax kills dozens of animals",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/ce8en6v3601o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T12:35:08+01:00",
+      "collected_at": "2026-09-15T00:26:17.372089+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3843,
+      "source_name": "BBC World",
+      "title": "Hyrox apologises for allowing race to continue after athlete soils herself",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cx2z5y37p90o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T12:20:07+01:00",
+      "collected_at": "2026-09-15T00:26:17.373088+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3844,
+      "source_name": "BBC World",
+      "title": "Bali police investigate after Australian man and children found dead in home",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/ckgwzlwglldo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T08:15:35+01:00",
+      "collected_at": "2026-09-15T00:26:17.374090+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3845,
+      "source_name": "BBC World",
+      "title": "Flash flooding interrupts half-marathon, submerges cars",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cx1l6rzj86vgo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T16:01:28+01:00",
+      "collected_at": "2026-09-15T00:26:17.381418+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3846,
+      "source_name": "BBC World",
+      "title": "Watch: Why a Russian strike on train near Ukraine-Poland border could mark an escalation",
+      "canonical_url": "https://www.bbc.co.uk/news/videos/cx2z5gjj838o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-14T02:12:20+01:00",
+      "collected_at": "2026-09-15T00:26:17.381418+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3847,
+      "source_name": "BBC World",
+      "title": "'She's back': Fans dance, sing and cry after C\u00e9line Dion's comeback concert in Paris",
+      "canonical_url": "https://www.bbc.co.uk/news/videos/cpq01p1wn78o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-13T03:59:29+01:00",
+      "collected_at": "2026-09-15T00:26:17.382413+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3848,
+      "source_name": "CNBC Business News",
+      "title": "Bank of America expects third-quarter investment banking fees to fall more than 10%; shares slide",
+      "canonical_url": "https://www.cnbc.com/2026/09/14/bank-of-america-bac-q3-investment-banking-fees.html",
+      "published_at": "2026-09-14T21:34:23+01:00",
+      "collected_at": "2026-09-15T00:26:17.626533+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3849,
+      "source_name": "CNBC Business News",
+      "title": "Novo CEO tells CNBC why drugmaker is rebranding, needs to 'rethink' obesity strategy",
+      "canonical_url": "https://www.cnbc.com/2026/09/14/novo-nordisk-rebrands-to-novo-ceo-mike-doustdar.html",
+      "published_at": "2026-09-14T18:30:14+01:00",
+      "collected_at": "2026-09-15T00:26:17.627540+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3850,
+      "source_name": "Construction Dive",
+      "title": "Nearly $2B in facility investments by US Steel, USA Rare Earth and more",
+      "canonical_url": "https://www.constructiondive.com/news/us-steel-usa-rare-earth-array-covenant-september-investments-openings/830193",
+      "published_at": "2026-09-14T22:24:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.742007+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3851,
+      "source_name": "Construction Dive",
+      "title": "The biggest project decisions occur before construction, says AECOM president",
+      "canonical_url": "https://www.constructiondive.com/news/Aecom-data-center-lara-poloni-president/830157",
+      "published_at": "2026-09-14T20:35:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.743004+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3852,
+      "source_name": "Construction Dive",
+      "title": "Labor squeeze prompts revised construction workforce strategies",
+      "canonical_url": "https://www.constructiondive.com/news/labor-squeeze-revised-construction-workforce-strategies/830219",
+      "published_at": "2026-09-14T14:03:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.744004+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3853,
+      "source_name": "Construction Dive",
+      "title": "Buildots raises $130M as data center projects surge",
+      "canonical_url": "https://www.constructiondive.com/news/buildots-raises-130m-data-center-projects-surge/830222",
+      "published_at": "2026-09-14T13:45:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.745133+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3854,
+      "source_name": "Construction Dive",
+      "title": "Your jobsite has the data. Why aren\u2019t you using it?",
+      "canonical_url": "https://www.constructiondive.com/spons/your-jobsite-has-the-data-why-arent-you-using-it/829852",
+      "published_at": "2026-09-14T10:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.746139+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3855,
+      "source_name": "Construction Dive",
+      "title": "Fluctuating material costs are rewriting who wins the bid",
+      "canonical_url": "https://www.constructiondive.com/spons/fluctuating-material-costs-are-rewriting-who-wins-the-bid/829740",
+      "published_at": "2026-09-14T10:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.747140+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3856,
+      "source_name": "Construction Dive",
+      "title": "Fit for purpose: Why helmet sizing and comfort are mission critical",
+      "canonical_url": "https://www.constructiondive.com/spons/fit-for-purpose-why-helmet-sizing-and-comfort-are-mission-critical/829647",
+      "published_at": "2026-09-14T10:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.747140+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3857,
+      "source_name": "European Central Bank (ECB)",
+      "title": "Christine Lagarde: A new age of capital: growth, sovereignty and AI",
+      "canonical_url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260914_2~a3f0efbee4.en.html",
+      "published_at": "2026-09-14T16:15:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.923924+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3858,
+      "source_name": "European Central Bank (ECB)",
+      "title": "Piero Cipollone: The future of euro cash: trusted today, designed for tomorrow",
+      "canonical_url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260914_1~91d3436449.en.html",
+      "published_at": "2026-09-14T14:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.924927+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3859,
+      "source_name": "European Central Bank (ECB)",
+      "title": "Isabel Schnabel: Macroeconomic, fiscal and financial stability in a shock-prone world",
+      "canonical_url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260914~0ffd556bc8.en.pdf",
+      "published_at": "2026-09-14T10:15:00+01:00",
+      "collected_at": "2026-09-15T00:26:17.925923+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3860,
+      "source_name": "Financial Times Markets",
+      "title": "Trump to scrap Biden-era climate protections on power plant pollution",
+      "canonical_url": "https://www.ft.com/content/5eb7f823-3b3f-4b22-9f25-44162a014d72?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T21:47:11+01:00",
+      "collected_at": "2026-09-15T00:26:18.353044+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3861,
+      "source_name": "Financial Times Markets",
+      "title": "Revolut handed nearly 700 customers\u2019 data to scammers",
+      "canonical_url": "https://www.ft.com/content/e0fe28a8-bc8c-460d-a7f2-972f725c0d46?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T21:24:47+01:00",
+      "collected_at": "2026-09-15T00:26:18.354045+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3862,
+      "source_name": "Financial Times Markets",
+      "title": "Oil hits $109 after Saudi Arabia closes vital export pipeline",
+      "canonical_url": "https://www.ft.com/content/4845a503-3ddd-4bb7-a469-c51f275bc873?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T21:11:20+01:00",
+      "collected_at": "2026-09-15T00:26:18.355044+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3863,
+      "source_name": "Financial Times Markets",
+      "title": "US tech stocks fall after big AI groups call for slowdown",
+      "canonical_url": "https://www.ft.com/content/aa8a1be7-abe0-44b7-bcd3-31fd0a44de08?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T21:10:48+01:00",
+      "collected_at": "2026-09-15T00:26:18.355044+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3864,
+      "source_name": "Financial Times Markets",
+      "title": "Ten-year Treasury yield hits 5% for first time since 2023",
+      "canonical_url": "https://www.ft.com/content/06cb850d-089a-4318-88d7-a410e9766b89?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T21:08:17+01:00",
+      "collected_at": "2026-09-15T00:26:18.355044+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3865,
+      "source_name": "Financial Times Markets",
+      "title": "Syrians take to the streets over fuel price rise",
+      "canonical_url": "https://www.ft.com/content/b78370c8-dc35-47ea-a254-a75421a46a85?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T17:01:48+01:00",
+      "collected_at": "2026-09-15T00:26:18.356551+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3866,
+      "source_name": "Financial Times Markets",
+      "title": "How much should lenders charge hyperscalers?",
+      "canonical_url": "https://www.ft.com/content/ba38df40-9898-48a0-bc9e-39d8a3da4305",
+      "published_at": "2026-09-14T15:23:48+01:00",
+      "collected_at": "2026-09-15T00:26:18.356551+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3867,
+      "source_name": "Financial Times Markets",
+      "title": "Crispin Odey loses appeal against industry ban",
+      "canonical_url": "https://www.ft.com/content/bd8a8a3f-220c-4f52-9a54-1eca0a4e0423?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T15:16:57+01:00",
+      "collected_at": "2026-09-15T00:26:18.357561+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3868,
+      "source_name": "Financial Times Markets",
+      "title": "Michael Dell\u2019s family office leads $7.7bn deal to take insurance broker private",
+      "canonical_url": "https://www.ft.com/content/5495d88b-b457-498a-bedd-64a954b538cd?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T14:17:22+01:00",
+      "collected_at": "2026-09-15T00:26:18.358561+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3869,
+      "source_name": "Financial Times Markets",
+      "title": "A spreading war threatens Trump and MBS",
+      "canonical_url": "https://www.ft.com/content/f2a472e6-352a-4067-b9e5-56596a8ba215?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T12:48:33+01:00",
+      "collected_at": "2026-09-15T00:26:18.358561+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3870,
+      "source_name": "Financial Times Markets",
+      "title": "The Saudi relief valve is being closed",
+      "canonical_url": "https://www.ft.com/content/bdc77254-e491-4d9f-8537-6f04317d037f?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T12:31:02+01:00",
+      "collected_at": "2026-09-15T00:26:18.358561+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3871,
+      "source_name": "Financial Times Markets",
+      "title": "Essar strikes deal to buy 118 UK petrol stations",
+      "canonical_url": "https://www.ft.com/content/130f45b6-ee45-4fa0-83eb-5ea8f9bc4680?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:21+01:00",
+      "collected_at": "2026-09-15T00:26:18.359569+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3872,
+      "source_name": "Financial Times Markets",
+      "title": "Tokenised gold could be exempt from fund regulations under FCA proposal",
+      "canonical_url": "https://www.ft.com/content/a45a2f1f-03d9-46aa-8307-fe89edd7e589?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:12+01:00",
+      "collected_at": "2026-09-15T00:26:18.361869+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3873,
+      "source_name": "Financial Times Markets",
+      "title": "How high might natural gas prices go?",
+      "canonical_url": "https://www.ft.com/content/639b4d2a-30c7-473c-a3ec-1fe96a7a7ac7?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:12+01:00",
+      "collected_at": "2026-09-15T00:26:18.364633+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3874,
+      "source_name": "Financial Times Markets",
+      "title": "Oil price surge revives prospect of Bank of England rate rise this year",
+      "canonical_url": "https://www.ft.com/content/050b2863-a164-431f-bd04-2e416adf9a38?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:12+01:00",
+      "collected_at": "2026-09-15T00:26:18.365632+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3875,
+      "source_name": "Financial Times Markets",
+      "title": "Cyber criminals use AI to supercharge scams, watchdog warns",
+      "canonical_url": "https://www.ft.com/content/d545bae1-d770-46f3-9913-07e85d4ae34c?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:12+01:00",
+      "collected_at": "2026-09-15T00:26:18.365632+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3876,
+      "source_name": "Financial Times Markets",
+      "title": "Euronext open to \u2018big bang\u2019 deal with rival Deutsche B\u00f6rse",
+      "canonical_url": "https://www.ft.com/content/cf0ee7e3-8634-4c1d-8a44-3b71acee1417?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:05+01:00",
+      "collected_at": "2026-09-15T00:26:18.366647+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3877,
+      "source_name": "Financial Times Markets",
+      "title": "Schroders considers acquisitions to expand wealth division",
+      "canonical_url": "https://www.ft.com/content/0688caee-f24f-4fa7-b04a-d1e8f9c0c03d?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:04+01:00",
+      "collected_at": "2026-09-15T00:26:18.367153+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3878,
+      "source_name": "Financial Times Markets",
+      "title": "Fed and BoJ expect rate hikes as US bond market flails",
+      "canonical_url": "https://www.ft.com/content/76a24fc8-b521-47d6-aec9-1bf6666afd60?syn-25a6b1a6=1",
+      "published_at": "2026-09-14T05:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.367153+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3879,
+      "source_name": "France 24 English",
+      "title": "Zelensky says Ukraine ready to de-escalate if Russia halts strikes",
+      "canonical_url": "https://www.france24.com/en/europe/20260914-zelensky-says-ukraine-ready-to-de-escalate-if-russia-halts-strikes",
+      "published_at": "2026-09-14T23:57:26+01:00",
+      "collected_at": "2026-09-15T00:26:18.522839+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3880,
+      "source_name": "France 24 English",
+      "title": "Macklemore dropped from Ed Sheeran US tour after pro-Palestinian remarks",
+      "canonical_url": "https://www.france24.com/en/americas/20260914-macklemore-dropped-from-ed-sheeran-us-tour-after-pro-palestinian-remarks",
+      "published_at": "2026-09-14T23:20:37+01:00",
+      "collected_at": "2026-09-15T00:26:18.523843+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3881,
+      "source_name": "France 24 English",
+      "title": "US Space Force confirms weapons deployed in space for first time",
+      "canonical_url": "https://www.france24.com/en/americas/20260914-us-space-force-confirms-weapons-deployed-in-space-for-first-time",
+      "published_at": "2026-09-14T22:56:25+01:00",
+      "collected_at": "2026-09-15T00:26:18.524840+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3882,
+      "source_name": "France 24 English",
+      "title": "Bob Mackie, fashion designer for the stars, dies at 87",
+      "canonical_url": "https://www.france24.com/en/bob-mackie-fashion-designer-for-the-stars-dies-at-87",
+      "published_at": "2026-09-14T22:40:59+01:00",
+      "collected_at": "2026-09-15T00:26:18.525840+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3883,
+      "source_name": "France 24 English",
+      "title": "Rights group accuses Israel of dismantling 'Palestinian existence' in West Bank",
+      "canonical_url": "https://www.france24.com/en/rights-group-accuses-israel-of-dismantling-palestinian-existence-in-west-bank",
+      "published_at": "2026-09-14T22:26:29+01:00",
+      "collected_at": "2026-09-15T00:26:18.525840+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3884,
+      "source_name": "France 24 English",
+      "title": "Yemen: Fact-checking videos claiming to show Houthi rebel attacks",
+      "canonical_url": "https://www.france24.com/en/yemen-fact-checking-videos-claiming-to-show-houthi-rebel-attacks-1",
+      "published_at": "2026-09-14T22:10:30+01:00",
+      "collected_at": "2026-09-15T00:26:18.526839+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3885,
+      "source_name": "France 24 English",
+      "title": "'The very existence of LGBTQI people is seen as obscene', Turkish activist says",
+      "canonical_url": "https://www.france24.com/en/tv-shows/a-propos/20260914-the-very-existence-of-lgbtqi-people-is-seen-as-obscene-turkish-activist-says",
+      "published_at": "2026-09-14T22:02:50+01:00",
+      "collected_at": "2026-09-15T00:26:18.527839+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3886,
+      "source_name": "France 24 English",
+      "title": "Nigeria's Dangote refinery kicks off blockbuster IPO",
+      "canonical_url": "https://www.france24.com/en/tv-shows/business/20260914-nigeria-s-dangote-refinery-kicks-off-blockbuster-ipo",
+      "published_at": "2026-09-14T21:46:19+01:00",
+      "collected_at": "2026-09-15T00:26:18.528843+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3887,
+      "source_name": "France 24 English",
+      "title": "Nigerian oil refinery Dangote aims to raise 1.6 billion dollars",
+      "canonical_url": "https://www.france24.com/en/nigerian-oil-refinery-dangote-aims-to-raise-1-6-billion-dollars",
+      "published_at": "2026-09-14T21:31:28+01:00",
+      "collected_at": "2026-09-15T00:26:18.529841+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3888,
+      "source_name": "France 24 English",
+      "title": "Turkey police disperse pro-LGBTQ protesters with tear gas",
+      "canonical_url": "https://www.france24.com/en/asia-pacific/20260914-turkey-police-disperse-pro-lgbtq-protesters-with-tear-gas",
+      "published_at": "2026-09-14T20:54:47+01:00",
+      "collected_at": "2026-09-15T00:26:18.530843+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3889,
+      "source_name": "France 24 English",
+      "title": "'Axis of Iranian centrality' remains \"one of more destabilising forces in the region\", expert says",
+      "canonical_url": "https://www.france24.com/en/axis-of-iranian-centrality-remains-one-of-more-destabilising-forces-in-the-region-expert-says",
+      "published_at": "2026-09-14T20:46:03+01:00",
+      "collected_at": "2026-09-15T00:26:18.531841+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3890,
+      "source_name": "France 24 English",
+      "title": "Leaders urge EU to boost Arctic role to tackle Russia 'threat'",
+      "canonical_url": "https://www.france24.com/en/leaders-urge-eu-to-boost-arctic-role-to-tackle-russia-threat",
+      "published_at": "2026-09-14T20:06:25+01:00",
+      "collected_at": "2026-09-15T00:26:18.532839+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3891,
+      "source_name": "France 24 English",
+      "title": "Where is the kill switch? AI doomsday warnings trigger calls to regulate",
+      "canonical_url": "https://www.france24.com/en/tv-shows/the-debate/20260914-where-is-the-kill-switch-ai-doomsday-warnings-trigger-calls-to-regulate",
+      "published_at": "2026-09-14T19:22:42+01:00",
+      "collected_at": "2026-09-15T00:26:18.534345+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3892,
+      "source_name": "France 24 English",
+      "title": "Leaders urge EU to expand Arctic presence amid Russia 'threat'",
+      "canonical_url": "https://www.france24.com/en/europe/20260914-leaders-urge-eu-to-expand-arctic-presence-amid-russia-threat",
+      "published_at": "2026-09-14T18:41:53+01:00",
+      "collected_at": "2026-09-15T00:26:18.534345+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3893,
+      "source_name": "France 24 English",
+      "title": "French candidates race to claim the cost-of-living issue ahead of 2027 vote",
+      "canonical_url": "https://www.france24.com/en/france/20260914-french-candidates-race-to-claim-the-cost-of-living-issue-ahead-of-2027-vote",
+      "published_at": "2026-09-14T17:53:16+01:00",
+      "collected_at": "2026-09-15T00:26:18.535352+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3894,
+      "source_name": "France 24 English",
+      "title": "Turkey: Police arrested at least 63 people in anti-LGBT+ crackdown",
+      "canonical_url": "https://www.france24.com/en/video/20260914-turkey-police-arrested-at-least-63-people-in-anti-lgbt-crackdown",
+      "published_at": "2026-09-14T16:43:05+01:00",
+      "collected_at": "2026-09-15T00:26:18.535352+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3895,
+      "source_name": "France 24 English",
+      "title": "Poll puts France's Le Pen in lead as presidential campaign kicks off",
+      "canonical_url": "https://www.france24.com/en/video/20260914-polls-put-france-s-le-pen-in-lead-as-presidential-campaign-kicks-off",
+      "published_at": "2026-09-14T15:59:09+01:00",
+      "collected_at": "2026-09-15T00:26:18.536353+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3896,
+      "source_name": "France 24 English",
+      "title": "Russian strike on train \"terror knocking on EU's door'",
+      "canonical_url": "https://www.france24.com/en/video/20260914-russian-strike-on-train-terror-knocking-on-eu-s-door",
+      "published_at": "2026-09-14T15:57:08+01:00",
+      "collected_at": "2026-09-15T00:26:18.536353+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3897,
+      "source_name": "France 24 English",
+      "title": "Investors weigh the potential cost of AI 'slowdown'",
+      "canonical_url": "https://www.france24.com/en/technology/20260914-investors-weigh-the-potential-cost-of-ai-slowdown",
+      "published_at": "2026-09-14T15:17:11+01:00",
+      "collected_at": "2026-09-15T00:26:18.536353+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3898,
+      "source_name": "France 24 English",
+      "title": "Countries turn to coal to avoid shipping disruptions in the Strait of Hormuz",
+      "canonical_url": "https://www.france24.com/en/tv-shows/down-to-earth/20260914-countries-turn-to-coal-to-avoid-shipping-disruptions-in-the-strait-of-hormuz",
+      "published_at": "2026-09-14T15:08:22+01:00",
+      "collected_at": "2026-09-15T00:26:18.537352+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3899,
+      "source_name": "France 24 English",
+      "title": "Keziah Jones goes symphonic",
+      "canonical_url": "https://www.france24.com/en/tv-shows/arts24/20260914-keziah-jones-goes-symphonic",
+      "published_at": "2026-09-14T14:55:25+01:00",
+      "collected_at": "2026-09-15T00:26:18.538354+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3900,
+      "source_name": "France 24 English",
+      "title": "How will EU respond to Russian attack on train near Polish border?",
+      "canonical_url": "https://www.france24.com/en/video/20260914-how-will-eu-respond-to-russian-attack-on-train-near-polish-border",
+      "published_at": "2026-09-14T14:42:14+01:00",
+      "collected_at": "2026-09-15T00:26:18.539358+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3901,
+      "source_name": "France 24 English",
+      "title": "'What makes China work despite the pain in society?' asks analyst Dan Wang",
+      "canonical_url": "https://www.france24.com/en/what-makes-china-work-despite-the-pain-in-society-asks-analyst-dan-wang",
+      "published_at": "2026-09-14T14:30:45+01:00",
+      "collected_at": "2026-09-15T00:26:18.540354+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3902,
+      "source_name": "FreightWaves",
+      "title": "FedEx Freight expands CTO\u2019s role to cover commercial strategy following CCO ouster",
+      "canonical_url": "https://www.freightwaves.com/news/fedex-freight-expands-ctos-role-to-cover-commercial-strategy-following-cco-ouster",
+      "published_at": "2026-09-14T23:18:32+01:00",
+      "collected_at": "2026-09-15T00:26:18.859924+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3903,
+      "source_name": "FreightWaves",
+      "title": "Cass: TL rates jump 11% in August, freight shipments turn positive",
+      "canonical_url": "https://www.freightwaves.com/news/cass-tl-rates-jump-11-in-august-freight-shipments-turn-positive",
+      "published_at": "2026-09-14T18:17:12+01:00",
+      "collected_at": "2026-09-15T00:26:18.859924+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3904,
+      "source_name": "FreightWaves",
+      "title": "Northern Air Cargo names permanent CEO",
+      "canonical_url": "https://www.freightwaves.com/news/northern-air-cargo-names-permanent-ceo",
+      "published_at": "2026-09-14T18:16:53+01:00",
+      "collected_at": "2026-09-15T00:26:18.861930+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3905,
+      "source_name": "FreightWaves",
+      "title": "Almost 1 million TEUs in new record for this U.S. container gateway",
+      "canonical_url": "https://www.freightwaves.com/news/almost-1-million-teus-in-new-record-for-this-u-s-container-gateway",
+      "published_at": "2026-09-14T17:28:43+01:00",
+      "collected_at": "2026-09-15T00:26:18.862438+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3906,
+      "source_name": "FreightWaves",
+      "title": "Small Fleet Financing: Why Buying Trucks Stops Making Sense",
+      "canonical_url": "https://www.freightwaves.com/news/small-fleet-financing-why-buying-trucks-stops-making-sense",
+      "published_at": "2026-09-14T15:47:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.863505+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3907,
+      "source_name": "FreightWaves",
+      "title": "How ServiceUp Centralizes Fleet Repair for Stellantis Vehicles",
+      "canonical_url": "https://www.freightwaves.com/news/how-serviceup-centralizes-fleet-repair-for-stellantis-vehicles",
+      "published_at": "2026-09-14T15:45:09+01:00",
+      "collected_at": "2026-09-15T00:26:18.864512+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3908,
+      "source_name": "FreightWaves",
+      "title": "5 Freight Markets: Why Spot Rates Are Sending Mixed Signals",
+      "canonical_url": "https://www.freightwaves.com/news/5-freight-markets-why-spot-rates-are-sending-mixed-signals",
+      "published_at": "2026-09-14T15:43:32+01:00",
+      "collected_at": "2026-09-15T00:26:18.865505+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3909,
+      "source_name": "FreightWaves",
+      "title": "Hub Group warns of Nasdaq delisting notice; flags H1 operating loss",
+      "canonical_url": "https://www.freightwaves.com/news/hub-group-warns-of-nasdaq-delisting-notice-flags-h1-operating-loss",
+      "published_at": "2026-09-14T15:26:43+01:00",
+      "collected_at": "2026-09-15T00:26:18.865505+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3910,
+      "source_name": "FreightWaves",
+      "title": "Texas couple sentenced in $2.4M Mexico-to-US smuggling operation",
+      "canonical_url": "https://www.freightwaves.com/news/texas-couple-sentenced-in-2-4m-mexico-to-us-smuggling-operation",
+      "published_at": "2026-09-14T15:02:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.866508+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3911,
+      "source_name": "FreightWaves",
+      "title": "Pink Cheetah, TQL fight it out as transparency rule awaited",
+      "canonical_url": "https://www.freightwaves.com/news/pink-cheetah-tql-fight-it-out-as-transparency-rule-awaited",
+      "published_at": "2026-09-14T14:59:37+01:00",
+      "collected_at": "2026-09-15T00:26:18.866508+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3912,
+      "source_name": "FreightWaves",
+      "title": "Kenco opens new innovation lab for warehouse automation testing",
+      "canonical_url": "https://www.freightwaves.com/news/kenco-warehouse-automation-testing-lab",
+      "published_at": "2026-09-14T14:41:39+01:00",
+      "collected_at": "2026-09-15T00:26:18.867506+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3913,
+      "source_name": "FreightWaves",
+      "title": "LX Pantos Sets Its Sights on Global Logistics Leadership",
+      "canonical_url": "https://www.freightwaves.com/news/lx-pantos-sets-its-sights-on-global-logistics-leadership",
+      "published_at": "2026-09-14T14:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.868505+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3914,
+      "source_name": "FreightWaves",
+      "title": "BNSF, CPKC, and CSX to request broad access to a combined UP-NS network",
+      "canonical_url": "https://www.freightwaves.com/news/bnsf-cpkc-and-csx-to-request-broad-access-to-a-combined-up-ns-network",
+      "published_at": "2026-09-14T13:59:58+01:00",
+      "collected_at": "2026-09-15T00:26:18.868505+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3915,
+      "source_name": "FreightWaves",
+      "title": "Shell Rotella to debut video for National Truck Driver Appreciation Week",
+      "canonical_url": "https://www.freightwaves.com/news/shell-rotella-to-debut-video-for-national-truck-driver-appreciation-week",
+      "published_at": "2026-09-14T13:32:18+01:00",
+      "collected_at": "2026-09-15T00:26:18.869507+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3916,
+      "source_name": "FreightWaves",
+      "title": "SC Ports, Norfolk Southern expand intermodal access to Huntsville",
+      "canonical_url": "https://www.freightwaves.com/news/sc-ports-norfolk-southern-expand-intermodal-access-to-huntsville",
+      "published_at": "2026-09-14T13:31:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.869507+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3917,
+      "source_name": "FreightWaves",
+      "title": "Aviro360 targets dwell time with automated yard inventory",
+      "canonical_url": "https://www.freightwaves.com/news/aviro360-targets-dwell-time-with-automated-yard-inventory",
+      "published_at": "2026-09-14T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.870506+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3918,
+      "source_name": "FreightWaves",
+      "title": "Police recovered $586K stolen copper load within 8 hours after suspected carrier impersonation",
+      "canonical_url": "https://www.freightwaves.com/news/police-recovered-586k-stolen-copper-load-within-8-hours-after-suspected-carrier-impersonation",
+      "published_at": "2026-09-14T12:26:07+01:00",
+      "collected_at": "2026-09-15T00:26:18.871504+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3919,
+      "source_name": "FreightWaves",
+      "title": "Feds: Cargo thief gets over 10 years in $1.5M theft ring that stole $230K in dimes",
+      "canonical_url": "https://www.freightwaves.com/news/feds-cargo-thief-gets-over-10-years-in-1-5m-theft-ring-that-stole-230k-in-dimes",
+      "published_at": "2026-09-14T12:10:46+01:00",
+      "collected_at": "2026-09-15T00:26:18.871504+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3920,
+      "source_name": "FreightWaves",
+      "title": "Rejigged NLRB likely to target Cemex rule, used by Teamsters to organize",
+      "canonical_url": "https://www.freightwaves.com/news/rejigged-nlrb-likely-to-target-cemex-rule-used-by-teamsters-to-organize",
+      "published_at": "2026-09-14T12:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:18.872506+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3921,
+      "source_name": "gCaptain",
+      "title": "Port of Los Angeles Caps Record Summer as U.S. Import Strength Holds Up",
+      "canonical_url": "https://gcaptain.com/port-of-los-angeles-caps-record-summer-as-u-s-import-strength-holds-up",
+      "published_at": "2026-09-14T22:14:40+01:00",
+      "collected_at": "2026-09-15T00:26:19.015147+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3922,
+      "source_name": "gCaptain",
+      "title": "U.S. Rejects Iran\u2019s Mine Claim as Hormuz Shipping Threat Remains Severe",
+      "canonical_url": "https://gcaptain.com/u-s-rejects-irans-mine-claim-as-hormuz-shipping-threat-remains-severe",
+      "published_at": "2026-09-14T21:28:38+01:00",
+      "collected_at": "2026-09-15T00:26:19.016341+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3923,
+      "source_name": "gCaptain",
+      "title": "Oil Tanker Rates Top $1 Million a Day as Hormuz War Squeezes Fleet",
+      "canonical_url": "https://gcaptain.com/oil-tanker-rates-top-1-million-a-day-as-hormuz-war-squeezes-fleet",
+      "published_at": "2026-09-14T19:24:16+01:00",
+      "collected_at": "2026-09-15T00:26:19.017350+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3924,
+      "source_name": "gCaptain",
+      "title": "Canadian Coast Guard Adds First Large Great Lakes Vessel in More Than 30 Years",
+      "canonical_url": "https://gcaptain.com/canadian-coast-guard-adds-first-large-great-lakes-vessel-in-more-than-30-years",
+      "published_at": "2026-09-14T18:33:06+01:00",
+      "collected_at": "2026-09-15T00:26:19.018351+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3925,
+      "source_name": "gCaptain",
+      "title": "New Pacific Launches First Shipbuilding Program Featuring Two\u00a0 Tugboats for American Marine Corporation",
+      "canonical_url": "https://gcaptain.com/new-pacific-launches-first-shipbuilding-program-featuring-two-tugboats-for-american-marine-corporation",
+      "published_at": "2026-09-14T18:18:18+01:00",
+      "collected_at": "2026-09-15T00:26:19.019351+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3926,
+      "source_name": "gCaptain",
+      "title": "New\u00a0Attacks\u00a0in Hormuz and Saudi Test Nerves as War\u2019s Spread Worsens Oil Disruption",
+      "canonical_url": "https://gcaptain.com/new-attacks-in-hormuz-and-saudi-test-nerves-as-wars-spread-worsens-oil-disruption",
+      "published_at": "2026-09-14T18:16:46+01:00",
+      "collected_at": "2026-09-15T00:26:19.020354+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3927,
+      "source_name": "gCaptain",
+      "title": "ABS Joins Korean Initiative to Advance Standards for Next-Generation Ships and Shipyards",
+      "canonical_url": "https://gcaptain.com/abs-joins-korean-initiative-to-advance-standards-for-next-generation-ships-and-shipyards",
+      "published_at": "2026-09-14T18:09:26+01:00",
+      "collected_at": "2026-09-15T00:26:19.020354+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3928,
+      "source_name": "gCaptain",
+      "title": "ABB joins forces with Ferrari Hypersail to take Direct Current to new horizons",
+      "canonical_url": "https://gcaptain.com/abb-joins-forces-with-ferrari-hypersail-to-take-direct-current-to-new-horizons",
+      "published_at": "2026-09-14T18:08:04+01:00",
+      "collected_at": "2026-09-15T00:26:19.021351+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3929,
+      "source_name": "gCaptain",
+      "title": "Gulf States Postpone Iran Talks as Houthis Strike Saudi Arabia",
+      "canonical_url": "https://gcaptain.com/gulf-states-postpone-iran-talks-as-houthis-strike-saudi-arabia",
+      "published_at": "2026-09-14T17:25:34+01:00",
+      "collected_at": "2026-09-15T00:26:19.022352+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3930,
+      "source_name": "gCaptain",
+      "title": "Swedish Club Warns Cape Horn Is No Simple Panama Canal Alternative",
+      "canonical_url": "https://gcaptain.com/swedish-club-warns-cape-horn-is-no-simple-panama-canal-alternative",
+      "published_at": "2026-09-14T17:17:16+01:00",
+      "collected_at": "2026-09-15T00:26:19.022352+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3931,
+      "source_name": "gCaptain",
+      "title": "Maersk, Hapag-Lloyd Accelerate Return to Suez Despite Red Sea Risks",
+      "canonical_url": "https://gcaptain.com/maersk-hapag-lloyd-accelerate-return-to-suez-despite-red-sea-risks",
+      "published_at": "2026-09-14T16:53:32+01:00",
+      "collected_at": "2026-09-15T00:26:19.023349+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3932,
+      "source_name": "gCaptain",
+      "title": "The Evolution of Offshore Emergency Response",
+      "canonical_url": "https://gcaptain.com/the-evolution-of-offshore-emergency-response",
+      "published_at": "2026-09-14T16:26:37+01:00",
+      "collected_at": "2026-09-15T00:26:19.023349+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3933,
+      "source_name": "Google Blog",
+      "title": "Watch astronaut Christina Koch and Google\u2019s James Manyika discuss space, technology, and discovery.",
+      "canonical_url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch",
+      "published_at": "2026-09-14T20:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:19.775860+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3934,
+      "source_name": "Google Blog",
+      "title": "DevFest is back",
+      "canonical_url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026",
+      "published_at": "2026-09-14T17:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:19.776860+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3935,
+      "source_name": "Google Blog",
+      "title": "We\u2019re exploring a potential data center in Lea County, New Mexico.",
+      "canonical_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/lea-county-new-mexico",
+      "published_at": "2026-09-14T15:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:19.779146+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3936,
+      "source_name": "Harvard Gazette",
+      "title": "How did her sister become so sick so fast?",
+      "canonical_url": "https://news.harvard.edu/gazette/story/2026/09/how-did-her-sister-once-so-vibrant-and-healthy-become-so-sick-so-fast",
+      "published_at": "2026-09-14T21:27:45+01:00",
+      "collected_at": "2026-09-15T00:26:20.872890+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3937,
+      "source_name": "Harvard Gazette",
+      "title": "When everything is politics on campus",
+      "canonical_url": "https://news.harvard.edu/gazette/story/2026/09/when-everything-is-politics-on-campus",
+      "published_at": "2026-09-14T18:27:43+01:00",
+      "collected_at": "2026-09-15T00:26:20.873894+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3938,
+      "source_name": "Hugging Face",
+      "title": "Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL",
+      "canonical_url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+      "published_at": "2026-09-10T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:21.236871+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3939,
+      "source_name": "Kubernetes",
+      "title": "Kubernetes Changed Block Tracking API - Beta Differences",
+      "canonical_url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta",
+      "published_at": "2026-09-14T19:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:22.487222+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3940,
+      "source_name": "Kubernetes",
+      "title": "Kubernetes v1.37: Memory QoS Graduates to Beta",
+      "canonical_url": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta",
+      "published_at": "2026-09-14T19:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:22.489224+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3941,
+      "source_name": "Linux Foundation",
+      "title": "Open Secure AI Alliance Joins the Linux Foundation to Build a Shared, Open Defense Stack for the AI Era",
+      "canonical_url": "https://www.linuxfoundation.org/blog/open-secure-ai-alliance-joins-the-linux-foundation-to-build-a-shared-open-defense-stack-for-the-ai-era",
+      "published_at": "2026-09-14T17:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:22.638872+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3942,
+      "source_name": "McKinsey & Company",
+      "title": "Stacking the odds: A blueprint for successfully scaling agentic AI",
+      "canonical_url": "https://www.mckinsey.com/capabilities/operations/our-insights/stacking-the-odds-a-blueprint-for-successfully-scaling-agentic-ai",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:23.218078+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3943,
+      "source_name": "McKinsey & Company",
+      "title": "Australia\u2019s next century of plenty",
+      "canonical_url": "https://www.mckinsey.com/au/our-insights/australias-next-century-of-plenty",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:23.219077+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3944,
+      "source_name": "Mining.com",
+      "title": "Pentagon backs $150M Blue Moon tungsten restart",
+      "canonical_url": "https://www.mining.com/us-department-of-war-commits-450-million-to-tungsten-supply-chain",
+      "published_at": "2026-09-14T17:38:23+01:00",
+      "collected_at": "2026-09-15T00:26:26.297744+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3945,
+      "source_name": "Mining.com",
+      "title": "Stormlands lifts Clarence Stream valuation 52.8% in new model",
+      "canonical_url": "https://www.mining.com/stormlands-lifts-clarence-stream-valuation-52-8-in-new-model",
+      "published_at": "2026-09-14T16:59:58+01:00",
+      "collected_at": "2026-09-15T00:26:26.298744+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3946,
+      "source_name": "Mining.com",
+      "title": "Osisko greenlights Cariboo gold project in BC",
+      "canonical_url": "https://www.mining.com/roosens-osisko-greenlights-cariboo-gold-project-in-bc",
+      "published_at": "2026-09-14T16:12:25+01:00",
+      "collected_at": "2026-09-15T00:26:26.299741+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3947,
+      "source_name": "Mining.com",
+      "title": "ONGold revives Monument Bay with 2M oz resource",
+      "canonical_url": "https://www.mining.com/ongold-revives-monument-bay-with-2m-oz-resource",
+      "published_at": "2026-09-14T16:05:44+01:00",
+      "collected_at": "2026-09-15T00:26:26.299741+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3948,
+      "source_name": "Mining.com",
+      "title": "US government secures 10% stake in Trilogy Metals",
+      "canonical_url": "https://www.mining.com/us-government-secures-10-stake-in-trilogy-metals",
+      "published_at": "2026-09-14T13:05:00+01:00",
+      "collected_at": "2026-09-15T00:26:26.300747+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3949,
+      "source_name": "Mining.com",
+      "title": "Saudi Arabia touts 110 million tonnes of uranium-bearing ore find",
+      "canonical_url": "https://www.mining.com/saudi-arabia-touts-110-million-tonnes-of-uranium-bearing-ore-find",
+      "published_at": "2026-09-14T12:59:00+01:00",
+      "collected_at": "2026-09-15T00:26:26.300747+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3950,
+      "source_name": "Mining.com",
+      "title": "Canada courts C$1 trillion with mining at centre of pitch",
+      "canonical_url": "https://www.mining.com/canada-courts-1-trillion-with-mining-at-centre-of-pitch",
+      "published_at": "2026-09-14T11:50:00+01:00",
+      "collected_at": "2026-09-15T00:26:26.301742+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3951,
+      "source_name": "MIT News",
+      "title": "Marine bacteria team up to break down one of the ocean's toughest carbon-storing molecules",
+      "canonical_url": "https://news.mit.edu/2026/marine-bacteria-team-up-to-break-down-carbon-storing-molecules-0914",
+      "published_at": "2026-09-14T21:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:26.768179+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3952,
+      "source_name": "MIT News",
+      "title": "New method enables AI for safety-critical situations",
+      "canonical_url": "https://news.mit.edu/2026/new-method-enables-ai-safety-critical-situations-0914",
+      "published_at": "2026-09-14T05:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:26.768179+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3953,
+      "source_name": "MIT News",
+      "title": "MIT spinout turns plastic waste into resilient building materials",
+      "canonical_url": "https://news.mit.edu/2026/mit-spinout-turns-plastic-waste-into-resilient-building-materials-0914",
+      "published_at": "2026-09-14T05:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:26.769183+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3954,
+      "source_name": "Nature Materials",
+      "title": "Excitons driving spin dynamics in CrSBr",
+      "canonical_url": "https://www.nature.com/articles/s41563-026-02730-3",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:27.116485+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3955,
+      "source_name": "Nature Materials",
+      "title": "Materials design for biocompatible electronics",
+      "canonical_url": "https://www.nature.com/articles/s41563-026-02739-8",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:27.117485+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3956,
+      "source_name": "Nature Materials",
+      "title": "Application-driven development of metal\u2013organic frameworks",
+      "canonical_url": "https://www.nature.com/articles/s41563-026-02705-4",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:27.118490+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3957,
+      "source_name": "Nature Materials",
+      "title": "Microwave-to-optical transduction using magnon\u2013exciton coupling",
+      "canonical_url": "https://www.nature.com/articles/s41563-026-02748-7",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:27.119491+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3958,
+      "source_name": "Nikkei Asia",
+      "title": "Japanese DOGE's cost-cutting push finds meager $110m in savings",
+      "canonical_url": "https://asia.nikkei.com/politics/japanese-doge-s-cost-cutting-push-finds-meager-110m-in-savings",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.237537+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3959,
+      "source_name": "Nikkei Asia",
+      "title": "Toyota sees Europe commercial vehicles as way out of hydrogen cost quagmire",
+      "canonical_url": "https://asia.nikkei.com/business/automobiles/toyota-sees-europe-commercial-vehicles-as-way-out-of-hydrogen-cost-quagmire",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.238538+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3960,
+      "source_name": "Nikkei Asia",
+      "title": "Malaysia\u2019s Solarvest goes beyond panels to batteries and power trading",
+      "canonical_url": "https://asia.nikkei.com/spotlight/asean-money/malaysia-s-solarvest-goes-beyond-panels-to-batteries-and-power-trading",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.239538+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3961,
+      "source_name": "Nikkei Asia",
+      "title": "SWIFT's blockchain ledger enters tests with Citi, MUFG for 24-hour cross-border payments",
+      "canonical_url": "https://asia.nikkei.com/business/finance/swift-s-blockchain-ledger-enters-tests-with-citi-mufg-for-24-hour-cross-border-payments",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.240539+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3962,
+      "source_name": "Nikkei Asia",
+      "title": "FamilyMart hopes to quickly tap into trends with AI-developed sweets",
+      "canonical_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/familymart-hopes-to-quickly-tap-into-trends-with-ai-developed-sweets",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.241537+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3963,
+      "source_name": "Nikkei Asia",
+      "title": "Japan's LNG demand stymies response after Putin's disputed-island visit",
+      "canonical_url": "https://asia.nikkei.com/politics/international-relations/japan-s-lng-demand-stymies-response-after-putin-s-disputed-island-visit",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.242536+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3964,
+      "source_name": "Nikkei Asia",
+      "title": "Sakana AI, Turing among Japan startup winners as investors turn choosy",
+      "canonical_url": "https://asia.nikkei.com/business/startups/sakana-ai-turing-among-japan-startup-winners-as-investors-turn-choosy",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.242536+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3965,
+      "source_name": "Nikkei Asia",
+      "title": "Mount Fuji climbers to face fees for off-season helicopter rescues",
+      "canonical_url": "https://asia.nikkei.com/business/travel-leisure/mount-fuji-climbers-to-face-fees-for-off-season-helicopter-rescues",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.243537+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3966,
+      "source_name": "Nikkei Asia",
+      "title": "Japan sees slower inflow of foreign professionals as AI crimps hiring",
+      "canonical_url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-sees-slower-inflow-of-foreign-professionals-as-ai-crimps-hiring",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.245535+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3967,
+      "source_name": "Nikkei Asia",
+      "title": "Kioxia-linked cloud startup to make it easier to crunch encrypted data",
+      "canonical_url": "https://asia.nikkei.com/business/startups/kioxia-linked-cloud-startup-to-make-it-easier-to-crunch-encrypted-data",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.247963+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3968,
+      "source_name": "Nikkei Asia",
+      "title": "Hikari Tsushin, MBK, NEC unit launch $1.7bn buyout for Japan's Leopalace21",
+      "canonical_url": "https://asia.nikkei.com/business/business-deals/hikari-tsushin-mbk-nec-unit-launch-1.7bn-buyout-for-japan-s-leopalace212",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.251959+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3969,
+      "source_name": "Nikkei Asia",
+      "title": "FAW to become GAC's No. 2 shareholder in China auto sector shake-up",
+      "canonical_url": "https://asia.nikkei.com/business/business-deals/faw-to-become-gac-s-no.-2-shareholder-in-china-auto-sector-shake-up",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.252961+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3970,
+      "source_name": "Nikkei Asia",
+      "title": "Korean Air launches free Starlink in-flight Wi-Fi",
+      "canonical_url": "https://asia.nikkei.com/business/transportation/korean-air-launches-free-starlink-in-flight-wi-fi",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.252961+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3971,
+      "source_name": "Nikkei Asia",
+      "title": "Toyota readies hydrogen-powered Hilux truck for 2028 Europe launch",
+      "canonical_url": "https://asia.nikkei.com/business/automobiles/toyota-readies-hydrogen-powered-hilux-truck-for-2028-europe-launch",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.253960+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3972,
+      "source_name": "Nikkei Asia",
+      "title": "Tesla lays groundwork to enter Vietnam's hot EV market",
+      "canonical_url": "https://asia.nikkei.com/business/automobiles/electric-vehicles/tesla-lays-groundwork-to-enter-vietnam-s-hot-ev-market",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.253960+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3973,
+      "source_name": "Nikkei Asia",
+      "title": "Indonesia's Prabowo fires finance minister, replaces him with deputy",
+      "canonical_url": "https://asia.nikkei.com/politics/indonesia-s-prabowo-fires-finance-minister-replaces-him-with-deputy",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.254958+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3974,
+      "source_name": "Nikkei Asia",
+      "title": "Hong Kong IPO boom and Chinese AI race fuel frenzy of follow-on deals",
+      "canonical_url": "https://asia.nikkei.com/business/markets/equities/hong-kong-ipo-boom-and-chinese-ai-race-fuel-frenzy-of-follow-on-deals",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.254958+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3975,
+      "source_name": "Nikkei Asia",
+      "title": "SoftBank Group plunges 11% after OpenAI says no IPO this year",
+      "canonical_url": "https://asia.nikkei.com/business/markets/softbank-group-plunges-11-after-openai-says-no-ipo-this-year",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.254958+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3976,
+      "source_name": "Nikkei Asia",
+      "title": "Taiwan to open new Philippines mission in diplomatic push, sources say",
+      "canonical_url": "https://asia.nikkei.com/politics/international-relations/taiwan-tensions/taiwan-to-open-new-philippines-mission-in-diplomatic-push-sources-say",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.255961+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3977,
+      "source_name": "Nikkei Asia",
+      "title": "OpenAI says it is in talks to train models in Australia",
+      "canonical_url": "https://asia.nikkei.com/business/technology/artificial-intelligence/openai-says-it-is-in-talks-to-train-models-in-australia",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.255961+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3978,
+      "source_name": "Nikkei Asia",
+      "title": "Pakistan's $3bn bond sale signals shift away from G2G borrowing",
+      "canonical_url": "https://asia.nikkei.com/business/markets/bonds/pakistan-s-3bn-bond-sale-signals-shift-away-from-g2g-borrowing",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.256962+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3979,
+      "source_name": "Nikkei Asia",
+      "title": "Okinawa political shift clears way for Japan defense buildup near Taiwan",
+      "canonical_url": "https://asia.nikkei.com/politics/okinawa-political-shift-clears-way-for-japan-defense-buildup-near-taiwan",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.256962+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3980,
+      "source_name": "Nikkei Asia",
+      "title": "TDK to ramp up production of electronic components for AI servers",
+      "canonical_url": "https://asia.nikkei.com/business/technology/tdk-to-ramp-up-production-of-electronic-components-for-ai-servers",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.257961+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3981,
+      "source_name": "Nikkei Asia",
+      "title": "Historic southern Philippines assembly election tests stability, self-rule",
+      "canonical_url": "https://asia.nikkei.com/politics/historic-southern-philippines-assembly-election-tests-stability-self-rule2",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.257961+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3982,
+      "source_name": "Nikkei Asia",
+      "title": "Australian luxury bootmaker RM Williams' next step is Japan",
+      "canonical_url": "https://asia.nikkei.com/business/retail/australian-luxury-bootmaker-rm-williams-next-step-is-japan",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.258959+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3983,
+      "source_name": "Nikkei Asia",
+      "title": "India's data center boom creates new engine for renewable energy",
+      "canonical_url": "https://asia.nikkei.com/business/energy/india-s-data-center-boom-creates-new-engine-for-renewable-energy",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.258959+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3984,
+      "source_name": "Nikkei Asia",
+      "title": "Trump leaves door open to Chinese carmakers ahead of summit with Xi",
+      "canonical_url": "https://asia.nikkei.com/politics/international-relations/us-china-tensions/trump-leaves-door-open-to-chinese-carmakers-ahead-of-summit-with-xi",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.258959+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3985,
+      "source_name": "Nikkei Asia",
+      "title": "BOJ and Fed face critical test as market pressure rises on rates",
+      "canonical_url": "https://asia.nikkei.com/business/markets/trading-asia/boj-and-fed-face-critical-test-as-market-pressure-rises-on-rates",
+      "published_at": null,
+      "collected_at": "2026-09-15T00:26:27.259960+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3986,
+      "source_name": "NVIDIA Newsroom",
+      "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
+      "canonical_url": "https://blogs.nvidia.com/blog/local-ai-perplexity-windows-pcs",
+      "published_at": "2026-09-14T16:00:52+01:00",
+      "collected_at": "2026-09-15T00:26:27.718397+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3987,
+      "source_name": "NVIDIA Newsroom",
+      "title": "NVIDIA Expands Open Source CUDA-Q Platform for Fault-Tolerant Quantum Computing",
+      "canonical_url": "https://nvidianews.nvidia.com/news/nvidia-expands-open-source-cuda-q-platform-for-fault-tolerant-quantum-computing",
+      "published_at": "2026-09-14T14:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:27.719392+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3988,
+      "source_name": "OilPrice.com",
+      "title": "$100 Oil Puts Central Banks Back on Inflation Alert",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/100-Oil-Puts-Central-Banks-Back-on-Inflation-Alert.html",
+      "published_at": "2026-09-15T00:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.559989+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3989,
+      "source_name": "OilPrice.com",
+      "title": "Global Fuel Squeeze Triggers U.S. Refiners Stocks Rally",
+      "canonical_url": "https://oilprice.com/Energy/Crude-Oil/Global-Fuel-Squeeze-Triggers-US-Refiners-Stocks-Rally.html",
+      "published_at": "2026-09-14T23:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.560998+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3990,
+      "source_name": "OilPrice.com",
+      "title": "New MIT Process Could Solve Hydrogen's Biggest Supply Chain Problem",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/New-MIT-Process-Could-Solve-Hydrogens-Biggest-Supply-Chain-Problem.html",
+      "published_at": "2026-09-14T22:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.562994+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3991,
+      "source_name": "OilPrice.com",
+      "title": "Can Utilities Cash In on AI Without Making Consumers Pay?",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/Can-Utilities-Cash-In-on-AI-Without-Making-Consumers-Pay.html",
+      "published_at": "2026-09-14T21:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.565499+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3992,
+      "source_name": "OilPrice.com",
+      "title": "Saudi Arabia Discovers 110 Million Tonnes of Uranium-Bearing Ore",
+      "canonical_url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Discovers-110-Million-Tonnes-of-Uranium-Bearing-Ore.html",
+      "published_at": "2026-09-14T21:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.566496+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3993,
+      "source_name": "OilPrice.com",
+      "title": "The Next Oil Shock Is Never the Last",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/The-Next-Oil-Shock-Is-Never-the-Last.html",
+      "published_at": "2026-09-14T20:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.567494+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3994,
+      "source_name": "OilPrice.com",
+      "title": "China\u2019s Growing Iran Trade Is Moving Overland Through Central Asia",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/Chinas-Growing-Iran-Trade-Is-Moving-Overland-Through-Central-Asia.html",
+      "published_at": "2026-09-14T19:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.568503+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3995,
+      "source_name": "OilPrice.com",
+      "title": "Dangote Prices Africa's Biggest IPO at $47 Billion",
+      "canonical_url": "https://oilprice.com/Latest-Energy-News/World-News/Dangote-Prices-Africas-Biggest-IPO-at-47-Billion.html",
+      "published_at": "2026-09-14T18:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.569496+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3996,
+      "source_name": "OilPrice.com",
+      "title": "SpaceX Turns Turbine Maker as Musk Warns of Years-Long Equipment Shortage",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/SpaceX-Turns-Turbine-Maker-as-Musk-Warns-of-Years-Long-Equipment-Shortage.html",
+      "published_at": "2026-09-14T18:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.570495+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3997,
+      "source_name": "OilPrice.com",
+      "title": "Chevron Targets Four Continents in New LNG Expansion Drive",
+      "canonical_url": "https://oilprice.com/Latest-Energy-News/World-News/Chevron-Targets-Four-Continents-in-New-LNG-Expansion-Drive.html",
+      "published_at": "2026-09-14T17:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.570495+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3998,
+      "source_name": "OilPrice.com",
+      "title": "The U.S.-China AI War Has Kazakhstan Caught in the Crossfire",
+      "canonical_url": "https://oilprice.com/Geopolitics/Asia/The-US-China-AI-War-Has-Kazakhstan-Caught-in-the-Crossfire.html",
+      "published_at": "2026-09-14T17:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.571499+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 3999,
+      "source_name": "OilPrice.com",
+      "title": "Uniper to Sell Gas Pipeline Stake to Meet EU State Aid Conditions",
+      "canonical_url": "https://oilprice.com/Latest-Energy-News/World-News/Uniper-to-Sell-Gas-Pipeline-Stake-to-Meet-EU-State-Aid-Conditions.html",
+      "published_at": "2026-09-14T16:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.571499+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4000,
+      "source_name": "OilPrice.com",
+      "title": "Record Freight Costs Squeeze Russia's Black Sea Crude Exports",
+      "canonical_url": "https://oilprice.com/Geopolitics/International/Record-Freight-Costs-Squeeze-Russias-Black-Sea-Crude-Exports.html",
+      "published_at": "2026-09-14T16:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.572500+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4001,
+      "source_name": "OilPrice.com",
+      "title": "Syria Diesel Prices Jump 40% Triggering Widespread Unrest",
+      "canonical_url": "https://oilprice.com/Latest-Energy-News/World-News/Syria-Diesel-Prices-Jump-40-Triggering-Widespread-Unrest.html",
+      "published_at": "2026-09-14T15:30:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.573502+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4002,
+      "source_name": "OilPrice.com",
+      "title": "The Problem With Trying to Bypass Hormuz Using Pipelines",
+      "canonical_url": "https://oilprice.com/Energy/Energy-General/The-Problem-With-Trying-to-Bypass-Hormuz-Using-Pipelines.html",
+      "published_at": "2026-09-14T15:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:29.573502+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4003,
+      "source_name": "OpenAI",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "canonical_url": "https://openai.com/index/fyxer",
+      "published_at": "2026-09-14T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:30.084113+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4004,
+      "source_name": "ScienceDaily Top News",
+      "title": "Scientists discover strange link between low vitamin D and pain",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260914042053.htm",
+      "published_at": "2026-09-14T13:52:54+01:00",
+      "collected_at": "2026-09-15T00:26:33.096004+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4005,
+      "source_name": "ScienceDaily Top News",
+      "title": "Cancer is rising in younger adults. Faster biological aging may help explain why",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260913082200.htm",
+      "published_at": "2026-09-14T15:47:07+01:00",
+      "collected_at": "2026-09-15T00:26:33.099003+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4006,
+      "source_name": "ScienceDaily Top News",
+      "title": "Chemistry textbooks have been getting this wrong for nearly 100 years",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260913082157.htm",
+      "published_at": "2026-09-14T15:13:47+01:00",
+      "collected_at": "2026-09-15T00:26:33.100004+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4007,
+      "source_name": "ScienceDaily Top News",
+      "title": "Hidden brain wiring may help keep the mind sharp as gray matter shrinks",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260913081921.htm",
+      "published_at": "2026-09-14T15:23:40+01:00",
+      "collected_at": "2026-09-15T00:26:33.100004+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4008,
+      "source_name": "ScienceDaily Top News",
+      "title": "This German submarine sank in 1917. It\u2019s still leaking TNT",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260913081919.htm",
+      "published_at": "2026-09-14T14:30:51+01:00",
+      "collected_at": "2026-09-15T00:26:33.101003+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4009,
+      "source_name": "ScienceDaily Top News",
+      "title": "Scientists find a hidden cause of high blood pressure that routine tests can miss",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260913081916.htm",
+      "published_at": "2026-09-14T14:57:49+01:00",
+      "collected_at": "2026-09-15T00:26:33.101003+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4010,
+      "source_name": "ScienceDaily Top News",
+      "title": "Crocodiles are famous for finding their way home. These ones didn\u2019t",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260913081913.htm",
+      "published_at": "2026-09-14T14:46:25+01:00",
+      "collected_at": "2026-09-15T00:26:33.102003+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4011,
+      "source_name": "ScienceDaily Top News",
+      "title": "Popular sweetener byproduct damages DNA in human cells",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260912220107.htm",
+      "published_at": "2026-09-14T02:41:03+01:00",
+      "collected_at": "2026-09-15T00:26:33.103003+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4012,
+      "source_name": "ScienceDaily Top News",
+      "title": "One Mount Etna eruption took weeks. Another happened in hours",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260912220100.htm",
+      "published_at": "2026-09-14T04:18:35+01:00",
+      "collected_at": "2026-09-15T00:26:33.103507+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4013,
+      "source_name": "ScienceDaily Top News",
+      "title": "Back-to-back Arctic storms can double sea ice loss",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260912220045.htm",
+      "published_at": "2026-09-14T03:38:47+01:00",
+      "collected_at": "2026-09-15T00:26:33.104514+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4014,
+      "source_name": "ScienceDaily Top News",
+      "title": "Scientists find how \u201czombie\u201d cells fuel inflammation as we age",
+      "canonical_url": "https://www.sciencedaily.com/releases/2026/09/260911214301.htm",
+      "published_at": "2026-09-14T04:48:19+01:00",
+      "collected_at": "2026-09-15T00:26:33.109514+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4015,
+      "source_name": "Siemens Global News",
+      "title": "Siemens expands rail service network with first Rail Service Center in Poland",
+      "canonical_url": "https://press.siemens.com/global/en/pressrelease/siemens-expands-rail-service-network-first-rail-service-center-poland",
+      "published_at": "2026-09-11T08:39:22+01:00",
+      "collected_at": "2026-09-15T00:26:33.432131+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4016,
+      "source_name": "TASS World",
+      "title": "Disarray at Pentagon under Hegseth hindering key missions \u2014 media",
+      "canonical_url": "https://tass.com/world/2187589",
+      "published_at": "2026-09-15T00:14:44+01:00",
+      "collected_at": "2026-09-15T00:26:35.162222+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4017,
+      "source_name": "TASS World",
+      "title": "Vucic states plans to resign on September 27",
+      "canonical_url": "https://tass.com/world/2187587",
+      "published_at": "2026-09-14T23:49:08+01:00",
+      "collected_at": "2026-09-15T00:26:35.163676+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4018,
+      "source_name": "TASS World",
+      "title": "GFCN chief warns of frequent cyber fraud, \"calls from FSB\"",
+      "canonical_url": "https://tass.com/society/2187579",
+      "published_at": "2026-09-14T23:26:51+01:00",
+      "collected_at": "2026-09-15T00:26:35.164690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4019,
+      "source_name": "TASS World",
+      "title": "CSTO seeks to draw extensively on lessons of modern warfare \u2014 secretary general",
+      "canonical_url": "https://tass.com/world/2187585",
+      "published_at": "2026-09-14T23:14:16+01:00",
+      "collected_at": "2026-09-15T00:26:35.164690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4020,
+      "source_name": "TASS World",
+      "title": "CSTO favors resuming cooperation with OSCE",
+      "canonical_url": "https://tass.com/world/2187583",
+      "published_at": "2026-09-14T22:54:57+01:00",
+      "collected_at": "2026-09-15T00:26:35.165687+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4021,
+      "source_name": "TASS World",
+      "title": "Saudi airstrikes on Yemen\u2019s Taiz Province cause casualties \u2014 agency",
+      "canonical_url": "https://tass.com/world/2187581",
+      "published_at": "2026-09-14T22:52:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.165687+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4022,
+      "source_name": "TASS World",
+      "title": "CSTO chief criticizes countries for choosing threats, bans over dialogue",
+      "canonical_url": "https://tass.com/world/2187577",
+      "published_at": "2026-09-14T22:39:35+01:00",
+      "collected_at": "2026-09-15T00:26:35.166688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4023,
+      "source_name": "TASS World",
+      "title": "Houthis report seven strikes on Yemen\u2019s Saada Province by Saudi warplanes",
+      "canonical_url": "https://tass.com/world/2187575",
+      "published_at": "2026-09-14T22:27:41+01:00",
+      "collected_at": "2026-09-15T00:26:35.166688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4024,
+      "source_name": "TASS World",
+      "title": "Drone attacks fishing vessels near Iran\u2019s Hormozgan province, IRIB reports",
+      "canonical_url": "https://tass.com/world/2187573",
+      "published_at": "2026-09-14T21:59:38+01:00",
+      "collected_at": "2026-09-15T00:26:35.167689+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4025,
+      "source_name": "TASS World",
+      "title": "CSTO says concerned about creation of NATO military infrastructure on its borders",
+      "canonical_url": "https://tass.com/politics/2187571",
+      "published_at": "2026-09-14T21:58:05+01:00",
+      "collected_at": "2026-09-15T00:26:35.168690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4026,
+      "source_name": "TASS World",
+      "title": "IRGC navy says Algaya supertanker hit naval mines in Strait of Hormuz",
+      "canonical_url": "https://tass.com/world/2187567",
+      "published_at": "2026-09-14T21:48:19+01:00",
+      "collected_at": "2026-09-15T00:26:35.168690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4027,
+      "source_name": "TASS World",
+      "title": "Risks of large-scale conflicts with catastrophic consequences grow \u2014 CSTO",
+      "canonical_url": "https://tass.com/politics/2187569",
+      "published_at": "2026-09-14T21:47:44+01:00",
+      "collected_at": "2026-09-15T00:26:35.169690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4028,
+      "source_name": "TASS World",
+      "title": "CSTO does not believe there are no prospects for dialogue with NATO \u2014 secretary general",
+      "canonical_url": "https://tass.com/politics/2187565",
+      "published_at": "2026-09-14T21:43:58+01:00",
+      "collected_at": "2026-09-15T00:26:35.170688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4029,
+      "source_name": "TASS World",
+      "title": "Belgian State Council rules Treasury\u2019s refusal to unblock BCS bank assets illegal",
+      "canonical_url": "https://tass.com/world/2187555",
+      "published_at": "2026-09-14T21:09:19+01:00",
+      "collected_at": "2026-09-15T00:26:35.170688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4030,
+      "source_name": "TASS World",
+      "title": "Italy\u2019s deputy PM believes that weak politicians need Ukrainian conflict",
+      "canonical_url": "https://tass.com/world/2187553",
+      "published_at": "2026-09-14T21:08:48+01:00",
+      "collected_at": "2026-09-15T00:26:35.171687+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4031,
+      "source_name": "TASS World",
+      "title": "US in contact with Houthis after their takeover of Perim Island, vice president says",
+      "canonical_url": "https://tass.com/world/2187551",
+      "published_at": "2026-09-14T20:59:59+01:00",
+      "collected_at": "2026-09-15T00:26:35.171687+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4032,
+      "source_name": "TASS World",
+      "title": "Brazil and Russia ready to assist in organizing direct flights \u2014 ambassador",
+      "canonical_url": "https://tass.com/world/2187549",
+      "published_at": "2026-09-14T20:48:51+01:00",
+      "collected_at": "2026-09-15T00:26:35.172686+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4033,
+      "source_name": "TASS World",
+      "title": "Shipping in Red Sea remains stable, head of Houthi-controlled corporation says",
+      "canonical_url": "https://tass.com/world/2187545",
+      "published_at": "2026-09-14T20:48:04+01:00",
+      "collected_at": "2026-09-15T00:26:35.172686+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4034,
+      "source_name": "TASS World",
+      "title": "Italy\u2019s deputy PM says Rome could play role in Ukraine peace process",
+      "canonical_url": "https://tass.com/world/2187547",
+      "published_at": "2026-09-14T20:47:49+01:00",
+      "collected_at": "2026-09-15T00:26:35.173689+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4035,
+      "source_name": "TASS World",
+      "title": "US blacklists VTB under Iran sanctions program \u2014 Treasury",
+      "canonical_url": "https://tass.com/world/2187543",
+      "published_at": "2026-09-14T20:06:41+01:00",
+      "collected_at": "2026-09-15T00:26:35.173689+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4036,
+      "source_name": "TASS World",
+      "title": "Record US refinery output fails to offset global diesel deficit \u2014 analyst",
+      "canonical_url": "https://tass.com/economy/2187541",
+      "published_at": "2026-09-14T20:04:13+01:00",
+      "collected_at": "2026-09-15T00:26:35.174690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4037,
+      "source_name": "TASS World",
+      "title": "Approval numbers for Germany's AfD party hit record high \u2014 survey",
+      "canonical_url": "https://tass.com/world/2187537",
+      "published_at": "2026-09-14T20:02:19+01:00",
+      "collected_at": "2026-09-15T00:26:35.174690+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4038,
+      "source_name": "TASS World",
+      "title": "Brazil tracks Russia's small modular reactor tech with interest \u2014 ambassador",
+      "canonical_url": "https://tass.com/world/2187535",
+      "published_at": "2026-09-14T20:01:08+01:00",
+      "collected_at": "2026-09-15T00:26:35.175688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4039,
+      "source_name": "TASS World",
+      "title": "Ukrainian PM reports government seriously low on funds",
+      "canonical_url": "https://tass.com/world/2187533",
+      "published_at": "2026-09-14T19:57:13+01:00",
+      "collected_at": "2026-09-15T00:26:35.175688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4040,
+      "source_name": "TASS World",
+      "title": "US reconnaissance drone flies over Persian Gulf for several hours",
+      "canonical_url": "https://tass.com/world/2187529",
+      "published_at": "2026-09-14T19:54:22+01:00",
+      "collected_at": "2026-09-15T00:26:35.175688+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4041,
+      "source_name": "TASS World",
+      "title": "Italy could resume Russian gas imports after Ukraine conflict ends \u2014 Deputy PM",
+      "canonical_url": "https://tass.com/world/2187527",
+      "published_at": "2026-09-14T19:51:02+01:00",
+      "collected_at": "2026-09-15T00:26:35.181201+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4042,
+      "source_name": "TASS World",
+      "title": "Oil shipments via Strait of Hormuz to rise in coming weeks \u2014 US Energy Secretary",
+      "canonical_url": "https://tass.com/world/2187525",
+      "published_at": "2026-09-14T19:34:07+01:00",
+      "collected_at": "2026-09-15T00:26:35.183199+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4043,
+      "source_name": "TASS World",
+      "title": "US ramps up advanced weapons production, Trump says",
+      "canonical_url": "https://tass.com/world/2187523",
+      "published_at": "2026-09-14T19:04:38+01:00",
+      "collected_at": "2026-09-15T00:26:35.184200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4044,
+      "source_name": "TASS World",
+      "title": "BRICS opposes imposing its views on other countries, unlike EU \u2014 Brazilian diplomat",
+      "canonical_url": "https://tass.com/world/2187519",
+      "published_at": "2026-09-14T18:49:55+01:00",
+      "collected_at": "2026-09-15T00:26:35.184200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4045,
+      "source_name": "TASS World",
+      "title": "Estonia discusses joining French 'forward nuclear deterrence' project, prime minister says",
+      "canonical_url": "https://tass.com/world/2187513",
+      "published_at": "2026-09-14T18:38:03+01:00",
+      "collected_at": "2026-09-15T00:26:35.185198+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4046,
+      "source_name": "TASS World",
+      "title": "Russian stock market closes sharply higher on surging energy prices",
+      "canonical_url": "https://tass.com/economy/2187509",
+      "published_at": "2026-09-14T18:17:44+01:00",
+      "collected_at": "2026-09-15T00:26:35.186202+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4047,
+      "source_name": "TASS World",
+      "title": "British national eliminated in Russia\u2019s special mil-op zone in Ukraine \u2014 top brass",
+      "canonical_url": "https://tass.com/defense/2187507",
+      "published_at": "2026-09-14T18:12:19+01:00",
+      "collected_at": "2026-09-15T00:26:35.186202+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4048,
+      "source_name": "TASS World",
+      "title": "Russia's antitrust watchdog opens 55 cases over fuel market violations",
+      "canonical_url": "https://tass.com/economy/2187505",
+      "published_at": "2026-09-14T18:06:28+01:00",
+      "collected_at": "2026-09-15T00:26:35.187203+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4049,
+      "source_name": "TASS World",
+      "title": "Russia to showcase nearly 500 defense industry products at South Africa exhibition",
+      "canonical_url": "https://tass.com/defense/2187503",
+      "published_at": "2026-09-14T18:05:11+01:00",
+      "collected_at": "2026-09-15T00:26:35.188200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4050,
+      "source_name": "TASS World",
+      "title": "EU backs 7-day Russia sanctions extension to resolve rifts \u2014 portal",
+      "canonical_url": "https://tass.com/world/2187501",
+      "published_at": "2026-09-14T18:01:29+01:00",
+      "collected_at": "2026-09-15T00:26:35.188200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4051,
+      "source_name": "TASS World",
+      "title": "US Navy escorts oil tankers through Strait of Hormuz at night, energy secretary says",
+      "canonical_url": "https://tass.com/world/2187499",
+      "published_at": "2026-09-14T17:57:32+01:00",
+      "collected_at": "2026-09-15T00:26:35.189203+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4052,
+      "source_name": "TASS World",
+      "title": "TNF's international status to expand participation of foreign partners",
+      "canonical_url": "https://tass.com/economy/2187497",
+      "published_at": "2026-09-14T17:55:52+01:00",
+      "collected_at": "2026-09-15T00:26:35.190204+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4053,
+      "source_name": "TASS World",
+      "title": "AI concerns, rising oil prices hit global markets \u2014 WSJ",
+      "canonical_url": "https://tass.com/economy/2187495",
+      "published_at": "2026-09-14T17:53:25+01:00",
+      "collected_at": "2026-09-15T00:26:35.191200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4054,
+      "source_name": "TASS World",
+      "title": "New requests from Kiev for supplies create \"bombshell\" effect in EU \u2014 WP",
+      "canonical_url": "https://tass.com/world/2187493",
+      "published_at": "2026-09-14T17:51:23+01:00",
+      "collected_at": "2026-09-15T00:26:35.191200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4055,
+      "source_name": "TASS World",
+      "title": "Europe's rush to fill gas storage amid LNG shortage drives prices higher \u2014 expert",
+      "canonical_url": "https://tass.com/economy/2187491",
+      "published_at": "2026-09-14T17:48:21+01:00",
+      "collected_at": "2026-09-15T00:26:35.192204+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4056,
+      "source_name": "TASS World",
+      "title": "West nervous about losing global leadership against backdrop of BRICS summit \u2014 LDPR leader",
+      "canonical_url": "https://tass.com/politics/2187489",
+      "published_at": "2026-09-14T17:29:05+01:00",
+      "collected_at": "2026-09-15T00:26:35.193201+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4057,
+      "source_name": "TASS World",
+      "title": "No additional control over AI needed in United States \u2014 Trump",
+      "canonical_url": "https://tass.com/world/2187485",
+      "published_at": "2026-09-14T17:20:17+01:00",
+      "collected_at": "2026-09-15T00:26:35.193201+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4058,
+      "source_name": "TASS World",
+      "title": "Refined product deficits, not crude supply, strain energy market \u2014 US Energy Secretary",
+      "canonical_url": "https://tass.com/economy/2187481",
+      "published_at": "2026-09-14T17:04:53+01:00",
+      "collected_at": "2026-09-15T00:26:35.194200+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4059,
+      "source_name": "TASS World",
+      "title": "Bank of Russia outlines key financial market development priorities for 2027-2029",
+      "canonical_url": "https://tass.com/economy/2187475",
+      "published_at": "2026-09-14T16:45:28+01:00",
+      "collected_at": "2026-09-15T00:26:35.195227+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4060,
+      "source_name": "TASS World",
+      "title": "Rosatom to launch three more depleted uranium processing units",
+      "canonical_url": "https://tass.com/economy/2187471",
+      "published_at": "2026-09-14T16:38:17+01:00",
+      "collected_at": "2026-09-15T00:26:35.195227+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4061,
+      "source_name": "TASS World",
+      "title": "Lavrov meets with Ugandan candidate for UN secretary-general \u2014 Foreign Ministry",
+      "canonical_url": "https://tass.com/politics/2187467",
+      "published_at": "2026-09-14T16:31:02+01:00",
+      "collected_at": "2026-09-15T00:26:35.196232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4062,
+      "source_name": "TASS World",
+      "title": "EU envoys fail to agree on extension of anti-Russia sanctions at first meeting \u2014 Politico",
+      "canonical_url": "https://tass.com/world/2187463",
+      "published_at": "2026-09-14T16:29:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.196232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4063,
+      "source_name": "TASS World",
+      "title": "Saudi minister announces discovery of major uranium deposit near Medina",
+      "canonical_url": "https://tass.com/world/2187455",
+      "published_at": "2026-09-14T16:15:01+01:00",
+      "collected_at": "2026-09-15T00:26:35.197232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4064,
+      "source_name": "TASS World",
+      "title": "NATO exercises near Kaliningrad borders to escalate tensions \u2014 expert",
+      "canonical_url": "https://tass.com/politics/2187451",
+      "published_at": "2026-09-14T16:12:52+01:00",
+      "collected_at": "2026-09-15T00:26:35.198241+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4065,
+      "source_name": "TASS World",
+      "title": "Russia\u2019s current account surplus up to $33.9 bln in January-July \u2014 Central Bank",
+      "canonical_url": "https://tass.com/economy/2187449",
+      "published_at": "2026-09-14T16:08:13+01:00",
+      "collected_at": "2026-09-15T00:26:35.198241+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4066,
+      "source_name": "TASS World",
+      "title": "Anti-Russian directives coming to Budapest from Brussels \u2014 former prime minister",
+      "canonical_url": "https://tass.com/world/2187447",
+      "published_at": "2026-09-14T16:07:06+01:00",
+      "collected_at": "2026-09-15T00:26:35.199235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4067,
+      "source_name": "TASS World",
+      "title": "Duma advises Kallas to seek treatment for her persecution complex regarding Russia",
+      "canonical_url": "https://tass.com/politics/2187445",
+      "published_at": "2026-09-14T16:04:54+01:00",
+      "collected_at": "2026-09-15T00:26:35.199235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4068,
+      "source_name": "TASS World",
+      "title": "Dommaraju, Sindarov to play for World Chess crown next month in Geneva",
+      "canonical_url": "https://tass.com/sports/2187443",
+      "published_at": "2026-09-14T16:03:10+01:00",
+      "collected_at": "2026-09-15T00:26:35.200233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4069,
+      "source_name": "TASS World",
+      "title": "Gold futures fall below $4,300 per troy ounce, first time since August 6",
+      "canonical_url": "https://tass.com/economy/2187439",
+      "published_at": "2026-09-14T15:38:09+01:00",
+      "collected_at": "2026-09-15T00:26:35.200233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4070,
+      "source_name": "TASS World",
+      "title": "Kalashnikov to showcase AK-15K, AK-19K assault rifles, KUB-2E UAV in South Africa",
+      "canonical_url": "https://tass.com/economy/2187437",
+      "published_at": "2026-09-14T15:37:37+01:00",
+      "collected_at": "2026-09-15T00:26:35.201236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4071,
+      "source_name": "TASS World",
+      "title": "European gas price may rise to $1,200-$1,300 in cold winter \u2014 expert",
+      "canonical_url": "https://tass.com/economy/2187435",
+      "published_at": "2026-09-14T15:36:23+01:00",
+      "collected_at": "2026-09-15T00:26:35.201236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4072,
+      "source_name": "TASS World",
+      "title": "Not enough air defense assets in whole world to meet Kiev\u2019s needs \u2014 former Estonian leader",
+      "canonical_url": "https://tass.com/world/2187433",
+      "published_at": "2026-09-14T15:34:22+01:00",
+      "collected_at": "2026-09-15T00:26:35.202234+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4073,
+      "source_name": "TASS World",
+      "title": "Rosatom ready for dialogue with Hungarian authorities in any format on Paks II project",
+      "canonical_url": "https://tass.com/economy/2187431",
+      "published_at": "2026-09-14T15:32:31+01:00",
+      "collected_at": "2026-09-15T00:26:35.202234+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4074,
+      "source_name": "TASS World",
+      "title": "Republika Srpska to maintain strong relations with Russia \u2014 Presidential advisor",
+      "canonical_url": "https://tass.com/world/2187427",
+      "published_at": "2026-09-14T15:20:53+01:00",
+      "collected_at": "2026-09-15T00:26:35.203234+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4075,
+      "source_name": "TASS World",
+      "title": "Zelensky regime persecutes all opponents of continuation of conflict \u2014 journalist",
+      "canonical_url": "https://tass.com/world/2187425",
+      "published_at": "2026-09-14T15:19:09+01:00",
+      "collected_at": "2026-09-15T00:26:35.203234+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4076,
+      "source_name": "TASS World",
+      "title": "China, Russia, Mongolia begin deep integration in border protection",
+      "canonical_url": "https://tass.com/world/2187423",
+      "published_at": "2026-09-14T15:13:46+01:00",
+      "collected_at": "2026-09-15T00:26:35.204233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4077,
+      "source_name": "TASS World",
+      "title": "Kiev\u2019s attacks on Zaporozhye plant aim to create noxious conditions for staff \u2014 Likhachev",
+      "canonical_url": "https://tass.com/economy/2187421",
+      "published_at": "2026-09-14T15:11:49+01:00",
+      "collected_at": "2026-09-15T00:26:35.204233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4078,
+      "source_name": "TASS World",
+      "title": "Rosatom has 30 RITM small reactors at various stages of completion \u2014 CEO",
+      "canonical_url": "https://tass.com/economy/2187415",
+      "published_at": "2026-09-14T15:09:11+01:00",
+      "collected_at": "2026-09-15T00:26:35.204233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4079,
+      "source_name": "TASS World",
+      "title": "IN BRIEF: What we know about scandal surrounding firing of Ukraine\u2019s Prosecutor General",
+      "canonical_url": "https://tass.com/world/2187413",
+      "published_at": "2026-09-14T15:04:25+01:00",
+      "collected_at": "2026-09-15T00:26:35.205236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4080,
+      "source_name": "TASS World",
+      "title": "UK Prime Minister\u2019s office rejects possibility of referendums on countries leaving Britain",
+      "canonical_url": "https://tass.com/world/2187407",
+      "published_at": "2026-09-14T14:32:55+01:00",
+      "collected_at": "2026-09-15T00:26:35.205236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4081,
+      "source_name": "TASS World",
+      "title": "Polish air defenses authorized to intercept aerial objects violating its national airspace",
+      "canonical_url": "https://tass.com/world/2187403",
+      "published_at": "2026-09-14T14:27:37+01:00",
+      "collected_at": "2026-09-15T00:26:35.206234+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4082,
+      "source_name": "TASS World",
+      "title": "AI data center energy consumption to triple by 2030 \u2014 Russian deputy PM",
+      "canonical_url": "https://tass.com/economy/2187399",
+      "published_at": "2026-09-14T14:16:14+01:00",
+      "collected_at": "2026-09-15T00:26:35.206234+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4083,
+      "source_name": "TASS World",
+      "title": "Leaders of Wales, Scotland, Northern Ireland sign memorandum on right to leave UK",
+      "canonical_url": "https://tass.com/world/2187397",
+      "published_at": "2026-09-14T14:11:49+01:00",
+      "collected_at": "2026-09-15T00:26:35.207235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4084,
+      "source_name": "TASS World",
+      "title": "CSTO must be prepared for global challenges, threats \u2014 Kazakh top brass",
+      "canonical_url": "https://tass.com/world/2187395",
+      "published_at": "2026-09-14T14:10:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.207235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4085,
+      "source_name": "TASS World",
+      "title": "Experts expect Brent crude at $95-115 per barrel in near term",
+      "canonical_url": "https://tass.com/economy/2187393",
+      "published_at": "2026-09-14T13:51:39+01:00",
+      "collected_at": "2026-09-15T00:26:35.208233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4086,
+      "source_name": "TASS World",
+      "title": "Kremlin comments on Trump\u2019s call, Finland's decision, situation on oil markets",
+      "canonical_url": "https://tass.com/politics/2187391",
+      "published_at": "2026-09-14T13:47:54+01:00",
+      "collected_at": "2026-09-15T00:26:35.208233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4087,
+      "source_name": "TASS World",
+      "title": "CSTO drills in Kazakhstan engage 1,500 personnel, over 300 pieces of weapons",
+      "canonical_url": "https://tass.com/world/2187389",
+      "published_at": "2026-09-14T13:38:33+01:00",
+      "collected_at": "2026-09-15T00:26:35.209235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4088,
+      "source_name": "TASS World",
+      "title": "FACTBOX: Russian strikes hit Kievstar mobile provider building, railway facilities",
+      "canonical_url": "https://tass.com/politics/2187375",
+      "published_at": "2026-09-14T13:13:04+01:00",
+      "collected_at": "2026-09-15T00:26:35.209235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4089,
+      "source_name": "TASS World",
+      "title": "Russia\u2019s Khachanov skyrockets in ATP Rankings on heels of US Open performance",
+      "canonical_url": "https://tass.com/sports/2187383",
+      "published_at": "2026-09-14T13:11:33+01:00",
+      "collected_at": "2026-09-15T00:26:35.210232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4090,
+      "source_name": "TASS World",
+      "title": "Active phase of CSTO Rubezh 2026 exercise begins in Kazakhstan",
+      "canonical_url": "https://tass.com/defense/2187381",
+      "published_at": "2026-09-14T13:10:09+01:00",
+      "collected_at": "2026-09-15T00:26:35.210232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4091,
+      "source_name": "TASS World",
+      "title": "Rosatom, IAEA chiefs discuss security issues facing Zaporozhye nuclear power plant",
+      "canonical_url": "https://tass.com/politics/2187379",
+      "published_at": "2026-09-14T13:08:14+01:00",
+      "collected_at": "2026-09-15T00:26:35.210232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4092,
+      "source_name": "TASS World",
+      "title": "BRICS could serve as platform for normalizing Iran-UAE dialogue, says expert",
+      "canonical_url": "https://tass.com/politics/2187373",
+      "published_at": "2026-09-14T13:03:35+01:00",
+      "collected_at": "2026-09-15T00:26:35.211235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4093,
+      "source_name": "TASS World",
+      "title": "Ban on exports of Russian petroleum products aimed to saturate domestic market \u2014 Kremlin",
+      "canonical_url": "https://tass.com/economy/2187367",
+      "published_at": "2026-09-14T12:48:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.212239+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4094,
+      "source_name": "TASS World",
+      "title": "Western-supplied weapons from Ukraine reach drug cartels \u2014 Russia\u2019s FSB",
+      "canonical_url": "https://tass.com/politics/2187365",
+      "published_at": "2026-09-14T12:45:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.212239+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4095,
+      "source_name": "TASS World",
+      "title": "Russian Armed Forces hold military engineer exercises for ASEAN",
+      "canonical_url": "https://tass.com/defense/2187363",
+      "published_at": "2026-09-14T12:40:24+01:00",
+      "collected_at": "2026-09-15T00:26:35.213238+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4096,
+      "source_name": "TASS World",
+      "title": "Russia\u2019s top female racquet Andreeva holds 5th place in new WTA Rankings",
+      "canonical_url": "https://tass.com/sports/2187359",
+      "published_at": "2026-09-14T12:29:59+01:00",
+      "collected_at": "2026-09-15T00:26:35.213238+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4097,
+      "source_name": "TASS World",
+      "title": "Ukrainian army escalates tensions around Zaporozhye nuclear plant \u2014 Rosatom chief",
+      "canonical_url": "https://tass.com/economy/2187355",
+      "published_at": "2026-09-14T12:24:30+01:00",
+      "collected_at": "2026-09-15T00:26:35.214236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4098,
+      "source_name": "TASS World",
+      "title": "Zelensky increasingly unpopular in UK \u2014 British politician",
+      "canonical_url": "https://tass.com/world/2187353",
+      "published_at": "2026-09-14T12:22:46+01:00",
+      "collected_at": "2026-09-15T00:26:35.214236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4099,
+      "source_name": "TASS World",
+      "title": "Kiev loses some 1,375 troops along engagement line in past day \u2014 Russia\u2019s top brass",
+      "canonical_url": "https://tass.com/politics/2187349",
+      "published_at": "2026-09-14T12:18:15+01:00",
+      "collected_at": "2026-09-15T00:26:35.215235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4100,
+      "source_name": "TASS World",
+      "title": "Conflict with Iran exposes US inability to project military power globally \u2014 expert",
+      "canonical_url": "https://tass.com/politics/2187347",
+      "published_at": "2026-09-14T12:12:59+01:00",
+      "collected_at": "2026-09-15T00:26:35.215235+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4101,
+      "source_name": "TASS World",
+      "title": "Russian petroleum products dropping out of exports impacts global markets \u2014 Kremlin",
+      "canonical_url": "https://tass.com/economy/2187343",
+      "published_at": "2026-09-14T11:45:48+01:00",
+      "collected_at": "2026-09-15T00:26:35.216236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4102,
+      "source_name": "TASS World",
+      "title": "US diesel prices hit record $6.23 per gallon",
+      "canonical_url": "https://tass.com/economy/2187341",
+      "published_at": "2026-09-14T11:44:20+01:00",
+      "collected_at": "2026-09-15T00:26:35.216236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4103,
+      "source_name": "TASS World",
+      "title": "Russia's new Geran drones changing air war in Ukraine \u2014 FT",
+      "canonical_url": "https://tass.com/defense/2187339",
+      "published_at": "2026-09-14T11:43:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.217236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4104,
+      "source_name": "TASS World",
+      "title": "BRICS summit demonstrates need for global change in relations with West, expert says",
+      "canonical_url": "https://tass.com/world/2187337",
+      "published_at": "2026-09-14T11:41:15+01:00",
+      "collected_at": "2026-09-15T00:26:35.217236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4105,
+      "source_name": "TASS World",
+      "title": "Putin welcomes Chinese, Indian leaders\u2019 readiness to help resolve Ukraine issue \u2014 Kremlin",
+      "canonical_url": "https://tass.com/politics/2187315",
+      "published_at": "2026-09-14T11:20:48+01:00",
+      "collected_at": "2026-09-15T00:26:35.218233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4106,
+      "source_name": "TASS World",
+      "title": "Russia successfully deploys new UAV communications system in special op zone",
+      "canonical_url": "https://tass.com/defense/2187305",
+      "published_at": "2026-09-14T11:17:51+01:00",
+      "collected_at": "2026-09-15T00:26:35.218233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4107,
+      "source_name": "TASS World",
+      "title": "Finland to join French forward nuclear deterrence project",
+      "canonical_url": "https://tass.com/world/2187307",
+      "published_at": "2026-09-14T11:11:12+01:00",
+      "collected_at": "2026-09-15T00:26:35.218233+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4108,
+      "source_name": "TASS World",
+      "title": "Press Review: EU bolsters Ukraine ahead of talks as BRICS summit shows Global South stance",
+      "canonical_url": "https://tass.com/pressreview/2187163",
+      "published_at": "2026-09-14T11:00:01+01:00",
+      "collected_at": "2026-09-15T00:26:35.219232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4109,
+      "source_name": "TASS World",
+      "title": "Dmitriev calls European gas price surge natural result of Eurocrats' policies",
+      "canonical_url": "https://tass.com/economy/2187251",
+      "published_at": "2026-09-14T10:51:56+01:00",
+      "collected_at": "2026-09-15T00:26:35.219232+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4110,
+      "source_name": "TASS World",
+      "title": "Houthis claim drone, missile strikes on airbase in Saudi Arabia",
+      "canonical_url": "https://tass.com/world/2187241",
+      "published_at": "2026-09-14T10:44:59+01:00",
+      "collected_at": "2026-09-15T00:26:35.220237+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4111,
+      "source_name": "TASS World",
+      "title": "Finland does not intend to host nuclear weapons in peacetime \u2014 president",
+      "canonical_url": "https://tass.com/world/2187219",
+      "published_at": "2026-09-14T10:29:09+01:00",
+      "collected_at": "2026-09-15T00:26:35.220237+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4112,
+      "source_name": "TASS World",
+      "title": "France's nuclear initiative does not entail collective defense \u2014 Finnish Defense Ministry",
+      "canonical_url": "https://tass.com/world/2187215",
+      "published_at": "2026-09-14T10:25:47+01:00",
+      "collected_at": "2026-09-15T00:26:35.221236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4113,
+      "source_name": "TASS World",
+      "title": "Ukrainian troops use chloropicrin, other prohibited chemical warfare agents \u2014 Russia\u2019s FSB",
+      "canonical_url": "https://tass.com/politics/2187213",
+      "published_at": "2026-09-14T10:16:52+01:00",
+      "collected_at": "2026-09-15T00:26:35.221236+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4114,
+      "source_name": "TASS World",
+      "title": "Russian forces break through Ukrainian defenses in Orekhov area \u2014 expert",
+      "canonical_url": "https://tass.com/defense/2187209",
+      "published_at": "2026-09-14T10:06:19+01:00",
+      "collected_at": "2026-09-15T00:26:35.222238+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4115,
+      "source_name": "TASS World",
+      "title": "Zelensky\u2019s position weaker with every passing day \u2014 opposition politician",
+      "canonical_url": "https://tass.com/world/2187205",
+      "published_at": "2026-09-14T10:00:40+01:00",
+      "collected_at": "2026-09-15T00:26:35.222238+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4116,
+      "source_name": "The Hacker News",
+      "title": "New DDRop Attack Breaks Intel TDX and AMD SEV-SNP Confidential Computing",
+      "canonical_url": "https://thehackernews.com/2026/09/new-ddrop-attack-breaks-intel-tdx-and.html",
+      "published_at": "2026-09-14T19:02:13+01:00",
+      "collected_at": "2026-09-15T00:26:35.578607+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4117,
+      "source_name": "The Hacker News",
+      "title": "3BB Attacker Used MeshCentral Backdoor for Root Access, Targeted Subscriber Credentials",
+      "canonical_url": "https://thehackernews.com/2026/09/3bb-attacker-used-meshcentral-backdoor.html",
+      "published_at": "2026-09-14T19:01:49+01:00",
+      "collected_at": "2026-09-15T00:26:35.580110+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4118,
+      "source_name": "The Hacker News",
+      "title": "Telegram Desktop Flaw Lets Hidden JavaScript Exfiltrate Messages From HTML Exports",
+      "canonical_url": "https://thehackernews.com/2026/09/telegram-desktop-flaw-lets-hidden.html",
+      "published_at": "2026-09-14T18:58:16+01:00",
+      "collected_at": "2026-09-15T00:26:35.581116+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4119,
+      "source_name": "The Hacker News",
+      "title": "Red Heron Exploits Gitea RCE to Compromise 13 Organizations Across Six Countries",
+      "canonical_url": "https://thehackernews.com/2026/09/red-heron-exploits-gitea-rce-to.html",
+      "published_at": "2026-09-14T17:56:30+01:00",
+      "collected_at": "2026-09-15T00:26:35.581116+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4120,
+      "source_name": "The Hacker News",
+      "title": "WordPress Adds Automated Plugin Reviews to Block High-Risk Updates Before Distribution",
+      "canonical_url": "https://thehackernews.com/2026/09/wordpress-adds-automated-plugin-reviews.html",
+      "published_at": "2026-09-14T17:00:04+01:00",
+      "collected_at": "2026-09-15T00:26:35.582128+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4121,
+      "source_name": "The Hacker News",
+      "title": "\u26a1 Weekly Recap: Rogue AI Agents, WeChat Worm, PaperCut Attacks, AI Espionage, and Rootkits",
+      "canonical_url": "https://thehackernews.com/2026/09/weekly-recap-rogue-ai-agents-wechat.html",
+      "published_at": "2026-09-14T15:40:34+01:00",
+      "collected_at": "2026-09-15T00:26:35.583119+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4122,
+      "source_name": "The Hacker News",
+      "title": "AI Changed the Exposure Problem. Validation Needs to Change With It.",
+      "canonical_url": "https://thehackernews.com/2026/09/ai-changed-exposure-problem-validation.html",
+      "published_at": "2026-09-14T12:58:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.583119+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4123,
+      "source_name": "The Hacker News",
+      "title": "Malicious Twitch Browser Extension Leaks OAuth Tokens From Nearly 31,000 Users",
+      "canonical_url": "https://thehackernews.com/2026/09/malicious-twitch-browser-extension.html",
+      "published_at": "2026-09-14T08:24:39+01:00",
+      "collected_at": "2026-09-15T00:26:35.584119+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4124,
+      "source_name": "The Hindu International",
+      "title": "Trump nominates Wesley Hunt to serve as U.S. Ambassador to Saudi; picks wife of 'God Bless the USA' singer as envoy to Barbados",
+      "canonical_url": "https://www.thehindu.com/news/international/trump-nominates-republican-rep-to-serve-as-us-ambassador-to-saudi/article71466469.ece",
+      "published_at": "2026-09-15T00:05:06+01:00",
+      "collected_at": "2026-09-15T00:26:35.739035+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4125,
+      "source_name": "The Hindu International",
+      "title": "NATO fighter jet shoots down drone in Lithuania",
+      "canonical_url": "https://www.thehindu.com/news/international/nato-fighter-jet-shoots-down-drone-in-lithuania/article71466476.ece",
+      "published_at": "2026-09-14T23:46:31+01:00",
+      "collected_at": "2026-09-15T00:26:35.740036+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4126,
+      "source_name": "The Hindu International",
+      "title": "French power sector labour strike takes 6.5 gigawatts offline overnight",
+      "canonical_url": "https://www.thehindu.com/news/international/french-power-sector-labour-strike-takes-65-gigawatts-offline-overnight/article71466448.ece",
+      "published_at": "2026-09-14T23:38:36+01:00",
+      "collected_at": "2026-09-15T00:26:35.740036+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4127,
+      "source_name": "The Hindu International",
+      "title": "U.S. Judge blocks Trump limits on duration of visas for foreign students, journalists",
+      "canonical_url": "https://www.thehindu.com/news/international/us-judge-blocks-trump-limits-on-duration-of-visas-for-foreign-students-journalists/article71466466.ece",
+      "published_at": "2026-09-14T23:37:16+01:00",
+      "collected_at": "2026-09-15T00:26:35.741042+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4128,
+      "source_name": "The Hindu International",
+      "title": "Houthis say Saudi Arabia hits Yemen with 54 strikes after attack on bases",
+      "canonical_url": "https://www.thehindu.com/news/international/houthis-say-saudi-arabia-hits-yemen-with-54-strikes-after-attack-on-bases/article71466445.ece",
+      "published_at": "2026-09-14T21:57:11+01:00",
+      "collected_at": "2026-09-15T00:26:35.741042+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4129,
+      "source_name": "The Hindu International",
+      "title": "Pakistan court orders blocking passports of Khyber Pakhtunkhwa CM, 24 lawmakers of Imran Khan's party",
+      "canonical_url": "https://www.thehindu.com/news/international/pakistan-court-orders-blocking-passports-of-khyber-pakhtunkhwa-cm-24-lawmakers-of-imran-khans-party/article71466429.ece",
+      "published_at": "2026-09-14T21:11:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.742042+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4130,
+      "source_name": "The Hindu International",
+      "title": "Bob Mackie, fashion designer for the stars, dies at 87",
+      "canonical_url": "https://www.thehindu.com/life-and-style/fashion/bob-mackie-fashion-designer-for-the-stars-dies-at-87/article71466423.ece",
+      "published_at": "2026-09-14T20:36:31+01:00",
+      "collected_at": "2026-09-15T00:26:35.742042+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4131,
+      "source_name": "The Hindu International",
+      "title": "Zelenskyy says Ukraine will pause strikes on Russia if Kremlin spares critical infrastructure",
+      "canonical_url": "https://www.thehindu.com/news/international/ukraine-wants-specifics-from-partners-over-halting-strikes-on-russia-zelenskyy-after-trumps-post/article71466382.ece",
+      "published_at": "2026-09-14T20:20:09+01:00",
+      "collected_at": "2026-09-15T00:26:35.743041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4132,
+      "source_name": "The Hindu International",
+      "title": "Trump Jr.'s wedding celebration partially funded by Russian oligarch, couple confirms",
+      "canonical_url": "https://www.thehindu.com/news/international/trump-jrs-wedding-celebration-partially-funded-by-russian-oligarch-couple-confirms/article71466400.ece",
+      "published_at": "2026-09-14T20:08:23+01:00",
+      "collected_at": "2026-09-15T00:26:35.743041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4133,
+      "source_name": "The Hindu International",
+      "title": "Trump says there is \u2018SICK conspiracy\u2019 against AI and data centres, dismisses new guardrails",
+      "canonical_url": "https://www.thehindu.com/sci-tech/technology/trump-dismisses-new-ai-guardrails-says-there-is-a-sick-conspiracy-against-ai-and-data-centers/article71466257.ece",
+      "published_at": "2026-09-14T18:43:47+01:00",
+      "collected_at": "2026-09-15T00:26:35.744041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4134,
+      "source_name": "The Hindu International",
+      "title": "China\u2019s spy chief warns of national security risks from AI",
+      "canonical_url": "https://www.thehindu.com/sci-tech/technology/chinas-spy-chief-warns-of-national-security-risks-from-ai/article71466340.ece",
+      "published_at": "2026-09-14T17:55:09+01:00",
+      "collected_at": "2026-09-15T00:26:35.745044+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4135,
+      "source_name": "The Hindu International",
+      "title": "Trump says \u2018open\u2019 to engaging with Iran",
+      "canonical_url": "https://www.thehindu.com/news/international/trump-says-open-to-engaging-with-iran/article71466318.ece",
+      "published_at": "2026-09-14T17:34:27+01:00",
+      "collected_at": "2026-09-15T00:26:35.745044+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4136,
+      "source_name": "The Hindu International",
+      "title": "United Nations calls for 'urgent action' to rein in AI in face of 'unprecedented risks'",
+      "canonical_url": "https://www.thehindu.com/news/international/united-nations-calls-for-urgent-action-to-rein-in-ai-in-face-of-unprecedented-risks/article71466181.ece",
+      "published_at": "2026-09-14T15:40:46+01:00",
+      "collected_at": "2026-09-15T00:26:35.746043+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4137,
+      "source_name": "The Hindu International",
+      "title": "Time to take forward ties \u2018without backsliding\u2019, says China\u2019s Foreign Minister",
+      "canonical_url": "https://www.thehindu.com/news/international/time-to-take-forward-ties-without-backsliding-says-chinas-foreign-minister/article71466185.ece",
+      "published_at": "2026-09-14T15:36:23+01:00",
+      "collected_at": "2026-09-15T00:26:35.747040+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4138,
+      "source_name": "The Hindu International",
+      "title": "India approves expedited export of electricity to flood-hit Nepal",
+      "canonical_url": "https://www.thehindu.com/business/Economy/india-approves-expedited-export-of-electricity-to-flood-hit-nepal/article71466141.ece",
+      "published_at": "2026-09-14T15:05:44+01:00",
+      "collected_at": "2026-09-15T00:26:35.747040+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4139,
+      "source_name": "The Hindu International",
+      "title": "Saudi oil pipeline hit in strikes will be mostly out of service for several weeks for repair",
+      "canonical_url": "https://www.thehindu.com/news/international/saudi-oil-pipeline-hit-in-strikes-will-be-mostly-out-of-service-for-several-weeks-for-repair/article71466140.ece",
+      "published_at": "2026-09-14T14:54:57+01:00",
+      "collected_at": "2026-09-15T00:26:35.748040+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4140,
+      "source_name": "The Hindu International",
+      "title": "Iran official blasts 'malicious' U.S. block at IAEA meeting",
+      "canonical_url": "https://www.thehindu.com/news/international/iran-official-blasts-malicious-us-block-at-iaea-meeting/article71466035.ece",
+      "published_at": "2026-09-14T13:56:16+01:00",
+      "collected_at": "2026-09-15T00:26:35.748040+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4141,
+      "source_name": "The Hindu International",
+      "title": "Scottish, Northern Irish, Welsh leaders assert right to \u2018self-determination\u2019",
+      "canonical_url": "https://www.thehindu.com/news/international/scottish-northern-irish-welsh-leaders-assert-right-to-self-determination/article71465923.ece",
+      "published_at": "2026-09-14T12:22:26+01:00",
+      "collected_at": "2026-09-15T00:26:35.749042+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4142,
+      "source_name": "The Hindu International",
+      "title": "Carney, locked in U.S. trade war, pitches Canada to global investment titans",
+      "canonical_url": "https://www.thehindu.com/news/international/carney-locked-in-us-trade-war-pitches-canada-to-global-investment-titans/article71465884.ece",
+      "published_at": "2026-09-14T11:38:46+01:00",
+      "collected_at": "2026-09-15T00:26:35.749042+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4143,
+      "source_name": "The Hindu International",
+      "title": "Saudi crown prince, U.S. CENTCOM chief discuss developments after Houthi escalation",
+      "canonical_url": "https://www.thehindu.com/news/international/saudi-crown-prince-us-centcom-chief-discuss-developments-after-houthi-escalation/article71465862.ece",
+      "published_at": "2026-09-14T11:23:02+01:00",
+      "collected_at": "2026-09-15T00:26:35.750043+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4144,
+      "source_name": "The Hindu International",
+      "title": "Merz wins respite in German municipal polls but tougher tests to come",
+      "canonical_url": "https://www.thehindu.com/news/international/merz-wins-respite-in-german-municipal-polls-but-tougher-tests-to-come/article71465861.ece",
+      "published_at": "2026-09-14T11:22:17+01:00",
+      "collected_at": "2026-09-15T00:26:35.751041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4145,
+      "source_name": "The Hindu International",
+      "title": "A road crash involving multiple vehicles in South Africa kills at least 21 people, officials say",
+      "canonical_url": "https://www.thehindu.com/news/international/a-road-crash-involving-multiple-vehicles-in-south-africa-kills-many-officials-say/article71465833.ece",
+      "published_at": "2026-09-14T11:00:21+01:00",
+      "collected_at": "2026-09-15T00:26:35.751041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4146,
+      "source_name": "The Hindu International",
+      "title": "There was only darkness: Nepal flood survivor recalls 9 days underground | Survivor story",
+      "canonical_url": "https://www.thehindu.com/videos/there-was-only-darkness-nepal-flood-survivor-recalls-9-days-underground-survivor-story/article71465798.ece",
+      "published_at": "2026-09-14T10:22:58+01:00",
+      "collected_at": "2026-09-15T00:26:35.752039+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4147,
+      "source_name": "The Hindu International",
+      "title": "India, Canada begin next round of talks on proposed trade pact: Official",
+      "canonical_url": "https://www.thehindu.com/business/Economy/india-canada-begin-next-round-of-talks-on-proposed-trade-pact-official/article71465752.ece",
+      "published_at": "2026-09-14T10:11:11+01:00",
+      "collected_at": "2026-09-15T00:26:35.752039+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4148,
+      "source_name": "The Hindu International",
+      "title": "Historic first Ganga Aarti held on River Thames in UK",
+      "canonical_url": "https://www.thehindu.com/news/international/historic-first-ganga-aarti-held-on-river-thames-in-uk/article71465401.ece",
+      "published_at": "2026-09-14T09:38:28+01:00",
+      "collected_at": "2026-09-15T00:26:35.753043+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4149,
+      "source_name": "The Hindu International",
+      "title": "Yemen\u2019s Houthi rebels seize more key islands in southern Red Sea, tighten grip on shipping routes",
+      "canonical_url": "https://www.thehindu.com/news/international/yemens-houthi-rebels-seize-more-key-islands-in-southern-red-sea-tighten-grip-on-shipping-routes/article71465671.ece",
+      "published_at": "2026-09-14T09:19:49+01:00",
+      "collected_at": "2026-09-15T00:26:35.753043+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4150,
+      "source_name": "The Hindu International",
+      "title": "Indian-origin man wanted in U.S. for Medicare fraud",
+      "canonical_url": "https://www.thehindu.com/news/international/indian-origin-man-wanted-in-us-for-medicare-fraud/article71465581.ece",
+      "published_at": "2026-09-14T08:37:25+01:00",
+      "collected_at": "2026-09-15T00:26:35.754050+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4151,
+      "source_name": "The Hindu International",
+      "title": "U.S. set to axe climate pollution limits for power plants: reports",
+      "canonical_url": "https://www.thehindu.com/news/international/us-set-to-axe-climate-pollution-limits-for-power-plants-reports/article71465576.ece",
+      "published_at": "2026-09-14T08:36:39+01:00",
+      "collected_at": "2026-09-15T00:26:35.754050+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4152,
+      "source_name": "The Hindu International",
+      "title": "Celine Dion thrills fans with emotional comeback concert after overcoming rare illness",
+      "canonical_url": "https://www.thehindu.com/entertainment/music/celine-dion-thrills-fans-with-emotional-comeback-concert-after-overcoming-rare-illness/article71465553.ece",
+      "published_at": "2026-09-14T08:03:57+01:00",
+      "collected_at": "2026-09-15T00:26:35.755041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4153,
+      "source_name": "The Hindu International",
+      "title": "At least one dead, 25 missing in migrant boat sinking off Greece: coast guard",
+      "canonical_url": "https://www.thehindu.com/news/international/boat-carrying-migrants-partially-sinks-in-greece/article71464548.ece",
+      "published_at": "2026-09-14T08:01:39+01:00",
+      "collected_at": "2026-09-15T00:26:35.755041+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4154,
+      "source_name": "The Hindu International",
+      "title": "Second federal judge freezes Trump mail ballot order with U.S. Supreme Court poised to weigh in",
+      "canonical_url": "https://www.thehindu.com/news/international/second-federal-judge-freezes-trump-mail-ballot-order-with-us-supreme-court-poised-to-weigh-in/article71465531.ece",
+      "published_at": "2026-09-14T07:39:56+01:00",
+      "collected_at": "2026-09-15T00:26:35.756168+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4155,
+      "source_name": "The Hindu International",
+      "title": "Donald Trump agrees to new ethics rules to advance crypto bill, but hurdles remain",
+      "canonical_url": "https://www.thehindu.com/news/international/donald-trump-agrees-to-new-ethics-rules-to-advance-crypto-bill-but-hurdles-remain/article71465500.ece",
+      "published_at": "2026-09-14T07:26:41+01:00",
+      "collected_at": "2026-09-15T00:26:35.756168+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4156,
+      "source_name": "The Hindu International",
+      "title": "Trump calls on Ukraine to halt strikes on Russian diesel fuel, says attacks causing shortage",
+      "canonical_url": "https://www.thehindu.com/news/international/trump-calls-on-ukraine-to-halt-strikes-on-russian-diesel-fuel-says-attacks-causing-shortage/article71464691.ece",
+      "published_at": "2026-09-14T07:02:55+01:00",
+      "collected_at": "2026-09-15T00:26:35.757173+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4157,
+      "source_name": "The Hindu International",
+      "title": "France submits new proposal to ban social media for under-15s",
+      "canonical_url": "https://www.thehindu.com/news/international/france-submits-new-proposal-to-ban-social-media-for-under-15s/article71465480.ece",
+      "published_at": "2026-09-14T06:57:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.757173+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4158,
+      "source_name": "The Hindu International",
+      "title": "Fighting in Yemen intensifies, Houthis launch more attacks on Saudi Arabia",
+      "canonical_url": "https://www.thehindu.com/news/international/fighting-in-yemen-intensifies-houthis-launch-more-attacks-on-saudi-arabia/article71464664.ece",
+      "published_at": "2026-09-14T06:48:44+01:00",
+      "collected_at": "2026-09-15T00:26:35.758168+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4159,
+      "source_name": "The Hindu International",
+      "title": "Japan scandal-hit nuclear plant operator head to resign: reports",
+      "canonical_url": "https://www.thehindu.com/news/international/japan-scandal-hit-nuclear-plant-operator-head-to-resign-reports/article71465441.ece",
+      "published_at": "2026-09-14T06:28:39+01:00",
+      "collected_at": "2026-09-15T00:26:35.758168+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4160,
+      "source_name": "The Hindu International",
+      "title": "Pakistan\u2019s westward turn \u2014 strategic depth or overstretch",
+      "canonical_url": "https://www.thehindu.com/opinion/op-ed/pakistans-westward-turn-strategic-depth-or-overstretch/article71464169.ece",
+      "published_at": "2026-09-14T05:30:37+01:00",
+      "collected_at": "2026-09-15T00:26:35.759173+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4161,
+      "source_name": "The Hindu International",
+      "title": "Why the BRICS summit was a major diplomatic win for India",
+      "canonical_url": "https://www.thehindu.com/videos/why-the-brics-summit-was-a-major-diplomatic-win-for-india/article71465371.ece",
+      "published_at": "2026-09-14T04:33:40+01:00",
+      "collected_at": "2026-09-15T00:26:35.760171+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4162,
+      "source_name": "The Hindu International",
+      "title": "Trump says he will consider releasing 9/11 records after families request",
+      "canonical_url": "https://www.thehindu.com/news/international/trump-says-he-will-consider-releasing-911-records-after-families-request/article71465334.ece",
+      "published_at": "2026-09-14T04:28:25+01:00",
+      "collected_at": "2026-09-15T00:26:35.760171+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4163,
+      "source_name": "The Hindu International",
+      "title": "More than 30 missing from ferry that sank in Vanuatu",
+      "canonical_url": "https://www.thehindu.com/news/international/more-than-30-missing-from-ferry-that-sank-in-vanuatu/article71465346.ece",
+      "published_at": "2026-09-14T04:13:55+01:00",
+      "collected_at": "2026-09-15T00:26:35.760171+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4164,
+      "source_name": "The Hindu International",
+      "title": "North Korea says its recent live-fire drill demonstrated 'huge destructive power'",
+      "canonical_url": "https://www.thehindu.com/news/international/north-korea-says-its-recent-live-fire-drill-demonstrated-huge-destructive-power/article71465327.ece",
+      "published_at": "2026-09-14T04:07:42+01:00",
+      "collected_at": "2026-09-15T00:26:35.761170+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4165,
+      "source_name": "The Hindu International",
+      "title": "Oil prices jump more than $3 after new strikes on Saudi, Strait of Hormuz",
+      "canonical_url": "https://www.thehindu.com/business/markets/oil-prices-jump-more-than-3-after-new-strikes-on-saudi-strait-of-hormuz/article71465318.ece",
+      "published_at": "2026-09-14T02:59:10+01:00",
+      "collected_at": "2026-09-15T00:26:35.762499+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4166,
+      "source_name": "The Hindu International",
+      "title": "Swedish election ends in near dead heat; preliminary results give opposition 1-seat majority",
+      "canonical_url": "https://www.thehindu.com/news/international/swedish-election-ends-in-near-dead-heat-preliminary-results-give-opposition-1-seat-majority/article71465312.ece",
+      "published_at": "2026-09-14T02:11:33+01:00",
+      "collected_at": "2026-09-15T00:26:35.762499+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4167,
+      "source_name": "The Hindu International",
+      "title": "Saudi Civil Defence lifts warnings of potential danger in four cities",
+      "canonical_url": "https://www.thehindu.com/news/international/saudi-civil-defence-lifts-warnings-of-potential-danger-in-four-cities/article71465311.ece",
+      "published_at": "2026-09-14T02:03:40+01:00",
+      "collected_at": "2026-09-15T00:26:35.763507+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4168,
+      "source_name": "The Hindu International",
+      "title": "Trump says lifting U.S. tariff on Irish whiskey as 'everybody's been bugging' him about it",
+      "canonical_url": "https://www.thehindu.com/news/international/trump-says-lifting-us-tariff-on-irish-whiskey-as-everybodys-been-bugging-him-about-it/article71464694.ece",
+      "published_at": "2026-09-14T00:09:25+01:00",
+      "collected_at": "2026-09-15T00:26:35.763507+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4169,
+      "source_name": "The Hindu International",
+      "title": "Talks between Iran and Gulf countries in Oman postponed \u2018in the interests of consensus\u2019",
+      "canonical_url": "https://www.thehindu.com/news/international/talks-between-iran-and-gulf-countries-in-oman-postponed-in-the-interests-of-consensus/article71464526.ece",
+      "published_at": "2026-09-13T21:23:58+01:00",
+      "collected_at": "2026-09-15T00:26:35.764510+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4170,
+      "source_name": "United Nations",
+      "title": "Civilians bear the brunt, with deadly US strikes in Iran and thousands displaced in Yemen",
+      "canonical_url": "https://news.un.org/feed/view/en/story/2026/09/1168328",
+      "published_at": "2026-09-14T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.898212+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4171,
+      "source_name": "United Nations",
+      "title": "Countries must increase AI regulation to avoid \u2018existential risks\u2019: T\u00fcrk",
+      "canonical_url": "https://news.un.org/feed/view/en/story/2026/09/1168326",
+      "published_at": "2026-09-14T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.899210+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4172,
+      "source_name": "United Nations",
+      "title": "IAEA chief underscores commitment to nuclear safety and verification",
+      "canonical_url": "https://news.un.org/feed/view/en/story/2026/09/1168325",
+      "published_at": "2026-09-14T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.901210+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4173,
+      "source_name": "United Nations",
+      "title": "South Sudan: UNICEF reaches communities cut off by conflict in Jonglei state",
+      "canonical_url": "https://news.un.org/feed/view/en/story/2026/09/1168324",
+      "published_at": "2026-09-14T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.901210+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4174,
+      "source_name": "United Nations",
+      "title": "Guterres: Old global order must change as power shifts to emerging economies",
+      "canonical_url": "https://news.un.org/feed/view/en/story/2026/09/1168323",
+      "published_at": "2026-09-13T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.902209+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4175,
+      "source_name": "United Nations",
+      "title": "Married at 13, pregnant and starving: Child brides of Yemen",
+      "canonical_url": "https://news.un.org/feed/view/en/story/2026/09/1168322",
+      "published_at": "2026-09-13T13:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:35.902209+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4176,
+      "source_name": "University of Cambridge",
+      "title": "Nazir Afzal OBE launches part one of the independent review following the death of Professor Jason Arday",
+      "canonical_url": "https://www.cam.ac.uk/news/nazir-afzal-obe-launches-part-one-of-the-independent-review-following-the-death-of-professor-jason",
+      "published_at": "2026-09-14T10:28:12+01:00",
+      "collected_at": "2026-09-15T00:26:36.188551+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4177,
+      "source_name": "Windows Blog",
+      "title": "Build anywhere, stay in flow: How Windows 365 is redefining the developer experience",
+      "canonical_url": "https://blogs.windows.com/windowsdeveloper/2026/09/14/build-anywhere-stay-in-flow-with-windows-365",
+      "published_at": "2026-09-14T18:00:49+01:00",
+      "collected_at": "2026-09-15T00:26:45.934854+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4178,
+      "source_name": "Windows Blog",
+      "title": "More choice and possibility with Windows PCs at IFA",
+      "canonical_url": "https://blogs.windows.com/devices/2026/09/14/more-choice-and-possibility-with-windows-pcs-at-ifa",
+      "published_at": "2026-09-14T18:00:39+01:00",
+      "collected_at": "2026-09-15T00:26:45.935854+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4179,
+      "source_name": "World Grain",
+      "title": "CHS to build new soybean processing plant",
+      "canonical_url": "https://www.world-grain.com/articles/23211-chs-to-build-new-soybean-processing-plant",
+      "published_at": "2026-09-14T14:52:11+01:00",
+      "collected_at": "2026-09-15T00:26:46.146515+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4180,
+      "source_name": "World Grain",
+      "title": "Japanese millers visit US wheat fields",
+      "canonical_url": "https://www.world-grain.com/articles/23210-japanese-millers-visit-us-wheat-fields",
+      "published_at": "2026-09-14T14:18:11+01:00",
+      "collected_at": "2026-09-15T00:26:46.147518+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4181,
+      "source_name": "World Grain",
+      "title": "NOPA names director of regulatory affairs",
+      "canonical_url": "https://www.world-grain.com/articles/23209-nopa-names-director-of-regulatory-affairs",
+      "published_at": "2026-09-14T14:06:05+01:00",
+      "collected_at": "2026-09-15T00:26:46.148518+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4182,
+      "source_name": "World Grain",
+      "title": "FAS: France to harvest smallest corn crop in 50 years",
+      "canonical_url": "https://www.world-grain.com/articles/23208-fas-france-to-harvest-smallest-corn-crop-in-50-years",
+      "published_at": "2026-09-14T12:55:50+01:00",
+      "collected_at": "2026-09-15T00:26:46.148518+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4183,
+      "source_name": "World Grain",
+      "title": "Ancient grains bring diversity",
+      "canonical_url": "https://www.world-grain.com/articles/23207-ancient-grains-bring-diversity",
+      "published_at": "2026-09-14T12:45:39+01:00",
+      "collected_at": "2026-09-15T00:26:46.149514+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4184,
+      "source_name": "World Trade Organization (WTO)",
+      "title": "Russian Federation notifies launch of safeguard investigation on certain flat steel products",
+      "canonical_url": "https://www.wto.org/english/news_e/news26_e/safe_rus_14sep26_485_e.htm",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:46.310284+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4185,
+      "source_name": "World Trade Organization (WTO)",
+      "title": "WTO study explores the role of stablecoins in international trade",
+      "canonical_url": "https://www.wto.org/english/news_e/news26_e/dtech_14sep26_486_e.htm",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:46.310284+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4186,
+      "source_name": "World Trade Organization (WTO)",
+      "title": "World Trade & Tech Day: AI and trade increasingly intertwined",
+      "canonical_url": "https://www.wto.org/english/news_e/news26_e/dtech_14sep26_488_e.htm",
+      "published_at": "2026-09-14T01:00:00+01:00",
+      "collected_at": "2026-09-15T00:26:46.311284+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4187,
+      "source_name": "Yle News",
+      "title": "Naton h\u00e4vitt\u00e4j\u00e4 ampui alas droonin Liettuan ilmatilassa",
+      "canonical_url": "https://yle.fi/a/74-20246274?origin=rss",
+      "published_at": "2026-09-14T23:10:51+01:00",
+      "collected_at": "2026-09-15T00:26:46.659299+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4188,
+      "source_name": "Yle News",
+      "title": "Suomen ja Ruotsin v\u00e4lisess\u00e4 s\u00e4hk\u00f6nsiirtoyhteydess\u00e4 vika, korjaus kest\u00e4\u00e4 noin viikon",
+      "canonical_url": "https://yle.fi/a/74-20246273?origin=rss",
+      "published_at": "2026-09-14T23:07:00+01:00",
+      "collected_at": "2026-09-15T00:26:46.660299+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4189,
+      "source_name": "Yle News",
+      "title": "Tanska: Ven\u00e4l\u00e4inen fregatti ampui h\u00e4t\u00e4raketteja tanskalaista sotilashelikopteria kohti",
+      "canonical_url": "https://yle.fi/a/74-20246272?origin=rss",
+      "published_at": "2026-09-14T22:36:08+01:00",
+      "collected_at": "2026-09-15T00:26:46.662299+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4190,
+      "source_name": "Yle News",
+      "title": "Trump kimmastui Googlen investoinnista Suomeen",
+      "canonical_url": "https://yle.fi/a/74-20246270?origin=rss",
+      "published_at": "2026-09-14T18:58:38+01:00",
+      "collected_at": "2026-09-15T00:26:46.663299+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4191,
+      "source_name": "Yle News",
+      "title": "Viro keskustelee Ranskan kanssa ydinpelotealoitteeseen liittymisest\u00e4",
+      "canonical_url": "https://yle.fi/a/74-20246268?origin=rss",
+      "published_at": "2026-09-14T18:38:49+01:00",
+      "collected_at": "2026-09-15T00:26:46.664298+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4192,
+      "source_name": "Yle News",
+      "title": "Yli miljoona saksalaista tuottaa jo halpaa s\u00e4hk\u00f6\u00e4 itselleen \u2013 Suomen viranomainen: ei k\u00e4y",
+      "canonical_url": "https://yle.fi/a/74-20245351?origin=rss",
+      "published_at": "2026-09-14T18:24:06+01:00",
+      "collected_at": "2026-09-15T00:26:46.665299+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4193,
+      "source_name": "Yle News",
+      "title": "Analyysi: Suomi kiinnostui Ranskan ydinaseista \u2013 kriisiaikana niit\u00e4 saatettaisiin periaatteessa tuoda Suomeenkin",
+      "canonical_url": "https://yle.fi/a/74-20246169?origin=rss",
+      "published_at": "2026-09-14T18:05:21+01:00",
+      "collected_at": "2026-09-15T00:26:46.666297+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4194,
+      "source_name": "Yle News",
+      "title": "Kurjet aiheuttavat mittavia tappioita viljelij\u00f6ille \u2013 MTK haluaa suojamets\u00e4styst\u00e4, lintuasiantuntija tyrm\u00e4\u00e4 t\u00e4ysin",
+      "canonical_url": "https://yle.fi/a/74-20246205?origin=rss",
+      "published_at": "2026-09-14T17:31:23+01:00",
+      "collected_at": "2026-09-15T00:26:46.666297+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4195,
+      "source_name": "Yle News",
+      "title": "Suvilahti DIY saa jatkoaikaa kes\u00e4\u00e4n asti Helsingiss\u00e4: kaupunki purkaa skeittipuiston vasta, kun uusi parkki on valmis",
+      "canonical_url": "https://yle.fi/a/74-20246252?origin=rss",
+      "published_at": "2026-09-14T17:17:22+01:00",
+      "collected_at": "2026-09-15T00:26:46.667298+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4196,
+      "source_name": "Yle News",
+      "title": "Friedrich Merz lupasi Rovaniemell\u00e4, ettei per\u00e4\u00e4nny Ukrainan rinnalta: \u201dEl\u00e4mme ratkaisevia hetki\u00e4 Euroopan rauhan kannalta\u201d",
+      "canonical_url": "https://yle.fi/a/74-20246187?origin=rss",
+      "published_at": "2026-09-14T17:16:38+01:00",
+      "collected_at": "2026-09-15T00:26:46.668298+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4197,
+      "source_name": "Yle News",
+      "title": "Valtava emu karkuteill\u00e4 Etel\u00e4-Savossa: \u201dSy\u00f6tt\u00e4k\u00e4\u00e4 paahtoleip\u00e4\u00e4, \u00e4lk\u00e4\u00e4 yritt\u00e4k\u00f6 ottaa kiinni\u201d, ohjeistaa omistaja",
+      "canonical_url": "https://yle.fi/a/74-20246137?origin=rss",
+      "published_at": "2026-09-14T17:07:31+01:00",
+      "collected_at": "2026-09-15T00:26:46.669299+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4198,
+      "source_name": "Yle News",
+      "title": "Salon kaupunki aloittaa yt-neuvottelut ensi viikolla \u2013 voivat johtaa irtisanomisiin",
+      "canonical_url": "https://yle.fi/a/74-20246258?origin=rss",
+      "published_at": "2026-09-14T17:01:26+01:00",
+      "collected_at": "2026-09-15T00:26:46.670297+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4199,
+      "source_name": "Yle News",
+      "title": "Teko\u00e4lyhuoli painoi Helsingin p\u00f6rssin laskuun maanantaina",
+      "canonical_url": "https://yle.fi/a/74-20246257?origin=rss",
+      "published_at": "2026-09-14T16:49:31+01:00",
+      "collected_at": "2026-09-15T00:26:46.670297+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4200,
+      "source_name": "Yle News",
+      "title": "Asiantuntija: Dieselin hinta nousee, kun talvi l\u00e4hestyy ja l\u00e4mmityskausi alkaa",
+      "canonical_url": "https://yle.fi/a/74-20246211?origin=rss",
+      "published_at": "2026-09-14T16:32:00+01:00",
+      "collected_at": "2026-09-15T00:26:46.671298+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4201,
+      "source_name": "Yle News",
+      "title": "YK:n rotusyrjint\u00e4komitea kehottaa Suomea parantamaan saamelaisten oikeuksia ja mainitsee my\u00f6s mets\u00e4saamelaiset",
+      "canonical_url": "https://yle.fi/a/74-20245561?origin=rss",
+      "published_at": "2026-09-14T16:07:19+01:00",
+      "collected_at": "2026-09-15T00:26:46.671298+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4202,
+      "source_name": "Yle News",
+      "title": "Trump sanoo olevansa riitt\u00e4v\u00e4 turvatoimi teko\u00e4ly\u00e4 vastaan",
+      "canonical_url": "https://yle.fi/a/74-20246254?origin=rss",
+      "published_at": "2026-09-14T16:03:43+01:00",
+      "collected_at": "2026-09-15T00:26:46.672299+01:00",
+      "raw_summary_present": false,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4203,
+      "source_name": "Yle News",
+      "title": "Oasis uudelle maailmankiertueelle \u2013 Suomi j\u00e4i keikkalistan ulkopuolelle",
+      "canonical_url": "https://yle.fi/a/74-20246253?origin=rss",
+      "published_at": "2026-09-14T16:01:03+01:00",
+      "collected_at": "2026-09-15T00:26:46.672299+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4204,
+      "source_name": "Yle News",
+      "title": "LUT-yliopiston ja Kaakkois-Suomen ammattikorkeakoulun yhteisty\u00f6 kariutui: \u201dPettymys\u201d, sanoo kaupunginjohtaja",
+      "canonical_url": "https://yle.fi/a/74-20246148?origin=rss",
+      "published_at": "2026-09-14T15:12:01+01:00",
+      "collected_at": "2026-09-15T00:26:46.674306+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4205,
+      "source_name": "Yle News",
+      "title": "Turussa tehd\u00e4\u00e4n taas seuraavaa maailman suurinta loistoristeilij\u00e4\u00e4 \u2013 t\u00e4lt\u00e4 se alkuvaiheessa n\u00e4ytt\u00e4\u00e4",
+      "canonical_url": "https://yle.fi/a/74-20245571?origin=rss",
+      "published_at": "2026-09-14T15:00:35+01:00",
+      "collected_at": "2026-09-15T00:26:46.675307+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    },
+    {
+      "article_id": 4206,
+      "source_name": "Yle News",
+      "title": "Analyysi: Ydinvoima rakentuu vain valtion tuella \u2013 yksi kuva sen kertoo",
+      "canonical_url": "https://yle.fi/a/74-20245890?origin=rss",
+      "published_at": "2026-09-14T14:37:03+01:00",
+      "collected_at": "2026-09-15T00:26:46.676307+01:00",
+      "raw_summary_present": true,
+      "ai_processing_status": "PENDING"
+    }
+  ]
+}

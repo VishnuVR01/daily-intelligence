@@ -1,0 +1,874 @@
+{
+  "total_questions": 25,
+  "classifications_count": {
+    "VALID_GOLD": 75,
+    "WEAK_GOLD": 6,
+    "INVALID_GOLD": 0,
+    "UNANALYZED": 0,
+    "OUT_OF_SCOPE": 0,
+    "STALE_ID_OR_DATA_DRIFT": 0
+  },
+  "questions_audit": [
+    {
+      "id": "RAG-001",
+      "question": "What happened in AI today?",
+      "category": "temporal_freshness",
+      "expected_ids": [],
+      "audited_golds": []
+    },
+    {
+      "id": "RAG-002",
+      "question": "What important developments happened yesterday?",
+      "category": "temporal_freshness",
+      "expected_ids": [
+        2926,
+        2927,
+        2928,
+        3144
+      ],
+      "audited_golds": [
+        {
+          "id": 2926,
+          "title": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2927,
+          "title": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2928,
+          "title": "Former US Army Secretary Driscoll arrives in Kiev \u2014 CBS",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3144,
+          "title": "Brics-maiden kokous jatkuu Intiassa",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-003",
+      "question": "What supply-chain developments happened this week?",
+      "category": "temporal_freshness",
+      "expected_ids": [
+        3752,
+        3754,
+        3758,
+        3763,
+        3772
+      ],
+      "audited_golds": [
+        {
+          "id": 3752,
+          "title": "Attack damages Bunge oilseeds plant in Ukraine",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3754,
+          "title": "CN files proposal with STB regarding UP-NS merger",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3758,
+          "title": "Bayer, Neste partner on US winter canola",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3763,
+          "title": "China continues US soybean push amid South American purchases",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3772,
+          "title": "Railroads ready for US grain harvest",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-004",
+      "question": "What major AI developments are present in the archive?",
+      "category": "historical_synthesis",
+      "expected_ids": [
+        3153,
+        3159,
+        3751,
+        3766,
+        3771
+      ],
+      "audited_golds": [
+        {
+          "id": 3153,
+          "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3159,
+          "title": "Professori tyrm\u00e4\u00e4 teko\u00e4lytutkijoiden kauhukuvat ihmiskunnan lopusta",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3751,
+          "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3766,
+          "title": "Crop forecasting enters the age of digital twins",
+          "source": "World Grain",
+          "classification": "WEAK_GOLD",
+          "reason": "Crop forecasting digital twins - secondary application of tech"
+        },
+        {
+          "id": 3771,
+          "title": "AI brings speed to supply chain",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-005",
+      "question": "What trends are visible in grain and agricultural supply chains?",
+      "category": "historical_synthesis",
+      "expected_ids": [
+        3763,
+        3768,
+        3770,
+        3772,
+        3775,
+        3778,
+        3780
+      ],
+      "audited_golds": [
+        {
+          "id": 3763,
+          "title": "China continues US soybean push amid South American purchases",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3768,
+          "title": "AFIA outlines industry contributions, challenges",
+          "source": "World Grain",
+          "classification": "WEAK_GOLD",
+          "reason": "AFIA feed industry economic footprint - secondary animal feed context"
+        },
+        {
+          "id": 3770,
+          "title": "India expands decentralized grain infrastructure",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3772,
+          "title": "Railroads ready for US grain harvest",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3775,
+          "title": "CN sets grain transportation mark for August",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3778,
+          "title": "Crop year off to record start for CPKC",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3780,
+          "title": "FAO Food Price Index rises again",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-006",
+      "question": "Summarize the geopolitical diplomatic developments involving Ukraine and Russia in the archive.",
+      "category": "historical_synthesis",
+      "expected_ids": [
+        2926,
+        2927,
+        2928,
+        3752
+      ],
+      "audited_golds": [
+        {
+          "id": 2926,
+          "title": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2927,
+          "title": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2928,
+          "title": "Former US Army Secretary Driscoll arrives in Kiev \u2014 CBS",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3752,
+          "title": "Attack damages Bunge oilseeds plant in Ukraine",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-007",
+      "question": "What sustainability and renewable energy initiatives are documented across sources?",
+      "category": "historical_synthesis",
+      "expected_ids": [
+        3758,
+        3765,
+        3777
+      ],
+      "audited_golds": [
+        {
+          "id": 3758,
+          "title": "Bayer, Neste partner on US winter canola",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3765,
+          "title": "FEFAC highlights sustainability progress",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3777,
+          "title": "Guatemala rolls out ethanol blending program",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Guatemala ethanol blending program"
+        }
+      ]
+    },
+    {
+      "id": "RAG-008",
+      "question": "What does the archive contain about OpenAI or Anthropic?",
+      "category": "entity_centric",
+      "expected_ids": [
+        3153
+      ],
+      "audited_golds": [
+        {
+          "id": 3153,
+          "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-009",
+      "question": "What information is available regarding Tesla and autonomous vehicles?",
+      "category": "entity_centric",
+      "expected_ids": [
+        3747,
+        3751
+      ],
+      "audited_golds": [
+        {
+          "id": 3747,
+          "title": "Tesla to Recall Cars in China on Safety Concerns",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3751,
+          "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-010",
+      "question": "Which companies appear in agricultural supply-chain related stories?",
+      "category": "entity_centric",
+      "expected_ids": [
+        3752,
+        3753,
+        3754,
+        3758,
+        3769,
+        3775,
+        3778
+      ],
+      "audited_golds": [
+        {
+          "id": 3752,
+          "title": "Attack damages Bunge oilseeds plant in Ukraine",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3753,
+          "title": "ADM rolling with biofuels opportunities",
+          "source": "World Grain",
+          "classification": "WEAK_GOLD",
+          "reason": "Biofuels / corporate executive retirement - secondary entity context"
+        },
+        {
+          "id": 3754,
+          "title": "CN files proposal with STB regarding UP-NS merger",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3758,
+          "title": "Bayer, Neste partner on US winter canola",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3769,
+          "title": "Bunge controller, CAO Simmons to retire",
+          "source": "World Grain",
+          "classification": "WEAK_GOLD",
+          "reason": "Biofuels / corporate executive retirement - secondary entity context"
+        },
+        {
+          "id": 3775,
+          "title": "CN sets grain transportation mark for August",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3778,
+          "title": "Crop year off to record start for CPKC",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-011",
+      "question": "What developments involve Bunge and ADM?",
+      "category": "entity_centric",
+      "expected_ids": [
+        3752,
+        3753,
+        3769
+      ],
+      "audited_golds": [
+        {
+          "id": 3752,
+          "title": "Attack damages Bunge oilseeds plant in Ukraine",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3753,
+          "title": "ADM rolling with biofuels opportunities",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3769,
+          "title": "Bunge controller, CAO Simmons to retire",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-012",
+      "question": "Compare the AI technology developments and autonomous vehicle announcements in the archive.",
+      "category": "comparison",
+      "expected_ids": [
+        3153,
+        3159,
+        3747,
+        3751,
+        3771
+      ],
+      "audited_golds": [
+        {
+          "id": 3153,
+          "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3159,
+          "title": "Professori tyrm\u00e4\u00e4 teko\u00e4lytutkijoiden kauhukuvat ihmiskunnan lopusta",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3747,
+          "title": "Tesla to Recall Cars in China on Safety Concerns",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3751,
+          "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3771,
+          "title": "AI brings speed to supply chain",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-013",
+      "question": "Compare developments involving India and China where sufficient evidence exists.",
+      "category": "comparison",
+      "expected_ids": [
+        3144,
+        3162,
+        3763,
+        3770
+      ],
+      "audited_golds": [
+        {
+          "id": 3144,
+          "title": "Brics-maiden kokous jatkuu Intiassa",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3162,
+          "title": "Kiina ja Intia pyrkiv\u00e4t ratkaisemaan vuosikymmeni\u00e4 hiert\u00e4neen rajakiistan",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3763,
+          "title": "China continues US soybean push amid South American purchases",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3770,
+          "title": "India expands decentralized grain infrastructure",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-014",
+      "question": "Compare North American grain rail logistics between Canadian National (CN) and CPKC.",
+      "category": "comparison",
+      "expected_ids": [
+        3754,
+        3775,
+        3778
+      ],
+      "audited_golds": [
+        {
+          "id": 3754,
+          "title": "CN files proposal with STB regarding UP-NS merger",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3775,
+          "title": "CN sets grain transportation mark for August",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3778,
+          "title": "Crop year off to record start for CPKC",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-015",
+      "question": "Construct a chronological timeline of grain market and agricultural developments in the archive.",
+      "category": "timeline",
+      "expected_ids": [
+        3781,
+        3780,
+        3778,
+        3775,
+        3770,
+        3765,
+        3762,
+        3758,
+        3752
+      ],
+      "audited_golds": [
+        {
+          "id": 3781,
+          "title": "Kamm takes over as SafeGrain CEO",
+          "source": "World Grain",
+          "classification": "WEAK_GOLD",
+          "reason": "SafeGrain CEO transition / FEFAC sustainability - secondary timeline events"
+        },
+        {
+          "id": 3780,
+          "title": "FAO Food Price Index rises again",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3778,
+          "title": "Crop year off to record start for CPKC",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3775,
+          "title": "CN sets grain transportation mark for August",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3770,
+          "title": "India expands decentralized grain infrastructure",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3765,
+          "title": "FEFAC highlights sustainability progress",
+          "source": "World Grain",
+          "classification": "WEAK_GOLD",
+          "reason": "SafeGrain CEO transition / FEFAC sustainability - secondary timeline events"
+        },
+        {
+          "id": 3762,
+          "title": "FAS: Thailand\u2019s rice output expected to decline",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3758,
+          "title": "Bayer, Neste partner on US winter canola",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3752,
+          "title": "Attack damages Bunge oilseeds plant in Ukraine",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-016",
+      "question": "Show the chronological sequence of relevant AI developments.",
+      "category": "timeline",
+      "expected_ids": [
+        3751,
+        3771,
+        3766,
+        3159,
+        3153
+      ],
+      "audited_golds": [
+        {
+          "id": 3751,
+          "title": "China's WeRide Wants to Build Global Robotaxi Empire",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3771,
+          "title": "AI brings speed to supply chain",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3766,
+          "title": "Crop forecasting enters the age of digital twins",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3159,
+          "title": "Professori tyrm\u00e4\u00e4 teko\u00e4lytutkijoiden kauhukuvat ihmiskunnan lopusta",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3153,
+          "title": "Teko\u00e4ly-yhti\u00f6 Anthropicin toimitusjohtaja kehottaa hidastamaan oman alansa kehityst\u00e4",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-017",
+      "question": "Provide a timeline of geopolitical diplomatic visits and talks reported in September 2026.",
+      "category": "timeline",
+      "expected_ids": [
+        3162,
+        2926,
+        2927,
+        2928,
+        3144
+      ],
+      "audited_golds": [
+        {
+          "id": 3162,
+          "title": "Kiina ja Intia pyrkiv\u00e4t ratkaisemaan vuosikymmeni\u00e4 hiert\u00e4neen rajakiistan",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2926,
+          "title": "Trips to Moscow, Kiev were very successful, US understands next steps \u2014 Kushner",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2927,
+          "title": "US believes Russia, Ukraine want to find way to settle conflict \u2014 Kushner",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 2928,
+          "title": "Former US Army Secretary Driscoll arrives in Kiev \u2014 CBS",
+          "source": "TASS World",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3144,
+          "title": "Brics-maiden kokous jatkuu Intiassa",
+          "source": "Yle News",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-018",
+      "question": "What factors appear to be affecting global grain supply and food prices?",
+      "category": "analytical_causal",
+      "expected_ids": [
+        3752,
+        3762,
+        3772,
+        3780
+      ],
+      "audited_golds": [
+        {
+          "id": 3752,
+          "title": "Attack damages Bunge oilseeds plant in Ukraine",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3762,
+          "title": "FAS: Thailand\u2019s rice output expected to decline",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3772,
+          "title": "Railroads ready for US grain harvest",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3780,
+          "title": "FAO Food Price Index rises again",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-019",
+      "question": "What evidence is there that AI and digital twins are being applied to supply chains?",
+      "category": "analytical_causal",
+      "expected_ids": [
+        3766,
+        3771
+      ],
+      "audited_golds": [
+        {
+          "id": 3766,
+          "title": "Crop forecasting enters the age of digital twins",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3771,
+          "title": "AI brings speed to supply chain",
+          "source": "World Grain",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-020",
+      "question": "What commercial and regulatory pressures are impacting wireless telecom and financial services?",
+      "category": "analytical_causal",
+      "expected_ids": [
+        3744,
+        3746,
+        3749
+      ],
+      "audited_golds": [
+        {
+          "id": 3744,
+          "title": "Verizon Results Boosted by Higher Prices, Gain in Wireless Customers",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3746,
+          "title": "CaixaBank's CFO Sees Case for Dealmaking Among Europe's Banks",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        },
+        {
+          "id": 3749,
+          "title": "Burberry Sees Positive Signs as Turnaround Plan Continues",
+          "source": "Wall Street Journal US Business",
+          "classification": "VALID_GOLD",
+          "reason": "Semantically relevant, active in DB, proper AI status"
+        }
+      ]
+    },
+    {
+      "id": "RAG-021",
+      "question": "What are the latest commercial sales figures for Apple Vision Pro 2 in Europe?",
+      "category": "insufficient_evidence",
+      "expected_ids": [],
+      "audited_golds": []
+    },
+    {
+      "id": "RAG-022",
+      "question": "What breakthroughs in fault-tolerant quantum computing were announced by IBM today?",
+      "category": "insufficient_evidence",
+      "expected_ids": [],
+      "audited_golds": []
+    },
+    {
+      "id": "RAG-023",
+      "question": "What was the outcome of the 2026 FIFA World Cup final in North America?",
+      "category": "insufficient_evidence",
+      "expected_ids": [],
+      "audited_golds": []
+    },
+    {
+      "id": "RAG-024",
+      "question": "What specific earnings guidance did Microsoft release for Q4 2026?",
+      "category": "insufficient_evidence",
+      "expected_ids": [],
+      "audited_golds": []
+    },
+    {
+      "id": "RAG-025",
+      "question": "How did the central bank of Japan adjust interest rates yesterday?",
+      "category": "insufficient_evidence",
+      "expected_ids": [],
+      "audited_golds": []
+    }
+  ]
+}

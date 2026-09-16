@@ -1,0 +1,12 @@
+{
+  "scheduler_active": true,
+  "pid": 19088,
+  "last_scheduler_heartbeat": "2026-09-16T19:10:04.415584+00:00",
+  "last_heartbeat_at": "2026-09-16T19:10:04.415584+00:00",
+  "last_ingestion_started": "2026-09-16T19:10:04.413642+00:00",
+  "last_ingestion_completed": "2026-09-16T19:10:04.415584+00:00",
+  "last_ai_started": "2026-09-16T19:09:40.308835+00:00",
+  "last_ai_completed": "2026-09-16T19:09:40.310340+00:00",
+  "last_ingestion_error": null,
+  "last_ai_error": "Ollama crash"
+}

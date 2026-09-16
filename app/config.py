@@ -56,6 +56,16 @@ class Settings(BaseSettings):
     morning_edition_hour: int = 7
     morning_edition_minute: int = 0
 
+    # Stage 1C Autonomous Pipeline Cadence & Bounded Draining
+    ingestion_interval_minutes: int = 30
+    ai_interval_minutes: int = 10
+    ai_batch_size: int = 5
+    ai_max_batches_per_cycle: int = 2
+
+    # Market Data API Configuration
+    market_data_api_key: str = ""
+    market_cache_ttl_seconds: int = 900
+
     enable_error_test_routes: bool = False
 
     model_config = SettingsConfigDict(
@@ -67,19 +77,22 @@ class Settings(BaseSettings):
 
     @property
     def is_production(self) -> bool:
-        """Returns True when executing in production or on Vercel."""
+        """Returns True when executing in production, Vercel, or Railway."""
         env = (self.app_env or "").lower()
         return (
             env in ("production", "prod", "staging")
             or os.getenv("VERCEL") == "1"
             or bool(os.getenv("VERCEL_ENV"))
+            or bool(os.getenv("RAILWAY_ENVIRONMENT"))
+            or bool(os.getenv("RAILWAY_PROJECT_ID"))
         )
 
     @property
     def effective_database_url(self) -> str:
         """
         Returns database URL for SQLAlchemy & Alembic.
-        In production/Vercel: if DATABASE_URL is missing or points to localhost,
+        Safely normalizes Railway/Heroku postgres:// or postgresql:// scheme to postgresql+psycopg://.
+        In production/Railway: if DATABASE_URL is missing or points to localhost,
         returns empty string to prevent dangerous fallback to localhost:5432.
         In local development: returns configured local DATABASE_URL.
         """
@@ -87,6 +100,10 @@ class Settings(BaseSettings):
         if self.is_production:
             if not url or get_db_host_mode(url) == "LOCAL":
                 return ""
+        if url.startswith("postgres://"):
+            url = "postgresql+psycopg://" + url[len("postgres://"):]
+        elif url.startswith("postgresql://") and not url.startswith("postgresql+"):
+            url = "postgresql+psycopg://" + url[len("postgresql://"):]
         return url
 
 

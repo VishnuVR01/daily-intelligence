@@ -167,20 +167,31 @@
   </div>
 
   {% if results.total_pages > 1 %}
-  <div class="pagination" style="margin-top: 24px;">
-    <a href="/search?q={{ q }}&page={{ results.page - 1 }}{% if filters.date_from %}&date_from={{ filters.date_from }}{% endif %}{% if filters.date_to %}&date_to={{ filters.date_to }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}{% if active_country %}&country={{ active_country }}{% endif %}" 
-       class="pagination-btn {% if not results.has_prev %}disabled{% endif %}">
-      &larr; Previous
-    </a>
+  <div class="pagination-wrapper">
+    <div class="pagination">
+      <a href="/search?q={{ q }}&page={{ results.page - 1 }}{% if filters.date_from %}&date_from={{ filters.date_from }}{% endif %}{% if filters.date_to %}&date_to={{ filters.date_to }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}{% if active_country %}&country={{ active_country }}{% endif %}" 
+         class="pagination-btn {% if not results.has_prev %}disabled{% endif %}"
+         {% if not results.has_prev %}tabindex="-1" aria-disabled="true"{% endif %}>
+        &larr; Previous
+      </a>
 
-    <span class="pagination-info">
-      Page <strong>{{ results.page }}</strong> of <strong>{{ results.total_pages }}</strong>
-    </span>
+      <div class="pagination-center">
+        <span class="pagination-info">
+          Page <strong>{{ results.page }}</strong> of <strong>{{ results.total_pages }}</strong>
+        </span>
+        {% if results.total_items is defined %}
+        <span class="pagination-count">
+          {{ "{:,}".format(results.total_items) }} results
+        </span>
+        {% endif %}
+      </div>
 
-    <a href="/search?q={{ q }}&page={{ results.page + 1 }}{% if filters.date_from %}&date_from={{ filters.date_from }}{% endif %}{% if filters.date_to %}&date_to={{ filters.date_to }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}{% if active_country %}&country={{ active_country }}{% endif %}" 
-       class="pagination-btn {% if not results.has_next %}disabled{% endif %}">
-      Next &rarr;
-    </a>
+      <a href="/search?q={{ q }}&page={{ results.page + 1 }}{% if filters.date_from %}&date_from={{ filters.date_from }}{% endif %}{% if filters.date_to %}&date_to={{ filters.date_to }}{% endif %}{% if active_category %}&category={{ active_category }}{% endif %}{% if active_country %}&country={{ active_country }}{% endif %}" 
+         class="pagination-btn {% if not results.has_next %}disabled{% endif %}"
+         {% if not results.has_next %}tabindex="-1" aria-disabled="true"{% endif %}>
+        Next &rarr;
+      </a>
+    </div>
   </div>
   {% endif %}
 

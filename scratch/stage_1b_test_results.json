@@ -1,0 +1,657 @@
+{
+  "timestamp": "2026-09-15T13:06:03.252838+00:00",
+  "dry_run_priority_table": [
+    {
+      "article_id": 11,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board announces approval of the application by Coastal Bend Bancshares, Inc.",
+      "collected_at": "2026-09-12T19:59:48.772280+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 12,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board announces approval of the application by FS Bancorp, Inc.",
+      "collected_at": "2026-09-12T19:59:48.773285+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 13,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board announces approval of the application by Banco Santander, S.A. and Santander Holdings USA, Inc.",
+      "collected_at": "2026-09-12T19:59:48.773285+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 14,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board requests comment on a proposal to modernize rules for mutual banking organizations",
+      "collected_at": "2026-09-12T19:59:48.774284+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 15,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board requests comment on a proposal to modernize its rule governing the extension of credit to bank \"insiders\"\u2014bank executives, board members and major shareholders who could potentially influence a bank's lending decisions",
+      "collected_at": "2026-09-12T19:59:48.774284+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 16,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board issues enforcement action with Iuka Bancshares, Inc. and The Iuka State Bank",
+      "collected_at": "2026-09-12T19:59:48.774284+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 17,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board issues enforcement actions with former employee of Regions Bank and former employee of First Interstate Bank",
+      "collected_at": "2026-09-12T19:59:48.775284+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 18,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve issues FOMC statement",
+      "collected_at": "2026-09-12T19:59:48.776288+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve, FOMC (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 19,
+      "source": "Federal Reserve",
+      "title": "Agencies issue joint statement on handling of highly sensitive information during bank examinations",
+      "collected_at": "2026-09-12T19:59:48.776288+01:00",
+      "base_score": 52,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 20,
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board issues enforcement action with former chief lending officer of Heritage State Bank",
+      "collected_at": "2026-09-12T19:59:48.777285+01:00",
+      "base_score": 77,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'institutional' (+20)",
+        "Source family 'central_bank' (+20)",
+        "Category 'Markets & Economy' (+12)",
+        "Critical keyword match: Federal Reserve (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 22,
+      "source": "OpenAI",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "collected_at": "2026-09-12T19:59:49.760757+01:00",
+      "base_score": 70,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Critical keyword match: OpenAI (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 25,
+      "source": "OpenAI",
+      "title": "Now everyone can put data to work",
+      "collected_at": "2026-09-12T19:59:49.762079+01:00",
+      "base_score": 70,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Critical keyword match: AI (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 26,
+      "source": "OpenAI",
+      "title": "Introducing ChatGPT for Financial Services",
+      "collected_at": "2026-09-12T19:59:49.763076+01:00",
+      "base_score": 53,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Strategic keyword match: research (+8)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 27,
+      "source": "OpenAI",
+      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
+      "collected_at": "2026-09-12T19:59:49.763076+01:00",
+      "base_score": 70,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Critical keyword match: AI, OpenAI (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 30,
+      "source": "OpenAI",
+      "title": "The AI policy window is open. We need to act.",
+      "collected_at": "2026-09-12T19:59:49.764073+01:00",
+      "base_score": 70,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Critical keyword match: AI (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 31,
+      "source": "OpenAI",
+      "title": "GPT-6 Astra: The next generation in intelligence for work",
+      "collected_at": "2026-09-12T19:59:49.764073+01:00",
+      "base_score": 70,
+      "aging_bonus": 50.0,
+      "effective_score": 100.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Critical keyword match: OpenAI (+25)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 23,
+      "source": "OpenAI",
+      "title": "Cognition helps Devin test its own work with GPT\u20116 Astra",
+      "collected_at": "2026-09-12T19:59:49.760757+01:00",
+      "base_score": 45,
+      "aging_bonus": 50.0,
+      "effective_score": 95.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 24,
+      "source": "OpenAI",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "collected_at": "2026-09-12T19:59:49.762079+01:00",
+      "base_score": 45,
+      "aging_bonus": 50.0,
+      "effective_score": 95.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 28,
+      "source": "OpenAI",
+      "title": "Build more natural voice experiences with GPT\u2011Live\u20111 in the API",
+      "collected_at": "2026-09-12T19:59:49.763076+01:00",
+      "base_score": 45,
+      "aging_bonus": 50.0,
+      "effective_score": 95.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    },
+    {
+      "article_id": 29,
+      "source": "OpenAI",
+      "title": "Introducing the Agents API",
+      "collected_at": "2026-09-12T19:59:49.764073+01:00",
+      "base_score": 45,
+      "aging_bonus": 50.0,
+      "effective_score": 95.0,
+      "priority_tier": "P0_CRITICAL",
+      "reasons": [
+        "Trust tier 'primary' (+25)",
+        "Source family 'industry' (+5)",
+        "Category 'AI & Technology' (+15)",
+        "Aging bonus: 66.1h in queue (+50.0 pts)"
+      ]
+    }
+  ],
+  "before_queue_status": {
+    "total_articles": 4202,
+    "unprocessed": 4128,
+    "P0_CRITICAL": 4107,
+    "P1_HIGH": 21,
+    "P2_NORMAL": 0,
+    "P3_LOW": 0,
+    "processing": 0,
+    "stale_processing": 0,
+    "completed_relevant": 62,
+    "completed_out_of_scope": 11,
+    "completed_total": 73,
+    "failed": 1,
+    "non_retryable": 0,
+    "retryable": 1,
+    "eligible": 4129,
+    "oldest_unprocessed_timestamp": "2026-09-12T19:59:48.772280+01:00",
+    "queue_age_hours": 66.08,
+    "newest_processed_timestamp": "2026-09-15T13:57:33.467529+01:00",
+    "ai_processing_coverage_percent": 1.74
+  },
+  "after_queue_status": {
+    "total_articles": 4202,
+    "unprocessed": 4118,
+    "P0_CRITICAL": 4097,
+    "P1_HIGH": 21,
+    "P2_NORMAL": 0,
+    "P3_LOW": 0,
+    "processing": 0,
+    "stale_processing": 0,
+    "completed_relevant": 72,
+    "completed_out_of_scope": 11,
+    "completed_total": 83,
+    "failed": 1,
+    "non_retryable": 0,
+    "retryable": 1,
+    "eligible": 4119,
+    "oldest_unprocessed_timestamp": "2026-09-12T19:59:48.774284+01:00",
+    "queue_age_hours": 66.1,
+    "newest_processed_timestamp": "2026-09-15T14:06:02.816960+01:00",
+    "ai_processing_coverage_percent": 1.98
+  },
+  "executed_batch": {
+    "claimed_count": 10,
+    "processed_success": 10,
+    "relevant_count": 10,
+    "out_of_scope_count": 0,
+    "failed_count": 0,
+    "batch_duration_ms": 72536,
+    "before_queue_status": {
+      "total_articles": 4202,
+      "unprocessed": 4128,
+      "P0_CRITICAL": 4107,
+      "P1_HIGH": 21,
+      "P2_NORMAL": 0,
+      "P3_LOW": 0,
+      "processing": 0,
+      "stale_processing": 0,
+      "completed_relevant": 62,
+      "completed_out_of_scope": 11,
+      "completed_total": 73,
+      "failed": 1,
+      "non_retryable": 0,
+      "retryable": 1,
+      "eligible": 4129,
+      "oldest_unprocessed_timestamp": "2026-09-12T19:59:48.772280+01:00",
+      "queue_age_hours": 66.08,
+      "newest_processed_timestamp": "2026-09-15T13:57:33.467529+01:00",
+      "ai_processing_coverage_percent": 1.74
+    },
+    "after_queue_status": {
+      "total_articles": 4202,
+      "unprocessed": 4118,
+      "P0_CRITICAL": 4097,
+      "P1_HIGH": 21,
+      "P2_NORMAL": 0,
+      "P3_LOW": 0,
+      "processing": 0,
+      "stale_processing": 0,
+      "completed_relevant": 72,
+      "completed_out_of_scope": 11,
+      "completed_total": 83,
+      "failed": 1,
+      "non_retryable": 0,
+      "retryable": 1,
+      "eligible": 4119,
+      "oldest_unprocessed_timestamp": "2026-09-12T19:59:48.774284+01:00",
+      "queue_age_hours": 66.1,
+      "newest_processed_timestamp": "2026-09-15T14:06:02.816960+01:00",
+      "ai_processing_coverage_percent": 1.98
+    },
+    "article_results": [
+      {
+        "article_id": 11,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board announces approval of the application by Coastal Bend Bancshares, Inc.",
+        "collected_at": "2026-09-12T19:59:48.772280+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 17747,
+        "error_message": null
+      },
+      {
+        "article_id": 12,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board announces approval of the application by FS Bancorp, Inc.",
+        "collected_at": "2026-09-12T19:59:48.773285+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 5819,
+        "error_message": null
+      },
+      {
+        "article_id": 13,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board announces approval of the application by Banco Santander, S.A. and Santander Holdings USA, Inc.",
+        "collected_at": "2026-09-12T19:59:48.773285+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 6516,
+        "error_message": null
+      },
+      {
+        "article_id": 14,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board requests comment on a proposal to modernize rules for mutual banking organizations",
+        "collected_at": "2026-09-12T19:59:48.774284+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 6246,
+        "error_message": null
+      },
+      {
+        "article_id": 16,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board issues enforcement action with Iuka Bancshares, Inc. and The Iuka State Bank",
+        "collected_at": "2026-09-12T19:59:48.774284+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 6157,
+        "error_message": null
+      },
+      {
+        "article_id": 17,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board issues enforcement actions with former employee of Regions Bank and former employee of First Interstate Bank",
+        "collected_at": "2026-09-12T19:59:48.775284+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 5815,
+        "error_message": null
+      },
+      {
+        "article_id": 18,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve issues FOMC statement",
+        "collected_at": "2026-09-12T19:59:48.776288+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve, FOMC (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 6029,
+        "error_message": null
+      },
+      {
+        "article_id": 19,
+        "source": "Federal Reserve",
+        "title": "Agencies issue joint statement on handling of highly sensitive information during bank examinations",
+        "collected_at": "2026-09-12T19:59:48.776288+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 52,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 5741,
+        "error_message": null
+      },
+      {
+        "article_id": 20,
+        "source": "Federal Reserve",
+        "title": "Federal Reserve Board issues enforcement action with former chief lending officer of Heritage State Bank",
+        "collected_at": "2026-09-12T19:59:48.777285+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 77,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'institutional' (+20)",
+          "Source family 'central_bank' (+20)",
+          "Category 'Markets & Economy' (+12)",
+          "Critical keyword match: Federal Reserve (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 6036,
+        "error_message": null
+      },
+      {
+        "article_id": 22,
+        "source": "OpenAI",
+        "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+        "collected_at": "2026-09-12T19:59:49.760757+01:00",
+        "priority_tier": "P0_CRITICAL",
+        "base_score": 70,
+        "aging_bonus": 50.0,
+        "effective_score": 100.0,
+        "reasons": [
+          "Trust tier 'primary' (+25)",
+          "Source family 'industry' (+5)",
+          "Category 'AI & Technology' (+15)",
+          "Critical keyword match: OpenAI (+25)",
+          "Aging bonus: 66.1h in queue (+50.0 pts)"
+        ],
+        "claim_status": "CLAIMED_SUCCESSFULLY",
+        "ollama_result": "success",
+        "final_queue_state": "COMPLETED_RELEVANT",
+        "processing_time_ms": 5725,
+        "error_message": null
+      }
+    ]
+  },
+  "verification": {
+    "duplicate_ai_outputs": 0,
+    "provenance_corruptions": 0
+  }
+}

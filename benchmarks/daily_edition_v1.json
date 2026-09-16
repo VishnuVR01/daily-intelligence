@@ -1,0 +1,81 @@
+{
+  "version": "v1",
+  "created_at": "2026-09-15T21:51:00Z",
+  "description": "Gold editorial benchmark for Stage 3C Daily Edition Selection Engine.",
+  "benchmark_editions": [
+    {
+      "edition_date": "2026-09-13",
+      "target_size": 15,
+      "expected_readiness": "READY",
+      "must_include": [
+        "NATO downs drone over Lithuania, probably launched by Russia",
+        "Egypts el-Sisi meets MBS, backs Saudi call for secure Red Sea navigation",
+        "Will Russia and Ukraine halt attacks on energy infrastructure?"
+      ],
+      "acceptable": [
+        "Carney visits Europe: Can Canada seek refuge with the EU amid US trade war?",
+        "Saudi Arabia faces high-stakes choices as war with Houthis escalates",
+        "Exclusive: Ayana Bio acquires Meati Foods assets for a steal to scale plant"
+      ],
+      "should_exclude": [
+        "Funerals for children killed after fire spreads to adjacent building",
+        "Out of scope gossip or sports commentary"
+      ],
+      "expected_sections": {
+        "WORLD": 5,
+        "ECONOMY": 4,
+        "TECH": 3,
+        "ENERGY": 2
+      }
+    },
+    {
+      "edition_date": "2026-09-10",
+      "target_size": 15,
+      "expected_readiness": "READY",
+      "must_include": [
+        "Federal Reserve holds interest rates steady at 4.75%-5.00%",
+        "ECB cuts Deposit Facility Rate by 25 bps to 3.25%",
+        "NVIDIA announces Vera Rubin NVLink architecture at GTC 2026"
+      ],
+      "acceptable": [
+        "Bank of England keeps Bank Rate unchanged at 4.75%",
+        "Google DeepMind introduces Gemini 3.8 Live with Executive Voice",
+        "US 10Y Treasury yield reaches 5.00% as bond selloff deepens"
+      ],
+      "should_exclude": [
+        "Celebrity red carpet fashion commentary",
+        "Local weather anomaly in small township"
+      ],
+      "expected_sections": {
+        "ECONOMY": 6,
+        "TECH": 4,
+        "WORLD": 3,
+        "ENERGY": 2
+      }
+    },
+    {
+      "edition_date": "2026-09-08",
+      "target_size": 15,
+      "expected_readiness": "READY",
+      "must_include": [
+        "Bank of Japan holds overnight call rate at 0.25%",
+        "USD/JPY rises 1.11% to 155.13 as yen softens again",
+        "Gold futures decline 0.37% to $4,335 per troy ounce"
+      ],
+      "acceptable": [
+        "Oil prices jump 3% as Red Sea shipping disruptions escalate",
+        "UK Gilt 10Y yield rises 7 bp to 4.12% following deficit data",
+        "China's CSI 300 drops 0.67% amid regional market pressure"
+      ],
+      "should_exclude": [
+        "Off-topic viral video recap"
+      ],
+      "expected_sections": {
+        "ECONOMY": 6,
+        "ENERGY": 3,
+        "WORLD": 3,
+        "TECH": 3
+      }
+    }
+  ]
+}

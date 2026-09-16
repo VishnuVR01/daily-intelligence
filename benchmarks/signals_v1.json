@@ -1,0 +1,122 @@
+[
+  {
+    "case_id": 1,
+    "signal_type": "ENTITY_CONCENTRATION",
+    "subject": "OpenAI",
+    "event_count": 4,
+    "source_count": 3,
+    "title": "Concentrated Event Activity: OpenAI",
+    "description": "Observed 4 qualifying events involving OpenAI across 3 distinct sources during the 7-day observation window.",
+    "expected_qualify": true,
+    "expected_language_safe": true,
+    "reasoning": "Valid multi-event entity recurrence with observational description"
+  },
+  {
+    "case_id": 2,
+    "signal_type": "ENTITY_CONCENTRATION",
+    "subject": "Acme Startup",
+    "event_count": 1,
+    "source_count": 1,
+    "title": "Concentrated Event Activity: Acme Startup",
+    "description": "Observed 1 qualifying event involving Acme Startup.",
+    "expected_qualify": false,
+    "expected_language_safe": true,
+    "reasoning": "Rejected by minimum event gate (< 2 events)"
+  },
+  {
+    "case_id": 3,
+    "signal_type": "ENTITY_CONCENTRATION",
+    "subject": "OpenAI",
+    "event_count": 4,
+    "source_count": 3,
+    "title": "OpenAI Momentum Surging",
+    "description": "OpenAI will likely dominate the market in coming months.",
+    "expected_qualify": false,
+    "expected_language_safe": false,
+    "reasoning": "Rejected by language safety filter (contains forbidden predictive terms 'will' and 'likely')"
+  },
+  {
+    "case_id": 4,
+    "signal_type": "POLICY_ACTIVITY",
+    "subject": "Policy Domain",
+    "event_count": 3,
+    "source_count": 2,
+    "title": "Concentrated Economic & Regulatory Policy Events",
+    "description": "Recorded 3 policy and regulatory events across 2 distinct sources during the 7-day observation window.",
+    "expected_qualify": true,
+    "expected_language_safe": true,
+    "reasoning": "Valid policy activity concentration with observational language"
+  },
+  {
+    "case_id": 5,
+    "signal_type": "POLICY_ACTIVITY",
+    "subject": "Policy Domain",
+    "event_count": 3,
+    "source_count": 2,
+    "title": "Central Bank Rate Cuts Expected",
+    "description": "Central banks are forecast to cut rates caused by cooling inflation.",
+    "expected_qualify": false,
+    "expected_language_safe": false,
+    "reasoning": "Rejected by language safety filter (contains 'forecast' and 'caused')"
+  },
+  {
+    "case_id": 6,
+    "signal_type": "TECHNOLOGY_ACTIVITY",
+    "subject": "AI & Technology",
+    "event_count": 5,
+    "source_count": 4,
+    "title": "High Density AI & Technology Event Activity",
+    "description": "Recorded 5 artificial intelligence and technology events across 4 distinct sources during the 7-day observation window.",
+    "expected_qualify": true,
+    "expected_language_safe": true,
+    "reasoning": "Valid tech activity concentration"
+  },
+  {
+    "case_id": 7,
+    "signal_type": "GEOGRAPHIC_CONCENTRATION",
+    "subject": "United States",
+    "event_count": 4,
+    "source_count": 3,
+    "title": "Geographic Event Concentration: United States",
+    "description": "Observed 4 qualifying events involving United States across 3 distinct sources during the 7-day observation window.",
+    "expected_qualify": true,
+    "expected_language_safe": true,
+    "reasoning": "Valid geographic concentration"
+  },
+  {
+    "case_id": 8,
+    "signal_type": "GEOGRAPHIC_CONCENTRATION",
+    "subject": "Country X",
+    "event_count": 4,
+    "source_count": 2,
+    "title": "Geographic Event Concentration: Country X",
+    "description": "Country X is predicted to enter geopolitical conflict.",
+    "expected_qualify": false,
+    "expected_language_safe": false,
+    "reasoning": "Rejected by language safety filter (contains 'predicted')"
+  },
+  {
+    "case_id": 9,
+    "signal_type": "CROSS_SOURCE_CORROBORATION",
+    "subject": "Federal Reserve",
+    "event_count": 3,
+    "source_count": 3,
+    "title": "Cross-Source Event Corroboration: Federal Reserve",
+    "description": "Recorded 3 events covered across 3 distinct sources during the observation window.",
+    "expected_qualify": true,
+    "expected_language_safe": true,
+    "reasoning": "Valid cross-source corroboration"
+  },
+  {
+    "case_id": 10,
+    "signal_type": "SUPPLY_STRESS",
+    "subject": "Brent Crude",
+    "event_count": 2,
+    "source_count": 2,
+    "title": "Observed Supply & Capacity Outage Events: Brent Crude",
+    "description": "Recorded 2 qualifying events with explicit supply outage or disruption evidence.",
+    "expected_qualify": true,
+    "expected_language_safe": true,
+    "reasoning": "Valid supply stress signal with explicit disruption evidence"
+  }
+]

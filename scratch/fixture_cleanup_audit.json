@@ -1,0 +1,11 @@
+[
+  {
+    "article_id": 4463,
+    "source_id": 78,
+    "source_name": "Dedupe Test Source",
+    "title": "Test Title",
+    "canonical_url": "https://test.com/article1",
+    "collected_at": "2026-09-15T14:19:12.043322+01:00",
+    "proven_fixture_reason": "Leaked from test_stage_1d.py / test_dedupe.py test runs"
+  }
+]

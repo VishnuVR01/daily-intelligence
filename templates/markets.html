@@ -1,0 +1,627 @@
+{% extends "base.html" %}
+{% from "macros/entity_markers.html" import render_entity_markers, render_save_button %}
+
+{% block title %}Global Markets Intelligence — Daily Intelligence{% endblock %}
+
+{% block content %}
+
+{# 1. PAGE HEADER #}
+<div class="markets-dashboard-header">
+  <div class="markets-title-block">
+    <div class="brand-badge" style="display: inline-flex; align-items: center; gap: 6px;">
+      <span class="brand-badge-dot"></span>
+      GLOBAL MARKETS INTELLIGENCE
+    </div>
+    <h1 class="markets-page-title">Global Markets &amp; Macro Intelligence</h1>
+    <p class="markets-page-subtitle">Key global indices and the intelligence shaping market sentiment.</p>
+  </div>
+
+  <div class="markets-meta-bar">
+    <span class="meta-item">Updated: <strong>{{ masthead_date if masthead_date else "Today" }}</strong></span>
+    <span class="meta-item">Source: <strong>{{ global_markets[0].source if global_markets else "Twelve Data / Yahoo" }}</strong></span>
+    <span class="meta-item">Cadence: <strong>15-Min Live / 6-Hour History Cache</strong></span>
+    {% if markets_is_stale %}
+    <span class="stale-cache-badge" style="font-size: 10.5px; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px;">STALE CACHE</span>
+    {% endif %}
+  </div>
+
+  <div class="markets-disclaimer-banner">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>Session status currently reflects regular trading hours and does not yet include full exchange-holiday calendars.</span>
+  </div>
+</div>
+
+{# 2. KEY TAKEAWAYS (Compact Block Top Placement) #}
+<section class="takeaways-top-section" style="margin-bottom: 24px;">
+  <div class="widget-panel takeaways-panel">
+    <div class="widget-header">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      KEY TAKEAWAYS &mdash; GROUNDED MARKET OBSERVATIONS
+    </div>
+
+    <div class="takeaways-grid">
+      {% for takeaway in takeaways %}
+      <div class="takeaway-card">
+        <div class="takeaway-topic">{{ takeaway.topic }}</div>
+        <p class="takeaway-text">{{ takeaway.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if not global_markets %}
+<div class="widget-panel" style="margin: 24px 0; padding: 24px; text-align: center;">
+  <h3 style="font-family: var(--font-serif); margin-bottom: 8px;">Market Data Temporarily Unavailable</h3>
+  <p style="color: var(--text-secondary); font-size: 14px;">The market data provider is currently refreshing. Please try again in a few moments.</p>
+</div>
+{% else %}
+
+{# 3. GLOBAL MARKET PULSE (Compact 3x2 Grid) #}
+<section class="pulse-section" style="margin-bottom: 28px;">
+  <div class="widget-panel">
+    <div class="widget-header">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+      GLOBAL MARKET PULSE
+    </div>
+
+    <div class="pulse-grid">
+      {% for snapshot in global_markets %}
+      {% set sess = market_sessions.get(snapshot.region) %}
+      {% set slug = snapshot.region.lower().replace(" ", "-") %}
+      {% set is_selected = (selected_snapshot and selected_snapshot.region == snapshot.region) %}
+
+      <a href="/markets?market={{ slug }}" class="pulse-compact-card {% if is_selected %}selected{% endif %}" aria-label="Select {{ snapshot.region }} market focus">
+        <div class="pulse-card-header">
+          <span class="pulse-region">{{ snapshot.region }}</span>
+          {% if sess %}
+          <span class="session-dot-badge {{ sess.dot_class }}" title="{{ sess.disclaimer }}">
+            ● {{ sess.display_label }}
+          </span>
+          {% endif %}
+        </div>
+
+        <div class="pulse-index-name">{{ snapshot.display_name }}</div>
+
+        <div class="pulse-price-row">
+          <span class="pulse-price">{{ "{:,.2f}".format(snapshot.latest_close) }}</span>
+          {% if snapshot.currency %}<small class="pulse-currency">{{ snapshot.currency }}</small>{% endif %}
+        </div>
+
+        <div class="pulse-card-footer">
+          {% if snapshot.direction == "UP" %}
+          <span class="market-change up">
+            <span class="market-dir">▲</span> +{{ "%.2f"|format(snapshot.change_percent) }}% <span class="market-state">UP</span>
+          </span>
+          {% elif snapshot.direction == "DOWN" %}
+          <span class="market-change down">
+            <span class="market-dir">▼</span> {{ "%.2f"|format(snapshot.change_percent) }}% <span class="market-state">DOWN</span>
+          </span>
+          {% else %}
+          <span class="market-change flat">
+            <span class="market-dir">—</span> {{ "%.2f"|format(snapshot.change_percent) }}% <span class="market-state">FLAT</span>
+          </span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# 3.5 MACRO & COMMODITY PULSE (New Stage 2C Compact Cross-Asset Section) #}
+<section class="macro-section" style="margin-bottom: 28px;">
+  <div class="widget-panel">
+    <div class="widget-header">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
+      MACRO &amp; COMMODITY PULSE
+    </div>
+
+    {% if macro_commodities %}
+    <div class="macro-groups-grid">
+      {# Group 1: ENERGY #}
+      <div class="macro-group-card">
+        <div class="macro-group-header">ENERGY</div>
+        <div class="macro-items-list">
+          {% for snap in macro_commodities if snap.asset_class == 'ENERGY_FUTURES' %}
+          <div class="macro-item-row">
+            <div class="macro-item-info">
+              <span class="macro-item-name">{{ snap.display_name }}</span>
+              <small class="macro-item-unit">{{ snap.unit if snap.unit else snap.currency }}</small>
+            </div>
+            <div class="macro-item-val-block">
+              <span class="macro-price">${{ "{:,.2f}".format(snap.latest_close) }}</span>
+              <span class="market-change {% if snap.direction == 'UP' %}up{% elif snap.direction == 'DOWN' %}down{% else %}flat{% endif %}">
+                <span class="market-dir">{% if snap.direction == 'UP' %}▲{% elif snap.direction == 'DOWN' %}▼{% else %}—{% endif %}</span>
+                {{ "{:+,.2f}".format(snap.change_percent) }}%
+              </span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# Group 2: PRECIOUS METALS #}
+      <div class="macro-group-card">
+        <div class="macro-group-header">PRECIOUS METALS</div>
+        <div class="macro-items-list">
+          {% for snap in macro_commodities if snap.asset_class == 'METALS_FUTURES' %}
+          <div class="macro-item-row">
+            <div class="macro-item-info">
+              <span class="macro-item-name">{{ snap.display_name }}</span>
+              <small class="macro-item-unit">{{ snap.unit if snap.unit else snap.currency }}</small>
+            </div>
+            <div class="macro-item-val-block">
+              <span class="macro-price">${{ "{:,.2f}".format(snap.latest_close) }}</span>
+              <span class="market-change {% if snap.direction == 'UP' %}up{% elif snap.direction == 'DOWN' %}down{% else %}flat{% endif %}">
+                <span class="market-dir">{% if snap.direction == 'UP' %}▲{% elif snap.direction == 'DOWN' %}▼{% else %}—{% endif %}</span>
+                {{ "{:+,.2f}".format(snap.change_percent) }}%
+              </span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# Group 3: CRITICAL MINERALS #}
+      <div class="macro-group-card">
+        <div class="macro-group-header">CRITICAL MINERALS</div>
+        <div class="macro-items-list">
+          {% for snap in macro_commodities if snap.asset_class == 'EQUITY_PROXY' %}
+          <div class="macro-item-row flex-column">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+              <div class="macro-item-info">
+                <span class="macro-item-name">{{ snap.display_name }}</span>
+                <span class="equity-proxy-badge">EQUITY PROXY</span>
+              </div>
+              <div class="macro-item-val-block">
+                <span class="macro-price">${{ "{:,.2f}".format(snap.latest_close) }}</span>
+                <span class="market-change {% if snap.direction == 'UP' %}up{% elif snap.direction == 'DOWN' %}down{% else %}flat{% endif %}">
+                  <span class="market-dir">{% if snap.direction == 'UP' %}▲{% elif snap.direction == 'DOWN' %}▼{% else %}—{% endif %}</span>
+                  {{ "{:+,.2f}".format(snap.change_percent) }}%
+                </span>
+              </div>
+            </div>
+            <div class="remx-methodology-note">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              REMX is an equity-market proxy tracking companies exposed to rare-earth and strategic metals. It is not a physical rare-earth commodity price.
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# Group 4: FX #}
+      <div class="macro-group-card">
+        <div class="macro-group-header">FOREIGN EXCHANGE (FX)</div>
+        <div class="macro-items-list">
+          {% for snap in macro_commodities if snap.asset_class == 'FX' %}
+          <div class="macro-item-row">
+            <div class="macro-item-info">
+              <span class="macro-item-name">{{ snap.display_name }}</span>
+              <small class="macro-item-unit">{{ snap.semantics_note if snap.semantics_note else snap.unit }}</small>
+            </div>
+            <div class="macro-item-val-block">
+              <span class="macro-price">
+                {% if snap.latest_close < 20.0 %}
+                  {{ "%.4f"|format(snap.latest_close) }}
+                {% else %}
+                  {{ "%.2f"|format(snap.latest_close) }}
+                {% endif %}
+              </span>
+              <span class="market-change {% if snap.direction == 'UP' %}up{% elif snap.direction == 'DOWN' %}down{% else %}flat{% endif %}">
+                <span class="market-dir">{% if snap.direction == 'UP' %}▲{% elif snap.direction == 'DOWN' %}▼{% else %}—{% endif %}</span>
+                {{ "{:+,.2f}".format(snap.change_percent) }}%
+              </span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div style="padding: 12px; text-align: center; color: var(--text-muted); font-size: 13px;">
+      Macro &amp; Commodity pulse data temporarily unavailable.
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{# 3.6 SOVEREIGN & POLICY PULSE (Stage 2D Section) #}
+<section class="sovereign-policy-section" style="margin-bottom: 28px;">
+  <div class="widget-panel">
+    <div class="widget-header">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      SOVEREIGN &amp; POLICY PULSE
+    </div>
+
+    <div class="macro-groups-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
+      {# Block A: SOVEREIGN YIELDS #}
+      <div class="macro-group-card">
+        <div class="macro-group-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <span>BENCHMARK 10Y SOVEREIGN YIELDS</span>
+          <span style="font-size: 10px; font-weight: 500; text-transform: none; color: var(--text-muted);">Market-Priced Bond Yields</span>
+        </div>
+        <div class="macro-items-list">
+          {% if sovereign_yields %}
+          {% for snap in sovereign_yields %}
+          <div class="macro-item-row">
+            <div class="macro-item-info">
+              <span class="macro-item-name">{{ snap.display_name }}</span>
+              <small class="macro-item-unit">{{ snap.country }} &bull; {{ snap.source }}</small>
+            </div>
+            <div class="macro-item-val-block">
+              <span class="macro-price">{{ "%.2f"|format(snap.yield_percent) }}%</span>
+              <span class="market-change {% if snap.direction == 'UP' %}up{% elif snap.direction == 'DOWN' %}down{% else %}flat{% endif %}">
+                <span class="market-dir">{% if snap.direction == 'UP' %}▲{% elif snap.direction == 'DOWN' %}▼{% else %}—{% endif %}</span>
+                {% if snap.change_basis_points > 0 %}+{% endif %}{{ "%.0f"|format(snap.change_basis_points) }} bp
+              </span>
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <div style="padding: 12px; text-align: center; color: var(--text-muted); font-size: 13px;">
+            Sovereign yield data temporarily unavailable.
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {# Block B: MONETARY POLICY RATES #}
+      <div class="macro-group-card">
+        <div class="macro-group-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <span>CENTRAL BANK MONETARY POLICY</span>
+          <span style="font-size: 10px; font-weight: 500; text-transform: none; color: var(--text-muted);">Official Benchmark Rates</span>
+        </div>
+        <div class="macro-items-list">
+          {% if monetary_policy_rates %}
+          {% for pol in monetary_policy_rates %}
+          <div class="macro-item-row" style="flex-direction: column; align-items: flex-start; gap: 4px; padding: 10px 0; border-bottom: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+              <div class="macro-item-info">
+                <span class="macro-item-name" style="font-weight: 700;">{{ pol.central_bank }}</span>
+                <small class="macro-item-unit">{{ pol.policy_rate_name }}</small>
+              </div>
+              <div class="macro-item-val-block" style="align-items: flex-end;">
+                <span class="macro-price" style="font-weight: 700;">
+                  {% if pol.lower_bound is not none and pol.upper_bound is not none %}
+                    {{ "%.2f"|format(pol.lower_bound) }}% &ndash; {{ "%.2f"|format(pol.upper_bound) }}%
+                  {% elif pol.rate is not none %}
+                    {{ "%.2f"|format(pol.rate) }}%
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </span>
+                <span class="market-change {% if pol.action == 'HIKE' %}up{% elif pol.action == 'CUT' %}down{% else %}flat{% endif %}" style="font-size: 10.5px; padding: 2px 6px;">
+                  <span class="market-dir">{% if pol.action == 'HIKE' %}▲{% elif pol.action == 'CUT' %}▼{% else %}—{% endif %}</span>
+                  {{ pol.action }}
+                </span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+              <span>Effective: <strong>{{ pol.effective_date }}</strong></span>
+              <span style="font-style: italic;">{{ pol.source }}</span>
+            </div>
+
+            {% if pol.secondary_rates %}
+            <div style="font-size: 10.5px; color: var(--text-secondary); background: rgba(0,0,0,0.03); padding: 3px 6px; border-radius: 3px; width: 100%; margin-top: 2px;">
+              {% for rname, rval in pol.secondary_rates.items() %}
+                {{ rname.replace('_', ' ').title() }}: <strong>{{ "%.2f"|format(rval) }}%</strong>{% if not loop.last %} &bull; {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+          {% else %}
+          <div style="padding: 12px; text-align: center; color: var(--text-muted); font-size: 13px;">
+            Monetary policy data temporarily unavailable.
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 4. MARKET FOCUS ANALYTICAL PANEL #}
+<section class="focus-section" id="focus-section" style="margin-bottom: 36px;">
+  <div class="widget-panel focus-panel">
+    <div class="widget-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 6px; font-weight: 700; letter-spacing: 0.05em; font-size: 13px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          MARKET FOCUS
+        </span>
+
+        <form method="GET" action="/markets" id="market-focus-form" style="display: inline-flex; align-items: center; margin: 0;">
+          <select name="market" id="market-focus-select" class="market-focus-dropdown" aria-label="Select market focus region" onchange="this.form.submit()">
+            <option value="us" {% if selected_snapshot.region == 'United States' %}selected{% endif %}>United States &mdash; S&amp;P 500</option>
+            <option value="uk" {% if selected_snapshot.region == 'United Kingdom' %}selected{% endif %}>United Kingdom &mdash; FTSE 100</option>
+            <option value="india" {% if selected_snapshot.region == 'India' %}selected{% endif %}>India &mdash; NIFTY 50</option>
+            <option value="japan" {% if selected_snapshot.region == 'Japan' %}selected{% endif %}>Japan &mdash; Nikkei 225</option>
+            <option value="europe" {% if selected_snapshot.region == 'Europe' %}selected{% endif %}>Europe &mdash; STOXX Europe 600</option>
+            <option value="china" {% if selected_snapshot.region == 'China' %}selected{% endif %}>China &mdash; CSI 300</option>
+          </select>
+          <noscript><button type="submit" class="dropdown-submit-btn">Go</button></noscript>
+        </form>
+      </div>
+
+      {% set selected_sess = market_sessions.get(selected_snapshot.region) %}
+      {% if selected_sess %}
+      <span class="session-dot-badge {{ selected_sess.dot_class }}" id="focus-session-badge">● {{ selected_sess.display_label }}</span>
+      {% endif %}
+    </div>
+
+    {# Top Snapshot Metrics Bar #}
+    <div class="focus-main-metrics">
+      <div class="focus-price-display">
+        <span class="big-price">{{ "{:,.2f}".format(selected_snapshot.latest_close) }}</span>
+        {% if selected_snapshot.currency %}<span class="big-currency">{{ selected_snapshot.currency }}</span>{% endif %}
+      </div>
+
+      <div class="focus-change-badge">
+        {% if selected_snapshot.direction == "UP" %}
+        <span class="market-change up" style="font-size: 15px; padding: 4px 10px;">
+          <span class="market-dir">▲</span> {{ "{:+,.2f}".format(selected_snapshot.change_value) }} ({{ "{:+,.2f}".format(selected_snapshot.change_percent) }}%) <span class="market-state">UP</span>
+        </span>
+        {% elif selected_snapshot.direction == "DOWN" %}
+        <span class="market-change down" style="font-size: 15px; padding: 4px 10px;">
+          <span class="market-dir">▼</span> {{ "{:+,.2f}".format(selected_snapshot.change_value) }} ({{ "{:+,.2f}".format(selected_snapshot.change_percent) }}%) <span class="market-state">DOWN</span>
+        </span>
+        {% else %}
+        <span class="market-change flat" style="font-size: 15px; padding: 4px 10px;">
+          <span class="market-dir">—</span> {{ "{:+,.2f}".format(selected_snapshot.change_value) }} ({{ "{:+,.2f}".format(selected_snapshot.change_percent) }}%) <span class="market-state">FLAT</span>
+        </span>
+        {% endif %}
+      </div>
+
+      <div class="focus-date-meta" style="font-size: 12px; color: var(--text-muted);">
+        Market Close Date: <strong>{{ selected_snapshot.market_date }}</strong>
+      </div>
+    </div>
+
+    {# Mini SVG Trend Line Chart #}
+    <div class="chart-container-box">
+      <div class="chart-header-row">
+        <span class="chart-title">1Y Trailing Trend (Daily Completed Closes)</span>
+        <span class="chart-tag">Trend Overview</span>
+      </div>
+      <div class="chart-svg-wrapper">
+        {{ svg_chart | safe }}
+      </div>
+    </div>
+
+    {# 52-Week Statistics Grid or Explicit Unavailable State #}
+    {% if historical_series and historical_series.daily_points|length >= 2 %}
+    <div class="stats-52w-grid">
+      <div class="stat-52w-box">
+        <span class="stat-52w-label">52W HIGH</span>
+        <span class="stat-52w-val">{{ "{:,.2f}".format(historical_series.high_52w) }}</span>
+      </div>
+      <div class="stat-52w-box">
+        <span class="stat-52w-label">52W LOW</span>
+        <span class="stat-52w-val">{{ "{:,.2f}".format(historical_series.low_52w) }}</span>
+      </div>
+      <div class="stat-52w-box">
+        <span class="stat-52w-label">FROM 52W HIGH</span>
+        <span class="stat-52w-val {% if historical_series.distance_from_52w_high < 0 %}neg{% else %}pos{% endif %}">
+          {{ "{:+,.2f}".format(historical_series.distance_from_52w_high) }}%
+        </span>
+      </div>
+      <div class="stat-52w-box">
+        <span class="stat-52w-label">YTD CHANGE</span>
+        <span class="stat-52w-val {% if historical_series.ytd_change_percent < 0 %}neg{% else %}pos{% endif %}">
+          {{ "{:+,.2f}".format(historical_series.ytd_change_percent) }}%
+        </span>
+      </div>
+    </div>
+    {% else %}
+    <div class="historical-unavailable-notice" style="padding: 14px 16px; background: var(--bg-secondary); border: 1px dashed var(--border-subtle); border-radius: 6px; text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">
+      Historical series temporarily unavailable.
+    </div>
+    {% endif %}
+
+    {# Featured Market Intelligence Story #}
+    <div class="focus-featured-story">
+      <h3 class="focus-story-title">Featured Market Intelligence</h3>
+
+      {% if intel_data.featured_story %}
+      {% set match = intel_data.featured_story %}
+      {% set art = match.article %}
+      {% set art_ai = get_article_ai_output(art) %}
+
+      <article class="featured-intel-card" id="article-{{ art.id }}">
+        <div class="card-top">
+          <span class="relationship-pill {% if match.relationship == 'MARKET_MOVING' %}market-moving{% else %}related{% endif %}">
+            {% if match.relationship == "MARKET_MOVING" %}
+              ★ MARKET-MOVING
+            {% else %}
+              Related Market Intelligence
+            {% endif %}
+          </span>
+
+          <div style="display: flex; align-items: center; gap: 6px;">
+            {% if match.importance_score %}
+            <span class="score-pill imp">IMP {{ match.importance_score }}</span>
+            {% endif %}
+            {{ render_save_button(art.id, saved_ids and art.id in saved_ids) }}
+          </div>
+        </div>
+
+        <h2 class="featured-headline">
+          <a href="{{ art.canonical_url }}" target="_blank" rel="noopener noreferrer">
+            {{ art.title }}
+          </a>
+        </h2>
+
+        {% if art_ai and art_ai.summary %}
+        <p class="featured-summary">{{ art_ai.summary }}</p>
+        {% elif art.raw_summary %}
+        <p class="featured-summary">{{ art.raw_summary | striptags }}</p>
+        {% endif %}
+
+        <div class="featured-meta">
+          <span>{{ art.source.name if art.source else "Source" }}</span>
+          <span>&bull;</span>
+          <span>
+            {% if art.published_at %}
+              {{ art.published_at.strftime("%b %d, %H:%M") }}
+            {% else %}
+              {{ art.collected_at.strftime("%b %d") }}
+            {% endif %}
+          </span>
+        </div>
+
+        {% if match.reasons %}
+        <div class="match-reasons-box">
+          <span class="reasons-label">Evidence Grounding:</span>
+          <span class="reasons-text">{{ match.reasons | join(" • ") }}</span>
+        </div>
+        {% endif %}
+      </article>
+
+      {% else %}
+      <div class="no-intel-notice">
+        <p>No strongly related market intelligence found in the current 48-hour archive window for {{ selected_snapshot.region }}.</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# 5. MARKET INTELLIGENCE STREAM (Renamed Section Heading) #}
+<section class="section-container" style="margin-top: 36px; margin-bottom: 48px;">
+  <div class="section-title">
+    <h2>Market Intelligence</h2>
+    <span style="font-size: 12px; color: var(--text-muted);">Verified Archive Coverage (Last 48h)</span>
+  </div>
+
+  {% if intel_data.recent_stories %}
+  <div class="articles-grid">
+    {% for match in intel_data.recent_stories %}
+    {% set art = match.article %}
+    {% set art_ai = get_article_ai_output(art) %}
+    <article class="article-card" id="article-{{ art.id }}">
+      <div>
+        <div class="card-top">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="category-pill" style="font-size: 10px; padding: 2px 6px;">
+              {{ match.market_region }} Markets
+            </span>
+            <span class="relationship-pill {% if match.relationship == 'MARKET_MOVING' %}market-moving{% else %}related{% endif %}" style="font-size: 9.5px; padding: 2px 6px;">
+              {% if match.relationship == "MARKET_MOVING" %}
+                MARKET-MOVING
+              {% else %}
+                RELATED
+              {% endif %}
+            </span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 6px;">
+            {% if match.importance_score %}
+            <span class="score-pill imp" style="font-size: 10px; padding: 2px 6px;">
+              IMP {{ match.importance_score }}
+            </span>
+            {% endif %}
+            {{ render_save_button(art.id, saved_ids and art.id in saved_ids) }}
+          </div>
+        </div>
+
+        <h3 class="card-headline">
+          <a href="{{ art.canonical_url }}" target="_blank" rel="noopener noreferrer">
+            {{ art.title }}
+          </a>
+        </h3>
+
+        {% if art_ai and art_ai.summary %}
+        <p class="card-summary">{{ art_ai.summary }}</p>
+        {% elif art.raw_summary %}
+        <p class="card-summary">{{ art.raw_summary | striptags }}</p>
+        {% endif %}
+      </div>
+
+      <div class="card-footer">
+        <span class="source-name">{{ art.source.name if art.source else "Source" }}</span>
+        <span>
+          {% if art.published_at %}
+            {{ art.published_at.strftime("%b %d, %H:%M") }}
+          {% else %}
+            {{ art.collected_at.strftime("%b %d") }}
+          {% endif %}
+        </span>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="widget-panel" style="padding: 16px; text-align: center; color: var(--text-muted);">
+    No market stories detected in current archive window.
+  </div>
+  {% endif %}
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function bindSelectDropdown() {
+    var selectEl = document.getElementById('market-focus-select');
+    if (!selectEl) return;
+    
+    // Remove inline fallback onchange to allow custom fetch navigation
+    selectEl.removeAttribute('onchange');
+    
+    selectEl.addEventListener('change', function(e) {
+      var selectedSlug = e.target.value;
+      var targetUrl = '/markets?market=' + encodeURIComponent(selectedSlug);
+      
+      fetch(targetUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function(res) {
+          if (!res.ok) throw new Error('Network error');
+          return res.text();
+        })
+        .then(function(htmlText) {
+          var parser = new DOMParser();
+          var newDoc = parser.parseFromString(htmlText, 'text/html');
+          
+          var newFocus = newDoc.querySelector('#focus-section');
+          var currentFocus = document.querySelector('#focus-section');
+          
+          var newTakeaways = newDoc.querySelector('.takeaways-panel');
+          var currentTakeaways = document.querySelector('.takeaways-panel');
+
+          var newPulse = newDoc.querySelector('.pulse-grid');
+          var currentPulse = document.querySelector('.pulse-grid');
+
+          if (newFocus && currentFocus) {
+            currentFocus.innerHTML = newFocus.innerHTML;
+          }
+          if (newTakeaways && currentTakeaways) {
+            currentTakeaways.innerHTML = newTakeaways.innerHTML;
+          }
+          if (newPulse && currentPulse) {
+            currentPulse.innerHTML = newPulse.innerHTML;
+          }
+          
+          window.history.pushState({ market: selectedSlug }, '', targetUrl);
+          bindSelectDropdown();
+        })
+        .catch(function() {
+          window.location.href = targetUrl;
+        });
+    });
+  }
+
+  bindSelectDropdown();
+
+  window.addEventListener('popstate', function(e) {
+    if (e.state && e.state.market) {
+      window.location.href = '/markets?market=' + encodeURIComponent(e.state.market);
+    } else {
+      window.location.reload();
+    }
+  });
+});
+</script>
+
+{% endblock %}

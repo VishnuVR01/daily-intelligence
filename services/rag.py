@@ -5,10 +5,11 @@ and real citation mapping over the Daily Intelligence archive.
 Snapshot Date: September 2026
 """
 
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 import json
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 import urllib.request
 import urllib.error
 
@@ -22,6 +23,59 @@ from services.ai.ollama import OllamaService
 logger = logging.getLogger(__name__)
 
 
+def parse_date_semantics(
+    question: str,
+    filters: Optional[Dict[str, Any]] = None,
+    tz_name: Optional[str] = None,
+) -> Tuple[Optional[date], Optional[date]]:
+    """
+    Parse deterministic date boundaries from question or explicit filters:
+    1. Explicit API filters take precedence over inferred query dates.
+    2. "today" -> Europe/London current calendar day.
+    3. "yesterday" -> Europe/London previous calendar day.
+    4. "this week" / "past 7 days" -> Europe/London recent 7 days.
+    5. "this month" -> Europe/London current month.
+    6. Unrestricted question -> None, None (searches complete archive).
+    """
+    filters = filters or {}
+    explicit_from = filters.get("date_from")
+    explicit_to = filters.get("date_to")
+
+    if explicit_from is not None or explicit_to is not None:
+        return explicit_from, explicit_to
+
+    if not question:
+        return None, None
+
+    if tz_name is None:
+        tz_name = get_settings().app_timezone or "Europe/London"
+
+    try:
+        local_tz = ZoneInfo(tz_name)
+    except Exception:
+        local_tz = timezone.utc
+
+    today_local = datetime.now(local_tz).date()
+    q_lower = question.lower()
+
+    if "today" in q_lower:
+        return today_local, today_local
+
+    if "yesterday" in q_lower:
+        yesterday_local = today_local - timedelta(days=1)
+        return yesterday_local, yesterday_local
+
+    if any(phrase in q_lower for phrase in ["this week", "past 7 days", "last 7 days", "past week", "last week"]):
+        start_week = today_local - timedelta(days=6)
+        return start_week, today_local
+
+    if any(phrase in q_lower for phrase in ["this month", "past month", "last 30 days"]):
+        start_month = today_local.replace(day=1)
+        return start_month, today_local
+
+    return None, None
+
+
 # ==============================================================================
 # RAG SERVICE IMPLEMENTATION
 # ==============================================================================
@@ -31,14 +85,19 @@ def ask_archive(
     question: str,
     filters: Optional[Dict[str, Any]] = None,
     max_evidence_count: int = 10,
+    candidate_limit: Optional[int] = None,
+    enable_query_expansion: bool = False,
+    enable_query_aware_reranking: bool = False,
+    skip_llm: bool = False,
 ) -> Dict[str, Any]:
     """
     Execute grounded RAG over historical intelligence archive:
     1. Validate input question
-    2. Retrieve evidence records via search_articles_v1
-    3. Construct compact context budget
-    4. Prompt Ollama with strict boundary rules
-    5. Return structured ArchiveAnswer with real traceable citations
+    2. Infer or respect date semantics (explicit filters override question phrases)
+    3. Retrieve evidence records via search_articles_v1
+    4. Construct compact context budget
+    5. Prompt Ollama with strict boundary rules
+    6. Return structured ArchiveAnswer with real traceable citations
     """
     clean_q = (question or "").strip()
     if not clean_q:
@@ -48,15 +107,16 @@ def ask_archive(
             "confidence": "low",
             "evidence_count": 0,
             "citations": [],
+            "retrieved_article_ids": [],
             "key_themes": [],
             "date_range": None,
             "insufficient_evidence": True,
+            "query_expansion_meta": {},
         }
 
     filters = filters or {}
     try:
-        date_from = filters.get("date_from")
-        date_to = filters.get("date_to")
+        date_from, date_to = parse_date_semantics(clean_q, filters=filters)
         categories = filters.get("categories")
         countries = filters.get("countries")
         sources = filters.get("sources")
@@ -78,6 +138,9 @@ def ask_archive(
             relevant_only=relevant_only,
             limit=max_evidence_count,
             offset=0,
+            candidate_limit=candidate_limit,
+            enable_query_expansion=enable_query_expansion,
+            enable_query_aware_reranking=enable_query_aware_reranking,
         )
 
         evidence_articles: List[Article] = search_res.get("articles", [])
@@ -89,6 +152,7 @@ def ask_archive(
                 "confidence": "low",
                 "evidence_count": 0,
                 "citations": [],
+                "retrieved_article_ids": [],
                 "key_themes": [],
                 "date_range": None,
                 "insufficient_evidence": True,
@@ -149,7 +213,19 @@ def ask_archive(
             max_d = max(dates_found).strftime("%b %d, %Y")
             date_range_str = f"{min_d} – {max_d}" if min_d != max_d else min_d
 
-        # 3. Grounded Prompting for Ollama
+        if skip_llm:
+            cited_bullets = [f"[{c['article_id']}] {c['headline']}" for c in citations_map]
+            return {
+                "question": clean_q,
+                "answer": f"Based on {len(context_records)} matching archive record(s): " + "; ".join(cited_bullets),
+                "confidence": "high",
+                "evidence_count": len(evidence_articles),
+                "citations": citations_map,
+                "retrieved_article_ids": [a.id for a in evidence_articles],
+                "key_themes": [],
+                "date_range": date_range_str,
+                "insufficient_evidence": False,
+            }
         system_prompt = (
             "You are the Daily Intelligence Archive Research Assistant.\n"
             "Your task is to answer the user's research question ONLY using the supplied archive evidence records below.\n\n"
@@ -209,9 +285,11 @@ def ask_archive(
             "confidence": confidence,
             "evidence_count": len(evidence_articles),
             "citations": final_citations,
+            "retrieved_article_ids": [art.id for art in evidence_articles],
             "key_themes": key_themes,
             "date_range": date_range_str,
             "insufficient_evidence": insufficient,
+            "query_expansion_meta": search_res.get("query_expansion_meta", {}),
             "context_meta": {
                 "article_count": len(evidence_articles),
                 "total_chars": total_chars,

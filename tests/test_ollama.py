@@ -512,7 +512,7 @@ def test_cloud_chat_json_helper():
 
 
 # 15. Test Unavailable Cloud Service does not crash web routes
-def test_unavailable_cloud_service_does_not_crash_web_routes():
+def test_unavailable_cloud_service_does_not_crash_web_routes(test_db_session):
     from fastapi.testclient import TestClient
     from app.main import app
 

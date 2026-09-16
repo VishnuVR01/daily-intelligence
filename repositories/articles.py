@@ -3,11 +3,12 @@ import math
 from typing import Any, Dict, List, Optional, Tuple
 from zoneinfo import ZoneInfo
 
-from sqlalchemy import func, or_, String
+from sqlalchemy import and_, func, or_, String
 from sqlalchemy.orm import Session, joinedload
 
 from app.config import get_settings
 from app.models import Article, ArticleCountry, ArticleAIOutput, Country, DailyEdition, EditionArticle, Source
+from services.query_expansion import expand_query, ExpandedQueryResult
 
 
 def _valid_published_filter():
@@ -135,32 +136,105 @@ def get_article_ai_output(art: Article) -> Any:
     return sorted(art.ai_outputs, key=lambda x: x.created_at, reverse=True)[0]
 
 
-def get_today_ai_context_stats(db: Session) -> dict[str, Any]:
+def get_today_ai_context_stats(db: Session, tz_name: str | None = None) -> dict[str, Any]:
     """
-    Aggregates live AI analysis statistics from ArticleAIOutput table for context sidebar widgets.
+    Aggregates live AI analysis statistics from ArticleAIOutput table for context sidebar widgets,
+    strictly filtered to today's local calendar day in APP_TIMEZONE (Europe/London).
     """
     from app.entity_metadata import get_country_info
     from app.intelligence_groups import INTELLIGENCE_GROUPS
 
-    total_processed = db.query(ArticleAIOutput).count()
-    relevant_count = db.query(ArticleAIOutput).filter(ArticleAIOutput.is_relevant == True).count()
-    out_of_scope_count = db.query(ArticleAIOutput).filter(ArticleAIOutput.is_relevant == False).count()
-    tech_success_count = relevant_count + out_of_scope_count
-    unprocessed_or_failed = max(0, total_processed - tech_success_count)
-    success_rate = (tech_success_count / total_processed * 100.0) if total_processed > 0 else 0.0
+    if tz_name is None:
+        tz_name = get_settings().app_timezone or "Europe/London"
+
+    try:
+        local_tz = ZoneInfo(tz_name)
+    except Exception:
+        local_tz = timezone.utc
+
+    now_local = datetime.now(local_tz)
+    today_start_local = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+    tomorrow_start_local = today_start_local + timedelta(days=1)
+
+    today_start_utc = today_start_local.astimezone(timezone.utc)
+    tomorrow_start_utc = tomorrow_start_local.astimezone(timezone.utc)
+
+    # 1. News Today Counts
+    articles_collected_today = (
+        db.query(Article)
+        .filter(
+            Article.collected_at >= today_start_utc,
+            Article.collected_at < tomorrow_start_utc,
+        )
+        .count()
+    )
+
+    articles_published_today = (
+        db.query(Article)
+        .filter(
+            Article.published_at.is_not(None),
+            Article.published_at >= today_start_utc,
+            Article.published_at < tomorrow_start_utc,
+        )
+        .count()
+    )
+
+    # 2. Today's Article Population (Europe/London calendar day)
+    today_article_filter = or_(
+        and_(Article.collected_at >= today_start_utc, Article.collected_at < tomorrow_start_utc),
+        and_(Article.published_at.is_not(None), Article.published_at >= today_start_utc, Article.published_at < tomorrow_start_utc),
+    )
+
+    today_articles = (
+        db.query(Article)
+        .options(joinedload(Article.ai_outputs))
+        .filter(today_article_filter)
+        .all()
+    )
+
+    relevant_count = 0
+    out_of_scope_count = 0
+    ai_processing_failed = 0
+    awaiting_ai_processing = 0
+    relevant_outputs = []
+
+    failed_statuses = {"failed", "invalid_json", "timeout", "unavailable", "temporary_error"}
+
+    for art in today_articles:
+        outs = art.ai_outputs or []
+        if not outs:
+            awaiting_ai_processing += 1
+            continue
+
+        latest_out = sorted(
+            outs,
+            key=lambda x: x.created_at or x.processed_at or datetime.min.replace(tzinfo=timezone.utc),
+            reverse=True,
+        )[0]
+        st = latest_out.status
+
+        if st == "success":
+            if latest_out.is_relevant is False:
+                out_of_scope_count += 1
+            else:
+                relevant_count += 1
+                if latest_out.output_json:
+                    relevant_outputs.append(latest_out)
+        elif st == "out_of_scope":
+            out_of_scope_count += 1
+        elif st in failed_statuses:
+            ai_processing_failed += 1
+        else:
+            awaiting_ai_processing += 1
+
+    ai_processed = relevant_count + out_of_scope_count
+    total_eligible = ai_processed + awaiting_ai_processing + ai_processing_failed
+    processing_coverage = (ai_processed / total_eligible * 100.0) if total_eligible > 0 else 0.0
 
     topic_counts: dict[str, int] = {}
     country_counts: dict[str, int] = {}
 
-    outputs = (
-        db.query(ArticleAIOutput)
-        .filter(ArticleAIOutput.is_relevant == True, ArticleAIOutput.output_json.is_not(None))
-        .order_by(ArticleAIOutput.id.desc())
-        .limit(100)
-        .all()
-    )
-
-    for out in outputs:
+    for out in relevant_outputs:
         if isinstance(out.output_json, dict):
             for t in out.output_json.get("topics", []):
                 if isinstance(t, str) and t.strip():
@@ -220,11 +294,18 @@ def get_today_ai_context_stats(db: Session) -> dict[str, Any]:
         })
 
     return {
-        "total_processed": total_processed,
+        "articles_collected_today": articles_collected_today,
+        "articles_published_today": articles_published_today,
+        "ai_processed": ai_processed,
         "relevant_today": relevant_count,
         "out_of_scope_today": out_of_scope_count,
-        "unprocessed_or_failed": unprocessed_or_failed,
-        "success_rate": round(success_rate, 1),
+        "awaiting_ai_processing": awaiting_ai_processing,
+        "ai_processing_failed": ai_processing_failed,
+        "processing_coverage": round(processing_coverage, 1),
+        # Aliases for backward compatibility
+        "total_processed": ai_processed,
+        "unprocessed_or_failed": awaiting_ai_processing,
+        "success_rate": round(processing_coverage, 1),
         "top_topics": top_topics_formatted,
         "top_countries": top_countries_formatted,
         "global_focus_items": global_focus_items,
@@ -251,15 +332,27 @@ def get_recent_articles(
         func.coalesce(Article.published_at, Article.collected_at).desc()
     )
 
-    raw_articles = query.limit(limit * 2).all()
-
-    if curated_only:
-        raw_articles = [a for a in raw_articles if not is_article_out_of_scope(a)]
+    raw_articles = query.limit(limit * 4).all()
 
     if (mode or "balanced").lower() == "chronological":
+        if curated_only:
+            raw_articles = [a for a in raw_articles if not is_article_out_of_scope(a)]
         return raw_articles[:limit]
 
-    return apply_editorial_diversity(raw_articles, max_per_source=2, max_items=limit)
+    # mode == "balanced": Require successful AI processing AND is_relevant == True
+    balanced_articles = []
+    for a in raw_articles:
+        ai_outs = getattr(a, "ai_outputs", [])
+        succ_relevant = False
+        if ai_outs:
+            for ai in ai_outs:
+                if ai.status == "success" and ai.is_relevant is True:
+                    succ_relevant = True
+                    break
+        if succ_relevant and not is_article_out_of_scope(a):
+            balanced_articles.append(a)
+
+    return apply_editorial_diversity(balanced_articles, max_per_source=2, max_items=limit)
 
 
 def get_top_story(db: Session, category: str | None = None) -> Article | None:
@@ -438,6 +531,9 @@ def search_articles_v1(
     limit: int = 50,
     offset: int = 0,
     page: int = 1,
+    candidate_limit: Optional[int] = None,
+    enable_query_expansion: bool = False,
+    enable_query_aware_reranking: bool = False,
 ) -> Dict[str, Any]:
     """
     Historical Search Query Service v1 with PostgreSQL Full-Text Search,
@@ -481,14 +577,22 @@ def search_articles_v1(
         )
 
     # 2. Date Boundaries
+    tz_name = get_settings().app_timezone or "Europe/London"
+    try:
+        local_tz = ZoneInfo(tz_name)
+    except Exception:
+        local_tz = timezone.utc
+
     if date_from:
-        start_utc = datetime(date_from.year, date_from.month, date_from.day, 0, 0, 0, tzinfo=timezone.utc)
+        start_local = datetime(date_from.year, date_from.month, date_from.day, 0, 0, 0, tzinfo=local_tz)
+        start_utc = start_local.astimezone(timezone.utc)
         base_query = base_query.filter(
             func.coalesce(Article.published_at, Article.collected_at) >= start_utc
         )
 
     if date_to:
-        end_utc = datetime(date_to.year, date_to.month, date_to.day, 23, 59, 59, 999999, tzinfo=timezone.utc)
+        end_local = datetime(date_to.year, date_to.month, date_to.day, 23, 59, 59, 999999, tzinfo=local_tz)
+        end_utc = end_local.astimezone(timezone.utc)
         base_query = base_query.filter(
             func.coalesce(Article.published_at, Article.collected_at) <= end_utc
         )
@@ -549,58 +653,131 @@ def search_articles_v1(
     except Exception:
         pass
 
+    cand_limit = candidate_limit if candidate_limit is not None else (limit * 4)
     raw_candidates: List[Article] = []
 
+    exp_res: Optional[ExpandedQueryResult] = None
+    expansion_meta: Dict[str, Any] = {
+        "enabled": enable_query_expansion,
+        "original_tokens": [],
+        "expanded_tokens": [],
+        "triggered_rules": [],
+        "fts_expression": "",
+        "candidate_match_origins": {},
+    }
+
+    if enable_query_expansion and clean_q:
+        exp_res = expand_query(clean_q)
+        expansion_meta["original_tokens"] = exp_res.original_tokens
+        expansion_meta["expanded_tokens"] = exp_res.expanded_tokens
+        expansion_meta["triggered_rules"] = exp_res.triggered_rules
+        expansion_meta["fts_expression"] = exp_res.fts_expression
+
     if clean_q:
-        stop_words = {"what", "did", "say", "about", "the", "a", "an", "is", "are", "in", "on", "of", "for", "to", "how", "why", "who", "where", "which", "with"}
+        stop_words = {
+            "what", "did", "say", "about", "the", "a", "an", "is", "are", "in", "on", "of", "for", "to", "how", "why", "who", "where", "which", "with",
+            "today", "yesterday", "this", "week", "month", "past", "last", "days", "happened", "latest", "news", "show", "tell", "me"
+        }
         raw_tokens = [t.lower().strip() for t in clean_q.split() if t.strip()]
         tokens = [t for t in raw_tokens if t not in stop_words and len(t) > 1]
-        if not tokens:
-            tokens = [clean_q.lower().strip()]
-
-        token_conditions = []
-        for tok in tokens:
-            like_pattern = f"%{tok}%"
-            token_conditions.append(
-                or_(
-                    func.lower(Article.title).like(like_pattern),
-                    func.lower(Article.raw_summary).like(like_pattern),
-                    Article.ai_outputs.any(func.lower(ArticleAIOutput.summary).like(like_pattern)),
-                    Article.ai_outputs.any(func.lower(func.cast(ArticleAIOutput.output_json, String)).like(like_pattern)),
-                    func.lower(Article.primary_category).like(like_pattern),
-                    Article.source.has(func.lower(Source.name).like(like_pattern)),
+        expanded_tokens = exp_res.expanded_tokens if (exp_res and exp_res.expanded_tokens) else []
+        
+        if tokens or expanded_tokens:
+            token_conditions = []
+            for tok in tokens:
+                like_pattern = f"%{tok}%"
+                token_conditions.append(
+                    or_(
+                        func.lower(Article.title).like(like_pattern),
+                        func.lower(Article.raw_summary).like(like_pattern),
+                        Article.ai_outputs.any(func.lower(ArticleAIOutput.summary).like(like_pattern)),
+                        Article.ai_outputs.any(func.lower(func.cast(ArticleAIOutput.output_json, String)).like(like_pattern)),
+                        func.lower(Article.primary_category).like(like_pattern),
+                        Article.source.has(func.lower(Source.name).like(like_pattern)),
+                    )
                 )
-            )
-        sql_search_cond = or_(*token_conditions)
 
-        if is_postgres:
-            fts_query = base_query.filter(
-                or_(
+            exp_conditions = []
+            for exp_tok in expanded_tokens:
+                like_pattern = f"%{exp_tok}%"
+                exp_conditions.append(
+                    or_(
+                        func.lower(Article.title).like(like_pattern),
+                        func.lower(Article.raw_summary).like(like_pattern),
+                        Article.ai_outputs.any(func.lower(ArticleAIOutput.summary).like(like_pattern)),
+                        Article.ai_outputs.any(func.lower(func.cast(ArticleAIOutput.output_json, String)).like(like_pattern)),
+                    )
+                )
+
+            sql_search_cond = or_(*token_conditions) if token_conditions else None
+            exp_sql_cond = or_(*exp_conditions) if exp_conditions else None
+            search_conds = [c for c in [sql_search_cond, exp_sql_cond] if c is not None]
+            combined_sql_cond = or_(*search_conds) if search_conds else None
+
+            if is_postgres:
+                fts_conds = [
                     func.to_tsvector("english", func.coalesce(Article.title, "") + " " + func.coalesce(Article.raw_summary, "")).op("@@")(func.websearch_to_tsquery("english", clean_q)),
                     Article.ai_outputs.any(func.to_tsvector("english", func.coalesce(ArticleAIOutput.summary, "")).op("@@")(func.websearch_to_tsquery("english", clean_q))),
-                    sql_search_cond,
-                )
-            )
-            raw_candidates = fts_query.limit(limit * 4).all()
+                ]
+                if sql_search_cond is not None:
+                    fts_conds.append(sql_search_cond)
+
+                if exp_res and exp_res.expanded_tokens:
+                    exp_tsquery_str = " | ".join([t.replace(" ", " & ") if " " in t else t for t in exp_res.expanded_tokens])
+                    try:
+                        fts_conds.append(func.to_tsvector("english", func.coalesce(Article.title, "") + " " + func.coalesce(Article.raw_summary, "")).op("@@")(func.to_tsquery("english", exp_tsquery_str)))
+                        fts_conds.append(Article.ai_outputs.any(func.to_tsvector("english", func.coalesce(ArticleAIOutput.summary, "")).op("@@")(func.to_tsquery("english", exp_tsquery_str))))
+                    except Exception:
+                        pass
+                if exp_sql_cond is not None:
+                    fts_conds.append(exp_sql_cond)
+
+                fts_query = base_query.filter(or_(*fts_conds))
+                raw_candidates = fts_query.limit(cand_limit).all()
+            else:
+                raw_candidates = base_query.filter(combined_sql_cond).limit(cand_limit).all() if combined_sql_cond is not None else base_query.limit(cand_limit).all()
         else:
-            raw_candidates = base_query.filter(sql_search_cond).limit(limit * 4).all()
+            raw_candidates = base_query.order_by(func.coalesce(Article.published_at, Article.collected_at).desc()).limit(cand_limit).all()
     else:
-        raw_candidates = base_query.order_by(func.coalesce(Article.published_at, Article.collected_at).desc()).limit(limit * 4).all()
+        raw_candidates = base_query.order_by(func.coalesce(Article.published_at, Article.collected_at).desc()).limit(cand_limit).all()
 
     # 8. Hybrid Ranking & Match Explanation Extraction
     now_utc = datetime.now(timezone.utc)
     scored_items: List[Tuple[Article, float, List[str]]] = []
 
     query_terms = [t.lower().strip() for t in clean_q.split() if len(t.strip()) > 2]
+    expanded_terms = [t.lower().strip() for t in (exp_res.expanded_tokens if exp_res else []) if len(t.strip()) > 2]
 
     for art in raw_candidates:
         ai_out = get_article_ai_output(art)
         matched_tags: List[str] = []
 
-        # Text Match Score
         title_lower = (art.title or "").lower()
         summary_lower = (art.raw_summary or "").lower()
         ai_summary_lower = (ai_out.summary or "").lower() if ai_out else ""
+
+        # Determine Match Origin
+        orig_match = False
+        exp_match = False
+
+        if clean_q:
+            if clean_q.lower() in title_lower or any(t in title_lower or t in summary_lower or t in ai_summary_lower for t in query_terms):
+                orig_match = True
+
+        if expanded_terms:
+            if any(t in title_lower or t in summary_lower or t in ai_summary_lower for t in expanded_terms):
+                exp_match = True
+
+        if orig_match and exp_match:
+            match_origin = "BOTH"
+        elif orig_match:
+            match_origin = "ORIGINAL_QUERY"
+        elif exp_match:
+            match_origin = "EXPANSION"
+        else:
+            match_origin = "ORIGINAL_QUERY"
+
+        expansion_meta["candidate_match_origins"][art.id] = match_origin
 
         fts_rank = 0.0
         if clean_q:
@@ -612,6 +789,25 @@ def search_articles_v1(
 
             if any(t in summary_lower or t in ai_summary_lower for t in query_terms):
                 fts_rank += 15.0
+
+        if enable_query_aware_reranking:
+            # 1. Multi-keyword overlap boost (original terms)
+            orig_matched_count = sum(1 for t in query_terms if t in title_lower or t in summary_lower or t in ai_summary_lower)
+            fts_rank += (orig_matched_count * 8.0)
+            if query_terms and all(t in title_lower for t in query_terms):
+                fts_rank += 15.0
+
+            # 2. Expansion overlap boost
+            if expanded_terms:
+                exp_matched_count = sum(1 for t in expanded_terms if t in title_lower or t in summary_lower or t in ai_summary_lower)
+                fts_rank += (exp_matched_count * 4.0)
+
+        elif enable_query_expansion and expanded_terms:
+            if any(t in title_lower for t in expanded_terms):
+                fts_rank += 10.0
+                matched_tags.append("(exp) " + art.title[:25] + "...")
+            if any(t in summary_lower or t in ai_summary_lower for t in expanded_terms):
+                fts_rank += 5.0
 
         # Topic & Entity Match Bonuses
         if ai_out and isinstance(ai_out.output_json, dict):
@@ -625,6 +821,8 @@ def search_articles_v1(
                         fts_rank += 15.0
                         if top_clean not in matched_tags:
                             matched_tags.append(top_clean)
+                    elif (enable_query_expansion or enable_query_aware_reranking) and any(t in top_clean.lower() for t in expanded_terms):
+                        fts_rank += 5.0
 
             for ent in entities:
                 ent_name = ent.get("name") if isinstance(ent, dict) else str(ent)
@@ -633,25 +831,46 @@ def search_articles_v1(
                         fts_rank += 15.0
                         if ent_name not in matched_tags:
                             matched_tags.append(ent_name)
+                    elif (enable_query_expansion or enable_query_aware_reranking) and any(t in ent_name.lower() for t in expanded_terms):
+                        fts_rank += 5.0
 
         # AI Relevance & Importance
         rel_score = float(ai_out.relevance_score) if (ai_out and ai_out.relevance_score is not None) else 70.0
         imp_score = float(ai_out.importance_score) if (ai_out and ai_out.importance_score is not None) else 50.0
 
-        rel_comp = rel_score * 0.15
-        imp_comp = imp_score * 0.15
+        if enable_query_aware_reranking:
+            rel_comp = rel_score * 0.25
+            imp_comp = imp_score * 0.20
+        else:
+            rel_comp = rel_score * 0.15
+            imp_comp = imp_score * 0.15
+
+        # Source Trust Boost
+        trust_boost = 0.0
+        if enable_query_aware_reranking and art.source:
+            tier = getattr(art.source, "trust_tier", "")
+            if tier == "institutional":
+                trust_boost = 5.0
+            elif tier == "primary":
+                trust_boost = 3.0
+            elif tier == "secondary":
+                trust_boost = 1.0
 
         # Recency Decay
         pub_time = art.published_at or art.collected_at or now_utc
         if pub_time.tzinfo is None:
             pub_time = pub_time.replace(tzinfo=timezone.utc)
         age_days = max(0.0, (now_utc - pub_time).total_seconds() / 86400.0)
-        recency_comp = max(0.0, 1.0 - (age_days / 180.0)) * 5.0
+
+        if enable_query_aware_reranking and not date_from and not date_to:
+            recency_comp = max(0.0, 1.0 - (age_days / 365.0)) * 5.0
+        else:
+            recency_comp = max(0.0, 1.0 - (age_days / 180.0)) * 5.0
 
         # Base default match score if no query specified
         base_match = fts_rank if clean_q else 40.0
 
-        total_rank_score = base_match + rel_comp + imp_comp + recency_comp
+        total_rank_score = base_match + rel_comp + imp_comp + recency_comp + trust_boost
 
         # Deduplicate matched_tags
         clean_matched_tags = list(dict.fromkeys(matched_tags))[:5]
@@ -688,13 +907,14 @@ def search_articles_v1(
         "filters": {
             "date_from": str(date_from) if date_from else None,
             "date_to": str(date_to) if date_to else None,
-            "categories": categories or [],
-            "countries": countries or [],
-            "sources": sources or [],
+            "categories": categories,
+            "countries": countries,
+            "sources": sources,
             "min_importance": min_importance,
             "min_relevance": min_relevance,
             "relevant_only": relevant_only,
         },
+        "query_expansion_meta": expansion_meta,
     }
 
 

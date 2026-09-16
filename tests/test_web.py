@@ -57,6 +57,14 @@ def test_db_session():
     )
 
     session.add_all([past_art1, past_art2, future_art])
+    session.commit()
+
+    # Seed successful relevant AI outputs for test articles
+    from app.models import ArticleAIOutput
+    ai1 = ArticleAIOutput(article_id=past_art1.id, status="success", is_relevant=True, importance_score=80)
+    ai2 = ArticleAIOutput(article_id=past_art2.id, status="success", is_relevant=True, importance_score=75)
+    session.add_all([ai1, ai2])
+    session.commit()
 
     # Add 30 articles for pagination testing
     for i in range(30):
@@ -334,26 +342,44 @@ def test_sectors_directory_and_alias(client):
 
 
 def test_key_themes_and_global_focus_widgets(client, test_db_session):
+    from datetime import datetime, timezone
     from app.models import ArticleAIOutput
     art = test_db_session.query(Article).first()
-    ai_out = ArticleAIOutput(
-        article_id=art.id,
-        provider="ollama",
-        model="qwen3.5:4b",
-        task="article_analysis",
-        prompt_version="v1",
-        is_relevant=True,
-        output_json={
+    now = datetime.now(timezone.utc)
+    art.collected_at = now
+    art.published_at = now
+    test_db_session.add(art)
+    test_db_session.commit()
+    ai_out = test_db_session.query(ArticleAIOutput).filter(ArticleAIOutput.article_id == art.id).first()
+    if ai_out:
+        ai_out.output_json = {
             "primary_category": "AI & Technology",
             "importance_score": 85,
             "relevance_score": 90,
             "topics": ["Artificial Intelligence", "Semiconductors"],
             "countries": ["US", "CN"],
             "entities": ["NVIDIA"]
-        },
-        status="processed"
-    )
-    test_db_session.add(ai_out)
+        }
+        ai_out.status = "success"
+    else:
+        ai_out = ArticleAIOutput(
+            article_id=art.id,
+            provider="ollama",
+            model="qwen3.5:4b",
+            task="article_analysis",
+            prompt_version="v1",
+            is_relevant=True,
+            output_json={
+                "primary_category": "AI & Technology",
+                "importance_score": 85,
+                "relevance_score": 90,
+                "topics": ["Artificial Intelligence", "Semiconductors"],
+                "countries": ["US", "CN"],
+                "entities": ["NVIDIA"]
+            },
+            status="success"
+        )
+        test_db_session.add(ai_out)
     test_db_session.commit()
 
     response = client.get("/")
