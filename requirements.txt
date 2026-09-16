@@ -3,7 +3,7 @@ uvicorn[standard]
 jinja2
 sqlalchemy
 psycopg[binary]
-alembic
+alembic>=1.13.0
 feedparser
 httpx
 trafilatura
