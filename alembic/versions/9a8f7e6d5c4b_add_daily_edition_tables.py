@@ -25,7 +25,6 @@ def upgrade() -> None:
 
     op.create_table(
         'daily_editions',
-        'daily_editions',
         sa.Column('id', sa.BigInteger().with_variant(sa.Integer(), 'sqlite'), primary_key=True, autoincrement=True),
         sa.Column('edition_date', sa.Date(), nullable=False),
         sa.Column('algorithm_version', sa.Text(), nullable=False, server_default='edition_v1'),
