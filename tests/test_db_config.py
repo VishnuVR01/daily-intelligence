@@ -3,6 +3,7 @@ Unit tests for Database Configuration, Production Safety, Host Mode, Credential 
 and Diagnostic Health Checks.
 """
 
+import urllib.parse
 from unittest.mock import patch, PropertyMock
 import pytest
 from fastapi.testclient import TestClient
@@ -110,3 +111,54 @@ def test_alembic_uses_effective_database_url():
         alembic_cfg = Config("alembic.ini")
         script = ScriptDirectory.from_config(alembic_cfg)
         assert script.get_current_head() is not None
+
+
+# 10. CASE A: Railway production DATABASE_URL resolution
+def test_database_url_consistency_case_a_railway_production(monkeypatch):
+    railway_url = "postgresql://railway_user:secret_pass@postgres.railway.internal:5432/railway"
+    monkeypatch.setenv("DATABASE_URL", railway_url)
+    monkeypatch.setenv("RAILWAY_ENVIRONMENT", "production")
+
+    settings = Settings()
+    effective_app_url = settings.effective_database_url
+    assert effective_app_url.startswith("postgresql+psycopg://")
+    parsed_app = urllib.parse.urlsplit(effective_app_url)
+    assert parsed_app.hostname == "postgres.railway.internal"
+    assert parsed_app.port == 5432
+    assert parsed_app.path == "/railway"
+
+    from alembic.config import Config
+    alembic_cfg = Config("alembic.ini")
+    env_url = settings.effective_database_url
+    alembic_cfg.set_main_option("sqlalchemy.url", env_url)
+    alembic_resolved = alembic_cfg.get_main_option("sqlalchemy.url")
+    parsed_alembic = urllib.parse.urlsplit(alembic_resolved)
+    assert parsed_alembic.hostname == parsed_app.hostname
+    assert parsed_alembic.hostname == "postgres.railway.internal"
+
+
+# 11. CASE B: Local development DATABASE_URL resolution
+def test_database_url_consistency_case_b_local_development(monkeypatch):
+    dev_url = "postgresql://dev_user:dev_pass@localhost:5432/daily_intelligence"
+    monkeypatch.setenv("DATABASE_URL", dev_url)
+    monkeypatch.delenv("RAILWAY_ENVIRONMENT", raising=False)
+    monkeypatch.setenv("APP_ENV", "development")
+
+    settings = Settings()
+    effective_app_url = settings.effective_database_url
+    assert effective_app_url.startswith("postgresql+psycopg://")
+    parsed_app = urllib.parse.urlsplit(effective_app_url)
+    assert parsed_app.hostname == "localhost"
+
+
+# 12. CASE C: Absent DATABASE_URL fallback resolution
+def test_database_url_consistency_case_c_absent_fallback(monkeypatch):
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    monkeypatch.delenv("RAILWAY_ENVIRONMENT", raising=False)
+    monkeypatch.setenv("APP_ENV", "development")
+
+    settings = Settings()
+    effective_app_url = settings.effective_database_url
+    assert "localhost" in effective_app_url
+    assert effective_app_url.startswith("postgresql+psycopg://")
+

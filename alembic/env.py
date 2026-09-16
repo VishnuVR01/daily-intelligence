@@ -14,9 +14,23 @@ import app.models  # noqa: F401
 config = context.config
 
 # Dynamically set database_url from application settings (.env / config)
-target_url = get_settings().effective_database_url or get_settings().database_url
+target_url = get_settings().effective_database_url
+if not target_url:
+    if get_settings().is_production:
+        raise RuntimeError(
+            "DATABASE_URL is unconfigured or invalid for production environment. "
+            "Alembic cannot migrate against localhost in production mode."
+        )
+    target_url = get_settings().database_url
+
+if target_url.startswith("postgres://"):
+    target_url = "postgresql+psycopg://" + target_url[len("postgres://"):]
+elif target_url.startswith("postgresql://") and not target_url.startswith("postgresql+"):
+    target_url = "postgresql+psycopg://" + target_url[len("postgresql://"):]
+
 url = target_url.replace("%", "%%")
 config.set_main_option("sqlalchemy.url", url)
+
 
 
 # Interpret the config file for Python logging.
