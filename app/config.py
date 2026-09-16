@@ -96,7 +96,7 @@ class Settings(BaseSettings):
         returns empty string to prevent dangerous fallback to localhost:5432.
         In local development: returns configured local DATABASE_URL.
         """
-        url = (self.database_url or "").strip()
+        url = (os.getenv("DATABASE_URL") or self.database_url or "").strip()
         if self.is_production:
             if not url or get_db_host_mode(url) == "LOCAL":
                 return ""
