@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 
 from app.db import SessionLocal
 from app.models import Source
+from scripts.seed_countries import seed_countries
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -15,6 +16,9 @@ logger = logging.getLogger(__name__)
 def seed_sources(
     session: Session, json_path: Path | str | None = None
 ) -> dict[str, Any]:
+    # Ensure prerequisite country reference data exists before inserting sources
+    country_summary = seed_countries(session)
+
     if json_path is None:
         json_path = Path(__file__).resolve().parent.parent / "config" / "sources.json"
     else:
@@ -100,6 +104,7 @@ def seed_sources(
     session.commit()
 
     summary = {
+        "countries": country_summary,
         "total": len(sources_data),
         "inserted": inserted,
         "updated": updated,
