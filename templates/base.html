@@ -59,10 +59,18 @@
 
           <div class="header-meta">
             <span class="masthead-date">{{ masthead_date if masthead_date else "Today's Edition" }}</span>
-            <div class="ollama-indicator" title="Local AI Inference Active">
+            {% set ai_info = get_ai_provider_info() %}
+            {% if ai_info and ai_info.available %}
+            <div class="ollama-indicator" title="AI Inference Active">
               <span class="ollama-pulse"></span>
-              Powered by Ollama (qwen3.5:4b)
+              {{ ai_info.label }}
             </div>
+            {% else %}
+            <div class="ollama-indicator" style="background: rgba(148, 163, 184, 0.1); border-color: rgba(148, 163, 184, 0.25); color: #64748b;" title="Deterministic Mode Active">
+              <span class="ollama-pulse" style="background-color: #94a3b8; box-shadow: none;"></span>
+              {{ ai_info.label if ai_info else "Deterministic Feed" }}
+            </div>
+            {% endif %}
             <button id="pwa-install-btn" class="pwa-install-btn" type="button" style="display: none;">
               Install App
             </button>
@@ -99,7 +107,8 @@
     <footer class="site-footer">
       <div class="container">
         <p>&copy; Daily Intelligence &bull; Independent Local-First RSS Ingestion & Permanent Archive</p>
-        <p class="footer-credits">Local AI Processing Engine Active &bull; Ollama Local Inference</p>
+        {% set ai_info = get_ai_provider_info() %}
+        <p class="footer-credits">{{ ai_info.footer_label if ai_info else "Independent Local-First Ingestion & Permanent Archive" }}</p>
       </div>
     </footer>
   </body>

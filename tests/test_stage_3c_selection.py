@@ -137,11 +137,17 @@ def test_editorial_balanced_vs_chronological_feed_semantics(test_db_session: Ses
     assert a_raw.id in chrono_ids
     assert a_reviewed.id in chrono_ids
 
-    # Balanced mode returns ONLY AI-reviewed relevant articles
+    # Balanced mode returns AI-independent feed with source diversity & scope filtering
     balanced_arts = get_recent_articles(test_db_session, mode="balanced", limit=50)
     balanced_ids = [a.id for a in balanced_arts]
-    assert a_raw.id not in balanced_ids
+    assert a_raw.id in balanced_ids
     assert a_reviewed.id in balanced_ids
+
+    # AI Curated mode returns ONLY AI-reviewed relevant articles
+    ai_curated_arts = get_recent_articles(test_db_session, mode="ai_curated", limit=50)
+    ai_curated_ids = [a.id for a in ai_curated_arts]
+    assert a_raw.id not in ai_curated_ids
+    assert a_reviewed.id in ai_curated_ids
 
 
 def test_source_cap_enforcement(test_db_session: Session, test_sources):

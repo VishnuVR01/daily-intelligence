@@ -1,7 +1,79 @@
 import os
+import time
 import urllib.parse
 from functools import lru_cache
+from typing import Any, Dict
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+_AI_PROVIDER_INFO_CACHE: Dict[str, Any] = {}
+_AI_PROVIDER_INFO_CACHE_TIME: float = 0.0
+
+
+def get_ai_provider_info(ttl_seconds: float = 10.0) -> Dict[str, Any]:
+    """
+    Returns runtime/config-aware info about the active AI inference provider.
+    Never claims 'Powered by Ollama' unless an AI provider/model is configured and available.
+    """
+    global _AI_PROVIDER_INFO_CACHE, _AI_PROVIDER_INFO_CACHE_TIME
+    now = time.time()
+    if _AI_PROVIDER_INFO_CACHE and (now - _AI_PROVIDER_INFO_CACHE_TIME) < ttl_seconds:
+        return _AI_PROVIDER_INFO_CACHE
+
+    settings = get_settings()
+
+    if getattr(settings, "openrouter_api_key", None) and getattr(settings, "openrouter_model", None):
+        res = {
+            "available": True,
+            "provider": "openrouter",
+            "model": settings.openrouter_model,
+            "label": f"Powered by {settings.openrouter_model}",
+            "footer_label": f"Cloud AI Inference Active • {settings.openrouter_model}",
+        }
+        _AI_PROVIDER_INFO_CACHE = res
+        _AI_PROVIDER_INFO_CACHE_TIME = now
+        return res
+
+    if getattr(settings, "ollama_enabled", True):
+        try:
+            from services.ai.ollama import OllamaService
+            svc = OllamaService(timeout_seconds=2)
+            health = svc.get_health_status()
+            if health.get("available") and health.get("model_configured"):
+                res = {
+                    "available": True,
+                    "provider": "ollama",
+                    "model": svc.model,
+                    "label": f"Powered by Ollama ({svc.model})",
+                    "footer_label": f"Local AI Processing Engine Active • Ollama ({svc.model})",
+                }
+                _AI_PROVIDER_INFO_CACHE = res
+                _AI_PROVIDER_INFO_CACHE_TIME = now
+                return res
+            elif health.get("available"):
+                res = {
+                    "available": True,
+                    "provider": "ollama",
+                    "model": svc.model,
+                    "label": "Powered by Ollama",
+                    "footer_label": "Local AI Processing Engine Active • Ollama",
+                }
+                _AI_PROVIDER_INFO_CACHE = res
+                _AI_PROVIDER_INFO_CACHE_TIME = now
+                return res
+        except Exception:
+            pass
+
+    res = {
+        "available": False,
+        "provider": "none",
+        "model": None,
+        "label": "Deterministic Feed",
+        "footer_label": "Independent Local-First Ingestion & Archive",
+    }
+    _AI_PROVIDER_INFO_CACHE = res
+    _AI_PROVIDER_INFO_CACHE_TIME = now
+    return res
 
 
 def get_db_host_mode(url: str) -> str:

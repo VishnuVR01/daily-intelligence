@@ -334,24 +334,30 @@ def get_recent_articles(
 
     raw_articles = query.limit(limit * 4).all()
 
-    if (mode or "balanced").lower() == "chronological":
+    mode_clean = (mode or "balanced").lower()
+
+    if mode_clean == "chronological":
         if curated_only:
             raw_articles = [a for a in raw_articles if not is_article_out_of_scope(a)]
         return raw_articles[:limit]
 
-    # mode == "balanced": Require successful AI processing AND is_relevant == True
-    balanced_articles = []
-    for a in raw_articles:
-        ai_outs = getattr(a, "ai_outputs", [])
-        succ_relevant = False
-        if ai_outs:
-            for ai in ai_outs:
-                if ai.status == "success" and ai.is_relevant is True:
-                    succ_relevant = True
-                    break
-        if succ_relevant and not is_article_out_of_scope(a):
-            balanced_articles.append(a)
+    if mode_clean == "ai_curated":
+        curated_articles = []
+        for a in raw_articles:
+            ai_outs = getattr(a, "ai_outputs", [])
+            succ_relevant = False
+            if ai_outs:
+                for ai in ai_outs:
+                    if ai.status == "success" and ai.is_relevant is True:
+                        succ_relevant = True
+                        break
+            if succ_relevant and not is_article_out_of_scope(a):
+                curated_articles.append(a)
 
+        return apply_editorial_diversity(curated_articles, max_per_source=2, max_items=limit)
+
+    # mode == "balanced" (or default fallback): AI-independent feed with source diversity & scope filtering
+    balanced_articles = [a for a in raw_articles if not is_article_out_of_scope(a)]
     return apply_editorial_diversity(balanced_articles, max_per_source=2, max_items=limit)
 
 
