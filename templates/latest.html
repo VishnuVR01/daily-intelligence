@@ -55,11 +55,14 @@
       </div>
       {% endif %}
 
-      <a href="/latest?mode=balanced{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode != 'chronological' %}active{% endif %}" style="font-size: 11px;">
+      <a href="/latest?mode=balanced{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode != 'chronological' and active_mode != 'ai_curated' %}active{% endif %}" style="font-size: 11px;">
         ⚖️ Editorial Balanced
       </a>
       <a href="/latest?mode=chronological{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode == 'chronological' %}active{% endif %}" style="font-size: 11px;">
         ⏱️ Pure Chronological
+      </a>
+      <a href="/latest?mode=ai_curated{% if active_category %}&category={{ active_category }}{% endif %}" class="filter-chip {% if active_mode == 'ai_curated' %}active{% endif %}" style="font-size: 11px;">
+        🤖 AI Curated
       </a>
     </div>
   </div>

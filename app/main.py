@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 
-from app.config import get_settings
+from app.config import get_ai_provider_info, get_settings
 from app.db import Base, engine, get_db
 from app.schema_validation import validate_schema
 from app.errors import register_error_handlers
@@ -98,6 +98,7 @@ templates.env.globals["get_daily_quote"] = get_daily_quote
 templates.env.globals["get_article_ai_output"] = get_article_ai_output
 templates.env.globals["is_article_out_of_scope"] = is_article_out_of_scope
 templates.env.globals["get_market_session_status"] = get_market_session_status
+templates.env.globals["get_ai_provider_info"] = get_ai_provider_info
 
 register_error_handlers(app, templates)
 
